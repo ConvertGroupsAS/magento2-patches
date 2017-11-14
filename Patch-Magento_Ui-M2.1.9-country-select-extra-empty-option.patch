@@ -1,0 +1,14 @@
+--- view/base/web/js/form/element/select.orig.js	2017-09-13 14:07:52.000000000 +0300
++++ view/base/web/js/form/element/select.js	2017-10-05 17:33:23.989687047 +0300
+@@ -44,9 +44,9 @@
+                 if (_.isUndefined(caption)) {
+                     caption = node.label;
+                 }
++            } else {
++                return node;
+             }
+-
+-            return node;
+         });
+ 
+         return {

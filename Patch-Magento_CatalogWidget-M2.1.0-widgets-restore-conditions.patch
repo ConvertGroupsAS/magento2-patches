@@ -1,0 +1,22 @@
+--- Block/Product/Widget/Conditions.php	2016-10-11 00:27:26.000000000 +0300
++++ Block/Product/Widget/Conditions.php	2017-02-21 22:49:32.000000000 +0300
+@@ -81,12 +81,16 @@
+      */
+     protected function _construct()
+     {
++        $widgetParameters = [];
+         $widget = $this->registry->registry('current_widget_instance');
+         if ($widget) {
+             $widgetParameters = $widget->getWidgetParameters();
+-            if (isset($widgetParameters['conditions'])) {
+-                $this->rule->loadPost($widgetParameters);
+-            }
++        } elseif($widgetOptions = $this->getLayout()->getBlock('wysiwyg_widget.options')) {
++            $widgetParameters = $widgetOptions->getWidgetValues();
++        }
++
++        if (isset($widgetParameters['conditions'])) {
++            $this->rule->loadPost($widgetParameters);
+         }
+     }
+ 

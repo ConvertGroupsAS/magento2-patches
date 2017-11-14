@@ -1,0 +1,26 @@
+--- Block/ListJson.php	2017-06-07 13:34:09.000000000 +0300
++++ Block/ListJson.php	2017-06-07 13:35:22.000000000 +0300
+@@ -200,7 +200,7 @@
+         /* For catalog list and search results
+          * Expects getListBlock as \Magento\Catalog\Block\Product\ListProduct
+          */
+-        if ($this->_productCollection === null) {
++        if ($this->_productCollection === null && !!$this->getListBlock()) {
+             $this->_productCollection = $this->getListBlock()->getLoadedProductCollection();
+         }
+ 
+@@ -213,12 +213,12 @@
+          * \Magento\Catalog\Block\Product\ProductList\Upsell | _itemCollection
+          * \Magento\Checkout\Block\Cart\Crosssell, | setter items
+          */
+-        if ($this->_showCrossSells && (null === $this->_productCollection)) {
++        if ($this->_showCrossSells && (null === $this->_productCollection && !!$this->getListBlock())) {
+             $this->_productCollection = $this->getListBlock()->getItemCollection();
+         }
+ 
+         // Support for CE
+-        if ((null === $this->_productCollection)
++        if ((null === $this->_productCollection && !!$this->getListBlock())
+             && ($this->getBlockName() == 'catalog.product.related'
+                 || $this->getBlockName() == 'checkout.cart.crosssell')
+         ) {

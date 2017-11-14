@@ -1,0 +1,66 @@
+--- Consumer.php
++++ Consumer.php
+@@ -136,20 +136,59 @@
+                 $this->getMessageController()->lock($message, $this->configuration->getConsumerName());
+                 if (in_array($topicName, $allowedTopics)) {
+                     $this->dispatchMessage($message);
+-                    $this->resource->getConnection()->commit();
++                    $this->commit();
+                     $queue->acknowledge($message);
+                 } else {
+                     $queue->reject($message); //push message back to the queue
+                 }
+             } catch (MessageLockException $exception) {
+-                $this->resource->getConnection()->rollBack();
++                $this->rollBack();
+                 $queue->acknowledge($message);
+             } catch (\Magento\Framework\MessageQueue\ConnectionLostException $e) {
+-                $this->resource->getConnection()->rollBack();
++                $this->rollBack();
+             } catch (\Exception $e) {
+-                $this->resource->getConnection()->rollBack();
++                $this->rollBack();
+                 $queue->reject($message, false, $e->getMessage());
+             }
+         };
+     }
++
++    /**
++     * Commit transaction
++     *
++     * @return void
++     * @throws \Exception
++     */
++    private function commit()
++    {
++        $connection = $this->resource->getConnection();
++        $connection->commit();
++
++        /**
++         * Process after commit callbacks
++         */
++        if ($this->resource->getConnection()->getTransactionLevel() === 0) {
++            $callbacks = \Magento\Framework\Model\CallbackPool::get(spl_object_hash($connection));
++            try {
++                foreach ($callbacks as $callback) {
++                    call_user_func($callback);
++                }
++            } catch (\Exception $e) {
++                throw $e;
++            } finally {
++                \Magento\Framework\Model\CallbackPool::clear(spl_object_hash($connection));
++            }
++        }
++    }
++
++    /**
++     * Roll back transaction
++     *
++     * @return void
++     */
++    private function rollBack()
++    {
++        $this->resource->getConnection()->rollBack();
++        \Magento\Framework\Model\CallbackPool::clear(spl_object_hash($this->resource->getConnection()));
++    }
+ }

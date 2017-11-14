@@ -1,0 +1,11 @@
+--- Controller/Cart/Add.php	2017-09-12 14:50:57.701891257 +0300
++++ Controller/Cart/Add.php	2017-09-12 14:37:08.835831726 +0300
+@@ -78,7 +78,7 @@
+     public function execute()
+     {
+         if (!$this->_formKeyValidator->validate($this->getRequest())) {
+-            return $this->resultRedirectFactory->create()->setPath('*/*/');
++            //return $this->resultRedirectFactory->create()->setPath('*/*/');
+         }
+ 
+         $params = $this->getRequest()->getParams();

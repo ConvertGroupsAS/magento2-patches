@@ -1,0 +1,11 @@
+--- Model/Sales/Total/Quote/CommonTaxCollector.php	2016-10-11 00:27:06.000000000 +0300
++++ Model/Sales/Total/Quote/CommonTaxCollector.php	2017-05-10 13:53:20.000000000 +0300
+@@ -536,6 +536,8 @@
+         $total->setBaseSubtotalTotalInclTax($baseSubtotalInclTax);
+         $total->setBaseSubtotalInclTax($baseSubtotalInclTax);
+ 
++        $shippingAssignment->getShipping()->getAddress()->setBaseSubtotalTotalInclTax($baseSubtotalInclTax);
++
+         return $this;
+     }
+ 

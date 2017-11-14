@@ -1,0 +1,15 @@
+--- setup/src/Magento/Setup/Model/Installer.php
++++ setup/src/Magento/Setup/Model/Installer.php
+@@ -1074,6 +1074,12 @@
+      */
+     private function cleanCaches()
+     {
++        if (file_exists(\Magento\Framework\App\ObjectManager\ConfigLoader\Compiled::getFilePath(\Magento\Framework\App\Area::AREA_GLOBAL))) {
++            $this->objectManagerProvider->get()->get('Magento\Framework\App\Cache')->clean();
++            $this->log->log('Cache cleared successfully (compiled fix)');
++            return;
++        }
++
+         /** @var \Magento\Framework\App\Cache\Manager $cacheManager */
+         $cacheManager = $this->objectManagerProvider->get()->get('Magento\Framework\App\Cache\Manager');
+         $types = $cacheManager->getAvailableTypes();

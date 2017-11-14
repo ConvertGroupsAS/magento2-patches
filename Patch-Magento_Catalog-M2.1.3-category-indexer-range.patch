@@ -1,0 +1,16 @@
+--- Model/Indexer/Category/Product/AbstractAction.php	2017-01-17 23:51:36.000000000 +0100
++++ Model/Indexer/Category/Product/AbstractAction.php	2017-01-18 00:17:50.000000000 +0100
+@@ -299,7 +299,12 @@
+      */
+     protected function isRangingNeeded()
+     {
+-        return true;
++        /*
++         * PATCH for select query limiting bug
++         * See https://github.com/magento/magento2/issues/8018
++         * Remove when fixed MAGETWO-62616
++         */
++        return false;
+     }
+
+     /**

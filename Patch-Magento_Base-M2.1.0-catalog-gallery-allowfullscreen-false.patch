@@ -1,0 +1,11 @@
+--- lib/web/mage/gallery/gallery.js	2017-03-17 12:50:57.000000000 +0300
++++ lib/web/mage/gallery/gallery.js	2017-03-31 12:45:14.000000000 +0300
+@@ -143,7 +143,7 @@
+                 }
+             });
+ 
+-            if (this.isTouchEnabled) {
++            if (this.isTouchEnabled && this.settings.isFullscreen) {
+                 this.settings.$element.on('tap', '.fotorama__stage__frame', function () {
+                     var translate = getTranslate($(this).parents('.fotorama__stage__shaft'));
+ 

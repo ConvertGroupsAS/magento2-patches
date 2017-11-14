@@ -1,0 +1,10 @@
+--- Observer/ProcessCronQueueObserver.php	2016-12-08 21:22:14.000000000 +0300
++++ Observer/ProcessCronQueueObserver.php	2017-06-20 20:11:40.882465852 +0300
+@@ -454,7 +454,6 @@
+             if ($schedule->trySchedule()) {
+                 // time matches cron expression
+                 $schedule->save();
+-                return;
+             }
+         }
+     }

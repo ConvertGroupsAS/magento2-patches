@@ -1,0 +1,11 @@
+--- Helper/Entity/ProductHelper.php	2017-06-29 15:24:09.163873496 +0300
++++ Helper/Entity/ProductHelper.php	2017-06-29 15:24:52.803748456 +0300
+@@ -320,7 +320,7 @@
+             foreach ($currencies as $currencyCode) {
+                 $customData[$field][$currencyCode] = [];
+ 
+-                $price = $product->getPrice();
++                $price = $product->getPriceInfo()->getPrice('regular_price')->getValue();
+                 if ($currencyCode !== $baseCurrencyCode) {
+                     $price = $this->priceCurrency->convert($price, $store, $currencyCode);
+                 }

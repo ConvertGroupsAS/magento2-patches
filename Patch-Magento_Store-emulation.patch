@@ -1,0 +1,50 @@
+--- Model/App/Emulation.php
++++ Model/App/Emulation.php
+@@ -195,7 +195,7 @@
+             [
+                 'area' => $this->_viewDesign->getArea(),
+                 'theme' => $this->_viewDesign->getDesignTheme(),
+-                'store' => $this->_storeManager->getStore()->getStoreId(),
++                'store' => $this->_storeManager->getStore()->getCode(),
+             ]
+         )->setInitialLocaleCode(
+             $this->_localeResolver->getLocale()
+
+--- Test/Unit/Model/App/EmulationTest.php
++++ Test/Unit/Model/App/EmulationTest.php
+@@ -100,7 +100,7 @@
+         $this->viewDesignMock = $this->getMockForAbstractClass('Magento\Framework\View\DesignInterface');
+         $this->storeMock = $this->getMockBuilder('Magento\Store\Model\Store')
+             ->disableOriginalConstructor()
+-            ->setMethods(['__wakeup', 'getStoreId'])
++            ->setMethods(['__wakeup', 'getStoreId', 'getCode'])
+             ->getMock();
+
+         // Stubs
+@@ -166,7 +166,7 @@
+         $initArea = 'initial area';
+         $initTheme = 'initial design theme';
+         $initLocale = 'initial locale code';
+-        $initialStore = 1;
++        $initStoreCode = 'default';
+         $initTranslateInline = false;
+
+         $this->inlineTranslationMock->expects($this->once())
+@@ -179,7 +179,7 @@
+             ->method('getDesignTheme')
+             ->willReturn($initTheme);
+         $this->storeManagerMock->expects($this->any())->method('getStore')->willReturn($this->storeMock);
+-        $this->storeMock->expects($this->once())->method('getStoreId')->willReturn($initialStore);
++        $this->storeMock->expects($this->once())->method('getCode')->willReturn($initStoreCode);
+         $this->localeResolverMock->expects($this->once())
+             ->method('getLocale')
+             ->willReturn($initLocale);
+@@ -194,7 +194,7 @@
+             ->method('setDesignTheme')
+             ->with($initTheme, $initArea);
+         $this->storeManagerMock->expects($this->once())
+-            ->method('setCurrentStore')->with($initialStore);
++            ->method('setCurrentStore')->with($initStoreCode);
+         $this->localeResolverMock->expects($this->once())
+             ->method('setLocale')
+             ->with($initLocale);

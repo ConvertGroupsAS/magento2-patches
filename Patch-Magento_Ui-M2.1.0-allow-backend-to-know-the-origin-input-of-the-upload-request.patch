@@ -1,0 +1,17 @@
+--- view/base/web/js/form/element/file-uploader.js.org	2016-08-01 20:33:22.866555339 +0200
++++ view/base/web/js/form/element/file-uploader.js	2016-08-01 20:33:42.384061881 +0200
+@@ -302,7 +302,13 @@
+                 allowed  = this.isFileAllowed(file);
+ 
+             if (allowed.passed) {
+-                $(e.target).fileupload('process', data).done(function () {
++                var $target = $(e.target);
++
++                $target.on('fileuploadsend', function(event, postData) {
++                    postData.data.set('param_name', this.paramName);
++                }.bind(data));
++
++                $target.fileupload('process', data).done(function () {
+                     data.submit();
+                 });
+             } else {

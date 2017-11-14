@@ -1,0 +1,30 @@
+--- Helper/Entity/ProductHelper.php	2017-04-03 21:14:44.000000000 +0300
++++ Helper/Entity/ProductHelper.php	2017-05-03 15:08:45.000000000 +0300
+@@ -655,10 +655,10 @@
+         $customData['categories_without_path'] = $categories;
+ 
+         /** @var Image $imageHelper */
+-        $imageHelper = $this->objectManager->create('Algolia\AlgoliaSearch\Helper\Image');
++        $imageHelper = $this->objectManager->create('Magento\Catalog\Helper\Image');
+ 
+         if (false === isset($defaultData['thumbnail_url'])) {
+-            $thumb = $imageHelper->init($product, 'thumbnail')->resize(75, 75);
++            $thumb = $imageHelper->init($product, 'product_thumbnail_image')->resize(75, 75);
+ 
+             $customData['thumbnail_url'] = $thumb->getUrl();
+         }
+--- Model/Source/ImageType.php	2017-05-03 15:09:51.000000000 +0300
++++ Model/Source/ImageType.php	2017-05-03 15:11:20.000000000 +0300
+@@ -9,9 +9,9 @@
+     public function toOptionArray()
+     {
+         return [
+-            ['value' => 'image',         'label' => __('Base Image')],
+-            ['value' => 'small_image',   'label' => __('Small Image')],
+-            ['value' => 'thumbnail',     'label' => __('Thumbnail')],
++            ['value' => 'product_base_image',      'label' => __('Base Image')],
++            ['value' => 'product_small_image',     'label' => __('Small Image')],
++            ['value' => 'product_thumbnail_image', 'label' => __('Thumbnail')],
+         ];
+     }
+ }

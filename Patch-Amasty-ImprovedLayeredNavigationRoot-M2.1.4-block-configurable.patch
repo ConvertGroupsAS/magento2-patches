@@ -1,0 +1,12 @@
+--- view/frontend/layout/amshopby_index_index.xml    2017-06-30 14:58:05.992337653 +0100
++++ view/frontend/layout/amshopby_index_index.xml    2017-06-30 14:36:01.775685200 +0100
+@@ -17,9 +17,6 @@
+         <css src="Magento_Swatches::css/swatches.css"/>
+     </head>
+     <body>
+-        <referenceBlock name="category.product.type.details.renderers">
+-            <block class="Magento\Swatches\Block\Product\Renderer\Listing\Configurable" as="configurable" template="Magento_Swatches::product/listing/renderer.phtml" />
+-        </referenceBlock>
+         <referenceContainer name="columns.top">
+             <container name="category.view.container" htmlTag="div" htmlClass="category-view" after="-">
+                 <block class="Magento\Catalog\Block\Category\View" name="category.image" template="Magento_Catalog::category/image.phtml"/>

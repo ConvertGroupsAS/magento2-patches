@@ -1,0 +1,11 @@
+--- etc/crontab.xml 2016-12-08 22:22:32.000000000 +0100
++++ etc/crontab.xml 2017-08-22 08:52:40.459412785 +0200
+@@ -8,7 +8,7 @@
+ <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+     <group id="default">
+         <job name="catalogrule_apply_all" instance="Magento\CatalogRule\Cron\DailyCatalogUpdate" method="execute">
+-            <schedule>0 1 * * *</schedule>
++            <schedule>0 3 * * *</schedule>
+         </job>
+     </group>
+ </config>

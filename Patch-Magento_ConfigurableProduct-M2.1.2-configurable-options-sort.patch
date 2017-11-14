@@ -1,0 +1,15 @@
+--- Model/ResourceModel/Product/Type/Configurable.php	2017-01-24 19:39:02.000000000 +0300
++++ Model/ResourceModel/Product/Type/ConfigurableFixed.php	2017-03-11 21:36:24.295759972 +0300
+@@ -279,6 +279,12 @@
+         )->where(
+             'attribute.attribute_id = ?',
+             $superAttribute->getAttributeId()
++        )->joinInner(
++            ['attribute_opt' => $this->getTable('eav_attribute_option')],
++            'attribute_opt.option_id = entity_value.value',
++            []
++        )->order(
++            'attribute_opt.sort_order ASC'
+         );
+
+         return $this->getConnection()->fetchAll($select);

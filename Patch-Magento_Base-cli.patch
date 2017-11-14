@@ -1,0 +1,23 @@
+--- bin/magento	(revision ea85f7de9b72c9dde9a26f640092fe75516d8799)
++++ bin/magento	(revision )
+@@ -19,6 +19,13 @@
+ try {
+     $handler = new \Magento\Framework\App\ErrorHandler();
+     set_error_handler([$handler, 'handler']);
++
++    $_SERVER[\Magento\Framework\App\Bootstrap::INIT_PARAM_FILESYSTEM_DIR_PATHS][\Magento\Framework\App\Filesystem\DirectoryList::ROOT] = [\Magento\Framework\App\Filesystem\DirectoryList::PATH => BP];
++    $_SERVER[\Magento\Framework\App\Bootstrap::INIT_PARAM_FILESYSTEM_DIR_PATHS][\Magento\Framework\App\Filesystem\DirectoryList::PUB] = [\Magento\Framework\App\Filesystem\DirectoryList::URL_PATH => ''];
++    $_SERVER[\Magento\Framework\App\Bootstrap::INIT_PARAM_FILESYSTEM_DIR_PATHS][\Magento\Framework\App\Filesystem\DirectoryList::MEDIA] = [\Magento\Framework\App\Filesystem\DirectoryList::URL_PATH => 'media'];
++    $_SERVER[\Magento\Framework\App\Bootstrap::INIT_PARAM_FILESYSTEM_DIR_PATHS][\Magento\Framework\App\Filesystem\DirectoryList::STATIC_VIEW] = [\Magento\Framework\App\Filesystem\DirectoryList::URL_PATH => 'static'];
++    $_SERVER[\Magento\Framework\App\Bootstrap::INIT_PARAM_FILESYSTEM_DIR_PATHS][\Magento\Framework\App\Filesystem\DirectoryList::UPLOAD] = [\Magento\Framework\App\Filesystem\DirectoryList::URL_PATH => 'media/upload'];
++
+     $application = new Magento\Framework\Console\Cli('Magento CLI');
+     $application->run();
+ } catch (\Exception $e) {
+@@ -28,5 +35,5 @@
+         echo "\n\n";
+         $e = $e->getPrevious();
+     }
+-    exit(Cli::RETURN_FAILURE);
++    exit(Magento\Framework\Console\Cli::RETURN_FAILURE);
+ }

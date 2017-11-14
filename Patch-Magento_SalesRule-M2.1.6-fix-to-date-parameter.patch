@@ -1,0 +1,17 @@
+--- Controller/Adminhtml/Promo/Quote/Save.php	2017-05-19 20:33:22.866555339 +0200
++++ Controller/Adminhtml/Promo/Quote/Save.php	2016-05-19 20:33:42.384061881 +0200
+@@ -26,8 +26,13 @@ class Save extends \Magento\SalesRule\Controller\Adminhtml\Promo\Quote
+                     ['request' => $this->getRequest()]
+                 );
+                 $data = $this->getRequest()->getPostValue();
++
++                $filterValues = ['from_date' => $this->_dateFilter];
++                if ($this->getRequest()->getParam('to_date')) {
++                    $filterValues['to_date'] = $this->_dateFilter;
++                }
+                 $inputFilter = new \Zend_Filter_Input(
+-                    ['from_date' => $this->_dateFilter, 'to_date' => $this->_dateFilter],
++                    $filterValues,
+                     [],
+                     $data
+                 );

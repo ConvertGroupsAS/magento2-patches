@@ -1,0 +1,11 @@
+--- pub/errors/processor.php	2017-01-24 19:38:40.000000000 +0300
++++ pub/errors/processor.php	2017-06-07 15:22:18.000000000 +0300
+@@ -568,7 +568,7 @@
+      */
+     protected function _setSkin($value, \stdClass $config = null)
+     {
+-        if (preg_match('/^[a-z0-9_]+$/i', $value) && is_dir($this->_indexDir . self::ERROR_DIR . '/' . $value)) {
++        if (preg_match('/^[a-z0-9_]+$/i', $value) && is_dir($this->_errorDir . $value)) {
+             if (!$config) {
+                 if ($this->_config) {
+                     $config = $this->_config;

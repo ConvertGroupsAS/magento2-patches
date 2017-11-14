@@ -1,0 +1,11 @@
+--- Helper/Page.php
++++ Helper/Page.php
+@@ -152,7 +152,7 @@
+         $resultPage = $this->resultPageFactory->create();
+         $this->setLayoutType($inRange, $resultPage);
+         $resultPage->addHandle('cms_page_view');
+-        $resultPage->addPageLayoutHandles(['id' => $this->_page->getIdentifier()]);
++        $resultPage->addPageLayoutHandles(['id' => str_replace('/', '_', $this->_page->getIdentifier())]);
+
+         $this->_eventManager->dispatch(
+             'cms_page_render',
