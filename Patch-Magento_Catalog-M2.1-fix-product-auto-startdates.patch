@@ -1,0 +1,77 @@
+--- Model/Attribute/Backend/Startdate.php
++++ Model/Attribute/Backend/Startdate.php
+@@ -44,12 +44,6 @@ protected function _getValueForSave($object)
+     {
+         $attributeName = $this->getAttribute()->getName();
+         $startDate = $object->getData($attributeName);
+-        if ($startDate === false) {
+-            return false;
+-        }
+-        if ($startDate == '' && $object->getSpecialPrice()) {
+-            $startDate = $this->_localeDate->date();
+-        }
+ 
+         return $startDate;
+     }
+
+--- etc/events.xml
++++ etc/events.xml
+@@ -51,6 +51,9 @@
+     <event name="magento_catalog_api_data_categorytreeinterface_load_after">
+         <observer name="legacy_categorytree_load_after" instance="Magento\Framework\EntityManager\Observer\AfterEntityLoad" />
+     </event>
++    <event name="catalog_product_save_before">
++        <observer name="set_special_price_start_date" instance="Magento\Catalog\Observer\SetSpecialPriceStartDate" />
++    </event>
+     <event name="admin_system_config_changed_section_catalog">
+         <observer name="catalog_update_price_attribute" instance="Magento\Catalog\Observer\SwitchPriceAttributeScopeOnConfigChange" />
+     </event>
+
+--- /dev/null
++++ Observer/SetSpecialPriceStartDate.php
+@@ -0,0 +1,45 @@
++<?php
++/**
++ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
++ * See COPYING.txt for license details.
++ */
++namespace Magento\Catalog\Observer;
++
++use Magento\Framework\Event\ObserverInterface;
++
++/**
++ *  Set value for Special Price start date
++ */
++class SetSpecialPriceStartDate implements ObserverInterface
++{
++    /**
++     * @var \Magento\Framework\Stdlib\DateTime\TimezoneInterface
++     */
++    private $localeDate;
++
++    /**
++     * @param \Magento\Framework\Stdlib\DateTime\TimezoneInterface $localeDate
++     * @codeCoverageIgnore
++     */
++    public function __construct(\Magento\Framework\Stdlib\DateTime\TimezoneInterface $localeDate)
++    {
++        $this->localeDate = $localeDate;
++    }
++
++    /**
++     * Set the current date to Special Price From attribute if it empty
++     *
++     * @param \Magento\Framework\Event\Observer $observer
++     * @return $this
++     */
++    public function execute(\Magento\Framework\Event\Observer $observer)
++    {
++        /** @var  $product \Magento\Catalog\Model\Product */
++        $product = $observer->getEvent()->getProduct();
++        if ($product->getSpecialPrice() && !$product->getSpecialFromDate()) {
++            $product->setData('special_from_date', $this->localeDate->date());
++        }
++
++        return $this;
++    }
++}

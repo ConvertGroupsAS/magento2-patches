@@ -1,0 +1,19 @@
+--- Model/Indexer/Product/Flat/Action/Indexer.php
++++ Model/Indexer/Product/Flat/Action/Indexer.php
+@@ -96,6 +96,16 @@ class Indexer
+                         if (isset($describe[$columnName])) {
+                             $ids[$attribute->getId()] = $columnName;
+                         }
++                        if (in_array($columnName, [
++                            'special_price',
++                            'cost',
++                            'news_from_date',
++                            'news_to_date',
++                            'special_from_date',
++                            'special_to_date'
++                        ])) {
++                            $updateData[$columnName] = null;
++                        }
+                     }
+                     $linkField = $this->getMetadataPool()->getMetadata(ProductInterface::class)->getLinkField();
+                     $select->joinLeft(
