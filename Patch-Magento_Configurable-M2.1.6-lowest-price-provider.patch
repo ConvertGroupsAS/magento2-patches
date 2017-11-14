@@ -1,0 +1,13 @@
+--- Pricing/Price/LowestPriceOptionsProvider.php	2017-09-13 14:07:42.000000000 +0300
++++ Pricing/Price/LowestPriceOptionsProvider.php	2017-11-14 14:38:24.654543124 +0300
+@@ -63,7 +63,9 @@
+             );
+ 
+             $this->productsMap[$product->getId()] = $this->collectionFactory->create()
+-                ->addAttributeToSelect(['price', 'special_price'])
++                ->addAttributeToSelect(
++                    ['price', 'special_price', 'special_from_date', 'special_to_date', 'tax_class_id']
++                )
+                 ->addIdFilter($productIds)
+                 ->getItems();
+         }
