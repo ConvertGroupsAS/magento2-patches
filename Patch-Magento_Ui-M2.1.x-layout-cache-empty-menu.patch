@@ -1,0 +1,11 @@
+--- view/base/layout/default.orig.xml	2017-11-17 12:13:59.000000000 +0300
++++ view/base/layout/default.xml	2017-11-17 14:14:43.648072871 +0300
+@@ -5,7 +5,7 @@
+  * See COPYING.txt for license details.
+  */
+ -->
+-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
++<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+     <body>
+         <referenceContainer name="after.body.start">
+             <block class="Magento\Ui\Block\Logger" name="logger" template="Magento_Ui::logger.phtml"/>
