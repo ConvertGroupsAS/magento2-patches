@@ -1,5 +1,5 @@
---- app/code/Magento/Catalog/Model/ProductRepository.php
-+++ app/code/Magento/Catalog/Model/ProductRepository.php
+--- Model/ProductRepository.php
++++ Model/ProductRepository.php
 @@ -282,7 +282,7 @@ class ProductRepository implements \Magento\Catalog\Api\ProductRepositoryInterfa
          if ($createNew) {
              $product = $this->productFactory->create();
