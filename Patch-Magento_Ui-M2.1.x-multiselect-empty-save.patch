@@ -11,10 +11,11 @@
              }
  
              return _.isString(value) ? value.split(',') : value;
-@@ -84,5 +84,16 @@
+@@ -83,6 +83,17 @@
+             this.error(false);
  
              return this;
-         }
++        },
 +
 +        /**
 +         * @inheritdoc
@@ -25,6 +26,6 @@
 +            }
 +
 +            this._super();
-+        }
+         }
      });
  });
