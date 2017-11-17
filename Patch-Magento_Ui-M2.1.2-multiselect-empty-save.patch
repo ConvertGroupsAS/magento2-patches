@@ -1,0 +1,30 @@
+--- view/base/web/js/form/element/multiselect.js	2017-05-30 08:01:34.000000000 +0300
++++ view/base/web/js/form/element/multiselect.js	2017-11-17 14:52:21.000000000 +0300
+@@ -31,8 +31,8 @@
+          * @inheritdoc
+          */
+         normalizeData: function (value) {
+-            if (utils.isEmpty(value)) {
+-                value = [];
++            if (utils.isEmpty(value) || (typeof value != 'undefined' && value.length == 0)) {
++                value = '';
+             }
+ 
+             return _.isString(value) ? value.split(',') : value;
+@@ -84,5 +84,16 @@
+ 
+             return this;
+         }
++
++        /**
++         * @inheritdoc
++         */
++        onUpdate: function () {
++            if (this.value().length == 0) {
++                this.value('');
++            }
++
++            this._super();
++        }
+     });
+ });
