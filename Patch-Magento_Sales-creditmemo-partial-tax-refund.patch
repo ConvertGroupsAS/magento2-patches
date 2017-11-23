@@ -1,16 +1,44 @@
 --- Model/Order/Creditmemo/Total/Tax.php	2017-01-24 19:38:48.000000000 +0300
-+++ Model/Order/Creditmemo/Total/Tax.php	2017-11-20 17:27:55.229021737 +0300
-@@ -156,7 +156,12 @@
-             $creditmemo->getBaseShippingDiscountTaxCompensationAmnt() -
-             $creditmemo->getBaseDiscountTaxCompensationAmount();
- 
--        if ($creditmemo->isLast() && !$isPartialShippingRefunded) {
++++ Model/Order/Creditmemo/Total/Tax.php	2017-11-22 14:54:27.542653700 +0300
+@@ -141,20 +141,27 @@
+             $baseTotalDiscountTaxCompensation += $baseShippingDiscountTaxCompensationAmount;
+         }
+
+-        $allowedTax = $order->getTaxInvoiced() - $order->getTaxRefunded() - $creditmemo->getTaxAmount();
+-        $allowedBaseTax = $order->getBaseTaxInvoiced() - $order->getBaseTaxRefunded() - $creditmemo->getBaseTaxAmount();
+-        $allowedDiscountTaxCompensation = $order->getDiscountTaxCompensationInvoiced() +
+-            $order->getShippingDiscountTaxCompensationAmount() -
+-            $order->getDiscountTaxCompensationRefunded() -
+-            $order->getShippingDiscountTaxCompensationRefunded() -
+-            $creditmemo->getDiscountTaxCompensationAmount() -
+-            $creditmemo->getShippingDiscountTaxCompensationAmount();
+-        $allowedBaseDiscountTaxCompensation = $order->getBaseDiscountTaxCompensationInvoiced() +
+-            $order->getBaseShippingDiscountTaxCompensationAmnt() -
+-            $order->getBaseDiscountTaxCompensationRefunded() -
+-            $order->getBaseShippingDiscountTaxCompensationRefunded() -
+-            $creditmemo->getBaseShippingDiscountTaxCompensationAmnt() -
+-            $creditmemo->getBaseDiscountTaxCompensationAmount();
 +        if ($invoice) {
-+            $totalTax = $invoice->getTaxAmount();
-+            $baseTotalTax = $invoice->getBaseTaxAmount();
-+            $totalDiscountTaxCompensation = $invoice->getDiscountTaxCompensationAmount();
-+            $baseTotalDiscountTaxCompensation = $invoice->getBaseDiscountTaxCompensationAmount();
-+        } elseif ($creditmemo->isLast() && !$isPartialShippingRefunded) {
++            $allowedTax = $invoice->getTaxAmount();
++            $allowedBaseTax = $invoice->getBaseTaxAmount();
++            $allowedDiscountTaxCompensation = $invoice->getDiscountTaxCompensationAmount();
++            $allowedBaseDiscountTaxCompensation = $invoice->getBaseDiscountTaxCompensationAmount();
++        } else {
++            $allowedTax = $order->getTaxInvoiced() - $order->getTaxRefunded() - $creditmemo->getTaxAmount();
++            $allowedBaseTax = $order->getBaseTaxInvoiced() - $order->getBaseTaxRefunded() - $creditmemo->getBaseTaxAmount();
++            $allowedDiscountTaxCompensation = $order->getDiscountTaxCompensationInvoiced() +
++                $order->getShippingDiscountTaxCompensationAmount() -
++                $order->getDiscountTaxCompensationRefunded() -
++                $order->getShippingDiscountTaxCompensationRefunded() -
++                $creditmemo->getDiscountTaxCompensationAmount() -
++                $creditmemo->getShippingDiscountTaxCompensationAmount();
++            $allowedBaseDiscountTaxCompensation = $order->getBaseDiscountTaxCompensationInvoiced() +
++                $order->getBaseShippingDiscountTaxCompensationAmnt() -
++                $order->getBaseDiscountTaxCompensationRefunded() -
++                $order->getBaseShippingDiscountTaxCompensationRefunded() -
++                $creditmemo->getBaseShippingDiscountTaxCompensationAmnt() -
++                $creditmemo->getBaseDiscountTaxCompensationAmount();
++        }
+
+         if ($creditmemo->isLast() && !$isPartialShippingRefunded) {
              $totalTax = $allowedTax;
-             $baseTotalTax = $allowedBaseTax;
-             $totalDiscountTaxCompensation = $allowedDiscountTaxCompensation;
