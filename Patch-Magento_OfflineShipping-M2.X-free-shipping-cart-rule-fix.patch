@@ -1,0 +1,11 @@
+--- Model/Quote/Address/FreeShipping.php
++++ OfflineShipping/Model/Quote/Address/FreeShipping.php
+@@ -64,7 +64,7 @@ class FreeShipping implements \Magento\Quote\Model\Quote\Address\FreeShippingInt
+ 
+             $this->calculator->processFreeShipping($item);
+             $itemFreeShipping = (bool)$item->getFreeShipping();
+-            $addressFreeShipping = $addressFreeShipping && $itemFreeShipping;
++            $addressFreeShipping = $item->getAddress()->getFreeShipping();
+ 
+             /** Parent free shipping we apply to all children*/
+             $this->applyToChildren($item, $itemFreeShipping);
