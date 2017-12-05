@@ -68,7 +68,8 @@ Full example:
                 "Fix: https://github.com/magento/magento2/issues/10266": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Swatches-M2.1.x-zero-value-attribute-options-fix.patch"
             },
             "magento/module-tax": {
-                "Fix: https://github.com/magento/magento2/issues/2939": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Tax-M2.1.0-free-shipping-availability-on-backend.patch"
+                "Fix: https://github.com/magento/magento2/issues/2939": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Tax-M2.1.0-free-shipping-availability-on-backend.patch",
+                "Fix: https://github.com/magento/magento2/issues/7801": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Tax-M2.X.X-sequence-fix.patch"
             },
             "magento/module-theme": {
                 "https://github.com/magento/magento2/issues/5352": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Email-M2.1.0-create-email-logo-2.patch"
