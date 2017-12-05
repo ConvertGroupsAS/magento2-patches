@@ -1,14 +1,6 @@
 --- Model/Plugin/EavAttribute.php
 +++ Model/Plugin/EavAttribute.php
-@@ -228,19 +228,19 @@ class EavAttribute
-     {
-         $swatchArray = $attribute->getData('swatch/value');
-         if (isset($swatchArray) && is_array($swatchArray)) {
--            foreach ($swatchArray as $optionId => $value) {
-+            foreach ($swatchArray as $optionId => $storeValues) {
-                 $optionId = $this->getAttributeOptionId($optionId);
-                 $isOptionForDelete = $this->isOptionForDelete($attribute, $optionId);
-                 if ($optionId === null || $isOptionForDelete) {
+@@ -235,12 +235,13 @@ class EavAttribute
                      //option was deleted by button with basket
                      continue;
                  }
@@ -18,10 +10,11 @@
 -
 -                $this->saveSwatchData($swatch, $optionId, self::DEFAULT_STORE_ID, $swatchType, $value);
 -                $this->isSwatchExists = null;
-+                foreach ($storeValues as $storeId => $value) {
++                $storeValues = is_array($value) ? $value : [static::DEFAULT_STORE_ID => $value];
++                foreach ($storeValues as $storeId => $swatchValue) {
 +                    $swatch = $this->loadSwatchIfExists($optionId, $storeId);
-+                    $swatchType = $this->determineSwatchType($value);
-+                    $this->saveSwatchData($swatch, $optionId, $storeId, $swatchType, $value);
++                    $swatchType = $this->determineSwatchType($swatchValue);
++                    $this->saveSwatchData($swatch, $optionId, $storeId, $swatchType, $swatchValue);
 +                    $this->isSwatchExists = null;
 +                }
              }
