@@ -28,7 +28,7 @@ Full example:
                 "Fix: Product auto enable on REST API update": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-rest-api-auto-enable-product-fix.patch",
                 "Fix: Set default website insteed of admin on REST API create product": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-rest-api-single-store-fix.patch",
                 "Fix: https://github.com/magento/magento2/issues/5438": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.1.0-image-attribute-backend-model-hardcoded-attribute-code-removal.patch",
-                "Fix: catalog_product_flat does not update column with empty value": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.1.4-product-flat-indexer.patch",
+                "Fix: catalog_product_flat does not update column with empty value. Fix options linking.": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.1.4-product-flat-indexer.patch",
                 "Fix: https://github.com/magento/magento2/issues/4387": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.1-fix-product-auto-startdates.patch"
             },
             "magento/module-catalog-rule": {

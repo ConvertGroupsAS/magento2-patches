@@ -17,3 +17,14 @@
                      }
                      $linkField = $this->getMetadataPool()->getMetadata(ProductInterface::class)->getLinkField();
                      $select->joinLeft(
+@@ -121,6 +121,10 @@ class Indexer
+                     );
+                     $cursor = $this->_connection->query($select);
+                     while ($row = $cursor->fetch(\Zend_Db::FETCH_ASSOC)) {
++                        // Not integer values can't be an option ID
++                        if (!is_int($row['value']) && !ctype_digit($row['value'])) {
++                            continue;
++                        }
+                         $updateData[$ids[$row['attribute_id']]] = $row['value'];
+                         $valueColumnName = $ids[$row['attribute_id']] . $valueFieldSuffix;
+                         if (isset($describe[$valueColumnName])) {
