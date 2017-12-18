@@ -1,0 +1,61 @@
+--- Pricing/Price/LowestPriceOptionsProvider.php	2017-09-13 14:07:42.000000000 +0300
++++ Pricing/Price/LowestPriceOptionsProvider.php	2017-12-18 12:23:37.439775641 +0300
+@@ -9,6 +9,7 @@
+ use Magento\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderInterface;
+ use Magento\Framework\App\ResourceConnection;
+ use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
++use Magento\Store\Model\StoreManagerInterface;
+
+ /**
+  * Retrieve list of products where each product contains lower price than others at least for one possible price type
+@@ -38,6 +39,11 @@
+     private $productsMap;
+
+     /**
++     * @var StoreManagerInterface
++     */
++    private $storeManager;
++
++    /**
+      * @param ResourceConnection $resourceConnection
+      * @param LinkedProductSelectBuilderInterface $linkedProductSelectBuilder
+      * @param CollectionFactory $collectionFactory
+@@ -45,11 +51,13 @@
+     public function __construct(
+         ResourceConnection $resourceConnection,
+         LinkedProductSelectBuilderInterface $linkedProductSelectBuilder,
+-        CollectionFactory $collectionFactory
++        CollectionFactory $collectionFactory,
++        StoreManagerInterface $storeManager
+     ) {
+         $this->resource = $resourceConnection;
+         $this->linkedProductSelectBuilder = $linkedProductSelectBuilder;
+         $this->collectionFactory = $collectionFactory;
++        $this->storeManager = $storeManager;
+     }
+
+     /**
+@@ -57,16 +65,19 @@
+      */
+     public function getProducts(ProductInterface $product)
+     {
+-        if (!isset($this->productsMap[$product->getId()])) {
++        $key = $this->storeManager->getStore()->getId() . '-' . $product->getId();
++        if (!isset($this->productsMap[$key])) {
+             $productIds = $this->resource->getConnection()->fetchCol(
+                 '(' . implode(') UNION (', $this->linkedProductSelectBuilder->build($product->getId())) . ')'
+             );
+
+-            $this->productsMap[$product->getId()] = $this->collectionFactory->create()
+-                ->addAttributeToSelect(['price', 'special_price'])
++            $this->productsMap[$key] = $this->collectionFactory->create()
++                ->addAttributeToSelect(
++                    ['price', 'special_price', 'special_from_date', 'special_to_date', 'tax_class_id']
++                )
+                 ->addIdFilter($productIds)
+                 ->getItems();
+         }
+-        return $this->productsMap[$product->getId()];
++        return $this->productsMap[$key];
+     }
+ }
