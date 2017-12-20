@@ -1,0 +1,14 @@
+--- Model/Country/Postcode/Config/Reader.php	2017-12-20 10:51:26.718397048 +0300
++++ Model/Country/Postcode/Config/Reader.php	2017-12-20 10:53:58.342135861 +0300
+@@ -12,7 +12,10 @@
+      *
+      * @var array
+      */
+-    protected $_idAttributes = ['/config/zip' => 'countryCode'];
++    protected $_idAttributes = [
++        '/config/zip' => 'countryCode',
++        '/config/zip/codes/code' => 'id',
++    ];
+ 
+     /**
+      * Construct the FileSystem Reader Class

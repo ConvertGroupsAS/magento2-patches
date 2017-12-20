@@ -51,6 +51,9 @@ Full example:
             "magento/module-customer": {
                 "Fix: https://github.com/magento/magento2/pull/10582": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Customer-M2.1.9-array-street-line.patch"
             },
+            "magento/module-directory": {
+                "Fix: https://github.com/magento/magento2/issues/6694": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Directory_M2.1-zip-codes.patch"
+            },
             "magento/module-email": {
                 "https://github.com/magento/magento2/issues/5352": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Email-M2.1.0-create-email-logo-1.patch"
             },
