@@ -1,0 +1,11 @@
+--- Helper/Stock.php	2017-12-20 22:34:03.499213047 +0300
++++ Helper/Stock.php	2017-12-20 22:34:50.842368545 +0300
+@@ -156,7 +156,7 @@
+             $resource = $this->getStockStatusResource();
+             $resource->addStockDataToCollection(
+                 $collection,
+-                !$isShowOutOfStock && $collection->getFlag('require_stock_items')
++                !$isShowOutOfStock || $collection->getFlag('require_stock_items')
+             );
+             $collection->setFlag($stockFlag, true);
+         }
