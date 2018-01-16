@@ -1,0 +1,53 @@
+--- Observer/CategoryProcessUrlRewriteSavingObserver.php
++++ Observer/CategoryProcessUrlRewriteSavingObserver.php
+@@ -49,8 +49,8 @@ class CategoryProcessUrlRewriteSavingObserver implements ObserverInterface
+         if ($category->getParentId() == Category::TREE_ROOT_ID) {
+             return;
+         }
+-        if ($category->dataHasChangedFor('url_key')
+-            || $category->dataHasChangedFor('is_anchor')
++        if ($category->getUrlKeyChanged()
++            || $category->getIsAnchorChanged()
+             || $category->getIsChangedProductList()
+         ) {
+             $urlRewrites = array_merge(
+--- Observer/CategoryUrlPathAutogeneratorObserver.php
++++ Observer/CategoryUrlPathAutogeneratorObserver.php
+@@ -24,15 +24,20 @@ class CategoryUrlPathAutogeneratorObserver implements ObserverInterface
+     /** @var StoreViewService */
+     protected $storeViewService;
+ 
++    /** @var \Magento\Catalog\Model\CategoryFactory  */
++    protected $categoryFactory;
++
+     /**
+      * @param CategoryUrlPathGenerator $categoryUrlPathGenerator
+      * @param ChildrenCategoriesProvider $childrenCategoriesProvider
+      * @param \Magento\CatalogUrlRewrite\Service\V1\StoreViewService $storeViewService
++     * @param \Magento\Catalog\Model\CategoryFactory $categoryFactory
+      */
+     public function __construct(
+         CategoryUrlPathGenerator $categoryUrlPathGenerator,
+         ChildrenCategoriesProvider $childrenCategoriesProvider,
+-        StoreViewService $storeViewService
++        StoreViewService $storeViewService,
++        \Magento\Catalog\Model\CategoryFactory $categoryFactory
+     ) {
+         $this->categoryUrlPathGenerator = $categoryUrlPathGenerator;
+         $this->childrenCategoriesProvider = $childrenCategoriesProvider;
+@@ -47,6 +52,15 @@ class CategoryUrlPathAutogeneratorObserver implements ObserverInterface
+     {
+         /** @var Category $category */
+         $category = $observer->getEvent()->getCategory();
++        if ($category->getId()) {
++            $categoryOrig = $this->categoryFactory->create()->load($category->getId());
++            if ($categoryOrig->getUrlKey() != $category->getUrlKey()) {
++                $category->setUrlKeyChanged(true);
++            }
++            if ($categoryOrig->getIsAnchor() != $category->getIsAnchor()) {
++                $category->setIsAnchorChanged(true);
++            }
++        }
+         if ($category->getUrlKey() !== false) {
+             $category->setUrlKey($this->categoryUrlPathGenerator->getUrlKey($category))
+                 ->setUrlPath($this->categoryUrlPathGenerator->getUrlPath($category));
