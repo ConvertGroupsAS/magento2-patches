@@ -22,7 +22,7 @@
                          $updateData[$ids[$row['attribute_id']]] = $row['value'];
                          $valueColumnName = $ids[$row['attribute_id']] . $valueFieldSuffix;
 -                        if (isset($describe[$valueColumnName])) {
-+                        if (isset($describe[$valueColumnName]) && !is_int($row['value']) && !ctype_digit($row['value'])) {
++                        if (isset($describe[$valueColumnName]) && (is_int($row['value']) || ctype_digit($row['value']))) {
                              $valueColumns[$row['value']] = $valueColumnName;
                          }
                      }
