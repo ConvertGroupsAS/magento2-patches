@@ -13,7 +13,7 @@
              $urlRewrites = array_merge(
 --- Observer/CategoryUrlPathAutogeneratorObserver.php
 +++ Observer/CategoryUrlPathAutogeneratorObserver.php
-@@ -24,15 +24,20 @@ class CategoryUrlPathAutogeneratorObserver implements ObserverInterface
+@@ -24,19 +24,25 @@ class CategoryUrlPathAutogeneratorObserver implements ObserverInterface
      /** @var StoreViewService */
      protected $storeViewService;
  
@@ -35,6 +35,11 @@
      ) {
          $this->categoryUrlPathGenerator = $categoryUrlPathGenerator;
          $this->childrenCategoriesProvider = $childrenCategoriesProvider;
+         $this->storeViewService = $storeViewService;
++        $this->categoryFactory = $categoryFactory;
+     }
+ 
+     /**
 @@ -47,6 +52,15 @@ class CategoryUrlPathAutogeneratorObserver implements ObserverInterface
      {
          /** @var Category $category */
