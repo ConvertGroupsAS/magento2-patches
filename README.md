@@ -91,6 +91,9 @@ Full example:
             },
             "magento/module-offline-shipping": {
                 "Fix: https://github.com/magento/magento2/issues/10704": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_OfflineShipping-M2.X-free-shipping-cart-rule-fix.patch"
+            },
+            "magento/module-catalog-url-rewrite": {
+                "Fix: https://github.com/magento/magento2/issues/7874": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch"
             }
         }
     }
