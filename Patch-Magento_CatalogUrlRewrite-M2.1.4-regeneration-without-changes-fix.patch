@@ -1,16 +1,18 @@
 --- Observer/CategoryProcessUrlRewriteSavingObserver.php
 +++ Observer/CategoryProcessUrlRewriteSavingObserver.php
-@@ -49,8 +49,8 @@ class CategoryProcessUrlRewriteSavingObserver implements ObserverInterface
+@@ -49,9 +49,9 @@ class CategoryProcessUrlRewriteSavingObserver implements ObserverInterface
          if ($category->getParentId() == Category::TREE_ROOT_ID) {
              return;
          }
 -        if ($category->dataHasChangedFor('url_key')
 -            || $category->dataHasChangedFor('is_anchor')
+-            || $category->getIsChangedProductList()
 +        if ($category->getUrlKeyChanged()
 +            || $category->getIsAnchorChanged()
-             || $category->getUrlRegenerationRequired()
++            || $category->getUrlRegenerationRequired()
          ) {
              $urlRewrites = array_merge(
+                 $this->categoryUrlRewriteGenerator->generate($category),
 --- Observer/CategoryUrlPathAutogeneratorObserver.php
 +++ Observer/CategoryUrlPathAutogeneratorObserver.php
 @@ -24,19 +24,25 @@ class CategoryUrlPathAutogeneratorObserver implements ObserverInterface
