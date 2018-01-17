@@ -8,7 +8,7 @@
 -            || $category->dataHasChangedFor('is_anchor')
 +        if ($category->getUrlKeyChanged()
 +            || $category->getIsAnchorChanged()
-             || $category->getIsChangedProductList()
+             || $category->getUrlRegenerationRequired()
          ) {
              $urlRewrites = array_merge(
 --- Observer/CategoryUrlPathAutogeneratorObserver.php
