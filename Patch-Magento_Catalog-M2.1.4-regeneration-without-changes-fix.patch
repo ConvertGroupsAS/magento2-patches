@@ -1,5 +1,5 @@
---- a/app/code/Magento/Catalog/Model/ResourceModel/Category.php
-+++ b/app/code/Magento/Catalog/Model/ResourceModel/Category.php
+--- Model/ResourceModel/Category.php
++++ Model/ResourceModel/Category.php
 @@ -415,6 +415,7 @@ class Category extends AbstractResource
                  'catalog_category_change_products',
                  ['category' => $category, 'product_ids' => $productIds]
