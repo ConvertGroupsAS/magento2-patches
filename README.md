@@ -95,6 +95,9 @@ Full example:
             },
             "magento/module-catalog-url-rewrite": {
                 "Fix: https://github.com/magento/magento2/issues/7874 depended on module-catalog patch": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch"
+            },
+            "mirasvit/module-feed": {
+                "Fix: DI compile without DB v2": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Mirasvit_Feed-1.0.60-fix-di-compile-without-db.patch"
             }
         }
     }

@@ -1,0 +1,90 @@
+--- src/Feed/Cron/Export.php	2017-12-05 14:43:32.132425189 +0300
++++ src/Feed/Cron/Export.php	2017-12-06 19:09:24.051925531 +0300
+@@ -63,7 +63,6 @@
+      * Constructor
+      *
+      * @param AppState         $appState
+-     * @param DateTime         $dateTime
+      * @param FeedCollection   $feedCollection
+      * @param ExporterFactory  $exporterFactory
+      * @param DelivererFactory $delivererFactory
+@@ -71,18 +70,18 @@
+      */
+     public function __construct(
+         AppState $appState,
+-        DateTime $dateTime,
+         FeedCollection $feedCollection,
+         ExporterFactory $exporterFactory,
+         DelivererFactory $delivererFactory,
+-        History $history
++        History $history,
++        \Magento\Framework\ObjectManagerInterface $objectManager
+     ) {
+         $this->appState = $appState;
+-        $this->dateTime = $dateTime;
+         $this->feedCollection = $feedCollection;
+         $this->exporterFactory = $exporterFactory;
+         $this->delivererFactory = $delivererFactory;
+         $this->history = $history;
++        $this->objectManager = $objectManager;
+     }
+ 
+     /**
+@@ -131,6 +130,7 @@
+      */
+     public function canExport(Feed $feed, $timestamp = null)
+     {
++        $this->dateTime = $this->objectManager->create(\Magento\Framework\Stdlib\DateTime\DateTime::class);
+         $result = -1;
+ 
+         $currentDay = (int)$this->dateTime->date('w', $timestamp);
+
+--- src/Feed/Console/Command/ExportCommand.php	2017-12-06 10:47:31.855000000 +0300
++++ src/Feed/Console/Command/ExportCommand.php	2017-12-08 17:37:48.000000000 +0300
+@@ -18,7 +18,7 @@
+ 
+ use Magento\Framework\App\State;
+ use Mirasvit\Feed\Model\FeedFactory;
+-use Mirasvit\Feed\Model\Feed\Exporter;
++use Mirasvit\Feed\Model\Feed\ExporterFactory;
+ use Symfony\Component\Console\Input\InputInterface;
+ use Symfony\Component\Console\Input\InputOption;
+ use Symfony\Component\Console\Output\OutputInterface;
+@@ -33,23 +33,23 @@
+     protected $feedFactory;
+ 
+     /**
+-     * @var Exporter
++     * @var ExporterFactory
+      */
+-    protected $exporter;
++    protected $exporterFactory;
+ 
+     /**
+      * {@inheritdoc}
+      * @param FeedFactory $feedFactory
+-     * @param Exporter    $exporter
++     * @param ExporterFactory $exporter
+      * @param State       $appState
+      */
+     public function __construct(
+         FeedFactory $feedFactory,
+-        Exporter $exporter,
++        ExporterFactory $exporterFactory,
+         State $appState
+     ) {
+         $this->feedFactory = $feedFactory;
+-        $this->exporter = $exporter;
++        $this->exporterFactory = $exporterFactory;
+ 
+         parent::__construct($appState);
+     }
+@@ -111,7 +111,7 @@
+             }
+ 
+             try {
+-                foreach ($this->exporter->exportCli($feed) as $status => $state) {
++                foreach ($this->exporterFactory->create()->exportCli($feed) as $status => $state) {
+                     if ($verbose) {
+                         $output->writeln('<info>' . ucfirst($status) . '</info>');
+                         $output->writeln('<comment>' . $state . '</comment>');
