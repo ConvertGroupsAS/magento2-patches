@@ -1,0 +1,9 @@
+--- Controller/Section/Load.php
++++ Controller/Section/Load.php
+@@ -79,6 +79,7 @@ class Load extends \Magento\Framework\App\Action\Action
+             $response = ['message' => $this->getEscaper()->escapeHtml($e->getMessage())];
+         }
+ 
++        $this->getResponse()->setNoCacheHeaders();
+         return $resultJson->setData($response);
+     }
