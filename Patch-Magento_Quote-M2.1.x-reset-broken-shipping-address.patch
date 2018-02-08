@@ -1,0 +1,50 @@
+--- Model/ShippingMethodManagement.php
++++ Model/ShippingMethodManagement.php
+@@ -50,19 +50,27 @@ class ShippingMethodManagement implements
+     protected $totalsCollector;
+ 
+     /**
++     * @var \Psr\Log\LoggerInterface
++     */
++    protected $logger;
++
++    /**
+      * Constructs a shipping method read service object.
+      *
+      * @param \Magento\Quote\Api\CartRepositoryInterface $quoteRepository
+      * @param Cart\ShippingMethodConverter $converter
+      * @param \Magento\Customer\Api\AddressRepositoryInterface $addressRepository
+      * @param Quote\TotalsCollector $totalsCollector
++     * @param \Psr\Log\LoggerInterface $logger
+      */
+     public function __construct(
+         \Magento\Quote\Api\CartRepositoryInterface $quoteRepository,
+         Cart\ShippingMethodConverter $converter,
+         \Magento\Customer\Api\AddressRepositoryInterface $addressRepository,
+-        \Magento\Quote\Model\Quote\TotalsCollector $totalsCollector
++        \Magento\Quote\Model\Quote\TotalsCollector $totalsCollector,
++        \Psr\Log\LoggerInterface $logger
+     ) {
++        $this->logger = $logger;
+         $this->quoteRepository = $quoteRepository;
+         $this->converter = $converter;
+         $this->addressRepository = $addressRepository;
+@@ -169,11 +177,16 @@ class ShippingMethodManagement implements
+                 __('Cart contains virtual product(s) only. Shipping method is not applicable.')
+             );
+         }
++        $noShipping = false;
+         $shippingAddress = $quote->getShippingAddress();
+         if (!$shippingAddress->getCountryId()) {
+-            throw new StateException(__('Shipping address is not set'));
++            $noShipping = true;
++            $shippingAddress->delete();
++            $this->logger->error("Shipping address is not set. CartID={$cartId}, ShippingAddressID={$shippingAddress->getId()}");
++        }
++        if (!$noShipping) {
++            $shippingAddress->setShippingMethod($carrierCode . '_' . $methodCode);
+         }
+-        $shippingAddress->setShippingMethod($carrierCode . '_' . $methodCode);
+     }
+ 
+     /**
