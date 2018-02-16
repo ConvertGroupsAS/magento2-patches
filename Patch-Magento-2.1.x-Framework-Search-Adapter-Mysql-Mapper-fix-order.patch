@@ -1,0 +1,11 @@
+--- Search/Adapter/Mysql/Mapper.php	2018-02-16 10:15:22.072246293 +0300
++++ Search/Adapter/Mysql/Mapper.php	2018-02-16 10:10:14.000000000 +0300
+@@ -145,7 +145,7 @@
+         );
+ 
+         $select->limit($request->getSize());
+-        $select->order('relevance ' . Select::SQL_DESC);
++        $select->order('relevance ' . Select::SQL_DESC)->order('entity_id ' . \Magento\Framework\DB\Select::SQL_DESC);
+         return $select;
+     }
+ 
