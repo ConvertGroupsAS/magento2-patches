@@ -1,0 +1,70 @@
+--- Helper/Data.php
++++ Helper/Data.php
+@@ -5,7 +5,12 @@
+  */
+ namespace Magento\Wishlist\Helper;
+ 
++use Magento\Framework\App\ObjectManager;
++use Magento\Framework\Data\Form\FormKey;
++use Magento\Framework\App\PageCache\FormKey as PageCacheFormKey;
+ use Magento\Framework\App\ActionInterface;
++use Magento\Framework\Session\Config\ConfigInterface;
++use Magento\Framework\Stdlib\Cookie\CookieMetadataFactory;
+ use Magento\Wishlist\Controller\WishlistProviderInterface;
+ 
+ /**
+@@ -627,4 +632,42 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
+         }
+         return $product->getUrlModel()->getUrl($product, $additional);
+     }
+-}
++
++    /**
++     * Refresh and set new form_key in session and cookie
++     *
++     * @return $this
++     */
++    public function refreshFormKey()
++    {
++        $beforeWishlistRequest = $this->_customerSession->getBeforeWishlistRequest();
++
++        if ($beforeWishlistRequest !== null) {
++
++            $formKeyData = ObjectManager::getInstance()->get(FormKey::class);
++
++            //form_key is already empty
++            $formKey = $formKeyData->getFormKey();
++
++            $sessionConfig = ObjectManager::getInstance()->get(ConfigInterface::class);
++            $cookieMetadata = ObjectManager::getInstance()->get(CookieMetadataFactory::class)->createPublicCookieMetadata();
++            $cookieMetadata->setDomain($sessionConfig->getCookieDomain());
++            $cookieMetadata->setPath($sessionConfig->getCookiePath());
++            $cookieMetadata->setDuration($sessionConfig->getCookieLifetime());
++
++            ObjectManager::getInstance()->get(PageCacheFormKey::class)->set(
++                $formKey,
++                $cookieMetadata
++            );
++
++            $beforeWishlistRequest['form_key'] = $formKey;
++            $this->_customerSession->setBeforeWishlistRequest($beforeWishlistRequest);
++            $this->_customerSession->setBeforeRequestParams($beforeWishlistRequest);
++            $this->_customerSession->setBeforeModuleName('wishlist');
++            $this->_customerSession->setBeforeControllerName('index');
++            $this->_customerSession->setBeforeAction('add');
++        }
++
++        return $this;
++    }
++}
+\ No newline at end of file
+--- Observer/CustomerLogin.php
++++ Observer/CustomerLogin.php
+@@ -33,6 +33,7 @@ class CustomerLogin implements ObserverInterface
+      */
+     public function execute(Observer $observer)
+     {
++        $this->wishlistData->refreshFormKey();
+         $this->wishlistData->calculate();
+     }
+ }
