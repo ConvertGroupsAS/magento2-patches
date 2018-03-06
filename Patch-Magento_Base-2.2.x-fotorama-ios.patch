@@ -1,0 +1,18 @@
+diff --git a/lib/web/fotorama/fotorama.js b/lib/web/fotorama/fotorama.js
+index 0947164e5b0f..e388ec0a2303 100644
+--- a/lib/web/fotorama/fotorama.js
++++ b/lib/web/fotorama/fotorama.js
+@@ -1218,6 +1218,14 @@ fotoramaVersion = '4.6.4';
+     }
+
+     function stubEvent($el, eventType) {
++        var isIOS = /ip(ad|hone|od)/i.test(window.navigator.userAgent);
++
++        if (isIOS && eventType === 'touchend') {
++            $el.on('touchend', function(e){
++                $DOCUMENT.trigger('mouseup', e);
++            })
++        }
++
+         $el.on(eventType, function (e) {
+             stopEvent(e, true);
