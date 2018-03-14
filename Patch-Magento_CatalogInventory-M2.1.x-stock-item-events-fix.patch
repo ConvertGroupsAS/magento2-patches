@@ -9,6 +9,15 @@
  
      /**
       * Parameter name in event
+@@ -32,7 +32,7 @@ class Stock extends AbstractExtensibleModel implements StockInterface
+      *
+      * @var string
+      */
+-    protected $eventObject = 'stock';
++    protected $_eventObject = 'stock';
+ 
+     const BACKORDERS_NO = 0;
+ 
 --- Model/Stock/Item.php
 +++ Model/Stock/Item.php
 @@ -32,7 +32,7 @@ class Item extends AbstractExtensibleModel implements StockItemInterface
@@ -20,3 +29,12 @@
  
      const WEBSITE_ID = 'website_id';
  
+@@ -43,7 +43,7 @@ class Item extends AbstractExtensibleModel implements StockItemInterface
+      *
+      * @var string
+      */
+-    protected $eventObject = 'item';
++    protected $_eventObject = 'item';
+ 
+     /**
+      * Store model manager
