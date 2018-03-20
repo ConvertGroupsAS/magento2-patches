@@ -1,0 +1,11 @@
+--- Indexer/Handler/AttributeHandler.php	2018-03-20 17:34:41.000000000 +0300
++++ Indexer/Handler/AttributeHandler.php	2018-03-20 17:36:31.889790127 +0300
+@@ -35,7 +35,7 @@
+                 'left'
+             );
+         } else {
+-            $source->addAttributeToSelect($fieldInfo['origin'], 'left');
++            $source->addFieldToSelect($fieldInfo['origin'], 'left');
+         }
+     }
+ }
