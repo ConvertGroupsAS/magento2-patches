@@ -76,9 +76,15 @@ Full example:
             "magento/module-page-cache": {
                 "Fix: https://github.com/magento/magento2/issues/6818": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_PageCache-M2.1.0-element-js-error-fix.patch"
             },
+            "magento/module-sales": {
+                "Fix: Partial creditmemo tax amount": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sales-creditmemo-partial-tax-refund.patch"
+            },            
             "magento/module-sales-rule": {
                 "Fix: https://github.com/magento/magento2/issues/6762": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_SalesRule-M2.1.6-fix-to-date-parameter.patch"
             },
+            "magento/module-store": {
+                "Fix emulation in admin store (Todo check: MAGETWO-59649)": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Store-emulation.patch"
+            },            
             "magento/module-swatches": {
                 "Fix: Add ability to set visual swatch by store ID as well as textual one": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Swatches-rest-api-visual-swatches-fix.patch",
                 "Fix: https://github.com/magento/magento2/issues/10266": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Swatches-M2.1.x-zero-value-attribute-options-fix.patch"
