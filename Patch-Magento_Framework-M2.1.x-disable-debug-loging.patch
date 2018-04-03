@@ -1,0 +1,12 @@
+--- Logger/Handler/Base.php
++++ Logger/Handler/Base.php
+@@ -52,6 +52,9 @@
+      */
+     public function write(array $record)
+     {
++        if ($this->$loggerType == Logger::DEBUG) {
++            return null;
++        }
+         $logDir = $this->filesystem->getParentDirectory($this->url);
+         if (!$this->filesystem->isDirectory($logDir)) {
+             $this->filesystem->createDirectory($logDir);
