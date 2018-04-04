@@ -16,14 +16,14 @@
  </config>
 --- etc/di.xml
 +++ etc/di.xml
-@@ -9,6 +9,7 @@
+@@ -6,6 +6,7 @@
+  */
+ -->
+ <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
++    <preference for="Magento\Framework\Logger\Handler\Debug" type="Magento\Developer\Model\Logger\Handler\Debug"/>
      <preference for="Magento\Framework\View\Asset\PreProcessor\ChainFactoryInterface" type="Magento\Framework\View\Asset\PreProcessor\ChainFactory"/>
      <preference for="Magento\Framework\Css\PreProcessor\ErrorHandlerInterface" type="Magento\Framework\Css\PreProcessor\ErrorHandler" />
      <preference for="Magento\Framework\View\Asset\PreProcessor\Helper\SortInterface" type="Magento\Framework\View\Asset\PreProcessor\Helper\Sort"/>
-+    <preference for="Magento\Framework\Logger\Handler\Debug" type="Magento\Developer\Model\Logger\Handler\Debug"/>
- 
-     <type name="Magento\Framework\View\Result\Page">
-         <arguments>
 --- Model/Logger/Handler/Debug.php
 +++ Model/Logger/Handler/Debug.php
 @@ -0,0 +1,68 @@
