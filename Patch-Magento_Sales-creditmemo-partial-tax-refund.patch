@@ -1,9 +1,44 @@
---- Model/Order/Creditmemo/Total/Tax.php	2017-01-24 19:38:48.000000000 +0300
-+++ Model/Order/Creditmemo/Total/Tax.php	2017-11-22 14:54:27.542653700 +0300
-@@ -141,20 +141,27 @@
+--- Model/Order/Creditmemo.php
++++ Model/Order/Creditmemo.php
+@@ -532,25 +532,13 @@ class Creditmemo extends AbstractModel implements EntityInterface, CreditmemoInt
+      */
+     public function isLast()
+     {
+-        $items = $this->getAllItems();
+-        foreach ($items as $item) {
+-            if (!$item->isLast()) {
+-                return false;
+-            }
+-        }
+-
+-        if (empty($items)) {
+-            $order = $this->getOrder();
+-            if ($order) {
+-                foreach ($order->getItems() as $orderItem) {
+-                    if ($orderItem->canRefund()) {
+-                        return false;
+-                    }
+-                }
+-            }
+-        }
+-
+-        return true;
++        // Patch: HOYERCARE-171
++        $order = $this->getOrder();
++        $sum = $order->getGrandTotal()
++            - $order->getBaseTotalRefunded()
++            - $this->getSubtotalInclTax()
++            - $this->getShippingInclTax();
++        return !($sum > 0.01);
+     }
+ 
+     /**
+--- Model/Order/Creditmemo/Total/Tax.php
++++ Model/Order/Creditmemo/Total/Tax.php
+@@ -141,20 +141,39 @@ class Tax extends AbstractTotal
              $baseTotalDiscountTaxCompensation += $baseShippingDiscountTaxCompensationAmount;
          }
-
+ 
 -        $allowedTax = $order->getTaxInvoiced() - $order->getTaxRefunded() - $creditmemo->getTaxAmount();
 -        $allowedBaseTax = $order->getBaseTaxInvoiced() - $order->getBaseTaxRefunded() - $creditmemo->getBaseTaxAmount();
 -        $allowedDiscountTaxCompensation = $order->getDiscountTaxCompensationInvoiced() +
@@ -18,9 +53,21 @@
 -            $order->getBaseShippingDiscountTaxCompensationRefunded() -
 -            $creditmemo->getBaseShippingDiscountTaxCompensationAmnt() -
 -            $creditmemo->getBaseDiscountTaxCompensationAmount();
++        // Patch: HOYERCARE-171
 +        if ($invoice) {
-+            $allowedTax = $invoice->getTaxAmount();
-+            $allowedBaseTax = $invoice->getBaseTaxAmount();
++            $invoiceTaxRefunded = $invoiceBaseTaxRefunded = 0;
++            $collection = $creditmemo->getCollection();
++            $collection->addFieldToFilter(
++                \Magento\Sales\Api\Data\CreditmemoInterface::INVOICE_ID,
++                $invoice->getId()
++            );
++            /** @var \Magento\Sales\Model\Order\Creditmemo $invoiceCreditmemo */
++            foreach ($collection as $invoiceCreditmemo) {
++                $invoiceTaxRefunded += $invoiceCreditmemo->getTaxAmount();
++                $invoiceBaseTaxRefunded += $invoiceCreditmemo->getBaseTaxAmount();
++            }
++            $allowedTax = $invoice->getTaxAmount() - $invoiceTaxRefunded;
++            $allowedBaseTax = $invoice->getBaseTaxAmount() - $invoiceBaseTaxRefunded;
 +            $allowedDiscountTaxCompensation = $invoice->getDiscountTaxCompensationAmount();
 +            $allowedBaseDiscountTaxCompensation = $invoice->getBaseDiscountTaxCompensationAmount();
 +        } else {
@@ -39,6 +86,6 @@
 +                $creditmemo->getBaseShippingDiscountTaxCompensationAmnt() -
 +                $creditmemo->getBaseDiscountTaxCompensationAmount();
 +        }
-
+ 
          if ($creditmemo->isLast() && !$isPartialShippingRefunded) {
              $totalTax = $allowedTax;
