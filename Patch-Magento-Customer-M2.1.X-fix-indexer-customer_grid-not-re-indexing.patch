@@ -1,0 +1,13 @@
+--- Model/Customer.php	2017-09-13 14:08:16.000000000 +0000
++++ Model/Customer.php	2018-04-06 11:45:14.653040300 +0000
+@@ -1076,9 +1076,7 @@
+     {
+         /** @var \Magento\Framework\Indexer\IndexerInterface $indexer */
+         $indexer = $this->indexerRegistry->get(self::CUSTOMER_GRID_INDEXER_ID);
+-        if (!$indexer->isScheduled()) {
+-            $indexer->reindexRow($this->getId());
+-        }
++        $indexer->reindexRow($this->getId());
+     }
+ 
+     /**
