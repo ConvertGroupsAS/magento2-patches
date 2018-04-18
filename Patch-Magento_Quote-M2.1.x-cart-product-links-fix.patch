@@ -1,0 +1,25 @@
+--- Model/Quote/Item.php
++++ Model/Quote/Item.php
+@@ -278,7 +278,6 @@ class Item extends \Magento\Quote\Model\Quote\Item\AbstractItem implements \Mage
+     {
+         $this->_quote = $quote;
+         $this->setQuoteId($quote->getId());
+-        $this->setStoreId($quote->getStoreId());
+         return $this;
+     }
+ 
+--- Model/Quote/Item/AbstractItem.php
++++ Model/Quote/Item/AbstractItem.php
+@@ -141,10 +141,11 @@ abstract class AbstractItem extends \Magento\Framework\Model\AbstractExtensibleM
+             $product = clone $this->productRepository->getById(
+                 $this->getProductId(),
+                 false,
+-                $this->getQuote()->getStoreId()
++                $this->getStoreId()
+             );
+             $this->setProduct($product);
+         }
++        $product->setStoreId($this->getStoreId());
+ 
+         /**
+          * Reset product final price because it related to custom options
