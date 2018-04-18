@@ -1,0 +1,31 @@
+--- etc/adminhtml/di.xml	2017-09-20 14:13:08.000000000 +0300
++++ /dev/null	2018-04-18 09:15:37.309545323 +0300
+@@ -1,12 +0,0 @@
+-<?xml version="1.0"?>
+-<!--
+-/**
+- * Copyright © Magento, Inc. All rights reserved.
+- * See COPYING.txt for license details.
+- */
+--->
+-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+-    <type name="Magento\Cms\Model\ResourceModel\Page">
+-        <plugin name="cms_url_rewrite_plugin" type="Magento\CmsUrlRewrite\Plugin\Cms\Model\ResourceModel\Page"/>
+-    </type>
+-</config>
+
+--- /dev/null	2018-04-18 09:15:37.309545323 +0300
++++ etc/di.xml	2018-04-18 12:03:14.676566775 +0300
+@@ -0,0 +1,12 @@
++<?xml version="1.0"?>
++<!--
++/**
++ * Copyright © Magento, Inc. All rights reserved.
++ * See COPYING.txt for license details.
++ */
++-->
++<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
++    <type name="Magento\Cms\Model\ResourceModel\Page">
++        <plugin name="cms_url_rewrite_plugin" type="Magento\CmsUrlRewrite\Plugin\Cms\Model\ResourceModel\Page"/>
++    </type>
++</config>
