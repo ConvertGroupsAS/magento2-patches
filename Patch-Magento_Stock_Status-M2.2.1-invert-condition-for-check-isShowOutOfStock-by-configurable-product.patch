@@ -1,0 +1,11 @@
+--- Model/ResourceModel/Product/StockStatusBaseSelectProcessor.php	2018-04-19 17:59:58.793257045 +0300
++++ Model/ResourceModel/Product/StockStatusBaseSelectProcessor.php	2018-04-19 18:13:26.341628682 +0300
+@@ -45,7 +45,7 @@
+      */
+     public function process(Select $select)
+     {
+-        if ($this->stockConfig->isShowOutOfStock()) {
++        if (!$this->stockConfig->isShowOutOfStock()) {
+             $select->joinInner(
+                 ['stock' => $this->stockStatusResource->getMainTable()],
+                 sprintf(
