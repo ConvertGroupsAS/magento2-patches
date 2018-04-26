@@ -1,11 +1,11 @@
 --- Session/SessionManager.php
 +++ Session/SessionManager.php
-@@ -503,18 +503,9 @@ public function regenerateId()
-         if (headers_sent()) {
+@@ -504,18 +504,9 @@
              return $this;
          }
+ 
 -        //@see http://php.net/manual/en/function.session-regenerate-id.php#53480 workaround
-+
++        
          if ($this->isSessionExists()) {
 -            $oldSessionId = session_id();
 -            session_regenerate_id();
