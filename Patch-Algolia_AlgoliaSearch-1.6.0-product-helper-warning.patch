@@ -1,0 +1,11 @@
+--- Helper/Entity/ProductHelper.php	2018-02-27 12:56:18.000000000 +0300
++++ Helper/Entity/ProductHelper.php	2018-05-02 20:32:08.000000000 +0300
+@@ -232,7 +232,7 @@
+         return $this->configHelper->getProductAdditionalAttributes($storeId);
+     }
+ 
+-    public function setSettings($indexName, $indexNameTmp, $storeId, $saveToTmpIndicesToo = false)
++    public function setSettings($indexName, $indexNameTmp, $storeId = null, $saveToTmpIndicesToo = false)
+     {
+         $searchableAttributes = $this->getSearchableAttributes();
+         $customRanking = $this->getCustomRanking($storeId);
