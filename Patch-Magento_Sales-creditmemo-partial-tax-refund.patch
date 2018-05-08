@@ -1,6 +1,7 @@
+index 76067b9..5148046 100644
 --- Model/Order/Creditmemo.php
 +++ Model/Order/Creditmemo.php
-@@ -532,25 +532,13 @@ class Creditmemo extends AbstractModel implements EntityInterface, CreditmemoInt
+@@ -532,25 +532,15 @@ class Creditmemo extends AbstractModel implements EntityInterface, CreditmemoInt
       */
      public function isLast()
      {
@@ -26,16 +27,19 @@
 +        // Patch: HOYERCARE-171
 +        $order = $this->getOrder();
 +        $sum = $order->getGrandTotal()
-+            - $order->getBaseTotalRefunded()
++            - $order->getTotalCanceled()
++            - $order->getTotalRefunded()
++            - $this->getDiscountAmount()
 +            - $this->getSubtotalInclTax()
 +            - $this->getShippingInclTax();
 +        return !($sum > 0.01);
      }
  
      /**
+index d1c4b03..f6eaa89 100644
 --- Model/Order/Creditmemo/Total/Tax.php
 +++ Model/Order/Creditmemo/Total/Tax.php
-@@ -141,20 +141,39 @@ class Tax extends AbstractTotal
+@@ -141,26 +141,45 @@ class Tax extends AbstractTotal
              $baseTotalDiscountTaxCompensation += $baseShippingDiscountTaxCompensationAmount;
          }
  
@@ -54,8 +58,8 @@
 -            $creditmemo->getBaseShippingDiscountTaxCompensationAmnt() -
 -            $creditmemo->getBaseDiscountTaxCompensationAmount();
 +        // Patch: HOYERCARE-171
++        $invoiceTaxRefunded = $invoiceBaseTaxRefunded = 0;
 +        if ($invoice) {
-+            $invoiceTaxRefunded = $invoiceBaseTaxRefunded = 0;
 +            $collection = $creditmemo->getCollection();
 +            $collection->addFieldToFilter(
 +                \Magento\Sales\Api\Data\CreditmemoInterface::INVOICE_ID,
@@ -89,3 +93,12 @@
  
          if ($creditmemo->isLast() && !$isPartialShippingRefunded) {
              $totalTax = $allowedTax;
+             $baseTotalTax = $allowedBaseTax;
+-            $totalDiscountTaxCompensation = $allowedDiscountTaxCompensation;
+-            $baseTotalDiscountTaxCompensation = $allowedBaseDiscountTaxCompensation;
++            $totalDiscountTaxCompensation = $allowedDiscountTaxCompensation - $invoiceTaxRefunded;
++            $baseTotalDiscountTaxCompensation = $allowedBaseDiscountTaxCompensation - $invoiceBaseTaxRefunded;
+         } else {
+             $totalTax = min($allowedTax, $totalTax);
+             $baseTotalTax = min($allowedBaseTax, $baseTotalTax);
+
