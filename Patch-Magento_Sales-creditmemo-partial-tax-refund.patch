@@ -1,4 +1,3 @@
-index 76067b9..5148046 100644
 --- Model/Order/Creditmemo.php
 +++ Model/Order/Creditmemo.php
 @@ -532,25 +532,15 @@ class Creditmemo extends AbstractModel implements EntityInterface, CreditmemoInt
@@ -36,10 +35,9 @@ index 76067b9..5148046 100644
      }
  
      /**
-index d1c4b03..f6eaa89 100644
 --- Model/Order/Creditmemo/Total/Tax.php
 +++ Model/Order/Creditmemo/Total/Tax.php
-@@ -141,26 +141,45 @@ class Tax extends AbstractTotal
+@@ -141,26 +141,48 @@ class Tax extends AbstractTotal
              $baseTotalDiscountTaxCompensation += $baseShippingDiscountTaxCompensationAmount;
          }
  
@@ -65,15 +63,18 @@ index d1c4b03..f6eaa89 100644
 +                \Magento\Sales\Api\Data\CreditmemoInterface::INVOICE_ID,
 +                $invoice->getId()
 +            );
++            $discountTaxCompensationRefunded = $baseDiscountTaxCompensationRefunded = 0;
 +            /** @var \Magento\Sales\Model\Order\Creditmemo $invoiceCreditmemo */
 +            foreach ($collection as $invoiceCreditmemo) {
 +                $invoiceTaxRefunded += $invoiceCreditmemo->getTaxAmount();
 +                $invoiceBaseTaxRefunded += $invoiceCreditmemo->getBaseTaxAmount();
++                $discountTaxCompensationRefunded += $invoiceCreditmemo->getDiscountTaxCompensationAmount();
++                $baseDiscountTaxCompensationRefunded += $invoiceCreditmemo->getBaseDiscountTaxCompensationAmount();
 +            }
 +            $allowedTax = $invoice->getTaxAmount() - $invoiceTaxRefunded;
 +            $allowedBaseTax = $invoice->getBaseTaxAmount() - $invoiceBaseTaxRefunded;
-+            $allowedDiscountTaxCompensation = $invoice->getDiscountTaxCompensationAmount();
-+            $allowedBaseDiscountTaxCompensation = $invoice->getBaseDiscountTaxCompensationAmount();
++            $allowedDiscountTaxCompensation = $invoice->getDiscountTaxCompensationAmount() - $discountTaxCompensationRefunded;
++            $allowedBaseDiscountTaxCompensation = $invoice->getBaseDiscountTaxCompensationAmount() - $baseDiscountTaxCompensationRefunded;
 +        } else {
 +            $allowedTax = $order->getTaxInvoiced() - $order->getTaxRefunded() - $creditmemo->getTaxAmount();
 +            $allowedBaseTax = $order->getBaseTaxInvoiced() - $order->getBaseTaxRefunded() - $creditmemo->getBaseTaxAmount();
@@ -96,9 +97,8 @@ index d1c4b03..f6eaa89 100644
              $baseTotalTax = $allowedBaseTax;
 -            $totalDiscountTaxCompensation = $allowedDiscountTaxCompensation;
 -            $baseTotalDiscountTaxCompensation = $allowedBaseDiscountTaxCompensation;
-+            $totalDiscountTaxCompensation = $allowedDiscountTaxCompensation - $invoiceTaxRefunded;
-+            $baseTotalDiscountTaxCompensation = $allowedBaseDiscountTaxCompensation - $invoiceBaseTaxRefunded;
++            $totalDiscountTaxCompensation = $order->getDiscountTaxCompensationAmount() - $order->getDiscountTaxCompensationRefunded();
++            $baseTotalDiscountTaxCompensation = $order->getBaseDiscountTaxCompensationAmount() - $order->getBaseDiscountTaxCompensationRefunded();
          } else {
              $totalTax = min($allowedTax, $totalTax);
              $baseTotalTax = min($allowedBaseTax, $baseTotalTax);
-
