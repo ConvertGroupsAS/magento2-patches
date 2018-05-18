@@ -131,7 +131,11 @@ Full example:
             "magento/module-quote": {
                 "Fix: Reset broken shipping address in quote": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Quote-M2.1.x-reset-broken-shipping-address.patch",
                 "Fix: Broken product links in cart on different stores": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Quote-M2.1.x-cart-product-links-fix.patch"
-            }
+            },
+            "magento/module-checkout": {
+                "Fix: addresses from other store on checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.1.x-filter-addresses.patch",
+                "Fix: addresses from other store on checkout 2.2+": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.2.x-filter-addresses.patch"
+            },
         }
     }
 }

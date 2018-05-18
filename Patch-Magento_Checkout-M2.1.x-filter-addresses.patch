@@ -1,0 +1,17 @@
+--- Model/DefaultConfigProvider.php	2017-09-13 14:08:10.000000000 +0300
++++ Model/DefaultConfigProvider.php	2018-04-16 12:31:54.147665766 +0300
+@@ -327,6 +327,14 @@
+             foreach ($customer->getAddresses() as $key => $address) {
+                 $customerData['addresses'][$key]['inline'] = $this->getCustomerAddressInline($address);
+             }
++
++            $allowedCountries = explode(',', $this->scopeConfig->getValue(
++                \Magento\Directory\Model\AllowedCountries::ALLOWED_COUNTRIES_PATH,
++                ScopeInterface::SCOPE_STORE
++            ));
++            $customerData['addresses'] = array_filter($customerData['addresses'], function ($el) use ($allowedCountries) {
++                return in_array($el['country_id'], $allowedCountries);
++            });
+         }
+         return $customerData;
+     }

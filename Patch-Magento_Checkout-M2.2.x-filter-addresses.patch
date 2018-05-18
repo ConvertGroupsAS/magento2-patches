@@ -1,0 +1,19 @@
+diff --git a/app/code/Magento/Checkout/Model/DefaultConfigProvider.php b/app/code/Magento/Checkout/Model/DefaultConfigProvider.php
+index b5727bf..b1972b3 100644
+--- a/app/code/Magento/Checkout/Model/DefaultConfigProvider.php
++++ b/app/code/Magento/Checkout/Model/DefaultConfigProvider.php
+@@ -325,6 +325,14 @@ class DefaultConfigProvider implements ConfigProviderInterface
+             foreach ($customer->getAddresses() as $key => $address) {
+                 $customerData['addresses'][$key]['inline'] = $this->getCustomerAddressInline($address);
+             }
++
++            $allowedCountries = explode(',', $this->scopeConfig->getValue(
++                \Magento\Directory\Model\AllowedCountries::ALLOWED_COUNTRIES_PATH,
++                ScopeInterface::SCOPE_STORE
++            ));
++            $customerData['addresses'] = array_filter($customerData['addresses'], function ($el) use ($allowedCountries) {
++                return in_array($el['country_id'], $allowedCountries);
++            });
+         }
+         return $customerData;
+     }
