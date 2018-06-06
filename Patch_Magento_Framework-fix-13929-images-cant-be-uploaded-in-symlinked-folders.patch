@@ -1,5 +1,5 @@
---- /vendor/magento/framework/App/Filesystem/DirectoryResolver.php	2018-02-21 01:25:30.000000000 +0000
-+++ /vendor/magento/framework/App/Filesystem/DirectoryResolver.php	2018-06-02 17:04:53.000000000 +0000
+--- App/Filesystem/DirectoryResolver.php	2018-02-21 01:25:30.000000000 +0000
++++ App/Filesystem/DirectoryResolver.php	2018-06-02 17:04:53.000000000 +0000
 @@ -39,7 +39,7 @@
      public function validatePath($path, $directoryConfig = DirectoryList::MEDIA)
      {
