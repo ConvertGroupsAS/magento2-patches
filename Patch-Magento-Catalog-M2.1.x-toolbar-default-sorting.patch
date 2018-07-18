@@ -1,0 +1,11 @@
+--- Block/Product/ProductList/Toolbar.php	2017-05-30 08:01:14.000000000 +0300
++++ Block/Product/ProductList/Toolbar.php	2018-07-18 23:28:15.153790499 +0300
+@@ -680,7 +680,7 @@
+             'limit' => ToolbarModel::LIMIT_PARAM_NAME,
+             'modeDefault' => $defaultMode,
+             'directionDefault' => $this->_direction ?: ProductList::DEFAULT_SORT_DIRECTION,
+-            'orderDefault' => $this->_productListHelper->getDefaultSortField(),
++            'orderDefault' => $this->getOrderField(),
+             'limitDefault' => $this->_productListHelper->getDefaultLimitPerPageValue($defaultMode),
+             'url' => $this->getPagerUrl(),
+         ];
