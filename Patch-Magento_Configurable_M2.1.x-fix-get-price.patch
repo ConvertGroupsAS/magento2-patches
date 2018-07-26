@@ -1,0 +1,22 @@
+--- Model/Product/Type/Configurable/Price.php
++++ Model/Product/Type/Configurable/Price.php
+@@ -39,10 +39,15 @@
+      */
+     public function getPrice($product)
+     {
+-        if ($product->getCustomOption('simple_product')) {
+-            return $product->getCustomOption('simple_product')->getProduct()->getPrice();
+-        } else {
+-            return 0;
++        if (!empty($product)) {
++            $simpleProductOption = $product->getCustomOption('simple_product');
++            if (!empty($simpleProductOption)) {
++                $simpleProduct = $simpleProductOption->getProduct();
++                if (!empty($simpleProduct)) {
++                    return $simpleProduct->getPrice();
++                }
++            }
+         }
++        return 0;
+     }
+ }
