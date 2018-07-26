@@ -1,3 +1,4 @@
+# New Document
 # Magento 2 Composer Patches
 
 Patches to be applied by https://github.com/cweagans/composer-patches
@@ -34,6 +35,7 @@ magento/module-configurable-product|Patch-Magento\_Configurable-M2.1.3-lowest-pr
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.2.x-fix-empty-price-in-category-page.patch|On development stage|>=2.2.1
 magento/module-tax|Patch-Magento-Tax-M2.1.0-free-shipping-availability-on-backend.patch|?|>=2.1.4 >=2.2.0
 magento/module-tax|Patch-Magento\_Tax-M2.X.X-sequence-fix.patch| |< 2.2.0
+magento/module-quote|Patch-Magento\_Quote-M2.2.0-2.2.3-totals-extension-attributes.patch|#12819|2.2.0-2.2.3
 magento/magento2-base|Patch-Magento\_Base-M2.1.0-catalog-gallery-allowfullscreen-false.patch|#5808|< 2.2.0
 magento/magento2-base|Patch-Magento\_Base-M2.1.0-errors-apply-skin-fix.patch|#4305|< 2.2.0
 magento/magento2-base|Patch-Magento\_Base-2.2.x-fotorama-ios.patch|#13226|>=2.2.0 < 2.3.0
@@ -197,7 +199,8 @@ Full composer.json example:
             },
             "magento/module-quote": {
                 "Fix: Reset broken shipping address in quote": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Quote-M2.1.x-reset-broken-shipping-address.patch",
-                "Fix: Broken product links in cart on different stores": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Quote-M2.1.x-cart-product-links-fix.patch"
+                "Fix: Broken product links in cart on different stores": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Quote-M2.1.x-cart-product-links-fix.patch",
+                "Fix: https://github.com/magento/magento2/issues/12819": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Quote-M2.2.0-2.2.3-totals-extension-attributes.patch"
             },
             "magento/module-checkout": {
                 "Fix: addresses from other store on checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.1.x-filter-addresses.patch",
