@@ -23,6 +23,7 @@ magento/module-cron|Patch-Magento\_Cron-M2.1.4-cron-generate-schedule.patch|#417
 magento/module-cron|Patch-Magento\_Cron-M2.2.0-2.2.3-prevent-already-running-v2.patch Patch-Magento\_Cron-M2.2.4-prevent-already-running-v2.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2.0-2.2.3  2.2.4+
 magento/module-directory|Patch-Magento\_Directory\_M2.1-zip-codes.patch|#6694|2.0.11+ < 2.2.0
 magento/module-email|Patch-Magento\_Email-M2.1.0-create-email-logo-1.patch| |< 2.1.8 (2.1.4 n/a)
+magento/module-review|Patch-Magento\_Review-M2.2-review-renderer-module-namespace.patch| |all as of 2.2.5
 magento/module-theme|Patch-Magento\_Email-M2.1.0-create-email-logo-2.patch| |< 2.1.8 (2.1.4 n/a)
 magento/magento2-base|Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame.patch| |>= 2.1.0 >= 2.2.0
 magento/module-page-cache|Patch-Magento\_PageCache-M2.1.0-element-js-error-fix.patch|#6818|< 2.1.10 < 2.2.0
@@ -157,6 +158,9 @@ Full composer.json example:
             },
             "magento/module-page-cache": {
                 "Fix: https://github.com/magento/magento2/issues/6818": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_PageCache-M2.1.0-element-js-error-fix.patch"
+            },
+            "magento/module-review": {
+                "Fix review namespace": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Review-M2.2-review-renderer-module-namespace.patch"
             },
             "magento/module-sales": {
                 "Fix: Partial creditmemo tax amount": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sales-creditmemo-partial-tax-refund.patch"
