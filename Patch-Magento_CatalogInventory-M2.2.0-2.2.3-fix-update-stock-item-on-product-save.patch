@@ -1,0 +1,11 @@
+--- Observer/ProcessInventoryDataObserver.php
++++ Observer/ProcessInventoryDataObserver.php
+@@ -97,7 +97,7 @@
+             ) {
+                 unset($quantityAndStockStatus['is_in_stock']);
+             }
+-            if (isset($quantityAndStockStatus['qty'])
++            if (array_key_exists('qty', $quantityAndStockStatus)
+                 && $stockItem->getQty() == $quantityAndStockStatus['qty']
+             ) {
+                 unset($quantityAndStockStatus['qty']);
