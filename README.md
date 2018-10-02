@@ -11,6 +11,7 @@ magento/framework|Patch-Magento\_Framework-M2.1.x-Search-Adapter-Mysql-Mapper-fi
 magento/framework|Patch-Magento\_Framework-customer-grid.patch|#10838|2.2 (probably all)
 magento/framework|Patch-Magento\_Framework-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2
 magento/framework|Patch-Magento\_Framework-M2.2.x-fix-sessions.patch|Pull #2226|>=2.2.0 (2.2.2, 2.2.3 n/a)
+magento/framework|Patch-Magento\_Framework-M2.2.5-force-unset-translation.patch| |>=2.2.5
 magento/magento2-base|Patch-Magento\_Base-M2.1.0-widgets-values-utf8-decode.patch|#4232|< 2.1.8 (2.1.4 n/a)
 magento/magento2-base|Patch-Magento\_Base-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2
 magento/module-catalog|Patch-Magento\_Catalog-M2.1.0-image-attribute-backend-model-hardcoded-attribute-code-removal.patch|#5438|< 2.1.8 (2.1.4 n/a)
@@ -91,7 +92,8 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/10838": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-customer-grid.patch",
                 "Pull request: https://github.com/magento/magento2/pull/2226": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-fix-sessions.patch",
                 "Pull request: https://github.com/magento/magento2/pull/8373": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.1.x-Curl-Post-Json.patch",
-                "Pull request: https://github.com/magento/magento2/pull/12497": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2-cron-prevent-already-running.patch"
+                "Pull request: https://github.com/magento/magento2/pull/12497": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2-cron-prevent-already-running.patch",
+                "Fix: Unset translations for same key-value only if given force parameter": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.5-force-unset-translation.patch"
             },
             "magento/magento2-base": {
                 "Fix MAGE_DIRS for CLI": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-cli.patch",
