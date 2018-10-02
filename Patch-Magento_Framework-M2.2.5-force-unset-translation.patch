@@ -1,0 +1,39 @@
+--- /var/www/eplehuset.local/vendor/magento/framework/Translate.php	2018-10-02 18:32:01.192478488 +0300
++++ /var/www/eplehuset.local/vendor/magento/framework/Translate.php	2018-10-02 18:02:26.000000000 +0300
+@@ -305,14 +305,15 @@
+     /**
+      * Adding translation data
+      *
+-     * @param array $data
++     * @param $data
++     * @param bool $force
+      * @return $this
+      */
+-    protected function _addData($data)
++    protected function _addData($data, $force = false)
+     {
+         foreach ($data as $key => $value) {
+             if ($key === $value) {
+-                if (isset($this->_data[$key])) {
++                if ($force && isset($this->_data[$key])) {
+                     unset($this->_data[$key]);
+                 }
+                 continue;
+@@ -335,7 +336,7 @@
+     {
+         $file = $this->_getThemeTranslationFile($this->getLocale());
+         if ($file) {
+-            $this->_addData($this->_getFileData($file));
++            $this->_addData($this->_getFileData($file), true);
+         }
+         return $this;
+     }
+@@ -359,7 +360,7 @@
+     protected function _loadDbTranslation()
+     {
+         $data = $this->_translateResource->getTranslationArray(null, $this->getLocale());
+-        $this->_addData(array_map('htmlspecialchars_decode', $data));
++        $this->_addData(array_map('htmlspecialchars_decode', $data), true);
+         return $this;
+     }
+ 
