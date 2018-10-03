@@ -1,5 +1,5 @@
---- /var/www/eplehuset.local/vendor/magento/framework/Translate.php	2018-10-02 18:32:01.192478488 +0300
-+++ /var/www/eplehuset.local/vendor/magento/framework/Translate.php	2018-10-02 18:02:26.000000000 +0300
+--- Translate.php	2018-10-02 18:32:01.192478488 +0300
++++ Translate.php	2018-10-02 18:02:26.000000000 +0300
 @@ -305,14 +305,15 @@
      /**
       * Adding translation data
