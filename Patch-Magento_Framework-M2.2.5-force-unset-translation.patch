@@ -1,11 +1,9 @@
---- Translate.php	2018-10-02 18:32:01.192478488 +0300
-+++ Translate.php	2018-10-02 18:02:26.000000000 +0300
-@@ -305,14 +305,15 @@
-     /**
+--- Translate.php	2018-09-04 16:50:34.000000000 +0300
++++ Translate.php	2018-10-03 12:18:45.300379080 +0300
+@@ -306,13 +306,14 @@
       * Adding translation data
       *
--     * @param array $data
-+     * @param $data
+      * @param array $data
 +     * @param bool $force
       * @return $this
       */
@@ -36,4 +34,4 @@
 +        $this->_addData(array_map('htmlspecialchars_decode', $data), true);
          return $this;
      }
- 
+
