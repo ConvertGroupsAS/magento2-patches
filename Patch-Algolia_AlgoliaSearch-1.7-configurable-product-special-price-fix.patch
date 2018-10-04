@@ -1,0 +1,17 @@
+--- Helper/Entity/Product/PriceManager.php	2018-10-04 12:19:15.402915771 +0300
++++ Helper/Entity/Product/PriceManager.php	2018-10-04 12:25:01.502869539 +0300
+@@ -211,7 +211,13 @@
+                         $groupId,
+                         $child->getId()
+                     );
+-                    $childrenPrices[] = $childPrice;
++                    if ($childPrice > 0) {
++                        $childrenPrices[] = $childPrice;
++                    }
++                    $finalPrice = $child->getFinalPrice();
++                    if ($finalPrice > 0) {
++                        $childrenPrices[] = $child->getFinalPrice();
++                    }
+                 }
+                 $specialPrices[$groupId][] = min($childrenPrices);
+             } else {
