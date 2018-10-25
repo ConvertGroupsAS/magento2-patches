@@ -51,6 +51,7 @@ magento/module-catalog-rule|Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch|Q-6
 magento/module-customer|Patch-Magento\_Customer-M2.1.9-array-street-line.patch (Patch-Magento\_Customer-array-street-line.patch)Patch-Webshipr\_Shipping-get-shipping-address-fix.patch|pull #10582 2.1.9 - error saving shipping address in checkout|>= 2.1.9 < 2.2.2
 magento/module-customer|Patch-Magento\_Customer-M2.1.9-generate-new-formkey-wishlist.patch|#11825|>=2.1.9 >=2.2.0 <2.2.4(maybe)
 magento/module-wishlist|Patch-Magento\_Wishlist-M2.x.x-add-to-wishlist-login-register.patch|#11825|>=2.1.9 >=2.2.0 <2.2.4(maybe)
+magento/module-wishlist|Patch-Magento\_Wishlist-M2.x.x-wishlist-keep-item-in-cart.patch| |\>=2.1.0
 magento/module-ui|Patch-Magento\_Ui-M2.1.9-country-select-extra-empty-option.patch|2.1.9 buggy implementation link|>= 2.1.9 <2.2.0 ???
 magento/module-ui|Patch-Magento\_Ui-M2.1.x-layout-cache-empty-menu.patch|#8554|< 2.2.0
 magento/module-catalog|Patch-Magento\_Catalog-rest-api-auto-enable-product-fix.patch| |< 2.2.0 all as of 2.1.9
@@ -201,7 +202,8 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/2913": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Widget-M2.1.0-widgets-restore-conditions.patch"
             },
             "magento/module-wishlist": {
-                "Fix: https://github.com/magento/magento2/issues/11825": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Wishlist-M2.x.x-add-to-wishlist-login-register.patch"
+                "Fix: https://github.com/magento/magento2/issues/11825": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Wishlist-M2.x.x-add-to-wishlist-login-register.patch",
+                "Add ability to keep item in cart after adding to wishlist": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Wishlist-M2.x.x-wishlist-keep-item-in-cart.patch"
             },
             "magento/module-offline-shipping": {
                 "Fix: https://github.com/magento/magento2/issues/10704": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_OfflineShipping-M2.X-free-shipping-cart-rule-fix.patch"

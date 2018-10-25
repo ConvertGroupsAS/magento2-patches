@@ -1,0 +1,16 @@
+--- Controller/Index/Fromcart.php
++++ Controller/Index/Fromcart.php
+@@ -112,8 +112,11 @@ class Fromcart extends \Magento\Wishlist\Controller\AbstractIndex
+             $buyRequest = $item->getBuyRequest();
+             $wishlist->addNewItem($productId, $buyRequest);
+ 
+-            $this->cart->getQuote()->removeItem($itemId);
+-            $this->cart->save();
++            $keepItemInCart = (bool)$this->getRequest()->getParam('keep_item_in_cart');
++            if (!$keepItemInCart) {
++                $this->cart->getQuote()->removeItem($itemId);
++                $this->cart->save();
++            }
+ 
+             $this->wishlistHelper->calculate();
+             $wishlist->save();
