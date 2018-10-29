@@ -14,3 +14,14 @@
  
              $this->wishlistHelper->calculate();
              $wishlist->save();
+--- Model/ItemCarrier.php
++++ Model/ItemCarrier.php
+@@ -147,7 +147,7 @@ class ItemCarrier
+                 }
+ 
+                 $cartItem = $cart->getQuote()->getItemByProduct($item->getProduct());
+-                if ($cartItem) {
++                if ($cartItem && !$wishlist->getData('keep_item_in_cart')) {
+                     $cart->getQuote()->deleteItem($cartItem);
+                 }
+             } catch (\Exception $e) {
