@@ -1,0 +1,17 @@
+--- Plugin/Catalog/Block/Product/View/BlockHtmlTitlePlugin.php	2018-10-31 17:09:20.300416369 +0300
++++ Plugin/Catalog/Block/Product/View/BlockHtmlTitlePlugin.php	2018-10-31 17:09:30.244433580 +0300
+@@ -72,7 +72,13 @@
+      */
+     protected function getOptionSettingUrl(OptionSetting $setting)
+     {
+-        return $this->brandHelper->getBrandUrl($setting->getAttributeOption());
++        $url = '';
++        $option = $setting->getAttributeOption();
++        if ($option) {
++            $url = $this->brandHelper->getBrandUrl($option);
++        }
++
++        return $url;
+     }
+ 
+     /**

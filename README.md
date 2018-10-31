@@ -73,6 +73,7 @@ magento/module-configurable-product|Patch-Magento_Configurable_M2.1.x-fix-get-pr
 magento/module-catalog|Patch-Magento-Catalog-M2.1.x-toolbar-default-sorting.patch|fix toolbar default sorting|>=2.1.0 <2.2.0
 klarna/module-kco|Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch|Fix wrong function parameters order|>=5.0.5
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch|Fix: Update stock item on product save|>=2.2.0 <2.2.4
+amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-missing-option-error-fix.patch|  | \>=2.6.0 < 2.6.5
 
 Full composer.json example:
 
@@ -81,14 +82,17 @@ Full composer.json example:
     "extra": {
         "magento-force": "override",
         "patches": {
-            "magento/framework-message-queue": {
-                "Fix Consumer Transactions Callbacks": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Message-Queue-Consumer-Transaction.patch"
-            },
             "amasty/module-improved-layered-navigation-root": {
                 "Fix: Remove unnecessary configurable block": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch"
             },
             "amasty/shopby-seo": {
                 "Fix: Broken product links in cart on different stores": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_ShopbySeo-cart-broken-links-fix.patch"
+            },
+            "amasty/module-shop-by-brand": {
+                 "Fix error when option was removed from attribute": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_ShopbyBrand-2.6.x-missing-option-error-fix.patch"
+            },
+            "magento/framework-message-queue": {
+                "Fix Consumer Transactions Callbacks": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Message-Queue-Consumer-Transaction.patch"
             },
             "magento/framework": {
                 "Pull request: https://github.com/magento/magento2/pull/13577": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-mview-changelog-increment.patch",
