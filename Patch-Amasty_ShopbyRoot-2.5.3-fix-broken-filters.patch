@@ -1,0 +1,10 @@
+--- Controller/Index/Index.php	2018-11-02 10:27:06.573357764 +0300
++++ Controller/Index/Index.php	2018-11-02 10:27:16.025265862 +0300
+@@ -109,7 +109,6 @@
+             return $this->resultForwardFactory->create()->forward('noroute');
+         }
+ 
+-        $this->layerResolver->create(\Magento\Catalog\Model\Layer\Resolver::CATALOG_LAYER_CATEGORY);
+         $settings = $this->catalogDesign->getDesignSettings($category);
+ 
+         // apply custom design
