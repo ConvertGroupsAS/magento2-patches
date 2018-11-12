@@ -71,6 +71,7 @@ magento/module-configurable-product|Patch-Magento\_Configurable-M2.1.3-lowest-pr
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.2.x-fix-empty-price-in-category-page.patch|On development stage|>=2.2.1
 magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices.patch|#15654|>=2.2.0 <2.3.0
 magento/module-configurable-product|Patch-Magento_Configurable_M2.1.x-fix-get-price.patch|#5519|<2.1.10
+magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch|#7614|<2.2
 
 **3th party modules:**
 
@@ -126,6 +127,9 @@ Full composer.json example:
             },
             "magento/module-developer": {
                 "Fix: https://github.com/magento/magento2/issues/4362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Developer-M2.1.x-disable-debug-loging.patch"
+            },
+            "magento/module-cache-invalidate": {
+                "Fix: https://github.com/magento/magento2/issues/7614": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch"
             },
             "magento/module-catalog": {
                 "Fix: https://github.com/magento/magento2/issues/8018": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.1.3-category-indexer-range.patch",
