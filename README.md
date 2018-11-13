@@ -80,6 +80,7 @@ magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache
 amasty/module-improved-layered-navigation-root|Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch| |all as of 1.15.1
 amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-missing-option-error-fix.patch|  | \>=2.6.0 < 2.6.5
 amasty/shopby-root|Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch| | 2.5.3
+bsscommerce/ajaxcart|Patch-Bss_AjaxCart-1.1.4-improvements.patch| | \=1.1.4
 klarna/module-kco|Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch|Fix wrong function parameters order|>=5.0.5
 
 
@@ -245,6 +246,9 @@ Full composer.json example:
             },
             "klarna/module-kco": {
                 "ReloadSummary action wrong order of parameters": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch"
+            },
+            "bsscommerce/ajaxcart": {
+                "Add event + multiple add to cart (reorder) fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Bss_AjaxCart-1.1.4-improvements.patch"
             }
         }
     }
