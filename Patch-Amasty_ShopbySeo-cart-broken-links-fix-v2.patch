@@ -1,0 +1,14 @@
+--- Plugin/UrlPlugin.php	2018-02-01 11:30:20.000000000 +0300
++++ Plugin/UrlPlugin.php	2018-04-23 10:44:42.000000000 +0300
+@@ -35,7 +35,10 @@
+     public function afterGetUrl(UrlInterface $subject, $native)
+     {
+         if ($this->_isInternalHost($native)
+-            && $this->helper->getRequest()->getFullActionName() != 'catalogsearch_result_index'
++            && !in_array(
++                $this->helper->getRequest()->getFullActionName(),
++                ['catalogsearch_result_index', 'checkout_cart_index', 'wishlist_index_index']
++            )
+         ) {
+             return $this->helper->seofyUrl($native);
+         } else {
