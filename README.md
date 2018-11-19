@@ -248,7 +248,7 @@ Full composer.json example:
             },
             "klarna/module-core": {
                 "Fix no such entity with addressId error in Klarna checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Core-fix-customer-address-no-such-exception.patch"
-            }
+            },
             "klarna/module-kco": {
                 "ReloadSummary action wrong order of parameters": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch"
             },
