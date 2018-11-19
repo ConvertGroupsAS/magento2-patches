@@ -1,0 +1,15 @@
+--- Helper/ConfigHelper.php	2018-05-22 21:15:24.000000000 +0300
++++ Helper/ConfigHelper.php	2018-11-19 15:08:13.546091292 +0300
+@@ -315,7 +315,11 @@
+         $customerObj = $this->customerRepository->getById($customerId);
+         $billingAddressId = $customerObj->getDefaultBilling();
+         if ($billingAddressId) {
+-            $defaultBillingAddress = $this->addressRepository->getById($billingAddressId);
++            try {
++                $defaultBillingAddress = $this->addressRepository->getById($billingAddressId);
++            } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
++                return false;
++            }
+             return $defaultBillingAddress->getCompany();
+         }
+         return false;
