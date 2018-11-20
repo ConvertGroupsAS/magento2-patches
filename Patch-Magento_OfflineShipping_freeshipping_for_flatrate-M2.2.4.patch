@@ -1,0 +1,16 @@
+--- Model/Carrier/Flatrate.php	2017-09-20 14:13:28.000000000 +0300
++++ Model/Carrier/Flatrate.php	2018-11-19 18:09:24.974030711 +0300
+@@ -89,10 +89,12 @@
+         $shippingPrice = $this->getShippingPrice($request, $freeBoxes);
+ 
+         if ($shippingPrice !== false) {
++            if($request->getFreeShipping()) {
++                $shippingPrice = 0;
++            }
+             $method = $this->createResultMethod($shippingPrice);
+             $result->append($method);
+         }
+-
+         return $result;
+     }
+ 

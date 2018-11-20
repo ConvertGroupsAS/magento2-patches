@@ -227,7 +227,8 @@ Full composer.json example:
                 "Add ability to keep item in cart after adding to wishlist": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Wishlist-M2.x.x-wishlist-keep-item-in-cart.patch"
             },
             "magento/module-offline-shipping": {
-                "Fix: https://github.com/magento/magento2/issues/10704": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_OfflineShipping-M2.X-free-shipping-cart-rule-fix.patch"
+                "Fix: https://github.com/magento/magento2/issues/10704": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_OfflineShipping-M2.X-free-shipping-cart-rule-fix.patch",
+                "Add ability create freeshipping by cart rule for Flatrate": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_OfflineShipping_freeshipping_for_flatrate-M2.2.4.patch"
             },
             "magento/module-catalog-url-rewrite": {
                 "Fix: https://github.com/magento/magento2/issues/7874 depended on module-catalog patch": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch"
