@@ -145,7 +145,7 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/4387": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.1-fix-product-auto-startdates.patch",
                 "Fix: https://github.com/magento/magento2/issues/7874": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.1.4-regeneration-without-changes-fix.patch",
                 "Fix: Change toolbar default sorting": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Catalog-M2.1.x-toolbar-default-sorting.patch",
-                "Fix: "https://github.com/magento/magento2/issues/13720: "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.2.x-related-products-visibility-in-admin.patch"
+                "Fix: https://github.com/magento/magento2/issues/13720": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.2.x-related-products-visibility-in-admin.patch"
             },
             "magento/module-catalog-inventory": {
                 "Fix: https://github.com/magento/magento2/issues/8566": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory_M2.1.3-hide-out-of-stock.patch",
