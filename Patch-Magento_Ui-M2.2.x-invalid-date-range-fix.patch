@@ -1,0 +1,12 @@
+--- view/base/web/js/grid/filters/range.js	2018-11-22 13:41:13.000000000 +0300
++++ view/base/web/js/grid/filters/range.js	2018-11-22 13:35:05.000000000 +0300
+@@ -27,7 +27,8 @@
+                 },
+                 date: {
+                     component: 'Magento_Ui/js/form/element/date',
+-                    dateFormat: 'MM/dd/YYYY'
++                    dateFormat: 'MM/dd/YYYY',
++                    inputDateFormat: 'MM/dd/YYYY'
+                 },
+                 text: {
+                     component: 'Magento_Ui/js/form/element/abstract'
