@@ -1,0 +1,44 @@
+--- lib/web/magnifier/magnifier.js	2018-09-06 14:45:22.000000000 +0300
++++ lib/web/magnifier/magnifier.js	2018-11-28 15:24:40.352148528 +0300
+@@ -554,6 +554,16 @@
+             thumbObj.src = thumb.src;
+         }
+ 
++        /**
++         * Hide magnifier when mouse exceeds image bounds.
++         */
++        function onMouseLeave() {
++            onThumbLeave();
++            isOverThumb = false;
++            $magnifierPreview.addClass(MagnifyCls.magnifyHidden);
++        }
++
++
+         function onMousemove(e) {
+             pos.x = e.clientX;
+             pos.y = e.clientY;
+@@ -564,15 +574,9 @@
+                 isOverThumb = inBounds;
+             }
+ 
+-            if (inBounds && isOverThumb) {
+-                if(gMode === 'outside'){
++            if (inBounds && isOverThumb && gMode === 'outside') {
+                     $magnifierPreview.removeClass(MagnifyCls.magnifyHidden);
+-                }
+                 move();
+-            } else {
+-                onThumbLeave();
+-                isOverThumb = false;
+-                $magnifierPreview.addClass(MagnifyCls.magnifyHidden);
+             }
+         }
+ 
+@@ -589,6 +592,7 @@
+         });
+ 
+         $box.on('mousemove', onMousemove);
++        $box.on('mouseleave', onMouseLeave);
+         _init($box, customUserOptions);
+     }
+ }(jQuery));
