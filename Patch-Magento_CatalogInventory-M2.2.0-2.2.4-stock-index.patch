@@ -1,0 +1,18 @@
+--- Model/ResourceModel/Indexer/Stock/DefaultStock.orig.php	2017-12-11 17:58:58.000000000 +0300
++++ Model/ResourceModel/Indexer/Stock/DefaultStock.php	2018-12-07 14:30:42.895556738 +0300
+@@ -288,6 +288,7 @@
+      */
+     protected function _updateIndex($entityIds)
+     {
++        $this->deleteOldRecords($entityIds);
+         $connection = $this->getConnection();
+         $select = $this->_getStockStatusSelect($entityIds, true);
+         $select = $this->getQueryProcessorComposite()->processQuery($select, $entityIds, true);
+@@ -310,7 +311,6 @@
+             }
+         }
+ 
+-        $this->deleteOldRecords($entityIds);
+         $this->_updateIndexTable($data);
+ 
+         return $this;
