@@ -1,16 +1,6 @@
---- Session/SessionManager.php.orig	2018-09-04 16:50:34.000000000 +0300
-+++ Session/SessionManager.php	2018-10-22 12:35:48.255746410 +0300
-@@ -124,9 +124,6 @@
-         $this->cookieManager = $cookieManager;
-         $this->cookieMetadataFactory = $cookieMetadataFactory;
-         $this->appState = $appState;
--
--        // Enable session.use_only_cookies
--        ini_set('session.use_only_cookies', '1');
-         $this->start();
-     }
- 
-@@ -183,10 +180,21 @@
+--- Session/SessionManager.php	2018-09-04 16:50:34.000000000 +0300
++++ Session/SessionManager.php	2018-12-11 17:52:58.398652963 +0300
+@@ -183,10 +183,21 @@
              // Need to apply the config options so they can be ready by session_start
              $this->initIniOptions();
              $this->registerSaveHandler();
@@ -31,20 +21,20 @@
 +
              $this->validator->validate($this);
              $this->renewCookie($sid);
- 
-@@ -476,7 +484,7 @@
+
+@@ -476,7 +487,7 @@
       */
      protected function _getHosts()
      {
 -        return isset($_SESSION[self::HOST_KEY]) ? $_SESSION[self::HOST_KEY] : [];
 +        return $_SESSION[self::HOST_KEY] ?? [];
      }
- 
+
      /**
-@@ -501,7 +509,33 @@
+@@ -501,7 +512,33 @@
              return $this;
          }
- 
+
 -        $this->isSessionExists() ? session_regenerate_id(true) : session_start();
 +        if ($this->isSessionExists()) {
 +            // Regenerate the session
@@ -74,46 +64,9 @@
 +        }
 +
          $this->storage->init(isset($_SESSION) ? $_SESSION : []);
- 
+
          if ($this->sessionConfig->getUseCookies()) {
-@@ -519,7 +553,7 @@
-     {
-         foreach (array_keys($this->_getHosts()) as $host) {
-             // Delete cookies with the same name for parent domains
--            if (strpos($this->sessionConfig->getCookieDomain(), $host) > 0) {
-+            if ($this->sessionConfig->getCookieDomain() !== $host) {
-                 $metadata = $this->cookieMetadataFactory->createPublicCookieMetadata();
-                 $metadata->setPath($this->sessionConfig->getCookiePath());
-                 $metadata->setDomain($host);
-@@ -559,14 +593,26 @@
-      */
-     private function initIniOptions()
-     {
-+        $result = ini_set('session.use_only_cookies', '1');
-+        if ($result === false) {
-+            $error = error_get_last();
-+            throw new \InvalidArgumentException(
-+                sprintf('Failed to set ini option session.use_only_cookies to value 1. %s', $error['message'])
-+            );
-+        }
-+
-         foreach ($this->sessionConfig->getOptions() as $option => $value) {
--            $result = ini_set($option, $value);
--            if ($result === false) {
--                $error = error_get_last();
--                throw new \InvalidArgumentException(
--                    sprintf('Failed to set ini option "%s" to value "%s". %s', $option, $value, $error['message'])
--                );
-+            if ($option=='session.save_handler') {
-+                continue;
-+            } else {
-+                $result = ini_set($option, $value);
-+                if ($result === false) {
-+                    $error = error_get_last();
-+                    throw new \InvalidArgumentException(
-+                        sprintf('Failed to set ini option "%s" to value "%s". %s', $option, $value, $error['message'])
-+                    );
-+                }
+@@ -569,4 +606,4 @@
              }
          }
      }
