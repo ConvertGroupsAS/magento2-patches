@@ -69,7 +69,7 @@ magento/module-store|Patch-Magento\_Store-emulation.patch|MAGETWO-59649|2.1-2.3
 magento/module-developer|Patch-Magento\_Developer-M2.1.x-disable-debug-loging.patch|#4362|< 2.2.3 < 2.2.0 ???
 magento/module-checkout|Patch-Magento\_Checkout-cart-form-key.patch|disable form key validation|>= 2.1.0 >= 2.2.0
 magento/module-checkout|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch|#12362| >= 2.2.0 < 2.2.6
-magento/module-checkout|Patch-Magento\_Framework-M2.2.6-drop-session-fix.patch|#12362| 2.2.6
+magento/framework|Patch-Magento\_Framework-M2.2.6-Fix-session-from-2.2.7.patch|#12362| 2.2.6
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.1.2-configurable-options-sort.patch|#7441|2.1.x
 magento/module-configurable-product|Patch-Magento\_Configurable-M2.1.3-lowest-price-provider.patch Patch-Magento\_Configurable-M2.1.6-lowest-price-provider.patch|#13933  #9796|<= 2.1.5  < 2.2.0
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.2.x-fix-empty-price-in-category-page.patch|On development stage|>=2.2.1
@@ -120,7 +120,8 @@ Full composer.json example:
                 "Pull request: https://github.com/magento/magento2/pull/8373": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.1.x-Curl-Post-Json.patch",
                 "Pull request: https://github.com/magento/magento2/pull/12497": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2-cron-prevent-already-running.patch",
                 "Fix: Unset translations for same key-value only if given force parameter": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.5-force-unset-translation.patch",
-                "Fix: https://github.com/magento/magento2/issues/12362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-drop-session-fix.patch"
+                "Fix: https://github.com/magento/magento2/issues/12362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-drop-session-fix.patch",
+                "Fix: https://github.com/magento/magento2/issues/12362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.6-Fix-session-from-2.2.7.patch"
             },
             "magento/magento2-base": {
                 "Fix MAGE_DIRS for CLI": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-cli.patch",
