@@ -87,6 +87,7 @@ amasty/shopby-root|Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch| | 2.5
 bsscommerce/ajaxcart|Patch-Bss_AjaxCart-1.1.4-improvements.patch| | \=1.1.4
 klarna/module-kco|Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch|Fix wrong function parameters order|>=5.0.5
 klarna/module-core|Patch-Klarna_Core-fix-customer-address-no-such-exception.patch|Fix no such entity with addressId error in Klarna checkout|>=4.2.3 (didn't check older versions)
+dotmailer/dotmailer-magento2-extension|Patch-Dotdigitalgroup_email-subject-fix.patch|Fix utf8 encoding in the subject of email|?
 
 
 Full composer.json example:
@@ -183,7 +184,7 @@ Full composer.json example:
             },
             "magento/module-customer": {
                 "Fix: https://github.com/magento/magento2/pull/10582": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Customer-M2.1.9-array-street-line.patch",
-                "Fix: https://github.com/magento/magento2/issues/11825": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Customer-M2.1.9-generate-new-formkey-wishlist.patch",                
+                "Fix: https://github.com/magento/magento2/issues/11825": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Customer-M2.1.9-generate-new-formkey-wishlist.patch",
                 "Fix: Disable cache for customer section data": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch_Magento_Customer-M2.1.4-customer-section-load-fix.patch"
             },
             "magento/module-directory": {
@@ -264,6 +265,9 @@ Full composer.json example:
             },
             "bsscommerce/ajaxcart": {
                 "Add event + multiple add to cart (reorder) fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Bss_AjaxCart-1.1.4-improvements.patch"
+            },
+            "dotmailer/dotmailer-magento2-extension": {
+                "Fix utf8 encoding in the subject of email": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Dotdigitalgroup_email-subject-fix.patch"
             }
         }
     }
