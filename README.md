@@ -84,6 +84,7 @@ magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache
 amasty/module-improved-layered-navigation-root|Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch| |all as of 1.15.1
 amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-missing-option-error-fix.patch|  | \>=2.6.0 < 2.6.5
 amasty/shopby-root|Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch| | 2.5.3
+amasty/shopby-seo|Patch-Amasty-ShopbySeo-2.4.6-set-category-sort.patch| Add sorting from category settings| \>=2.4.6 (didn't check older versions) <2.5.0
 bsscommerce/ajaxcart|Patch-Bss_AjaxCart-1.1.4-improvements.patch| | \=1.1.4
 klarna/module-kco|Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch|Fix wrong function parameters order|>=5.0.5
 klarna/module-core|Patch-Klarna_Core-fix-customer-address-no-such-exception.patch|Fix no such entity with addressId error in Klarna checkout|>=4.2.3 (didn't check older versions)
@@ -102,6 +103,7 @@ Full composer.json example:
             },
             "amasty/shopby-seo": {
                 "Fix: Broken product links in cart on different stores": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_ShopbySeo-cart-broken-links-fix.patch",
+                "Fix: Add sorting from category settings": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty-ShopbySeo-2.4.6-set-category-sort.patch",
                 "Fix: Broken product links in cart on different stores and fix wishlist": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_ShopbySeo-cart-broken-links-fix-v2.patch"
             },
             "amasty/module-shop-by-brand": {

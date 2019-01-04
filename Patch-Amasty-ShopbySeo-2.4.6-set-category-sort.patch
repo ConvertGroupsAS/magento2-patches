@@ -1,0 +1,14 @@
+--- Helper/Meta.php	2018-12-05 18:34:29.989168634 +0300
++++ Helper/Meta.php	2018-12-05 18:39:32.293181070 +0300
+@@ -80,6 +80,11 @@
+         $this->request = $context->getRequest();
+         $this->registry = $registry;
+         $this->contentHelper = $contentHelper;
++
++        // add sorting from category settings:
++        $field = $resolver->get()->getCurrentCategory()->getDefaultSortBy();
++        $toolbar->setDefaultOrder($field);
++
+         $toolbar->setCollection($resolver->get()->getProductCollection());
+         $this->toolbar = $toolbar;
+     }
