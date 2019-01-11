@@ -1,0 +1,37 @@
+--- lib/web/magnifier/magnifier.js	2019-01-11 14:39:23.627622640 +0300
++++ lib/web/magnifier/magnifier1.js	2019-01-11 13:00:37.000000000 +0300
+@@ -156,7 +156,7 @@
+                 magnifyLensElement.html('');
+ 
+                 largeImgInMagnifyLens.id = idSelectorMainImg + '-large';
+-                largeImgInMagnifyLens.style.width = data[idSelectorMainImg].largeImgInMagnifyLensWidth + 'px';
++                largeImgInMagnifyLens.style.width = data[idSelectorMainImg].largeImgInMagnifyLensWidth * rate + 'px';
+                 largeImgInMagnifyLens.style.height = data[idSelectorMainImg].largeImgInMagnifyLensHeight + 'px';
+                 largeImgInMagnifyLens.className = 'magnifier-large magnify-hidden';
+ 
+@@ -217,7 +217,7 @@
+                 magnifierOptions.largeL = Math.round(xPos * (magnifierOptions.zoom - magnifierOptions.lensW / magnifierOptions.w));
+                 magnifierOptions.largeT = Math.round(yPos * (magnifierOptions.zoom - magnifierOptions.lensH / magnifierOptions.h));
+             } else {
+-                magnifierOptions.largeL = Math.round(magnifierOptions.lensBgX * magnifierOptions.zoom * (magnifierOptions.largeWrapperW / magnifierOptions.w));
++                magnifierOptions.largeL = Math.round(magnifierOptions.lensBgX * magnifierOptions.zoom * (magnifierOptions.largeWrapperW / magnifierOptions.w) * rate);
+                 magnifierOptions.largeT = Math.round(magnifierOptions.lensBgY * magnifierOptions.zoom * (magnifierOptions.largeWrapperH / magnifierOptions.h));
+             }
+         }
+@@ -337,7 +337,7 @@
+             mainImageData.largeImgInMagnifyLensWidth = Math.round(mainImageData.zoom * w);
+             mainImageData.largeImgInMagnifyLensHeight = Math.round(mainImageData.zoom * h);
+ 
+-            mainImageData.lensW = Math.round(mainImageData.w / mainImageData.zoom);
++            mainImageData.lensW = Math.round(mainImageData.w / mainImageData.zoom / rate);
+             mainImageData.lensH = Math.round(mainImageData.h / mainImageData.zoom);
+         }
+ 
+@@ -529,6 +529,7 @@
+                 onthumbmove: onthumbmove
+             };
+ 
++            rate = ($thumb.width() / $thumb.height()) / (data[idx].largeWrapperW / data[idx].largeWrapperH);
+             paddingX = ($thumb.parent().width() - $thumb.width()) / 2;
+             paddingY = ($thumb.parent().height() - $thumb.height()) / 2;
+ 
