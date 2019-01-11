@@ -1,5 +1,5 @@
 --- lib/web/magnifier/magnifier.js	2019-01-11 14:39:23.627622640 +0300
-+++ lib/web/magnifier/magnifier1.js	2019-01-11 13:00:37.000000000 +0300
++++ lib/web/magnifier/magnifier.js	2019-01-11 13:00:37.000000000 +0300
 @@ -156,7 +156,7 @@
                  magnifyLensElement.html('');
  
