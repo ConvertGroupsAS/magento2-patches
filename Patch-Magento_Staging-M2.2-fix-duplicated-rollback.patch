@@ -1,0 +1,11 @@
+--- Model/Operation/Update.php	2017-11-02 13:33:36.000000000 +0300
++++ Model/Operation/Update.php	2019-01-14 23:44:34.323162100 +0300
+@@ -235,7 +235,7 @@
+     private function createRollback(UpdateInfo $update, VersionInfo $version, $entity, bool $rescheduledUpdate)
+     {
+         $newTemporary = $version->getRowId() === null;
+-        $permanentToTemporary = $update->getRollbackId() && $version->getUpdatedIn() !== $update->getRollbackId();
++        $permanentToTemporary = $update->getRollbackId() && $version->getUpdatedIn() != $update->getRollbackId();
+         //Creating new rollback if the staged updated is a new temporary update,
+         //or it was rescheduled:
+         //Start date was moved

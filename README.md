@@ -66,6 +66,7 @@ magento/module-catalog-widget|Patch-Magento\_CatalogWidget-M2.1.0-widgets-restor
 magento/module-swatches|Patch-Magento\_Swatches-rest-api-visual-swatches-fix.patch| |>= 2.1.4
 magento/module-swatches|Patch-Magento\_Swatches-M2.1.x-zero-value-attribute-options-fix.patch|#10266|<= 2.1.10
 magento/module-sales|Patch-Magento\_Sales-creditmemo-partial-tax-refund.patch|#10982|2.1-2.3
+magento/module-staging|Patch-Magento_Staging-M2.2-fix-duplicated-rollback.patch||2.2
 magento/module-store|Patch-Magento\_Store-emulation.patch|MAGETWO-59649|2.1-2.3
 magento/module-developer|Patch-Magento\_Developer-M2.1.x-disable-debug-loging.patch|#4362|< 2.2.3 < 2.2.0 ???
 magento/module-checkout|Patch-Magento\_Checkout-cart-form-key.patch|disable form key validation|>= 2.1.0 >= 2.2.0
@@ -211,6 +212,9 @@ Full composer.json example:
             },
             "magento/module-sales-rule": {
                 "Fix: https://github.com/magento/magento2/issues/6762": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_SalesRule-M2.1.6-fix-to-date-parameter.patch"
+            },
+            "magento/module-staging": {
+                "Fix: Duplicated rollback": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Staging-M2.2-fix-duplicated-rollback.patch"
             },
             "magento/module-store": {
                 "Fix emulation in admin store (Todo check: MAGETWO-59649)": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Store-emulation.patch"
