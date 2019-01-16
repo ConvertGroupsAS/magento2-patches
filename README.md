@@ -16,12 +16,12 @@ magento/framework|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch"|#12362
 magento/framework|Patch-Magento\_Framework-M2.1.x-Curl-Post-Json.patch|#8373|< 2.2.0
 magento/framework-message-queue|Patch-Message-Queue-Consumer-Transaction.patch| |EE Only < 2.2.0
 magento/magento2-base|Patch-Magento\_Base-M2.1.0-widgets-values-utf8-decode.patch|#4232|< 2.1.8 (2.1.4 n/a)
-magento/magento2-base|Patch-Magento\_Base-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2
+magento/magento2-base|Patch-Magento\_Base-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2 < 2.2.6
 magento/magento2-base|Patch-Magento\_Base-M2.x.x-zoomed-photo-product.patch |MAGETWO-94989| < 2.1-2.3
 magento/magento2-base|Patch-Magento\_Base-M2.2.5-mangnifier-zoom-distortion.patch | | > 2.2.5
-magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-delete.patch|pull 14751|>= 2.2.0
+magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-delete.patch|pull 14751|>= 2.2.0 < 2.2.5
 magento/module-cron|Patch-Magento\_Cron-M2.1.4-cron-generate-schedule.patch|#4173|all as of 2.1.7 < 2.2.0
-magento/module-cron|Patch-Magento\_Cron-M2.2.0-2.2.3-prevent-already-running-v2.patch Patch-Magento\_Cron-M2.2.4-prevent-already-running-v2.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2.0-2.2.3  2.2.4+
+magento/module-cron|Patch-Magento\_Cron-M2.2.0-2.2.3-prevent-already-running-v2.patch Patch-Magento\_Cron-M2.2.4-prevent-already-running-v2.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2.0-2.2.4 < 2.2.6
 magento/module-directory|Patch-Magento\_Directory\_M2.1-zip-codes.patch|#6694|2.0.11+ < 2.2.0
 magento/module-email|Patch-Magento\_Email-M2.1.0-create-email-logo-1.patch| |< 2.1.8 (2.1.4 n/a)
 magento/module-review|Patch-Magento\_Review-M2.2-review-renderer-module-namespace.patch| |all as of 2.2.5
@@ -48,7 +48,7 @@ magento/module-ui|Patch-Magento\_Ui-M2.1.9-country-select-extra-empty-option.pat
 magento/module-ui|Patch-Magento\_Ui-M2.1.x-layout-cache-empty-menu.patch|#8554|< 2.2.0
 magento/module-ui|Patch-Magento\_Ui-M2.2.x-invalid-date-range-fix.patch|#16119|< 2.3.0
 magento/module-catalog|Patch-Magento\_Catalog-rest-api-auto-enable-product-fix.patch| |< 2.2.0 all as of 2.1.9
-magento/module-catalog|Patch-Magento\_Catalog-rest-api-single-store-fix.patch| |>= 2.1.0 >= 2.2.0
+magento/module-catalog|Patch-Magento\_Catalog-rest-api-single-store-fix.patch| |>= 2.1.0 >= 2.2.0 < 2.2.6
 magento/module-catalog|Patch-Magento\_Catalog-M2.1-fix-product-auto-startdates.patch|#4387|< 2.1.10 < 2.2.0
 magento/module-catalog|Patch-Magento\_Catalog-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|#7874|>=2.1.4 < 2.1.9
 magento/module-catalog|Patch-Magento-Catalog-M2.1.x-toolbar-default-sorting.patch|fix toolbar default sorting|>=2.1.0 <2.2.0
@@ -64,6 +64,7 @@ magento/module-catalog-rule|Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch|Q-6
 magento/module-catalog-url-rewrite|Patch-Magento\_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|#7874|>=2.1.4 < 2.1.9
 magento/module-catalog-widget|Patch-Magento\_CatalogWidget-M2.1.0-widgets-restore-conditions.patch|#2913|< 2.1.8 (2.1.4 n/a)
 magento/module-swatches|Patch-Magento\_Swatches-rest-api-visual-swatches-fix.patch| |>= 2.1.4
+magento/module-swatches|Patch-Magento_Swatches-rest-api-visual-swatches-fix_2.2.6.patch| |>= 2.2.6
 magento/module-swatches|Patch-Magento\_Swatches-M2.1.x-zero-value-attribute-options-fix.patch|#10266|<= 2.1.10
 magento/module-sales|Patch-Magento\_Sales-creditmemo-partial-tax-refund.patch|#10982|2.1-2.3
 magento/module-staging|Patch-Magento_Staging-M2.2-fix-duplicated-rollback.patch||2.2
@@ -76,6 +77,7 @@ magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.1.2-co
 magento/module-configurable-product|Patch-Magento\_Configurable-M2.1.3-lowest-price-provider.patch Patch-Magento\_Configurable-M2.1.6-lowest-price-provider.patch|#13933  #9796|<= 2.1.5  < 2.2.0
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.2.x-fix-empty-price-in-category-page.patch|On development stage|>=2.2.1
 magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices.patch|#15654|>=2.2.0 <2.3.0
+magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices_M2.2.6.patch|#15654|>=2.2.6
 magento/module-configurable-product|Patch-Magento_Configurable_M2.1.x-fix-get-price.patch|#5519|<2.1.10
 magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch|#7614|<2.2
 
@@ -180,6 +182,7 @@ Full composer.json example:
                 "Pull request: https://github.com/magento/magento2/pull/9796": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Configurable-M2.1.3-lowest-price-provider.patch",
                 "Pull request: https://github.com/magento/magento2/pull/9796": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Configurable-M2.1.6-lowest-price-provider.patch",
                 "Fix: https://github.com/magento/magento2/issues/15654": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices.patch",
+                "Fix: https://github.com/magento/magento2/issues/15654": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices_M2.2.6.patch",
                 "Fix: https://github.com/magento/magento2/issues/5519": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Configurable_M2.1.x-fix-get-price.patch"
             },
             "magento/module-cron": {
@@ -221,6 +224,7 @@ Full composer.json example:
             },
             "magento/module-swatches": {
                 "Fix: Add ability to set visual swatch by store ID as well as textual one": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Swatches-rest-api-visual-swatches-fix.patch",
+                "Fix: Add ability to set visual swatch by store ID as well as textual one": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Swatches-rest-api-visual-swatches-fix_2.2.6.patch",
                 "Fix: https://github.com/magento/magento2/issues/10266": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Swatches-M2.1.x-zero-value-attribute-options-fix.patch"
             },
             "magento/module-tax": {

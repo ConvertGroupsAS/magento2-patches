@@ -1,0 +1,20 @@
+--- Model/ResourceModel/Product/Indexer/Price/Configurable.php.origin	2018-09-04 16:50:56.000000000 +0300
++++ Model/ResourceModel/Product/Indexer/Price/Configurable.php	2019-01-16 12:43:41.485812431 +0300
+@@ -223,8 +223,15 @@
+         // adds price of custom option, that was applied in DefaultPrice::_applyCustomOption
+         $selectForCrossUpdate->columns(
+             [
+-                'min_price' => new \Zend_Db_Expr('i.min_price - i.price + io.min_price'),
+-                'max_price' => new \Zend_Db_Expr('i.max_price - i.price + io.max_price'),
++                /**
++                 * Applying fix for https://github.com/magento/magento2/issues/15654
++                 *
++                 * Old:
++                 * 'min_price' => new \Zend_Db_Expr('i.min_price - i.orig_price + io.min_price'),
++                 * 'max_price' => new \Zend_Db_Expr('i.max_price - i.orig_price + io.max_price'),
++                */
++                'min_price' => new \Zend_Db_Expr('io.min_price'),
++                'max_price' => new \Zend_Db_Expr('io.max_price'),
+                 'tier_price' => 'io.tier_price',
+             ]
+         );
