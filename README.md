@@ -81,6 +81,7 @@ magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix
 magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices_M2.2.6.patch|#15654|>=2.2.6
 magento/module-configurable-product|Patch-Magento_Configurable_M2.1.x-fix-get-price.patch|#5519|<2.1.10
 magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch|#7614|<2.2
+magento/module-config|Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch|#19070| 2.2.5 2.2.6 
 
 **3th party modules:**
 
@@ -282,6 +283,9 @@ Full composer.json example:
             },
             "dotmailer/dotmailer-magento2-extension": {
                 "Fix utf8 encoding in the subject of email": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Dotdigitalgroup_email-subject-fix.patch"
+            },
+            "magento/module-config": {
+                "Fix: https://github.com/magento/magento2/issues/19070": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch"
             }
         }
     }
