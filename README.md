@@ -87,6 +87,7 @@ magento/module-config|Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patc
 
 **Module**|**Name**|**Fixes**|**Affected versions**
 :-----:|:-----:|:-----:|:-----:
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch|Fix configurable product price|\>=1.8.0
 amasty/module-improved-layered-navigation-root|Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch| |all as of 1.15.1
 amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-missing-option-error-fix.patch|  | \>=2.6.0 < 2.6.5
 amasty/shopby-root|Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch| | 2.5.3
@@ -283,6 +284,9 @@ Full composer.json example:
             },
             "dotmailer/dotmailer-magento2-extension": {
                 "Fix utf8 encoding in the subject of email": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Dotdigitalgroup_email-subject-fix.patch"
+            },
+            "algolia/algoliasearch-magento-2": {
+                "Configurable product price fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch"
             },
             "magento/module-config": {
                 "Fix: https://github.com/magento/magento2/issues/19070": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch"
