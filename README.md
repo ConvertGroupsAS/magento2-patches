@@ -48,6 +48,7 @@ magento/module-wishlist|Patch-Magento\_Wishlist-M2.x.x-wishlist-keep-item-in-car
 magento/module-ui|Patch-Magento\_Ui-M2.1.9-country-select-extra-empty-option.patch|2.1.9 buggy implementation link|>= 2.1.9 <2.2.0 ???
 magento/module-ui|Patch-Magento\_Ui-M2.1.x-layout-cache-empty-menu.patch|#8554|< 2.2.0
 magento/module-ui|Patch-Magento\_Ui-M2.2.x-invalid-date-range-fix.patch|#16119|< 2.3.0
+magento/module-ui|Patch-Magento-Ui_fix-reset-disabled-attributes.patch| |< 2.2.5
 magento/module-catalog|Patch-Magento\_Catalog-rest-api-auto-enable-product-fix.patch| |< 2.2.0 all as of 2.1.9
 magento/module-catalog|Patch-Magento\_Catalog-rest-api-single-store-fix.patch| |>= 2.1.0 >= 2.2.0 < 2.2.6
 magento/module-catalog|Patch-Magento\_Catalog-M2.1-fix-product-auto-startdates.patch|#4387|< 2.1.10 < 2.2.0
@@ -244,7 +245,8 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/5438": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.1.0-allow-backend-to-know-the-origin-input-of-the-upload-request.patch",
                 "Fix: https://github.com/magento/magento2/issues/6281": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.1.x-multiselect-empty-save.patch",
                 "Fix: https://github.com/magento/magento2/issues/8554": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.1.x-layout-cache-empty-menu.patch",
-                "Fix: https://github.com/magento/magento2/issues/16119": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.2.x-invalid-date-range-fix.patch"
+                "Fix: https://github.com/magento/magento2/issues/16119": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.2.x-invalid-date-range-fix.patch",
+                "Fix reset of disabled attributes": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Ui_fix-reset-disabled-attributes.patch"
             },
             "magento/module-widget": {
                 "Fix: https://github.com/magento/magento2/issues/2913": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Widget-M2.1.0-widgets-restore-conditions.patch"
