@@ -1,5 +1,5 @@
---- /home/mikhail/dev/runandrelax/vendor/klarna/module-kco-core/Block/Info/Klarna.php	2019-02-01 15:20:19.679727993 +0300
-+++ /home/mikhail/dev/runandrelax/vendor/klarna/module-kco-core/Block/Info/Klarna.php	2019-02-01 15:20:36.567895152 +0300
+--- Block/Info/Klarna.php	2019-02-01 15:20:19.679727993 +0300
++++ Block/Info/Klarna.php	2019-02-01 15:20:36.567895152 +0300
 @@ -68,7 +68,6 @@
          MerchantPortal $merchantPortal,
          Resolver $locale,
