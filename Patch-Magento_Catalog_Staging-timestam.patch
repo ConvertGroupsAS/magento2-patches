@@ -1,0 +1,36 @@
+--- Observer/UpdateProductDateAttributes.php	2019-02-14 14:46:57.128821255 +0300
++++ Observer/UpdateProductDateAttributes.php	2019-02-14 14:46:43.893157971 +0300
+@@ -98,10 +98,20 @@
+     {
+         $product = $observer->getEvent()->getProduct();
+         $version = $this->versionManager->getCurrentVersion();
+-
++        /*
++         * Removed date conversion and formatting
++         *  $localStartTime = $this->localeDate->date($version->getStartTime());
++         *  $this->setDateTime($product, self::$startDateKeys, $localStartTime->format(DateTime::DATETIME_PHP_FORMAT)));
++         * because we need get a date from DB in the correct DB format (timestamp), and put it into other DB record.
++         * When we convert timestam string in to DataTime object over "$this->localeDate->date", we can break a date,
++         * because it converter use locale and if system locale format disagree with timestamp format, conversion can
++         * break the date (return object with wrong date). If we be pass locale of string into the
++         * "$this->localeDate->date", as a result, we get exactly the same date. So we don`t need a convert date,
++         * we can use timestamp date as it is.
++         * Conversion in this case is an extra code that can lead to errors and waste time.
++         */
+         if ($version->getStartTime()) {
+-            $localStartTime = $this->localeDate->date($version->getStartTime());
+-            $this->setDateTime($product, self::$startDateKeys, $localStartTime->format(DateTime::DATETIME_PHP_FORMAT));
++            $this->setDateTime($product, self::$startDateKeys, $version->getStartTime());
+         } else {
+             $date = $product->getData('is_new')
+                 ? $this->localeDate->date()->format(DateTime::DATETIME_PHP_FORMAT)
+@@ -110,8 +120,7 @@
+         }
+ 
+         if ($version->getEndTime()) {
+-            $localEndTime = $this->localeDate->date($version->getEndTime());
+-            $this->setDateTime($product, self::$endDateKeys, $localEndTime->format(DateTime::DATETIME_PHP_FORMAT));
++            $this->setDateTime($product, self::$endDateKeys, $version->getEndTime());
+         } else {
+             $this->setDateTime($product, self::$endDateKeys, null);
+         }

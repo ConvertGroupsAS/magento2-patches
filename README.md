@@ -63,6 +63,7 @@ magento/module-catalog-inventory|Patch-Magento\_CatalogInventory-M2.1.x-stock-it
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch|Fix: Update stock item on product save|>=2.2.0 <2.2.4
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch|#12205|>=2.2.0 <2.2.5
 magento/module-catalog-rule|Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch|Q-67970|>= 2.1.0 >= 2.2.0
+magento/module-catalog-staging|Patch-Magento_Catalog_Staging-timestam.patch| | ?
 magento/module-catalog-url-rewrite|Patch-Magento\_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|#7874|>=2.1.4 < 2.1.9
 magento/module-catalog-widget|Patch-Magento\_CatalogWidget-M2.1.0-widgets-restore-conditions.patch|#2913|< 2.1.8 (2.1.4 n/a)
 magento/module-swatches|Patch-Magento\_Swatches-rest-api-visual-swatches-fix.patch| |>= 2.1.4
@@ -82,7 +83,7 @@ magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix
 magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices_M2.2.6.patch|#15654|>=2.2.6
 magento/module-configurable-product|Patch-Magento_Configurable_M2.1.x-fix-get-price.patch|#5519|<2.1.10
 magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch|#7614|<2.2
-magento/module-config|Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch|#19070| 2.2.5 2.2.6 
+magento/module-config|Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch|#19070| 2.2.5 2.2.6
 
 **3th party modules:**
 
@@ -174,6 +175,9 @@ Full composer.json example:
             },
             "magento/module-catalog-rule": {
                 "Fix: https://magento.stackexchange.com/questions/67970/catalog-price-rules-disappear-after-mid-night": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch"
+            },
+            "magento/module-catalog-staging": {
+                "Fix: changing the date depending on the locale": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog_Staging-timestam.patch"
             },
             "magento/module-catalog-widget": {
                 "Fix: https://github.com/magento/magento2/issues/2913": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogWidget-M2.1.0-widgets-restore-conditions.patch"
