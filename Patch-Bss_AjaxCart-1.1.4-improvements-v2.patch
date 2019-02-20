@@ -1,0 +1,68 @@
+--- Controller/Index/Index.php
++++ Controller/Index/Index.php
+@@ -226,7 +226,7 @@ class Index extends \Magento\Framework\App\Action\Action
+ 
+             $resultItem = $product->getTypeId() == \Magento\GroupedProduct\Model\Product\Type\Grouped::TYPE_CODE ?
+                                 $this->dataObjectFactory->create()->setProduct($product)
+-                                : $this->registry->registry('last_added_quote_item');
++                                : $this->registry->registry(\Bss\AjaxCart\Model\Observer\ProductAddToCartAfter::LAST_ADDED_QUOTE_ITEM_KEY);
+             return $this->returnResult($resultItem, $this->relatedAdded);
+         } catch (\Magento\Framework\Exception\LocalizedException $e) {
+             $this->messageManager->addNoticeMessage(
+@@ -235,6 +235,7 @@ class Index extends \Magento\Framework\App\Action\Action
+ 
+             $result = [];
+             $result['error'] = true;
++            $result['message'] = $e->getMessage();
+             $result['view'] = true;
+             $result['url'] = $this->escaper->escapeUrl(
+                 $this->urlInterface->getUrl('ajaxcart/index/view', ['id' => $params['id']])
+@@ -252,6 +252,7 @@ class Index extends \Magento\Framework\App\Action\Action
+ 
+             $result = [];
+             $result['error'] = true;
++            $result['message'] = __('We can\'t add this item to your shopping cart right now.');
+ 
+             $resultJson = $this->resultFactory->create(ResultFactory::TYPE_JSON);
+             $resultJson->setData($result);
+@@ -330,6 +330,10 @@ class Index extends \Magento\Framework\App\Action\Action
+             $this->messageManager->addSuccessMessage($message);
+ 
+             $result['popup'] = $html;
++            $this->_eventManager->dispatch(
++                'bss_ajaxcart_result',
++                ['subject' => $this, 'item' => $resultItem, 'request' => $this->getRequest(), 'result' => &$result]
++            );
+ 
+             $resultJson = $this->resultFactory->create(ResultFactory::TYPE_JSON);
+             $resultJson->setData($result);
+--- Model/Observer/ProductAddToCartAfter.php
++++ Model/Observer/ProductAddToCartAfter.php
+@@ -23,6 +23,11 @@ use Magento\Framework\Event\ObserverInterface;
+ class ProductAddToCartAfter implements ObserverInterface
+ {
+     /**
++     *  Last added quote item register key
++     */
++    const LAST_ADDED_QUOTE_ITEM_KEY = 'last_added_quote_item';
++    
++    /**
+      * Ajax cart helper.
+      *
+      * @var \Bss\AjaxCart\Helper\Data
+@@ -60,7 +65,14 @@ class ProductAddToCartAfter implements ObserverInterface
+     {
+         if ($this->helper->isEnabled()) {
+             $resultItem = $observer->getQuoteItem();
+-            $this->registry->register('last_added_quote_item', $resultItem);
++            /**
++             * when have event multiple add to cart (reorder), we have trouble 
++             * with last quote item
++             */
++            if ($this->registry->registry(self::LAST_ADDED_QUOTE_ITEM_KEY) !== null) {
++                $this->registry->unregister(self::LAST_ADDED_QUOTE_ITEM_KEY);
++            }
++            $this->registry->register(self::LAST_ADDED_QUOTE_ITEM_KEY, $resultItem);
+         }
+     }
+ }
