@@ -16,17 +16,18 @@ magento/framework|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch"|#12362
 magento/framework|Patch-Magento\_Framework-M2.1.x-Curl-Post-Json.patch|#8373|< 2.2.0
 magento/framework-message-queue|Patch-Message-Queue-Consumer-Transaction.patch| |EE Only < 2.2.0
 magento/magento2-base|Patch-Magento\_Base-M2.1.0-widgets-values-utf8-decode.patch|#4232|< 2.1.8 (2.1.4 n/a)
-magento/magento2-base|Patch-Magento\_Base-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2
+magento/magento2-base|Patch-Magento\_Base-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2 < 2.2.6
 magento/magento2-base|Patch-Magento\_Base-M2.x.x-zoomed-photo-product.patch |MAGETWO-94989| < 2.1-2.3
 magento/magento2-base|Patch-Magento\_Base-M2.2.5-mangnifier-zoom-distortion.patch | | > 2.2.5
-magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-delete.patch|pull 14751|>= 2.2.0
+magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-delete.patch|pull 14751|>= 2.2.0 < 2.2.5
 magento/module-cron|Patch-Magento\_Cron-M2.1.4-cron-generate-schedule.patch|#4173|all as of 2.1.7 < 2.2.0
-magento/module-cron|Patch-Magento\_Cron-M2.2.0-2.2.3-prevent-already-running-v2.patch Patch-Magento\_Cron-M2.2.4-prevent-already-running-v2.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2.0-2.2.3  2.2.4+
+magento/module-cron|Patch-Magento\_Cron-M2.2.0-2.2.3-prevent-already-running-v2.patch Patch-Magento\_Cron-M2.2.4-prevent-already-running-v2.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2.0-2.2.4 < 2.2.6
 magento/module-directory|Patch-Magento\_Directory\_M2.1-zip-codes.patch|#6694|2.0.11+ < 2.2.0
 magento/module-email|Patch-Magento\_Email-M2.1.0-create-email-logo-1.patch| |< 2.1.8 (2.1.4 n/a)
 magento/module-review|Patch-Magento\_Review-M2.2-review-renderer-module-namespace.patch| |all as of 2.2.5
 magento/module-theme|Patch-Magento\_Email-M2.1.0-create-email-logo-2.patch| |< 2.1.8 (2.1.4 n/a)
 magento/magento2-base|Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame.patch| |>= 2.1.0 >= 2.2.0
+magento/magento2-base|Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame_M2.2.6.patch| |>= 2.1.0 >= 2.2.6
 magento/module-page-cache|Patch-Magento\_PageCache-M2.1.0-element-js-error-fix.patch|#6818|< 2.1.10 < 2.2.0
 magento/module-ui|Patch-Magento\_Ui-M2.1.0-allow-backend-to-know-the-origin-input-of-the-upload-request.patch|#5438|< 2.1.8 (2.1.4 n/a)
 magento/module-widget|Patch-Magento\_Widget-M2.1.0-widgets-restore-conditions.patch|#2913|< 2.1.9 (2.1.4 n/a)
@@ -47,8 +48,9 @@ magento/module-wishlist|Patch-Magento\_Wishlist-M2.x.x-wishlist-keep-item-in-car
 magento/module-ui|Patch-Magento\_Ui-M2.1.9-country-select-extra-empty-option.patch|2.1.9 buggy implementation link|>= 2.1.9 <2.2.0 ???
 magento/module-ui|Patch-Magento\_Ui-M2.1.x-layout-cache-empty-menu.patch|#8554|< 2.2.0
 magento/module-ui|Patch-Magento\_Ui-M2.2.x-invalid-date-range-fix.patch|#16119|< 2.3.0
+magento/module-ui|Patch-Magento-Ui_fix-reset-disabled-attributes.patch| |< 2.2.5
 magento/module-catalog|Patch-Magento\_Catalog-rest-api-auto-enable-product-fix.patch| |< 2.2.0 all as of 2.1.9
-magento/module-catalog|Patch-Magento\_Catalog-rest-api-single-store-fix.patch| |>= 2.1.0 >= 2.2.0
+magento/module-catalog|Patch-Magento\_Catalog-rest-api-single-store-fix.patch| |>= 2.1.0 >= 2.2.0 < 2.2.6
 magento/module-catalog|Patch-Magento\_Catalog-M2.1-fix-product-auto-startdates.patch|#4387|< 2.1.10 < 2.2.0
 magento/module-catalog|Patch-Magento\_Catalog-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|#7874|>=2.1.4 < 2.1.9
 magento/module-catalog|Patch-Magento-Catalog-M2.1.x-toolbar-default-sorting.patch|fix toolbar default sorting|>=2.1.0 <2.2.0
@@ -61,9 +63,11 @@ magento/module-catalog-inventory|Patch-Magento\_CatalogInventory-M2.1.x-stock-it
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch|Fix: Update stock item on product save|>=2.2.0 <2.2.4
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch|#12205|>=2.2.0 <2.2.5
 magento/module-catalog-rule|Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch|Q-67970|>= 2.1.0 >= 2.2.0
+magento/module-catalog-staging|Patch-Magento_Catalog_Staging-timestam.patch| | ?
 magento/module-catalog-url-rewrite|Patch-Magento\_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|#7874|>=2.1.4 < 2.1.9
 magento/module-catalog-widget|Patch-Magento\_CatalogWidget-M2.1.0-widgets-restore-conditions.patch|#2913|< 2.1.8 (2.1.4 n/a)
 magento/module-swatches|Patch-Magento\_Swatches-rest-api-visual-swatches-fix.patch| |>= 2.1.4
+magento/module-swatches|Patch-Magento_Swatches-rest-api-visual-swatches-fix_2.2.6.patch| |>= 2.2.6
 magento/module-swatches|Patch-Magento\_Swatches-M2.1.x-zero-value-attribute-options-fix.patch|#10266|<= 2.1.10
 magento/module-sales|Patch-Magento\_Sales-creditmemo-partial-tax-refund.patch|#10982|2.1-2.3
 magento/module-staging|Patch-Magento_Staging-M2.2-fix-duplicated-rollback.patch||2.2
@@ -76,13 +80,17 @@ magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.1.2-co
 magento/module-configurable-product|Patch-Magento\_Configurable-M2.1.3-lowest-price-provider.patch Patch-Magento\_Configurable-M2.1.6-lowest-price-provider.patch|#13933  #9796|<= 2.1.5  < 2.2.0
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.2.x-fix-empty-price-in-category-page.patch|On development stage|>=2.2.1
 magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices.patch|#15654|>=2.2.0 <2.3.0
+magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices_M2.2.6.patch|#15654|>=2.2.6
 magento/module-configurable-product|Patch-Magento_Configurable_M2.1.x-fix-get-price.patch|#5519|<2.1.10
 magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch|#7614|<2.2
+magento/module-config|Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch|#19070| 2.2.5 2.2.6
 
 **3th party modules:**
 
 **Module**|**Name**|**Fixes**|**Affected versions**
 :-----:|:-----:|:-----:|:-----:
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch|Fix configurable product price|\>=1.8.0
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.7-catalogrule-index-mview.patch|Subscribe to price index to reindex catalog rule changes on schedule|1.7.0-1.9.1
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch| |1.9
 amasty/module-improved-layered-navigation-root|Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch| |all as of 1.15.1
 amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-missing-option-error-fix.patch|  | \>=2.6.0 < 2.6.5
@@ -91,6 +99,7 @@ amasty/shopby-seo|Patch-Amasty-ShopbySeo-2.4.6-set-category-sort.patch| Add sort
 bsscommerce/ajaxcart|Patch-Bss_AjaxCart-1.1.4-improvements.patch| | \=1.1.4
 klarna/module-kco|Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch|Fix wrong function parameters order|>=5.0.5
 klarna/module-core|Patch-Klarna_Core-fix-customer-address-no-such-exception.patch|Fix no such entity with addressId error in Klarna checkout|>=4.2.3 (didn't check older versions)
+klarna/module-kco-core|Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch|Fix Incorrect dependency in class Klarna\KcoCore\Block\Info\Klarna |>=5.2 (didn't check older versions)
 dotmailer/dotmailer-magento2-extension|Patch-Dotdigitalgroup_email-subject-fix.patch|Fix utf8 encoding in the subject of email|?
 
 
@@ -135,6 +144,7 @@ Full composer.json example:
             "magento/magento2-base": {
                 "Fix MAGE_DIRS for CLI": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-cli.patch",
                 "Fix FotoramaJS for single frame": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame.patch",
+                "Fix FotoramaJS for single frame": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame_M2.2.6.patch",
                 "Fix: cache clean after di compile": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-setup-upgrade.patch",
                 "Fix: https://github.com/magento/magento2/issues/4232": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.1.0-widgets-values-utf8-decode.patch",
                 "Fix: https://github.com/magento/magento2/issues/5808": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.1.0-catalog-gallery-allowfullscreen-false.patch",
@@ -170,6 +180,9 @@ Full composer.json example:
             "magento/module-catalog-rule": {
                 "Fix: https://magento.stackexchange.com/questions/67970/catalog-price-rules-disappear-after-mid-night": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch"
             },
+            "magento/module-catalog-staging": {
+                "Fix: changing the date depending on the locale": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog_Staging-timestam.patch"
+            },
             "magento/module-catalog-widget": {
                 "Fix: https://github.com/magento/magento2/issues/2913": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogWidget-M2.1.0-widgets-restore-conditions.patch"
             },
@@ -184,6 +197,7 @@ Full composer.json example:
                 "Pull request: https://github.com/magento/magento2/pull/9796": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Configurable-M2.1.3-lowest-price-provider.patch",
                 "Pull request: https://github.com/magento/magento2/pull/9796": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Configurable-M2.1.6-lowest-price-provider.patch",
                 "Fix: https://github.com/magento/magento2/issues/15654": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices.patch",
+                "Fix: https://github.com/magento/magento2/issues/15654": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices_M2.2.6.patch",
                 "Fix: https://github.com/magento/magento2/issues/5519": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Configurable_M2.1.x-fix-get-price.patch"
             },
             "magento/module-cron": {
@@ -225,6 +239,7 @@ Full composer.json example:
             },
             "magento/module-swatches": {
                 "Fix: Add ability to set visual swatch by store ID as well as textual one": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Swatches-rest-api-visual-swatches-fix.patch",
+                "Fix: Add ability to set visual swatch by store ID as well as textual one": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Swatches-rest-api-visual-swatches-fix_2.2.6.patch",
                 "Fix: https://github.com/magento/magento2/issues/10266": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Swatches-M2.1.x-zero-value-attribute-options-fix.patch"
             },
             "magento/module-tax": {
@@ -239,7 +254,8 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/5438": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.1.0-allow-backend-to-know-the-origin-input-of-the-upload-request.patch",
                 "Fix: https://github.com/magento/magento2/issues/6281": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.1.x-multiselect-empty-save.patch",
                 "Fix: https://github.com/magento/magento2/issues/8554": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.1.x-layout-cache-empty-menu.patch",
-                "Fix: https://github.com/magento/magento2/issues/16119": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.2.x-invalid-date-range-fix.patch"
+                "Fix: https://github.com/magento/magento2/issues/16119": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.2.x-invalid-date-range-fix.patch",
+                "Fix reset of disabled attributes": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Ui_fix-reset-disabled-attributes.patch"
             },
             "magento/module-widget": {
                 "Fix: https://github.com/magento/magento2/issues/2913": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Widget-M2.1.0-widgets-restore-conditions.patch"
@@ -272,6 +288,9 @@ Full composer.json example:
             "klarna/module-core": {
                 "Fix no such entity with addressId error in Klarna checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Core-fix-customer-address-no-such-exception.patch"
             },
+            "klarna/module-kco-core": {
+                "Fix Incorrect dependency in class Klarna_KcoCore_Block_Info_Klarna": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch"
+            },
             "klarna/module-kco": {
                 "ReloadSummary action wrong order of parameters": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch"
             },
@@ -280,6 +299,13 @@ Full composer.json example:
             },
             "dotmailer/dotmailer-magento2-extension": {
                 "Fix utf8 encoding in the subject of email": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Dotdigitalgroup_email-subject-fix.patch"
+            },
+            "algolia/algoliasearch-magento-2": {
+                "Configurable product price fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch",
+                "Catalogrule index mview": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.7-catalogrule-index-mview.patch"
+            },
+            "magento/module-config": {
+                "Fix: https://github.com/magento/magento2/issues/19070": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch"
             }
         }
     }

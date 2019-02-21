@@ -1,0 +1,34 @@
+--- lib/web/fotorama/fotorama.js	2018-09-06 14:45:22.000000000 +0300
++++ lib/web/fotorama/fotorama.js	2019-01-16 15:49:08.833823592 +0300
+@@ -633,8 +633,12 @@
+             /**
+              * Set type of navigation. Can be thumbs or slides
+              */
+-            navtype: 'thumbs'
++            navtype: 'thumbs',
+
++           /**
++             * Enable show thumbnail if 1 image is present
++             */
++            enableifsingleframe: false
+         },
+
+         KEYBOARD_OPTIONS = {
+@@ -2032,7 +2036,7 @@
+         }
+
+         function stageNoMove() {
+-            var _noMove = size < 2 || $videoPlaying;
++            var _noMove = (size < 2 && !opts.enableifsingleframe) || $videoPlaying;
+             stageShaftTouchTail.noMove = _noMove || o_fade;
+             stageShaftTouchTail.noSwipe = _noMove || !opts.swipe;
+
+@@ -2087,7 +2091,7 @@
+                 classes[FLAG ? 'add' : 'remove'].push(value);
+             }
+
+-            if (size > 1) {
++            if (size > 1 || opts.enableifsingleframe) {
+                 o_nav = opts.nav;
+                 o_navTop = opts.navposition === 'top';
+                 classes.remove.push(selectClass);

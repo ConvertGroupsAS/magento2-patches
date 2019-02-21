@@ -1,0 +1,11 @@
+--- Helper/Entity/Product/PriceManager/ProductWithoutChildren.php	(date 1537264870000)
++++ Helper/Entity/Product/PriceManager/ProductWithoutChildren.php	(date 1548397104000)
+@@ -65,7 +65,7 @@
+             foreach ($currencies as $currencyCode) {
+                 $this->customData[$field][$currencyCode] = [];
+ 
+-                $price = $product->getPrice();
++                $price = $product->getPriceInfo()->getPrice('regular_price')->getValue();
+                 if ($currencyCode !== $this->baseCurrencyCode) {
+                     $price = $this->convertPrice($price, $currencyCode);
+                 }
