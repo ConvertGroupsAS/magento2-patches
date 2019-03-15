@@ -1,0 +1,11 @@
+--- view/base/web/js/form/element/abstract.js	2019-01-29 11:43:14.326668023 +0000
++++ view/base/web/js/form/element/abstract_1.js	2019-01-29 11:43:07.262857895 +0000
+@@ -451,7 +451,7 @@
+         toggleUseDefault: function (state) {
+             this.disabled(state);
+ 
+-            if (this.source) {
++            if (this.source && this.hasService()) {
+                 this.source.set('data.use_default.' + this.index, Number(state));
+             }
+         },

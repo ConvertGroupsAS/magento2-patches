@@ -1,0 +1,19 @@
+--- Block/Info/Klarna.php	2019-02-01 15:20:19.679727993 +0300
++++ Block/Info/Klarna.php	2019-02-01 15:20:36.567895152 +0300
+@@ -68,7 +68,6 @@
+         MerchantPortal $merchantPortal,
+         Resolver $locale,
+         DataObjectFactory $dataObjectFactory,
+-        State $appState,
+         array $data = []
+     ) {
+         parent::__construct($context, $data);
+@@ -77,7 +76,7 @@
+         $this->locale = $locale;
+         $this->merchantPortal = $merchantPortal;
+         $this->dataObjectFactory = $dataObjectFactory;
+-        $this->appState = $appState;
++        $this->appState = $context->getAppState();
+     }
+ 
+     /**

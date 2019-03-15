@@ -1,0 +1,11 @@
+--- Helper/ConfigHelper.php
++++ Helper/ConfigHelper.php
+@@ -373,7 +373,7 @@
+ 
+     public function getNumberOfJobToRun($storeId = null)
+     {
+-        return $this->configInterface->getValue(self::NUMBER_OF_JOB_TO_RUN, ScopeInterface::SCOPE_STORE, $storeId);
++        return (int)$this->configInterface->getValue(self::NUMBER_OF_JOB_TO_RUN, ScopeInterface::SCOPE_STORE, $storeId);
+     }
+ 
+     public function getRetryLimit($storeId = null)
