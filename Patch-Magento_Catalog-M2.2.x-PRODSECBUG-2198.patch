@@ -1,0 +1,76 @@
+--- Model/Product/ProductFrontendAction/Synchronizer.php	2018-09-04 16:50:52.000000000 +0300
++++ Model/Product/ProductFrontendAction/Synchronizer.php	2019-03-29 15:44:05.069029062 +0300
+@@ -138,7 +138,9 @@
+         $productIds = [];
+ 
+         foreach ($actions as $action) {
+-            $productIds[] = $action['product_id'];
++            if (isset($action['product_id']) && is_int($action['product_id'])) {
++                $productIds[] = $action['product_id'];
++            }
+         }
+ 
+         return $productIds;
+@@ -159,33 +161,36 @@
+         $customerId = $this->session->getCustomerId();
+         $visitorId = $this->visitor->getId();
+         $collection = $this->getActionsByType($typeId);
+-        $collection->addFieldToFilter('product_id', $this->getProductIdsByActions($productsData));
++        $productIds = $this->getProductIdsByActions($productsData);
++        if ($productIds) {
++            $collection->addFieldToFilter('product_id', $productIds);
++
++            /**
++             * Note that collection is also filtered by visitor id and customer id
++             * This collection shouldn't be flushed when visitor has products and then login
++             * It can remove only products for visitor, or only products for customer
++             *
++             * ['product_id' => 'added_at']
++             * @var ProductFrontendActionInterface $item
++             */
++            foreach ($collection as $item) {
++                $this->entityManager->delete($item);
++            }
++
++            foreach ($productsData as $productId => $productData) {
++                /** @var ProductFrontendActionInterface $action */
++                $action = $this->productFrontendActionFactory->create([
++                    'data' => [
++                        'visitor_id' => $customerId ? null : $visitorId,
++                            'customer_id' => $this->session->getCustomerId(),
++                            'added_at' => $productData['added_at'],
++                            'product_id' => $productId,
++                            'type_id' => $typeId
++                        ]
++                ]);
+ 
+-        /**
+-         * Note that collection is also filtered by visitor id and customer id
+-         * This collection shouldnt be flushed when visitor has products and then login
+-         * It can remove only products for visitor, or only products for customer
+-         *
+-         * ['product_id' => 'added_at']
+-         * @var ProductFrontendActionInterface $item
+-         */
+-        foreach ($collection as $item) {
+-            $this->entityManager->delete($item);
+-        }
+-
+-        foreach ($productsData as $productId => $productData) {
+-            /** @var ProductFrontendActionInterface $action */
+-            $action = $this->productFrontendActionFactory->create([
+-                'data' => [
+-                    'visitor_id' => $customerId ? null : $visitorId,
+-                    'customer_id' => $this->session->getCustomerId(),
+-                    'added_at' => $productData['added_at'],
+-                    'product_id' => $productId,
+-                    'type_id' => $typeId
+-                ]
+-            ]);
+-
+-            $this->entityManager->save($action);
++                $this->entityManager->save($action);
++            }
+         }
+     }
+ 

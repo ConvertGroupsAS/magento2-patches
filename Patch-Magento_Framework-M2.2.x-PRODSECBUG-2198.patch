@@ -1,0 +1,11 @@
+--- DB/Adapter/Pdo/Mysql.php	2018-09-04 16:50:34.000000000 +0300
++++ DB/Adapter/Pdo/Mysql.php	2019-03-29 15:47:57.665734744 +0300
+@@ -2904,7 +2904,7 @@
+                 if (isset($condition['to'])) {
+                     $query .= empty($query) ? '' : ' AND ';
+                     $to     = $this->_prepareSqlDateCondition($condition, 'to');
+-                    $query = $this->_prepareQuotedSqlCondition($query . $conditionKeyMap['to'], $to, $fieldName);
++                    $query .= $this->_prepareQuotedSqlCondition($conditionKeyMap['to'], $to, $fieldName);
+                 }
+             } elseif (array_key_exists($key, $conditionKeyMap)) {
+                 $value = $condition[$key];
