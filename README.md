@@ -15,6 +15,7 @@ magento/framework|Patch-Magento\_Framework-M2.2.5-force-unset-translation.patch|
 magento/framework|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch"|#12362| >= 2.2.0 < 2.2.6
 magento/framework|Patch-Magento\_Framework-M2.1.x-Curl-Post-Json.patch|#8373|< 2.2.0
 magento/framework|Patch-Magento\_Framework-M2.2.x-PRODSECBUG-2198.patch| < 2.2.8
+magento/framework|Patch-Magento\_Framework-M2.3.1-fix-elasticsearch-generation.patch| >= 2.3.1
 magento/framework-message-queue|Patch-Message-Queue-Consumer-Transaction.patch| |EE Only < 2.2.0
 magento/magento2-base|Patch-Magento\_Base-M2.1.0-widgets-values-utf8-decode.patch|#4232|< 2.1.8 (2.1.4 n/a)
 magento/magento2-base|Patch-Magento\_Base-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2 < 2.2.6
@@ -142,7 +143,8 @@ Full composer.json example:
                 "Fix: Unset translations for same key-value only if given force parameter": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.5-force-unset-translation.patch",
                 "Fix: https://github.com/magento/magento2/issues/12362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-drop-session-fix.patch",
                 "Fix: https://github.com/magento/magento2/issues/12362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.6-Fix-session-from-2.2.7.patch",
-                "Fix: SQL injection vulnerability": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-PRODSECBUG-2198.patch"
+                "Fix: SQL injection vulnerability": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-PRODSECBUG-2198.patch",
+                "Fix: https://github.com/magento/magento2/issues/21916": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.3.1-fix-elasticsearch-generation.patch"
             },
             "magento/magento2-base": {
                 "Fix MAGE_DIRS for CLI": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-cli.patch",
