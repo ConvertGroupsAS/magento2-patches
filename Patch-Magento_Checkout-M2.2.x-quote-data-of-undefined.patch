@@ -1,0 +1,11 @@
+--- view/frontend/web/js/model/quote.js
++++ view/frontend/web/js/model/quote.js
+@@ -7,7 +7,8 @@
+  */
+ define([
+     'ko',
+-    'underscore'
++    'underscore',
++    'domReady!'
+ ], function (ko, _) {
+     'use strict';

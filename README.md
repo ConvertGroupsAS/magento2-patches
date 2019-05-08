@@ -288,7 +288,8 @@ Full composer.json example:
                 "Fix: addresses from other store on checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.1.x-filter-addresses.patch",
                 "Fix: addresses from other store on checkout 2.2+": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.2.x-filter-addresses.patch",
                 "Fix: Add to cart form key": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-cart-form-key.patch",
-                "Fix: https://github.com/magento/magento2/issues/12362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-drop-session-fix.patch"
+                "Fix: https://github.com/magento/magento2/issues/12362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-drop-session-fix.patch",
+                "Fix: https://github.com/magento/magento2/pull/18503": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.2.x-quote-data-of-undefined.patch"
             },
             "klarna/module-core": {
                 "Fix no such entity with addressId error in Klarna checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Core-fix-customer-address-no-such-exception.patch"
