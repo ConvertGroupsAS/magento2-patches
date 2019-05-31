@@ -1,0 +1,14 @@
+--- Model/TypeLocator/SimpleType.orig.php	2019-03-15 05:07:42.000000000 +0300
++++ Model/TypeLocator/SimpleType.php	2019-05-31 11:54:59.051146986 +0300
+@@ -50,6 +50,11 @@
+         } catch (NoSuchEntityException $exception) {
+             return TypeProcessor::NORMALIZED_ANY_TYPE;
+         }
++
++        if ($attribute->getFrontendInput() === 'multiselect') {
++            return TypeProcessor::NORMALIZED_ANY_TYPE;
++        }
++
+         $backendType = $attribute->getBackendType();
+         $backendTypeMap = [
+             'static' => TypeProcessor::NORMALIZED_ANY_TYPE,
