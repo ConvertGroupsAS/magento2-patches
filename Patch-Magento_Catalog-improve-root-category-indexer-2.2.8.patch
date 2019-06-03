@@ -1,0 +1,45 @@
+--- Model/Indexer/Category/Product/AbstractAction.php	2017-12-27 17:22:47.000000000 +0300
++++ Model/Indexer/Category/Product/AbstractAction.php	2017-12-27 17:27:58.853276786 +0300
+@@ -134,9 +134,9 @@
+     {
+         foreach ($this->storeManager->getStores() as $store) {
+             if ($this->getPathFromCategoryId($store->getRootCategoryId())) {
+                 $this->currentStoreId = $store->getId();
+-                $this->reindexRootCategory($store);
+                 $this->reindexAnchorCategories($store);
+                 $this->reindexNonAnchorCategories($store);
++                $this->reindexRootCategory($store);
+             }
+         }
+     }
+@@ -704,8 +704,11 @@
+     protected function reindexRootCategory(\Magento\Store\Model\Store $store)
+     {
+         if ($this->isIndexRootCategoryNeeded()) {
++            $productSelect = $this->getAllProducts($store)->where(
++                'ccp.category_id = ' . $store->getRootCategoryId()
++            );
+             $selects = $this->prepareSelectsByRange(
+-                $this->getAllProducts($store),
++                $productSelect,
+                 'entity_id',
+                 self::RANGE_PRODUCT_STEP
+             );
+--- Model/Indexer/Category/Product/Action/Full.php
++++ Model/Indexer/Category/Product/Action/Full.php
+@@ -272,4 +272,15 @@
+             $this->publishData($store);
+         }
+     }
++
++    /**
++     * Check whether indexation of root category is needed
++     *
++     * @return bool
++     */
++    protected function isIndexRootCategoryNeeded()
++    {
++        return false;
++    }
+ }
++
