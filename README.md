@@ -25,6 +25,7 @@ magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-
 magento/module-cron|Patch-Magento\_Cron-M2.1.4-cron-generate-schedule.patch|#4173|all as of 2.1.7 < 2.2.0
 magento/module-cron|Patch-Magento\_Cron-M2.2.0-2.2.3-prevent-already-running-v2.patch Patch-Magento\_Cron-M2.2.4-prevent-already-running-v2.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2.0-2.2.4 < 2.2.6
 magento/module-directory|Patch-Magento\_Directory\_M2.1-zip-codes.patch|#6694|2.0.11+ < 2.2.0
+magento/module-eav|Patch-Magento\_Eav-M2.3-api-product-multiselect.patch|pull 21901|>= 2.3.0
 magento/module-email|Patch-Magento\_Email-M2.1.0-create-email-logo-1.patch| |< 2.1.8 (2.1.4 n/a)
 magento/module-review|Patch-Magento\_Review-M2.2-review-renderer-module-namespace.patch| |all as of 2.2.5
 magento/module-theme|Patch-Magento\_Email-M2.1.0-create-email-logo-2.patch| |< 2.1.8 (2.1.4 n/a)
@@ -62,6 +63,7 @@ magento/module-catalog|Patch-Magento\_Catalog-M2.1.3-category-indexer-range.patc
 magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-related-products-visibility-in-admin.patch|#13720|>= 2.2.1 >= 2.3.0
 magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-PRODSECBUG-2198.patch| < 2.2.8
 magento/module-catalog|Patch-Magento\_Catalog-improve-root-category-indexer-2.2.8.patch| > 2.2.8
+magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-skip-empty-custom-options-skus.patch | | 2.2.5
 magento/module-catalog-inventory|Patch-Magento\_CatalogInventory\_M2.1.3-hide-out-of-stock.patch|#8566|>=2.1.0 < 2.2.0
 magento/module-catalog-inventory|Patch-Magento\_CatalogInventory-M2.1.x-stock-item-events-fix.patch|#4857|<2.2.0
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch|Fix: Update stock item on product save|>=2.2.0 <2.2.4
@@ -178,7 +180,8 @@ Full composer.json example:
                 "Fix: Change toolbar default sorting": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Catalog-M2.1.x-toolbar-default-sorting.patch",
                 "Fix: https://github.com/magento/magento2/issues/13720": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.2.x-related-products-visibility-in-admin.patch",
                 "Fix: SQL injection vulnerability": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.2.x-PRODSECBUG-2198.patch",
-                "Fix: Brand page for multystore": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-improve-root-category-indexer-2.2.8.patch"
+                "Fix: Brand page for multystore": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-improve-root-category-indexer-2.2.8.patch",
+                "Fix: skip empty Custom Options SKUs to avoid adding extra delimiters to configurable product SKU": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.2.x-skip-empty-custom-options-skus.patch"
             },
             "magento/module-catalog-inventory": {
                 "Fix: https://github.com/magento/magento2/issues/8566": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory_M2.1.3-hide-out-of-stock.patch",
@@ -221,6 +224,9 @@ Full composer.json example:
             },
             "magento/module-directory": {
                 "Fix: https://github.com/magento/magento2/issues/6694": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Directory_M2.1-zip-codes.patch"
+            },
+            "magento/module-eav": {
+                "Pull: https://github.com/magento/magento2/pull/21901": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Eav-M2.3-api-product-multiselect.patch"
             },
             "magento/module-email": {
                 "https://github.com/magento/magento2/issues/5352": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Email-M2.1.0-create-email-logo-1.patch"

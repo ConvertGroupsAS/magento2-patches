@@ -1,0 +1,15 @@
+--- Model/Product/Option/Type/Select.php	2019-05-23 14:57:34.252542323 +0300
++++ Model/Product/Option/Type/Select.php	2019-05-23 15:12:41.468579643 +0300
+@@ -268,7 +268,11 @@
+             foreach (explode(',', $optionValue) as $value) {
+                 $optionSku = $option->getValueById($value);
+                 if ($optionSku) {
+-                    $skus[] = $optionSku->getSku();
++                    // the fix to skip empty Custom Options SKUs and avoid adding extra delimiters to configurable product SKU [SPAR-148]
++                    $optionSkuValue = trim($optionSku->getSku());
++                    if($optionSkuValue) {
++                        $skus[] = $optionSkuValue;
++                    }
+                 } else {
+                     if ($this->getListener()) {
+                         $this->getListener()->setHasError(true)->setMessage($this->_getWrongConfigurationMessage());
