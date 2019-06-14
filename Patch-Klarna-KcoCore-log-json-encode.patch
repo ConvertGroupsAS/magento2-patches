@@ -1,0 +1,11 @@
+--- Logger/Logger.php	2018-10-18 00:47:16.000000000 +0300
++++ Logger/Logger.php	2019-01-09 17:36:23.202570282 +0300
+@@ -82,7 +82,7 @@
+             $message = $this->cleanser->checkForSensitiveData($message);
+         }
+         if (is_array($message)) {
+-            $message = print_r($message, true);
++            $message = json_encode($message);
+         }
+         return parent::addRecord($level, $message, $context);
+     }
