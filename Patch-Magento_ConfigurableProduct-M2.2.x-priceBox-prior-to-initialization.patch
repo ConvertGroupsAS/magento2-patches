@@ -1,0 +1,11 @@
+--- view/frontend/web/js/configurable.js	2019-06-27 10:29:36.307264623 +0300
++++ view/frontend/web/js/configurable.js	2019-06-27 10:29:29.000000000 +0300
+@@ -81,7 +81,7 @@
+         _initializeOptions: function () {
+             var options = this.options,
+                 gallery = $(options.mediaGallerySelector),
+-                priceBoxOptions = $(this.options.priceHolderSelector).priceBox('option').priceConfig || null;
++                priceBoxOptions = $(this.options.priceHolderSelector).priceBox().priceBox('option').priceConfig || null;
+ 
+             if (priceBoxOptions && priceBoxOptions.optionTemplate) {
+                 options.optionTemplate = priceBoxOptions.optionTemplate;

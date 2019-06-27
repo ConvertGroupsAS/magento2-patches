@@ -1,0 +1,12 @@
+--- Helper/Entity/ProductHelper.php	2019-06-27 14:26:46.841223725 +0300
++++ Helper/Entity/ProductHelperCopy.php	2019-06-27 14:27:02.117259790 +0300
+@@ -1126,8 +1126,7 @@
+         }
+ 
+         if (!$this->configHelper->getShowOutOfStock($storeId)) {
+-            $stockItem = $this->stockRegistry->getStockItem($product->getId());
+-            if (! $stockItem->getIsInStock()) {
++            if (!$product->isSalable()) {
+                 throw (new ProductOutOfStockException())
+                     ->withProduct($product)
+                     ->withStoreId($storeId);
