@@ -15,18 +15,20 @@ magento/framework|Patch-Magento\_Framework-M2.2.5-force-unset-translation.patch|
 magento/framework|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch"|#12362| >= 2.2.0 < 2.2.6
 magento/framework|Patch-Magento\_Framework-M2.1.x-Curl-Post-Json.patch|#8373|< 2.2.0
 magento/framework|Patch-Magento\_Framework-M2.2.x-PRODSECBUG-2198.patch| < 2.2.8
-magento/framework|Patch-Magento\_Framework-M2.3.1-fix-elasticsearch-generation.patch| >= 2.3.1
+magento/framework|Patch-Magento\_Framework-M2.3.1-fix-elasticsearch-generation.patch| >= 2.3.1 < 2.3.2
 magento/framework-message-queue|Patch-Message-Queue-Consumer-Transaction.patch| |EE Only < 2.2.0
 magento/magento2-base|Patch-Magento\_Base-M2.1.0-widgets-values-utf8-decode.patch|#4232|< 2.1.8 (2.1.4 n/a)
 magento/magento2-base|Patch-Magento\_Base-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2 < 2.2.6
 magento/magento2-base|Patch-Magento\_Base-M2.x.x-zoomed-photo-product.patch |MAGETWO-94989| < 2.1-2.3
 magento/magento2-base|Patch-Magento\_Base-M2.2.5-mangnifier-zoom-distortion.patch | | > 2.2.5
+magento/magento2-base|Path-Magento\_Base-tests-cookie-and-session-add-to-return-null-value.patch| | >= 2.3.0
 magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-delete.patch|pull 14751|>= 2.2.0 < 2.2.5
 magento/module-cron|Patch-Magento\_Cron-M2.1.4-cron-generate-schedule.patch|#4173|all as of 2.1.7 < 2.2.0
 magento/module-cron|Patch-Magento\_Cron-M2.2.0-2.2.3-prevent-already-running-v2.patch Patch-Magento\_Cron-M2.2.4-prevent-already-running-v2.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2.0-2.2.4 < 2.2.6
 magento/module-directory|Patch-Magento\_Directory\_M2.1-zip-codes.patch|#6694|2.0.11+ < 2.2.0
 magento/module-eav|Patch-Magento\_Eav-M2.3-api-product-multiselect.patch|pull 21901|>= 2.3.0
 magento/module-email|Patch-Magento\_Email-M2.1.0-create-email-logo-1.patch| |< 2.1.8 (2.1.4 n/a)
+magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.x-Send-Error-Message.patch| | >= 2.3.0
 magento/module-review|Patch-Magento\_Review-M2.2-review-renderer-module-namespace.patch| |all as of 2.2.5
 magento/module-theme|Patch-Magento\_Email-M2.1.0-create-email-logo-2.patch| |< 2.1.8 (2.1.4 n/a)
 magento/magento2-base|Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame.patch| |>= 2.1.0 >= 2.2.0
@@ -165,6 +167,7 @@ Full composer.json example:
                 "Pull request: https://github.com/magento/magento2/pull/12497": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.2-cron-prevent-already-running.patch",
                 "Fix zoom in profuct page (Todo check: MAGETWO-94989)": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.x.x-zoomed-photo-product.patch",
                 "Fix magnifier zoom calculation": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.2.5-mangnifier-zoom-distortion.patch",
+                "Add null to return value for session and cookies": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.3.x-tests-cookie-and-session-add-to-return-null-value.patch"
             },
             "magento/module-developer": {
                 "Fix: https://github.com/magento/magento2/issues/4362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Developer-M2.1.x-disable-debug-loging.patch"
@@ -234,6 +237,9 @@ Full composer.json example:
             },
             "magento/module-email": {
                 "https://github.com/magento/magento2/issues/5352": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Email-M2.1.0-create-email-logo-1.patch"
+            },
+            "magento/module-elasticsearch": {
+                "Ignore Elastic Search Error": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Elasticsearch-M2.3.x-Send-Error-Message.patch"
             },
             "magento/module-google-tag-manager": {
                 "Fix: Check block before get Product List": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch_Magento_GoogleTagManager_M2.1.0-fix-empty-product-list-block.patch"

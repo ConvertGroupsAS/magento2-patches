@@ -1,0 +1,47 @@
+--- Elasticsearch5/SearchAdapter/Adapter.php	2019-06-27 10:32:17.476404835 +0300
++++ Elasticsearch5/SearchAdapter/Adapter.php	2019-06-27 10:29:48.512862242 +0300
+@@ -75,6 +75,16 @@
+     private $logger;
+
+     /**
++     * @var \Magento\Framework\Message\ManagerInterface
++     */
++    protected $messageManager;
++
++    /**
++     * @var \Magento\Framework\HTTP\PhpEnvironment\Response
++     */
++    protected $httpResponse;
++
++    /**
+      * @param ConnectionManager $connectionManager
+      * @param Mapper $mapper
+      * @param ResponseFactory $responseFactory
+@@ -97,6 +107,10 @@
+         $this->queryContainerFactory = $queryContainerFactory;
+         $this->logger = $logger ?: ObjectManager::getInstance()
+             ->get(LoggerInterface::class);
++        $this->messageManager = ObjectManager::getInstance()
++            ->get(\Magento\Framework\Message\ManagerInterface::class);
++        $this->httpResponse = ObjectManager::getInstance()
++            ->get(\Magento\Framework\App\Response\Http::class);
+     }
+
+     /**
+@@ -118,6 +132,16 @@
+             $this->logger->critical($e);
+             // return empty search result in case an exception is thrown from Elasticsearch
+             $rawResponse = self::$emptyRawResponse;
++            foreach($request->getAggregation() as $bucket) {
++                $rawResponse['aggregations'][$bucket->getName()] = [
++                    'buckets' => [],
++                    'count' => 0,
++                    'min' => 0,
++                    'max' => 0,
++                ];
++            }
++            $this->messageManager->addErrorMessage(__('The server is temporarily unavailable. Please try the search box to find what you are looking for.'));
++            $this->httpResponse->setHttpResponseCode(503);
+         }
+ 
+         $rawDocuments = isset($rawResponse['hits']['hits']) ? $rawResponse['hits']['hits'] : [];
