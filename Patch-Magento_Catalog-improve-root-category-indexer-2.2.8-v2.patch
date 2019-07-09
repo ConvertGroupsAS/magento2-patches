@@ -1,7 +1,6 @@
---- Model/Indexer/Category/Product/AbstractAction.php	2017-12-27 17:22:47.000000000 +0300
-+++ Model/Indexer/Category/Product/AbstractAction.php	2017-12-27 17:27:58.853276786 +0300
-@@ -134,9 +134,9 @@
-     {
+--- Model/Indexer/Category/Product/AbstractAction.php   2019-07-09 14:57:01.280954957 +0300
++++ Model/Indexer/Category/Product/AbstractAction.php   2019-07-09 14:56:04.000000000 +0300
+@@ -174,9 +174,9 @@
          foreach ($this->storeManager->getStores() as $store) {
              if ($this->getPathFromCategoryId($store->getRootCategoryId())) {
                  $this->currentStoreId = $store->getId();
@@ -12,8 +11,8 @@
              }
          }
      }
-@@ -704,8 +704,11 @@
-     protected function reindexRootCategory(\Magento\Store\Model\Store $store)
+@@ -860,8 +860,11 @@
+     protected function reindexRootCategory(Store $store)
      {
          if ($this->isIndexRootCategoryNeeded()) {
 +            $productSelect = $this->getAllProducts($store)->where(
@@ -25,6 +24,7 @@
                  'entity_id',
                  self::RANGE_PRODUCT_STEP
              );
+
 --- Model/Indexer/Category/Product/Action/Full.php
 +++ Model/Indexer/Category/Product/Action/Full.php
 @@ -272,4 +272,15 @@
