@@ -93,6 +93,7 @@ magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix
 magento/module-configurable-product|Patch-Magento_Configurable_M2.1.x-fix-get-price.patch|#5519|<2.1.10
 magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch|#7614|<2.2
 magento/module-config|Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch|#19070| 2.2.5 2.2.6
+magento/module-persistent-history|Patch-Magento_PersistentHistory-no-such-entity-with-address-id-fix.patch|#15115|2.2.x-2.3.0
 
 **3th party modules:**
 
@@ -334,6 +335,9 @@ Full composer.json example:
             },
             "magento/module-config": {
                 "Fix: https://github.com/magento/magento2/issues/19070": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch"
+            },
+            "magento/module-persistent-history": {
+                "Fix: https://github.com/magento/magento2/issues/15115": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_PersistentHistory-no-such-entity-with-address-id-fix.patch"
             }
         }
     }

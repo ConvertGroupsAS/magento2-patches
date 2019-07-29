@@ -1,0 +1,28 @@
+--- Model/CustomerEmulator.php	2018-09-06 13:29:26.000000000 +0300
++++ Model/CustomerEmulator.php	2019-07-29 14:48:24.342593291 +0300
+@@ -110,7 +110,11 @@
+         /** @var \Magento\Customer\Model\Customer $customer */
+         $customer = $this->_customerFactory->create()->load($customerId);
+         if ($defaultShipping = $customer->getDefaultShipping()) {
+-            $address = $this->addressRepository->getById($defaultShipping);
++            try {
++                $address = $this->addressRepository->getById($defaultShipping);
++            } catch (\Exception $e) {
++                $address = null;
++            }
+             if ($address) {
+                 $this->_customerSession->setDefaultTaxShippingAddress(
+                     [
+@@ -126,7 +130,11 @@
+ 
+         if ($defaultBilling = $customer->getDefaultBilling()) {
+             /** @var  \Magento\Customer\Model\Data\Address $address */
+-            $address = $this->addressRepository->getById($defaultBilling);
++            try {
++                $address = $this->addressRepository->getById($defaultBilling);
++            } catch (\Exception $e) {
++                $address = null;
++            }
+             if ($address) {
+                 $this->_customerSession->setDefaultTaxBillingAddress([
+                     'country_id' => $address->getCountryId(),
