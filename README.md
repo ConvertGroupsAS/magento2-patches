@@ -105,6 +105,7 @@ algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.p
 algolia/algoliasearch-magento-2|Patch-Algolia-AlgoliaSearch-1.10.0-out_of_stock_configurable.patch| |1.10.0
 amasty/module-improved-layered-navigation-root|Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch| |all as of 1.15.1
 amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-missing-option-error-fix.patch|  | \>=2.6.0 < 2.6.5
+amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-fix-empty-title-for-brand-page.patch|  | \>=2.6.5
 amasty/shopby-root|Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch| | 2.5.3
 amasty/shopby-seo|Patch-Amasty-ShopbySeo-2.4.6-set-category-sort.patch| Add sorting from category settings| \>=2.4.6 (didn't check older versions) <2.5.0
 bsscommerce/ajaxcart|Patch-Bss_AjaxCart-1.1.4-improvements.patch| | \=1.1.4
@@ -135,6 +136,7 @@ Full composer.json example:
             },
             "amasty/module-shop-by-brand": {
                  "Fix error when option was removed from attribute": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_ShopbyBrand-2.6.x-missing-option-error-fix.patch"
+                 "Fix epty brand column on brand page": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_ShopbyBrand-2.6.x-fix-empty-title-for-brand-page.patch"
             },
             "amasty/shopby-root": {
                  "Fix filters exception on category page": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch"

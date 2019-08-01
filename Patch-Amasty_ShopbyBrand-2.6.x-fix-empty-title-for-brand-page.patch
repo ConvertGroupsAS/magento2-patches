@@ -1,0 +1,10 @@
+--- Block/Widget/BrandListAbstract.php	2019-08-01 09:24:44.649765198 +0300
++++ Block/Widget/BrandListAbstract.php	2019-08-01 09:23:42.000000000 +0300
+@@ -136,6 +136,7 @@
+                 $setting = $this->getBrandOptionSettingByValue($option->getValue());
+                 $data = $this->getItemData($option, $setting);
+                 if ($data) {
++                    $data['label'] = $data['label'] ? $data['label']: $option->getLabel();
+                     $this->items[] = $data;
+                 }
+             }
