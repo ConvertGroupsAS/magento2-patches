@@ -1,0 +1,17 @@
+--- Controller/Cart/Add.php	(date 1565017447440)
++++ Controller/Cart/Add.php	(date 1565017447440)
+@@ -83,10 +83,10 @@
+     public function execute()
+     {
+         if (!$this->_formKeyValidator->validate($this->getRequest())) {
+-            $this->messageManager->addErrorMessage(
+-                __('Your session has expired')
+-            );
+-            return $this->resultRedirectFactory->create()->setPath('*/*/');
++//            $this->messageManager->addErrorMessage(
++//                __('Your session has expired')
++//            );
++//            return $this->resultRedirectFactory->create()->setPath('*/*/');
+         }
+ 
+         $params = $this->getRequest()->getParams();
