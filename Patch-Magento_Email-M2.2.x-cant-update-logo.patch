@@ -1,0 +1,16 @@
+--- Model/AbstractTemplate.origin.php	2018-06-14 15:32:18.000000000 +0300
++++ Model/AbstractTemplate.php	2019-08-09 10:54:07.121820297 +0300
+@@ -534,10 +534,10 @@
+      */
+     public function setForcedArea($templateId)
+     {
+-        if ($this->area) {
+-            throw new \LogicException(__('Area is already set'));
++        if ($this->area === null) {
++            $this->area = $this->emailConfig->getTemplateArea($templateId);
+         }
+-        $this->area = $this->emailConfig->getTemplateArea($templateId);
++
+         return $this;
+     }
+ 
