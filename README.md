@@ -67,6 +67,7 @@ magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-related-products-visibility
 magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-PRODSECBUG-2198.patch| < 2.2.8
 magento/module-catalog|Patch-Magento\_Catalog-improve-root-category-indexer-2.2.8.patch| > 2.2.8
 magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-skip-empty-custom-options-skus.patch | | 2.2.5
+magento/module-catalog|Patch-Magento-Catalog-M2.1.x-2.2.7-fix-save-customizable-options.patch| pull #16838 | >= 2.1.* <=2.3.1
 magento/module-catalog-inventory|Patch-Magento\_CatalogInventory\_M2.1.3-hide-out-of-stock.patch|#8566|>=2.1.0 < 2.2.0
 magento/module-catalog-inventory|Patch-Magento\_CatalogInventory-M2.1.x-stock-item-events-fix.patch|#4857|<2.2.0
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch|Fix: Update stock item on product save|>=2.2.0 <2.2.4
@@ -192,7 +193,8 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/13720": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.2.x-related-products-visibility-in-admin.patch",
                 "Fix: SQL injection vulnerability": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.2.x-PRODSECBUG-2198.patch",
                 "Fix: Brand page for multystore": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-improve-root-category-indexer-2.2.8.patch",
-                "Fix: skip empty Custom Options SKUs to avoid adding extra delimiters to configurable product SKU": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.2.x-skip-empty-custom-options-skus.patch"
+                "Fix: skip empty Custom Options SKUs to avoid adding extra delimiters to configurable product SKU": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.2.x-skip-empty-custom-options-skus.patch",
+                "Fix: https://github.com/magento/magento2/pull/16838": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Catalog-M2.1.x-2.2.7-fix-save-customizable-options.patch"
             },
             "magento/module-catalog-inventory": {
                 "Fix: https://github.com/magento/magento2/issues/8566": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory_M2.1.3-hide-out-of-stock.patch",

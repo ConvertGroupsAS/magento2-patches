@@ -1,0 +1,40 @@
+--- Model/Product/Option/Value.origin.php	2018-06-14 15:32:00.000000000 +0300
++++ Model/Product/Option/Value.php	2019-08-28 13:08:18.000000000 +0300
+@@ -204,27 +204,26 @@
+     public function saveValues()
+     {
+         foreach ($this->getValues() as $value) {
+-            $this->isDeleted(false);
+-            $this->setData(
++            $optionValue = clone $this;
++            $optionValue->isDeleted(false);
++            $optionValue->setData(
+                 $value
+             )->setData(
+                 'option_id',
+-                $this->getOption()->getId()
++                $optionValue->getOption()->getId()
+             )->setData(
+                 'store_id',
+-                $this->getOption()->getStoreId()
++                $optionValue->getOption()->getStoreId()
+             );
+-
+-            if ($this->getData('is_delete') == '1') {
+-                if ($this->getId()) {
+-                    $this->deleteValues($this->getId());
+-                    $this->delete();
++            if ($optionValue->getData('is_delete') == '1') {
++                if ($optionValue->getId()) {
++                    $optionValue->deleteValues($optionValue->getId());
++                    $optionValue->delete();
+                 }
+             } else {
+-                $this->save();
++                $optionValue->save();
+             }
+         }
+-        //eof foreach()
+         return $this;
+     }
+ 
