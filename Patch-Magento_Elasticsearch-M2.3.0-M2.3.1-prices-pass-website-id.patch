@@ -1,0 +1,19 @@
+--- Model/Adapter/BatchDataMapper/PriceFieldsProvider.orig.php	2019-03-15 05:02:14.000000000 +0300
++++ Model/Adapter/BatchDataMapper/PriceFieldsProvider.php	2019-09-22 22:12:25.201740872 +0300
+@@ -72,13 +72,15 @@
+      */
+     public function getFields(array $productIds, $storeId)
+     {
++        $websiteId = $this->storeManager->getStore($storeId)->getWebsiteId();
++
+         $priceData = $this->dataProvider->getSearchableAttribute('price')
+             ? $this->resourceIndex->getPriceIndexData($productIds, $storeId)
+             : [];
+ 
+         $fields = [];
+         foreach ($productIds as $productId) {
+-            $fields[$productId] = $this->getProductPriceData($productId, $storeId, $priceData);
++            $fields[$productId] = $this->getProductPriceData($productId, $websiteId, $priceData);
+         }
+ 
+         return $fields;
