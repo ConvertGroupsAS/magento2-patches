@@ -29,6 +29,7 @@ magento/module-directory|Patch-Magento\_Directory\_M2.1-zip-codes.patch|#6694|2.
 magento/module-eav|Patch-Magento\_Eav-M2.3-api-product-multiselect.patch|pull 21901|>= 2.3.0
 magento/module-email|Patch-Magento\_Email-M2.1.0-create-email-logo-1.patch| |< 2.1.8 (2.1.4 n/a)
 magento/module-email|Patch-Magento\_Email-M2.2.x-cant-update-logo.patch|pull 15137 |< 2.2.6 (2.2.4 n/a)
+magento/module-email|Patch-Magento\_Email-M2.2.8-2.3.2-No-Sid-In-Messages.patch| |>= 2.2.8 <=2.3.2
 magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.x-Send-Error-Message.patch| | >= 2.3.0
 magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.0-M2.3.1-prices-pass-website-id.patch| | >= 2.3.0 <= 2.3.1
 magento/module-review|Patch-Magento\_Review-M2.2-review-renderer-module-namespace.patch| |all as of 2.2.5
@@ -245,7 +246,8 @@ Full composer.json example:
             },
             "magento/module-email": {
                 "https://github.com/magento/magento2/issues/5352": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Email-M2.1.0-create-email-logo-1.patch",
-                "https://github.com/magento/magento2/issues/14968": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Email-M2.2.x-cant-update-logo.patch"
+                "https://github.com/magento/magento2/issues/14968": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Email-M2.2.x-cant-update-logo.patch",
+                "Disable adding ?SID in email message urls": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Email-M2.2.8-2.3.2-No-Sid-In-Messages.patch"
             },
             "magento/module-elasticsearch": {
                 "Ignore Elastic Search Error": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Elasticsearch-M2.3.x-Send-Error-Message.patch",

@@ -1,0 +1,10 @@
+--- Model/AbstractTemplate.php	2019-03-15 05:02:20.000000000 +0300
++++ Model/AbstractTemplate.php	2019-10-08 16:22:27.577883207 +0300
+@@ -735,6 +735,7 @@
+      */
+     public function getUrl(Store $store, $route = '', $params = [])
+     {
++        $params['_nosid'] = true;
+         $url = $this->urlModel->setScope($store);
+         if ($this->storeManager->getStore()->getId() != $store->getId()) {
+             $params['_scope_to_url'] = true;
