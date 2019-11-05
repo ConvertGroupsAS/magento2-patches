@@ -1,0 +1,19 @@
+--- Model/Carrier/Postnord.php	2019-11-05 13:31:27.000000000 +0300
++++ Model/Carrier/Postnord.php	2019-11-05 13:29:33.000000000 +0300
+@@ -171,11 +171,11 @@
+     {
+         $countryId = $this->_dataHelper->getStoreConfigFlag('shipping/origin/country_id') ? strtolower($this->_dataHelper->getStoreConfig('shipping/origin/country_id')) : '';
+         return array(
+-            $countryId . '_privatehome'   => $this->_dataHelper->getStoreConfig('carrier/vconnect_postnord/title') . ' ' . __('privatehome'),
+-            $countryId . '_commercial'    => $this->_dataHelper->getStoreConfig('carrier/vconnect_postnord/title') . ' ' . __('commercial'),
+-            $countryId . '_pickup'        => $this->_dataHelper->getStoreConfig('carrier/vconnect_postnord/title') . ' ' . __('pickup'),
+-            $countryId . '_valuemail'     => $this->_dataHelper->getStoreConfig('carrier/vconnect_postnord/title') . ' ' . __('valuemail'),
+-            $countryId . '_pickupinshop'  => $this->_dataHelper->getStoreConfig('carrier/vconnect_postnord/title') . ' ' . __('pickupinshop'),
++            $countryId . '_privatehome'   => $this->_dataHelper->getStoreConfig('carriers/vconnect_postnord/title') . ' ' . __('privatehome'),
++            $countryId . '_commercial'    => $this->_dataHelper->getStoreConfig('carriers/vconnect_postnord/title') . ' ' . __('commercial'),
++            $countryId . '_pickup'        => $this->_dataHelper->getStoreConfig('carriers/vconnect_postnord/title') . ' ' . __('pickup'),
++            $countryId . '_valuemail'     => $this->_dataHelper->getStoreConfig('carriers/vconnect_postnord/title') . ' ' . __('valuemail'),
++            $countryId . '_pickupinshop'  => $this->_dataHelper->getStoreConfig('carriers/vconnect_postnord/title') . ' ' . __('pickupinshop'),
+         );
+     }
+ 
