@@ -1,0 +1,33 @@
+--- etc/frontend/di.xml	2019-11-08 11:54:46.310840482 +0300
++++ etc/frontend/di.xml	2019-11-08 11:55:05.723126799 +0300
+@@ -30,30 +30,6 @@
+         </arguments>
+     </type>
+ 
+-    <virtualType name="categoryFilterList" type="Magento\Catalog\Model\Layer\FilterList">
+-        <arguments>
+-            <argument name="filterableAttributes" xsi:type="object">Algolia\AlgoliaSearch\Model\Layer\Category\FilterableAttributeList</argument>
+-            <argument name="filters" xsi:type="array">
+-                <item name="attribute" xsi:type="string">Algolia\AlgoliaSearch\Model\Layer\Filter\Attribute</item>
+-                <item name="price" xsi:type="string">Algolia\AlgoliaSearch\Model\Layer\Filter\Price</item>
+-                <item name="decimal" xsi:type="string">Algolia\AlgoliaSearch\Model\Layer\Filter\Decimal</item>
+-                <item name="category" xsi:type="string">Algolia\AlgoliaSearch\Model\Layer\Filter\Category</item>
+-            </argument>
+-        </arguments>
+-    </virtualType>
+-
+-    <virtualType name="searchFilterList" type="Magento\Catalog\Model\Layer\FilterList">
+-        <arguments>
+-            <argument name="filterableAttributes" xsi:type="object">Algolia\AlgoliaSearch\Model\Layer\Search\FilterableAttributeList</argument>
+-            <argument name="filters" xsi:type="array">
+-                <item name="attribute" xsi:type="string">Algolia\AlgoliaSearch\Model\Layer\Filter\Attribute</item>
+-                <item name="price" xsi:type="string">Algolia\AlgoliaSearch\Model\Layer\Filter\Price</item>
+-                <item name="decimal" xsi:type="string">Algolia\AlgoliaSearch\Model\Layer\Filter\Decimal</item>
+-                <item name="category" xsi:type="string">Algolia\AlgoliaSearch\Model\Layer\Filter\Category</item>
+-            </argument>
+-        </arguments>
+-    </virtualType>
+-
+     <virtualType name="Algolia\AlgoliaSearch\Block\Navigation\Category" type="Algolia\AlgoliaSearch\Block\Navigation">
+         <arguments>
+             <argument name="filterList" xsi:type="object">categoryFilterList</argument>
