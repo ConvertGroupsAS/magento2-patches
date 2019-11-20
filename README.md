@@ -105,6 +105,7 @@ magento/module-persistent-history|Patch-Magento_PersistentHistory-no-such-entity
 
 **Module**|**Name**|**Fixes**|**Affected versions**
 :-----:|:-----:|:-----:|:-----:
+algolia/algoliasearch-magento-2|Patch-Algolia-AlgoliaSearch-1.12.1-out_of_stock_configurable.patch| Fix configurable product checking for indexation|1.12.1
 algolia/algoliasearch-magento-2|Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch|Resolve conflict with Amasty modules (due searchFilterList virtualType iverriding)|1.12.1
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch|Fix configurable product price|\>=1.8.0
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.7-catalogrule-index-mview.patch|Subscribe to price index to reindex catalog rule changes on schedule|1.7.0-1.9.1
@@ -344,6 +345,7 @@ Full composer.json example:
                 "Fix utf8 encoding in the subject of email": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Dotdigitalgroup_email-subject-fix.patch"
             },
             "algolia/algoliasearch-magento-2": {
+                "Configurable product out of stock": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia-AlgoliaSearch-1.12.1-out_of_stock_configurable.patch",
                 "Configurable product price fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch",
                 "Configurable product price fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch",
                 "Catalogrule index mview": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.7-catalogrule-index-mview.patch",
