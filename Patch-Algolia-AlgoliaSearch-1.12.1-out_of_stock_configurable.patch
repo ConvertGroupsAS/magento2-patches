@@ -1,0 +1,19 @@
+--- Helper/Entity/ProductHelper.php	2019-11-20 16:31:39.968751415 +0300
++++ Helper/Entity/ProductHelper.php	2019-11-20 16:33:41.650168629 +0300
+@@ -1163,10 +1163,15 @@
+         return true;
+     }
+ 
++    /**
++     * @param Product $product
++     * @param int $storeId
++     * @return bool|int
++     */
+     public function productIsInStock($product, $storeId)
+     {
+         $stockItem = $this->stockRegistry->getStockItem($product->getId());
+ 
+-        return $stockItem->getIsInStock();
++        return ($product->isSaleable() && $stockItem->getIsInStock());
+     }
+ }
