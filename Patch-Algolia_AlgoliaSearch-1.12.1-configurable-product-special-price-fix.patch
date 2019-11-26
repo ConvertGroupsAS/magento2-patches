@@ -1,0 +1,11 @@
+--- Helper/Entity/Product/PriceManager/ProductWithoutChildren.php	2019-11-26 14:17:05.917031929 +0300
++++ Helper/Entity/Product/PriceManager/ProductWithoutChildren.php	2019-11-26 14:28:19.748387567 +0300
+@@ -155,7 +155,7 @@
+             $specialPrices[$groupId][] = $this->getRulePrice($groupId, $product);
+ 
+             // The price with applied catalog rules
+-            $specialPrices[$groupId][] = $product->getFinalPrice(); // The product's special price
++            $specialPrices[$groupId][] = $product->getPriceInfo()->getPrice('final_price')->getValue(); // The product's special price
+ 
+             $specialPrices[$groupId] = array_filter($specialPrices[$groupId], function ($price) {
+                 return $price > 0;
