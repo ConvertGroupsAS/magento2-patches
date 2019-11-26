@@ -346,7 +346,7 @@ Full composer.json example:
             },
             "algolia/algoliasearch-magento-2": {
                 "Special price with configurable product fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.11.0-configurable-product-special-price-fix.patch",
-                "Configurable product price fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch",
+                "Resolve conflict with Amasty": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch",
                 "Configurable product price fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch",
                 "Catalogrule index mview": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.7-catalogrule-index-mview.patch",
                 "Configurable product out of stock": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia-AlgoliaSearch-1.10.0-out_of_stock_configurable.patch"
