@@ -88,7 +88,7 @@ magento/module-developer|Patch-Magento\_Developer-M2.1.x-disable-debug-loging.pa
 magento/module-checkout|Patch-Magento\_Checkout-cart-form-key.patch|disable form key validation|>= 2.1.0 >= 2.2.0
 magento/module-checkout|Patch-Magento\_Checkout-M2.3.x-cart-form-key.patch|disable form key validation|>= 2.3.0
 magento/module-checkout|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch|#12362| >= 2.2.0 < 2.2.6
-magento/module-checkout|Patch-Magento_Checkout-M2.3.3-replace-ES6-code.patch|#22119| >=2.3.0 <2.3.4
+magento/module-checkout|Patch-Magento\_Checkout-M2.3.3-replace-ES6-code.patch|#22119| >=2.3.0 <2.3.4
 magento/framework|Patch-Magento\_Framework-M2.2.6-Fix-session-from-2.2.7.patch|#12362| 2.2.6
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.1.2-configurable-options-sort.patch|#7441|2.1.x
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.2.x-priceBox-prior-to-initialization.patch|#8018|2.2.x
