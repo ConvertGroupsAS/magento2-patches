@@ -1,0 +1,31 @@
+--- view/frontend/web/js/model/address-converter.orig.js	2019-11-26 12:40:29.767358011 +0300
++++ view/frontend/web/js/model/address-converter.js	2019-11-26 12:12:11.197000000 +0300
+@@ -9,8 +9,9 @@
+     'jquery',
+     'Magento_Checkout/js/model/new-customer-address',
+     'Magento_Customer/js/customer-data',
+-    'mage/utils/objects'
+-], function ($, address, customerData, mageUtils) {
++    'mage/utils/objects',
++    'underscore'
++], function ($, address, customerData, mageUtils, _) {
+     'use strict';
+ 
+     var countryData = customerData.get('directory-data');
+@@ -59,11 +60,12 @@
+             delete addressData['region_id'];
+ 
+             if (addressData['custom_attributes']) {
+-                addressData['custom_attributes'] = Object.entries(addressData['custom_attributes'])
+-                    .map(function (customAttribute) {
++                addressData['custom_attributes'] = _.map(
++                    addressData['custom_attributes'],
++                    function (value, key) {
+                         return {
+-                            'attribute_code': customAttribute[0],
+-                            'value': customAttribute[1]
++                            'attribute_code': key,
++                            'value': value
+                         };
+                     });
+             }

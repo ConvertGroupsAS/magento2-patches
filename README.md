@@ -88,6 +88,7 @@ magento/module-developer|Patch-Magento\_Developer-M2.1.x-disable-debug-loging.pa
 magento/module-checkout|Patch-Magento\_Checkout-cart-form-key.patch|disable form key validation|>= 2.1.0 >= 2.2.0
 magento/module-checkout|Patch-Magento\_Checkout-M2.3.x-cart-form-key.patch|disable form key validation|>= 2.3.0
 magento/module-checkout|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch|#12362| >= 2.2.0 < 2.2.6
+magento/module-checkout|Patch-Magento_Checkout-M2.3.3-replace-ES6-code.patch|#22119| >=2.3.0 <2.3.4
 magento/framework|Patch-Magento\_Framework-M2.2.6-Fix-session-from-2.2.7.patch|#12362| 2.2.6
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.1.2-configurable-options-sort.patch|#7441|2.1.x
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.2.x-priceBox-prior-to-initialization.patch|#8018|2.2.x
@@ -327,7 +328,8 @@ Full composer.json example:
                 "Fix: Add to cart form key": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-cart-form-key.patch",
                 "Fix: Add to cart form key": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3.x-cart-form-key.patch",
                 "Fix: https://github.com/magento/magento2/issues/12362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-drop-session-fix.patch",
-                "Fix: https://github.com/magento/magento2/pull/18503": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.2.x-quote-data-of-undefined.patch"
+                "Fix: https://github.com/magento/magento2/pull/18503": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.2.x-quote-data-of-undefined.patch",
+                "Fix: https://github.com/magento/magento2/issues/22119": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3.3-replace-ES6-code.patch"
             },
             "klarna/module-core": {
                 "Fix no such entity with addressId error in Klarna checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Core-fix-customer-address-no-such-exception.patch"
