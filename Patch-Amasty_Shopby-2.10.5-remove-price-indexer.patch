@@ -1,0 +1,11 @@
+--- Plugin/CatalogRule/Model/Indexer/RuleProductPricesPersistor.php	2019-01-08 13:00:20.000000000 +0300
++++ Plugin/CatalogRule/Model/Indexer/RuleProductPricesPersistor.php	2019-12-03 09:56:50.733301102 +0300
+@@ -31,7 +31,7 @@
+      */
+     public function afterExecute($subject, $result)
+     {
+-        $this->indexerRegistry->get(Processor::INDEXER_ID)->invalidate();
++        // $this->indexerRegistry->get(Processor::INDEXER_ID)->invalidate();
+         return $result;
+     }
+ }

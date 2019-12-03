@@ -1,0 +1,13 @@
+diff --git a/Helper/Entity/Product/PriceManager/ProductWithoutChildren.php b/Helper/Entity/Product/PriceManager/ProductWithoutChildren.php
+index 37966a6..4edc72d 100644
+--- a/Helper/Entity/Product/PriceManager/ProductWithoutChildren.php
++++ b/Helper/Entity/Product/PriceManager/ProductWithoutChildren.php
+@@ -65,7 +65,7 @@ abstract class ProductWithoutChildren
+             foreach ($currencies as $currencyCode) {
+                 $this->customData[$field][$currencyCode] = [];
+ 
+-                $price = $product->getPrice();
++                $price = $product->getPriceInfo()->getPrice('regular_price')->getValue();
+                 if ($currencyCode !== $this->baseCurrencyCode) {
+                     $price = $this->convertPrice($price, $currencyCode);
+                 }
