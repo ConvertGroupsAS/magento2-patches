@@ -6,6 +6,17 @@ Patches to be applied by https://github.com/cweagans/composer-patches
 **Module**|**Name**|**Fixes**|**Affected versions**
 :-----:|:-----:|:-----:|:-----:
 magento/magento2-base|Patch-Magento\_Base-cli.patch Patch-Magento\_Base-M2.2.x-cli.patch| |< 2.2.0 >=2.2.0
+magento/magento2-base|Patch-Magento\_Base-M2.1.0-widgets-values-utf8-decode.patch|#4232|< 2.1.8 (2.1.4 n/a)
+magento/magento2-base|Patch-Magento\_Base-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2 < 2.2.6
+magento/magento2-base|Patch-Magento\_Base-M2.x.x-zoomed-photo-product.patch |MAGETWO-94989| < 2.1-2.3
+magento/magento2-base|Patch-Magento\_Base-M2.2.5-mangnifier-zoom-distortion.patch | | > 2.2.5
+magento/magento2-base|Path-Magento\_Base-tests-cookie-and-session-add-to-return-null-value.patch| | >= 2.3.0
+magento/magento2-base|Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame.patch| |>= 2.1.0 >= 2.2.0
+magento/magento2-base|Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame_M2.2.6.patch| |>= 2.1.0 >= 2.2.6
+magento/magento2-base|Patch-Magento\_Base-setup-upgrade.patch| |>= 2.1.0 >= 2.2.0
+magento/magento2-base|Patch-Magento\_Base-M2.1.0-catalog-gallery-allowfullscreen-false.patch|#5808|< 2.2.0
+magento/magento2-base|Patch-Magento\_Base-M2.1.0-errors-apply-skin-fix.patch|#4305|< 2.2.0
+magento/magento2-base|Patch-Magento\_Base-2.2.x-fotorama-ios.patch|#13226|>=2.2.0 < 2.3.0
 magento/framework|Patch-Magento\_Framework-mview-changelog-increment.patch|pull 13577|2.1-2.3
 magento/framework|Patch-Magento\_Framework-M2.1.x-Search-Adapter-Mysql-Mapper-fix-order.patch|#9020|<2.2.0
 magento/framework|Patch-Magento\_Framework-customer-grid.patch|#10838|2.2 (probably all)
@@ -16,12 +27,8 @@ magento/framework|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch"|#12362
 magento/framework|Patch-Magento\_Framework-M2.1.x-Curl-Post-Json.patch|#8373|< 2.2.0
 magento/framework|Patch-Magento\_Framework-M2.2.x-PRODSECBUG-2198.patch| < 2.2.8
 magento/framework|Patch-Magento\_Framework-M2.3.1-fix-elasticsearch-generation.patch| >= 2.3.1 < 2.3.2
+magento/framework|Patch-Magento\_Framework-M2.2.6-Fix-session-from-2.2.7.patch|#12362| 2.2.6
 magento/framework-message-queue|Patch-Message-Queue-Consumer-Transaction.patch| |EE Only < 2.2.0
-magento/magento2-base|Patch-Magento\_Base-M2.1.0-widgets-values-utf8-decode.patch|#4232|< 2.1.8 (2.1.4 n/a)
-magento/magento2-base|Patch-Magento\_Base-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2 < 2.2.6
-magento/magento2-base|Patch-Magento\_Base-M2.x.x-zoomed-photo-product.patch |MAGETWO-94989| < 2.1-2.3
-magento/magento2-base|Patch-Magento\_Base-M2.2.5-mangnifier-zoom-distortion.patch | | > 2.2.5
-magento/magento2-base|Path-Magento\_Base-tests-cookie-and-session-add-to-return-null-value.patch| | >= 2.3.0
 magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-delete.patch|pull 14751|>= 2.2.0 < 2.2.5
 magento/module-cron|Patch-Magento\_Cron-M2.1.4-cron-generate-schedule.patch|#4173|all as of 2.1.7 < 2.2.0
 magento/module-cron|Patch-Magento\_Cron-M2.2.0-2.2.3-prevent-already-running-v2.patch Patch-Magento\_Cron-M2.2.4-prevent-already-running-v2.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2.0-2.2.4 < 2.2.6
@@ -34,25 +41,19 @@ magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.x-Send-Error-Mess
 magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.0-M2.3.1-prices-pass-website-id.patch| | >= 2.3.0 <= 2.3.1
 magento/module-review|Patch-Magento\_Review-M2.2-review-renderer-module-namespace.patch| |all as of 2.2.5
 magento/module-theme|Patch-Magento\_Email-M2.1.0-create-email-logo-2.patch| |< 2.1.8 (2.1.4 n/a)
-magento/magento2-base|Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame.patch| |>= 2.1.0 >= 2.2.0
-magento/magento2-base|Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame_M2.2.6.patch| |>= 2.1.0 >= 2.2.6
 magento/module-page-cache|Patch-Magento\_PageCache-M2.1.0-element-js-error-fix.patch|#6818|< 2.1.10 < 2.2.0
-magento/module-ui|Patch-Magento\_Ui-M2.1.0-allow-backend-to-know-the-origin-input-of-the-upload-request.patch|#5438|< 2.1.8 (2.1.4 n/a)
 magento/module-widget|Patch-Magento\_Widget-M2.1.0-widgets-restore-conditions.patch|#2913|< 2.1.9 (2.1.4 n/a)
-magento/magento2-base|Patch-Magento\_Base-setup-upgrade.patch| |>= 2.1.0 >= 2.2.0
 magento/module-cms|Patch-Magento\_Cms-page-layout-handles.patch|#9247|< 2.2.0
 magento/module-tax|Patch-Magento-Tax-M2.1.0-free-shipping-availability-on-backend.patch|?|>=2.1.4 >=2.2.0
 magento/module-tax|Patch-Magento\_Tax-M2.X.X-sequence-fix.patch| |< 2.2.0
 magento/module-quote|Patch-Magento\_Quote-M2.2.0-2.2.3-totals-extension-attributes.patch|#12819|2.2.0-2.2.3
-magento/magento2-base|Patch-Magento\_Base-M2.1.0-catalog-gallery-allowfullscreen-false.patch|#5808|< 2.2.0
-magento/magento2-base|Patch-Magento\_Base-M2.1.0-errors-apply-skin-fix.patch|#4305|< 2.2.0
-magento/magento2-base|Patch-Magento\_Base-2.2.x-fotorama-ios.patch|#13226|>=2.2.0 < 2.3.0
 magento/module-sales-rule|Patch-Magento\_SalesRule-M2.1.6-fix-to-date-parameter.patch|#6762|< 2.2.0
 magento/module-google-tag-manager|Patch\_Magento\_GoogleTagManager\_M2.1.0-fix-empty-product-list-block.patch| |EE Only
 magento/module-customer|Patch-Magento\_Customer-M2.1.9-array-street-line.patch (Patch-Magento\_Customer-array-street-line.patch)Patch-Webshipr\_Shipping-get-shipping-address-fix.patch|pull #10582 2.1.9 - error saving shipping address in checkout|>= 2.1.9 < 2.2.2
 magento/module-customer|Patch-Magento\_Customer-M2.1.9-generate-new-formkey-wishlist.patch|#11825|>=2.1.9 >=2.2.0 <2.2.4(maybe)
 magento/module-wishlist|Patch-Magento\_Wishlist-M2.x.x-add-to-wishlist-login-register.patch|#11825|>=2.1.9 >=2.2.0 <2.2.4(maybe)
 magento/module-wishlist|Patch-Magento\_Wishlist-M2.x.x-wishlist-keep-item-in-cart.patch| |\>=2.1.0
+magento/module-ui|Patch-Magento\_Ui-M2.1.0-allow-backend-to-know-the-origin-input-of-the-upload-request.patch|#5438|< 2.1.8 (2.1.4 n/a)
 magento/module-ui|Patch-Magento\_Ui-M2.1.9-country-select-extra-empty-option.patch|2.1.9 buggy implementation link|>= 2.1.9 <2.2.0 ???
 magento/module-ui|Patch-Magento\_Ui-M2.1.x-layout-cache-empty-menu.patch|#8554|< 2.2.0
 magento/module-ui|Patch-Magento\_Ui-M2.2.x-invalid-date-range-fix.patch|#16119|< 2.3.0
@@ -89,7 +90,6 @@ magento/module-checkout|Patch-Magento\_Checkout-cart-form-key.patch|disable form
 magento/module-checkout|Patch-Magento\_Checkout-M2.3.x-cart-form-key.patch|disable form key validation|>= 2.3.0
 magento/module-checkout|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch|#12362| >= 2.2.0 < 2.2.6
 magento/module-checkout|Patch-Magento\_Checkout-M2.3.3-replace-ES6-code.patch|#22119| >=2.3.0 <2.3.4
-magento/framework|Patch-Magento\_Framework-M2.2.6-Fix-session-from-2.2.7.patch|#12362| 2.2.6
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.1.2-configurable-options-sort.patch|#7441|2.1.x
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.2.x-priceBox-prior-to-initialization.patch|#8018|2.2.x
 magento/module-configurable-product|Patch-Magento\_Configurable-M2.1.3-lowest-price-provider.patch Patch-Magento\_Configurable-M2.1.6-lowest-price-provider.patch|#13933  #9796|<= 2.1.5  < 2.2.0
