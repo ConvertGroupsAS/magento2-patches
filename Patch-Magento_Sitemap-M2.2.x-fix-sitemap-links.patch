@@ -1,0 +1,48 @@
+--- Model/Observer.orig.php	2019-12-13 11:14:27.881913529 +0300
++++ Model/Observer.php	2019-12-13 11:16:50.448802050 +0300
+@@ -67,24 +67,32 @@
+     protected $inlineTranslation;
+ 
+     /**
++     * @var \Magento\Store\Model\App\Emulation
++     */
++    protected $appEmulation;
++
++    /**
+      * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
+      * @param \Magento\Sitemap\Model\ResourceModel\Sitemap\CollectionFactory $collectionFactory
+      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
+      * @param \Magento\Framework\Mail\Template\TransportBuilder $transportBuilder
+      * @param \Magento\Framework\Translate\Inline\StateInterface $inlineTranslation
++     * @param \Magento\Store\Model\App\Emulation $appEmulation
+      */
+     public function __construct(
+         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
+         \Magento\Sitemap\Model\ResourceModel\Sitemap\CollectionFactory $collectionFactory,
+         \Magento\Store\Model\StoreManagerInterface $storeManager,
+         \Magento\Framework\Mail\Template\TransportBuilder $transportBuilder,
+-        \Magento\Framework\Translate\Inline\StateInterface $inlineTranslation
++        \Magento\Framework\Translate\Inline\StateInterface $inlineTranslation,
++        \Magento\Store\Model\App\Emulation $appEmulation
+     ) {
+         $this->_scopeConfig = $scopeConfig;
+         $this->_collectionFactory = $collectionFactory;
+         $this->_storeManager = $storeManager;
+         $this->_transportBuilder = $transportBuilder;
+         $this->inlineTranslation = $inlineTranslation;
++        $this->appEmulation = $appEmulation;
+     }
+ 
+     /**
+@@ -112,6 +120,11 @@
+         foreach ($collection as $sitemap) {
+             /* @var $sitemap \Magento\Sitemap\Model\Sitemap */
+             try {
++                $this->appEmulation->startEnvironmentEmulation(
++                    $sitemap->getStoreId(),
++                    \Magento\Framework\App\Area::AREA_FRONTEND,
++                    true
++                );
+                 $sitemap->generateXml();
+             } catch (\Exception $e) {
+                 $errors[] = $e->getMessage();
