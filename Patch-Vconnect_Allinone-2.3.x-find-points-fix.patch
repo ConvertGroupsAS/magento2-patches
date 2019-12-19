@@ -1,0 +1,33 @@
+--- Controller/Postnord/Points.php	2019-12-19 17:27:38.203383435 +0300
++++ Controller/Postnord/Points.php	2019-12-19 17:27:04.991000000 +0300
+@@ -135,6 +135,30 @@
+             $street = 'test';
+         }
+ 
++        //PATCH
++        if (!$this->getRequest()->getPost('fromSearch')) {
++            if ($vconnectData = $quote->getVconnectPostnordData()) {
++                $vconnectData = json_decode($vconnectData, true);
++
++                if (isset($vconnectData['data']['postcode'])) {
++                    $postcode = $vconnectData['data']['postcode'];
++                }
++
++                if (isset($vconnectData['data']['countryCode'])) {
++                    $countryId = $vconnectData['data']['countryCode'];
++                }
++
++                if (isset($vconnectData['data']['countryCode'])) {
++                    $countryId = $vconnectData['data']['countryCode'];
++                }
++
++                if (isset($vconnectData['data']['streetName'])) {
++                    $street = $vconnectData['data']['streetName'];
++                }
++            }
++        }
++        //ENDPATCH
++
+         $apiKey = $this->dataHelper->getStoreConfig('carriers/vconnectpostnord/api_key');
+ 
+         $response = $this->vconnectApiclient->findPoints($apiKey, $postcode, $countryId, 10, $street);

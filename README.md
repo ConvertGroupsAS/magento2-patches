@@ -128,6 +128,10 @@ klarna/module-core|Patch-Klarna_Core-fix-customer-address-no-such-exception.patc
 klarna/module-kco-core|Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch|Fix Incorrect dependency in class Klarna\KcoCore\Block\Info\Klarna |>=5.2 (didn't check older versions)
 klarna/module-kco-core|Patch-Klarna-KcoCore-log-json-encode.patch|Convert logs from array to json format |>=5.2.1 (didn't check older versions)
 dotmailer/dotmailer-magento2-extension|Patch-Dotdigitalgroup_email-subject-fix.patch|Fix utf8 encoding in the subject of email|?
+vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch|Fixed allowed methods in carrier model| >=2.3.0
+vconnect/module-allinone|Patch-Vconnect_Allinone-allowed-methods-fix.patch|Fixed allowed methods in carrier model| >=2.2.0 < 2.3.0
+vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch|Address fix for findPoints call| >=2.3.0
+vconnect/module-allinone|Patch-Vconnect_Allinone-fix-js-for-ie.patch|Fixed JS for IE| >=2.2.0
 
 
 Full composer.json example:
@@ -370,6 +374,12 @@ Full composer.json example:
             },
             "magento/module-sitemap": {
                 "Fix: https://github.com/magento/magento2/issues/19565": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sitemap-M2.2.x-fix-sitemap-links.patch"
+            },
+            "vconnect/module-allinone": {
+                "Fixed allowed methods in carrier model": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch",
+                "Address fix for findPoints call": "patches/Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch"
+                "Fixed JS for IE": "patches/Patch-Vconnect_Allinone-fix-js-for-ie.patch",
+                "Fixed Postnord refreshing": "patches/Patch-Vconnect_Allinone-prevent-postnord-refreshing-v2.patch"
             }
         }
     }
