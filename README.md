@@ -377,9 +377,9 @@ Full composer.json example:
             },
             "vconnect/module-allinone": {
                 "Fixed allowed methods in carrier model": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch",
-                "Address fix for findPoints call": "patches/Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch"
-                "Fixed JS for IE": "patches/Patch-Vconnect_Allinone-fix-js-for-ie.patch",
-                "Fixed Postnord refreshing": "patches/Patch-Vconnect_Allinone-prevent-postnord-refreshing-v2.patch"
+                "Address fix for findPoints call": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch"
+                "Fixed JS for IE": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vconnect_Allinone-fix-js-for-ie.patch",
+                "Fixed Postnord refreshing": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vconnect_Allinone-prevent-postnord-refreshing-v2.patch"
             }
         }
     }
