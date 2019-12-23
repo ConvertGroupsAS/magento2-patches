@@ -1,0 +1,50 @@
+--- Model/Session.orig.php	2019-09-19 12:30:52.000000000 +0200
++++ Model/Session.php	2019-11-16 18:30:32.417908405 +0100
+@@ -7,6 +7,7 @@
+ 
+ use Magento\Customer\Api\Data\CustomerInterface;
+ use Magento\Framework\App\ObjectManager;
++use Magento\Quote\Api\Data\CartInterface;
+ use Magento\Quote\Model\Quote;
+ use Magento\Quote\Model\QuoteIdMaskFactory;
+ use Psr\Log\LoggerInterface;
+@@ -267,14 +268,10 @@
+ 
+             if (!$this->getQuoteId()) {
+                 if ($this->_customerSession->isLoggedIn() || $this->_customer) {
+-                    $customerId = $this->_customer
+-                        ? $this->_customer->getId()
+-                        : $this->_customerSession->getCustomerId();
+-                    try {
+-                        $quote = $this->quoteRepository->getActiveForCustomer($customerId);
+-                        $this->setQuoteId($quote->getId());
+-                    } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
+-                        $this->logger->critical($e);
++                    $quoteByCustomer = $this->getQuoteByCustomer();
++                    if ($quoteByCustomer !== null) {
++                        $this->setQuoteId($quoteByCustomer->getId());
++                        $quote = $quoteByCustomer;
+                     }
+                 } else {
+                     $quote->setIsCheckoutCart(true);
+@@ -569,4 +566,20 @@
+     {
+         return $this->isQuoteMasked;
+     }
++
++    /**
++     * Returns quote for customer if there is any
++     */
++    private function getQuoteByCustomer(): ?CartInterface
++    {
++        $customerId = $this->_customer
++            ? $this->_customer->getId()
++            : $this->_customerSession->getCustomerId();
++        try {
++            $quote = $this->quoteRepository->getActiveForCustomer($customerId);
++        } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
++            $quote = null;
++        }
++        return $quote;
++    }
+ }
