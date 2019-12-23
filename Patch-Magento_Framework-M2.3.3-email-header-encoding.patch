@@ -1,0 +1,10 @@
+--- Mail/Template/TransportBuilder.orig.php	2019-09-19 12:30:58.000000000 +0300
++++ Mail/Template/TransportBuilder.php	2019-11-26 15:32:03.584683935 +0300
+@@ -394,6 +394,7 @@
+                 );
+         }
+         $mimePart = $this->mimePartInterfaceFactory->create(['content' => $content]);
++        $this->messageData['encoding'] = $mimePart->getCharset();
+         $this->messageData['body'] = $this->mimeMessageInterfaceFactory->create(
+             ['parts' => [$mimePart]]
+         );

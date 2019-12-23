@@ -1,0 +1,11 @@
+--- Search/Adapter/Mysql/ResponseFactory.orig.php	2019-12-02 13:14:23.297000000 +0100
++++ Search/Adapter/Mysql/ResponseFactory.php	2019-12-02 13:17:03.589856781 +0100
+@@ -69,7 +69,7 @@
+             [
+                 'documents' => $documents,
+                 'aggregations' => $aggregations,
+-                'total' => $rawResponse['total']
++                'total' => isset($rawResponse['total']) ? $rawResponse['total'] : 0
+             ]
+         );
+     }

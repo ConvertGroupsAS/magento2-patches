@@ -1,0 +1,15 @@
+--- Model/ResourceModel/Packaging/PackagingRepository.orig.php	2019-09-10 10:47:30.000000000 +0300
++++ Model/ResourceModel/Packaging/PackagingRepository.php	2019-11-28 15:30:24.503414918 +0300
+@@ -110,6 +110,12 @@
+      */
+     public function getList(SearchCriteriaInterface $searchCriteria): array
+     {
++        /** @var \Temando\Shipping\Model\Config\ModuleConfig $moduleConfig */
++        $moduleConfig = \Magento\Framework\App\ObjectManager::getInstance()->get(\Temando\Shipping\Model\Config\ModuleConfig::class);
++        if (!$moduleConfig->isEnabled()) {
++            return [];
++        }
++
+         try {
+             $pagination = $this->paginationFactory->create([
+                 'offset' => $searchCriteria->getCurrentPage(),

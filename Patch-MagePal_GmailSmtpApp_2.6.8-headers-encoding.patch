@@ -1,0 +1,11 @@
+--- Model/ZendMailTwo/Smtp.orig.php	2019-10-19 18:18:56.000000000 +0300
++++ Model/ZendMailTwo/Smtp.php	2019-11-27 12:01:33.276558965 +0300
+@@ -85,7 +85,7 @@
+          * Fix new encoding issue introduce in 2.2.10 with Amazon SES
+          * Temporary fix since 2.2.x will be deprecated shortly and 2.3.3 uses new logic.
+          */
+-        $message = Message::fromString($message->toString());
++        //$message = Message::fromString($message->toString());
+ 
+         //Set reply-to path
+         switch ($dataHelper->getConfigSetReturnPath()) {
