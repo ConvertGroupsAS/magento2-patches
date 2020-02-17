@@ -1,0 +1,655 @@
+{
+    "algolia/algoliasearch-magento-2": {
+        "Fixed processing of queue jobs": {
+            "file": "Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch",
+            "version": "*"
+        }
+    },
+    "amasty/module-improved-layered-navigation-root": {
+        "Fix: Remove unnecessary configurable block": {
+            "file": "Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch",
+            "version": "*"
+        }
+    },
+    "amasty/shopby-seo": {
+        "Fix: Broken product links in cart on different stores": {
+            "file": "Patch-Amasty_ShopbySeo-cart-broken-links-fix.patch",
+            "version": "*"
+        },
+        "Fix: Add sorting from category settings": {
+            "file": "Patch-Amasty-ShopbySeo-2.4.6-set-category-sort.patch",
+            "version": "*"
+        },
+        "Fix: Broken product links in cart on different stores and fix wishlist": {
+            "file": "Patch-Amasty_ShopbySeo-cart-broken-links-fix-v2.patch",
+            "version": "*"
+        }
+    },
+    "amasty/module-shop-by-brand": {
+         "Fix error when option was removed from attribute": {
+            "file": "Patch-Amasty_ShopbyBrand-2.6.x-missing-option-error-fix.patch",
+            "version": "*"
+        },
+         "Fix epty brand column on brand page": {
+            "file": "Patch-Amasty_ShopbyBrand-2.6.x-fix-empty-title-for-brand-page.patch",
+            "version": "*"
+        }
+    },
+    "amasty/shopby-root": {
+         "Fix filters exception on category page": {
+            "file": "Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch",
+            "version": "*"
+        }
+    },
+    "magento/framework-message-queue": {
+        "Fix Consumer Transactions Callbacks": {
+            "file": "Patch-Message-Queue-Consumer-Transaction.patch",
+            "version": "*"
+        }
+    },
+    "magento/framework": {
+        "Pull request: https://github.com/magento/magento2/pull/13577": {
+            "file": "Patch-Magento_Framework-mview-changelog-increment.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/9020": {
+            "file": "Patch-Magento_Framework-M2.1.x-Search-Adapter-Mysql-Mapper-fix-order.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/10838": {
+            "file": "Patch-Magento_Framework-customer-grid.patch",
+            "version": "*"
+        },
+        "Pull request: https://github.com/magento/magento2/pull/2226": {
+            "file": "Patch-Magento_Framework-M2.2.x-fix-sessions.patch",
+            "version": "*"
+        },
+        "Pull request: https://github.com/magento/magento2/pull/8373": {
+            "file": "Patch-Magento_Framework-M2.1.x-Curl-Post-Json.patch",
+            "version": "*"
+        },
+        "Pull request: https://github.com/magento/magento2/pull/12497": {
+            "file": "Patch-Magento_Framework-M2.2-cron-prevent-already-running.patch",
+            "version": "*"
+        },
+        "Fix: Unset translations for same key-value only if given force parameter": {
+            "file": "Patch-Magento_Framework-M2.2.5-force-unset-translation.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/12362": {
+            "file": "Patch-Magento_Framework-M2.2.x-drop-session-fix.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/12362": {
+            "file": "Patch-Magento_Framework-M2.2.6-Fix-session-from-2.2.7.patch",
+            "version": "*"
+        },
+        "Fix: SQL injection vulnerability": {
+            "file": "Patch-Magento_Framework-M2.2.x-PRODSECBUG-2198.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/21916": {
+            "file": "Patch-Magento_Framework-M2.3.1-fix-elasticsearch-generation.patch",
+            "version": "*"
+        }
+    },
+    "magento/magento2-base": {
+        "Fix MAGE_DIRS for CLI (<2.2)": {
+            "file": "Patch-Magento_Base-cli.patch",
+            "version": "< 2.2.0"
+        },
+        "Fix MAGE_DIRS for CLI (2.2+)": {
+            "file": "Patch-Magento_Base-M2.2.x-cli.patch",
+            "version": ">=2.2.0"
+        },
+        "Fix FotoramaJS for single frame": {
+            "file": "Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame.patch",
+            "version": "*"
+        },
+        "Fix FotoramaJS for single frame": {
+            "file": "Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame_M2.2.6.patch",
+            "version": "*"
+        },
+        "Fix: cache clean after di compile": {
+            "file": "Patch-Magento_Base-setup-upgrade.patch",
+            "version": "*"
+        },
+        "Fix: cache clean after di compile": {
+            "file": "Patch-Magento_Base-setup-upgrade_2.2.6.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/4232": {
+            "file": "Patch-Magento_Base-M2.1.0-widgets-values-utf8-decode.patch",
+            "version": "< 2.1.4 || > 2.1.4",
+            "description": "UTF-8 special character issue in widgets"
+        },
+        "Fix: https://github.com/magento/magento2/issues/5808": {
+            "file": "Patch-Magento_Base-M2.1.0-catalog-gallery-allowfullscreen-false.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/4305": {
+            "file": "Patch-Magento_Base-M2.1.0-errors-apply-skin-fix.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/13226": {
+            "file": "Patch-Magento_Base-2.2.x-fotorama-ios.patch",
+            "version": "*"
+        },
+        "Pull request: https://github.com/magento/magento2/pull/12497": {
+            "file": "Patch-Magento_Base-M2.2-cron-prevent-already-running.patch",
+            "version": "*"
+        },
+        "Fix zoom in profuct page (Todo check: MAGETWO-94989)": {
+            "file": "Patch-Magento_Base-M2.x.x-zoomed-photo-product.patch",
+            "version": "*"
+        },
+        "Fix magnifier zoom calculation": {
+            "file": "Patch-Magento_Base-M2.2.5-mangnifier-zoom-distortion.patch",
+            "version": "*"
+        },
+        "Add null to return value for session and cookies": {
+            "file": "Patch-Magento_Base-M2.3.x-tests-cookie-and-session-add-to-return-null-value.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-developer": {
+        "Fix: https://github.com/magento/magento2/issues/4362": {
+            "file": "Patch-Magento_Developer-M2.1.x-disable-debug-loging.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-cache-invalidate": {
+        "Fix: https://github.com/magento/magento2/issues/7614": {
+            "file": "Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-catalog": {
+        "Fix: https://github.com/magento/magento2/issues/8018": {
+            "file": "Patch-Magento_Catalog-M2.1.3-category-indexer-range.patch",
+            "version": "*"
+        },
+        "Fix: Product auto enable on REST API update": {
+            "file": "Patch-Magento_Catalog-rest-api-auto-enable-product-fix.patch",
+            "version": "*"
+        },
+        "Fix: Set default website insteed of admin on REST API create product": {
+            "file": "Patch-Magento_Catalog-rest-api-single-store-fix.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/5438": {
+            "file": "Patch-Magento_Catalog-M2.1.0-image-attribute-backend-model-hardcoded-attribute-code-removal.patch",
+            "version": "*"
+        },
+        "Fix: catalog_product_flat does not update column with empty value. Fix options linking.": {
+            "file": "Patch-Magento_Catalog-M2.1.4-product-flat-indexer-v2.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/4387": {
+            "file": "Patch-Magento_Catalog-M2.1-fix-product-auto-startdates.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/7874": {
+            "file": "Patch-Magento_Catalog-M2.1.4-regeneration-without-changes-fix.patch",
+            "version": "*"
+        },
+        "Fix: Change toolbar default sorting": {
+            "file": "Patch-Magento-Catalog-M2.1.x-toolbar-default-sorting.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/13720": {
+            "file": "Patch-Magento_Catalog-M2.2.x-related-products-visibility-in-admin.patch",
+            "version": "*"
+        },
+        "Fix: SQL injection vulnerability": {
+            "file": "Patch-Magento_Catalog-M2.2.x-PRODSECBUG-2198.patch",
+            "version": "*"
+        },
+        "Fix: Brand page for multystore": {
+            "file": "Patch-Magento_Catalog-improve-root-category-indexer-2.2.8.patch",
+            "version": "*"
+        },
+        "Fix: skip empty Custom Options SKUs to avoid adding extra delimiters to configurable product SKU": {
+            "file": "Patch-Magento_Catalog-M2.2.x-skip-empty-custom-options-skus.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/pull/16838": {
+            "file": "Patch-Magento-Catalog-M2.1.x-2.2.7-fix-save-customizable-options.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-catalog-inventory": {
+        "Fix: https://github.com/magento/magento2/issues/8566": {
+            "file": "Patch-Magento_CatalogInventory_M2.1.3-hide-out-of-stock.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/4857": {
+            "file": "Patch-Magento_CatalogInventory-M2.1.x-stock-item-events-fix.patch",
+            "version": "*"
+        },
+        "Fix: Update stock item on product save": {
+            "file": "Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/12205": {
+            "file": "Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-catalog-rule": {
+        "Fix: https://magento.stackexchange.com/questions/67970/catalog-price-rules-disappear-after-mid-night": {
+            "file": "Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-catalog-staging": {
+        "Fix: changing the date depending on the locale": {
+            "file": "Patch-Magento_Catalog_Staging-timestam.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-catalog-widget": {
+        "Fix: https://github.com/magento/magento2/issues/2913": {
+            "file": "Patch-Magento_CatalogWidget-M2.1.0-widgets-restore-conditions.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-cms": {
+        "Pull request: https://github.com/magento/magento2/pull/9247": {
+            "file": "Patch-Magento_Cms-page-layout-handles.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-cms-url-rewrite": {
+        "Pull request: https://github.com/magento/magento2/pull/14751": {
+            "file": "Patch-M2.2-Magento_CmsUrlRewrite-global-rewrite-delete.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-configurable-product": {
+        "https://github.com/magento/magento2/issues/7441": {
+            "file": "Patch-Magento_ConfigurableProduct-M2.1.2-configurable-options-sort.patch",
+            "version": "*"
+        },
+        "Pull request: https://github.com/magento/magento2/pull/9796": {
+            "file": "Patch-Magento_Configurable-M2.1.3-lowest-price-provider.patch",
+            "version": "*"
+        },
+        "Pull request: https://github.com/magento/magento2/pull/9796": {
+            "file": "Patch-Magento_Configurable-M2.1.6-lowest-price-provider.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/15654": {
+            "file": "Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/15654": {
+            "file": "Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices_M2.2.6.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/15654": {
+            "file": "Patch-Magento_ConfigurableProduct-M2.2.8-fix-min-max-prices.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/5519": {
+            "file": "Patch-Magento_Configurable_M2.1.x-fix-get-price.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/8018": {
+            "file": "Patch-Magento_ConfigurableProduct-M2.2.x-priceBox-prior-to-initialization.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-cron": {
+        "Fix: https://github.com/magento/magento2/issues/4173": {
+            "file": "Patch-Magento_Cron-M2.1.4-cron-generate-schedule.patch",
+            "version": "*"
+        },
+        "Pull request: https://github.com/magento/magento2/pull/12497": {
+            "file": "Patch-Magento_Cron-M2.2.0-2.2.3-prevent-already-running-v2.patch",
+            "version": "*"
+        },
+        "Pull request: https://github.com/magento/magento2/pull/12497": {
+            "file": "Patch-Magento_Cron-M2.2.4-prevent-already-running-v2.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-customer": {
+        "Fix: https://github.com/magento/magento2/pull/10582": {
+            "file": "Patch-Magento_Customer-M2.1.9-array-street-line.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/11825": {
+            "file": "Patch-Magento_Customer-M2.1.9-generate-new-formkey-wishlist.patch",
+            "version": "*"
+        },
+        "Fix: Disable cache for customer section data": {
+            "file": "Patch_Magento_Customer-M2.1.4-customer-section-load-fix.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-directory": {
+        "Fix: https://github.com/magento/magento2/issues/6694": {
+            "file": "Patch-Magento_Directory_M2.1-zip-codes.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-eav": {
+        "Pull: https://github.com/magento/magento2/pull/21901": {
+            "file": "Patch-Magento_Eav-M2.3-api-product-multiselect.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-email": {
+        "https://github.com/magento/magento2/issues/5352": {
+            "file": "Patch-Magento_Email-M2.1.0-create-email-logo-1.patch",
+            "version": "*"
+        },
+        "https://github.com/magento/magento2/issues/14968": {
+            "file": "Patch-Magento_Email-M2.2.x-cant-update-logo.patch",
+            "version": "*"
+        },
+        "Disable adding ?SID in email message urls": {
+            "file": "Patch-Magento_Email-M2.2.8-2.3.2-No-Sid-In-Messages.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-elasticsearch": {
+        "Ignore Elastic Search Error": {
+            "file": "Patch-Magento_Elasticsearch-M2.3.x-Send-Error-Message.patch",
+            "version": "*"
+        },
+        "Website prices: https://github.com/magento/magento2/pull/21216": {
+            "file": "Patch-Magento_Elasticsearch-M2.3.0-M2.3.1-prices-pass-website-id.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-google-tag-manager": {
+        "Fix: Check block before get Product List": {
+            "file": "Patch_Magento_GoogleTagManager_M2.1.0-fix-empty-product-list-block.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-page-cache": {
+        "Fix: https://github.com/magento/magento2/issues/6818": {
+            "file": "Patch-Magento_PageCache-M2.1.0-element-js-error-fix.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-review": {
+        "Fix review namespace": {
+            "file": "Patch-Magento_Review-M2.2-review-renderer-module-namespace.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-sales": {
+        "Fix: Partial creditmemo tax amount": {
+            "file": "Patch-Magento_Sales-creditmemo-partial-tax-refund.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-sales-rule": {
+        "Fix: https://github.com/magento/magento2/issues/6762": {
+            "file": "Patch-Magento_SalesRule-M2.1.6-fix-to-date-parameter.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-staging": {
+        "Fix: Duplicated rollback": {
+            "file": "Patch-Magento_Staging-M2.2-fix-duplicated-rollback.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-store": {
+        "Fix emulation in admin store (Todo check: MAGETWO-59649)": {
+            "file": "Patch-Magento_Store-emulation.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-swatches": {
+        "Fix: Add ability to set visual swatch by store ID as well as textual one": {
+            "file": "Patch-Magento_Swatches-rest-api-visual-swatches-fix.patch",
+            "version": "*"
+        },
+        "Fix: Add ability to set visual swatch by store ID as well as textual one": {
+            "file": "Patch-Magento_Swatches-rest-api-visual-swatches-fix_2.2.6.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/10266": {
+            "file": "Patch-Magento_Swatches-M2.1.x-zero-value-attribute-options-fix.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-tax": {
+        "Fix: https://github.com/magento/magento2/issues/2939": {
+            "file": "Patch-Magento-Tax-M2.1.0-free-shipping-availability-on-backend.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/7801": {
+            "file": "Patch-Magento_Tax-M2.X.X-sequence-fix.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-theme": {
+        "https://github.com/magento/magento2/issues/5352": {
+            "file": "Patch-Magento_Email-M2.1.0-create-email-logo-2.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-ui": {
+        "Fix broken by: MAGETWO-57144": {
+            "file": "Patch-Magento_Ui-M2.1.9-country-select-extra-empty-option.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/5438": {
+            "file": "Patch-Magento_Ui-M2.1.0-allow-backend-to-know-the-origin-input-of-the-upload-request.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/6281": {
+            "file": "Patch-Magento_Ui-M2.1.x-multiselect-empty-save.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/8554": {
+            "file": "Patch-Magento_Ui-M2.1.x-layout-cache-empty-menu.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/16119": {
+            "file": "Patch-Magento_Ui-M2.2.x-invalid-date-range-fix.patch",
+            "version": "*"
+        },
+        "Fix reset of disabled attributes": {
+            "file": "Patch-Magento-Ui_fix-reset-disabled-attributes.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-widget": {
+        "Fix: https://github.com/magento/magento2/issues/2913": {
+            "file": "Patch-Magento_Widget-M2.1.0-widgets-restore-conditions.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-wishlist": {
+        "Fix: https://github.com/magento/magento2/issues/11825": {
+            "file": "Patch-Magento_Wishlist-M2.x.x-add-to-wishlist-login-register.patch",
+            "version": "*"
+        },
+        "Add ability to keep item in cart after adding to wishlist": {
+            "file": "Patch-Magento_Wishlist-M2.x.x-wishlist-keep-item-in-cart.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-offline-shipping": {
+        "Fix: https://github.com/magento/magento2/issues/10704": {
+            "file": "Patch-Magento_OfflineShipping-M2.X-free-shipping-cart-rule-fix.patch",
+            "version": "*"
+        },
+        "Add ability create freeshipping by cart rule for Flatrate": {
+            "file": "Patch-Magento_OfflineShipping_freeshipping_for_flatrate-M2.2.4.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-catalog-url-rewrite": {
+        "Fix: https://github.com/magento/magento2/issues/7874 depended on module-catalog patch": {
+            "file": "Patch-Magento_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch",
+            "version": "*"
+        }
+    },
+    "mirasvit/module-feed": {
+        "Fix: DI compile without DB v2": {
+            "file": "Patch-Mirasvit_Feed-1.0.60-fix-di-compile-without-db.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-quote": {
+        "Fix: Reset broken shipping address in quote": {
+            "file": "Patch-Magento_Quote-M2.1.x-reset-broken-shipping-address.patch",
+            "version": "*"
+        },
+        "Fix: Broken product links in cart on different stores": {
+            "file": "Patch-Magento_Quote-M2.1.x-cart-product-links-fix.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/12819": {
+            "file": "Patch-Magento_Quote-M2.2.0-2.2.3-totals-extension-attributes.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-checkout": {
+        "Fix: addresses from other store on checkout": {
+            "file": "Patch-Magento_Checkout-M2.1.x-filter-addresses.patch",
+            "version": "*"
+        },
+        "Fix: addresses from other store on checkout 2.2+": {
+            "file": "Patch-Magento_Checkout-M2.2.x-filter-addresses.patch",
+            "version": "*"
+        },
+        "Fix: Add to cart form key": {
+            "file": "Patch-Magento_Checkout-cart-form-key.patch",
+            "version": "*"
+        },
+        "Fix: Add to cart form key": {
+            "file": "Patch-Magento_Checkout-M2.3.x-cart-form-key.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/12362": {
+            "file": "Patch-Magento_Framework-M2.2.x-drop-session-fix.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/pull/18503": {
+            "file": "Patch-Magento_Checkout-M2.2.x-quote-data-of-undefined.patch",
+            "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/22119": {
+            "file": "Patch-Magento_Checkout-M2.3.3-replace-ES6-code.patch",
+            "version": "*"
+        }
+    },
+    "klarna/module-core": {
+        "Fix no such entity with addressId error in Klarna checkout": {
+            "file": "Patch-Klarna_Core-fix-customer-address-no-such-exception.patch",
+            "version": "*"
+        }
+    },
+    "klarna/module-kco-core": {
+        "Fix Incorrect dependency in class Klarna_KcoCore_Block_Info_Klarna": {
+            "file": "Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch",
+            "version": "*"
+        },
+        "Convert logs from array to json format": {
+            "file": "Patch-Klarna-KcoCore-log-json-encode.patch",
+            "version": "*"
+        }
+    },       
+    "klarna/module-kco": {
+        "ReloadSummary action wrong order of parameters": {
+            "file": "Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch",
+            "version": "*"
+        }
+    },
+    "bsscommerce/ajaxcart": {
+        "Add event + multiple add to cart (reorder) fix": {
+            "file": "Patch-Bss_AjaxCart-1.1.4-improvements.patch",
+            "version": "*"
+        }
+    },
+    "dotmailer/dotmailer-magento2-extension": {
+        "Fix utf8 encoding in the subject of email": {
+            "file": "Patch-Dotdigitalgroup_email-subject-fix.patch",
+            "version": "*"
+        }
+    },
+    "algolia/algoliasearch-magento-2": {
+        "Special price with configurable product fix": {
+            "file": "Patch-Algolia_AlgoliaSearch-1.11.0-configurable-product-special-price-fix.patch",
+            "version": "*"
+        },
+        "Resolve conflict with Amasty": {
+            "file": "Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch",
+            "version": "*"
+        },
+        "Configurable product out of stock": {
+            "file": "Patch-Algolia-AlgoliaSearch-1.12.1-out_of_stock_configurable.patch",
+            "version": "*"
+        },
+        "Configurable product price fix": {
+            "file": "Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch",
+            "version": "*"
+        },
+        "Configurable product price fix": {
+            "file": "Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch",
+            "version": "*"
+        },
+        "Configurable product out of stock": {
+            "file": "Patch-Algolia-AlgoliaSearch-1.10.0-out_of_stock_configurable.patch",
+            "version": "*"
+        },
+        "Fixed issue with wrong prices for configurable products": {
+            "file": "Patch-Algolia_AlgoliaSearch-1.10.0-configurable-price.patch",
+            "version": "*"
+        },
+        "Remove auto price indexer for v2.10.5": {
+            "file": "Patch-Amasty_Shopby-2.10.5-remove-price-indexer.patch",
+            "version": "*"
+        },
+        "Remove auto price indexer for v2.12.5": {
+            "file": "Patch-Amasty_Shopby-2.12.5-remove-price-indexer.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-config": {
+        "Fix: https://github.com/magento/magento2/issues/19070": {
+            "file": "Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-persistent-history": {
+        "Fix: https://github.com/magento/magento2/issues/15115": {
+            "file": "Patch-Magento_PersistentHistory-no-such-entity-with-address-id-fix.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-sitemap": {
+        "Fix: https://github.com/magento/magento2/issues/19565": {
+            "file": "Patch-Magento_Sitemap-M2.2.x-fix-sitemap-links.patch",
+            "version": "*"
+        }
+    },
+    "vconnect/module-allinone": {
+        "Fixed allowed methods in carrier model": {
+            "file": "Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch",
+            "version": "*"
+        },
+        "Address fix for findPoints call": {
+            "file": "Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch",
+            "version": "*"
+        },
+        "Fixed JS for IE": {
+            "file": "Patch-Vconnect_Allinone-fix-js-for-ie.patch",
+            "version": "*"
+        },
+        "Fixed Postnord refreshing": {
+            "file": "Patch-Vconnect_Allinone-prevent-postnord-refreshing-v2.patch",
+            "version": "*"
+        }
+    }
+}
