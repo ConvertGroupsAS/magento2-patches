@@ -128,6 +128,7 @@ klarna/module-core|Patch-Klarna_Core-fix-customer-address-no-such-exception.patc
 klarna/module-kco-core|Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch|Fix Incorrect dependency in class Klarna\KcoCore\Block\Info\Klarna |>=5.2 (didn't check older versions)
 klarna/module-kco-core|Patch-Klarna-KcoCore-log-json-encode.patch|Convert logs from array to json format |>=5.2.1 (didn't check older versions)
 dotmailer/dotmailer-magento2-extension|Patch-Dotdigitalgroup_email-subject-fix.patch|Fix utf8 encoding in the subject of email|?
+trollweb/module-bring|Patch-Trollweb-Bring-2.3.2-Customer-number-argument-usage|Fix wrong Customer Number param in request for carriers| 2.3.2
 vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch|Fixed allowed methods in carrier model| >=2.3.0
 vconnect/module-allinone|Patch-Vconnect_Allinone-allowed-methods-fix.patch|Fixed allowed methods in carrier model| >=2.2.0 < 2.3.0
 vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch|Address fix for findPoints call| >=2.3.0
@@ -374,6 +375,9 @@ Full composer.json example:
             },
             "magento/module-sitemap": {
                 "Fix: https://github.com/magento/magento2/issues/19565": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sitemap-M2.2.x-fix-sitemap-links.patch"
+            },
+            "trollweb/module-bring": {
+                "Fix Сustomer number argument name and usage": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Trollweb-Bring-2.3.2-Customer-number-argument-usage.patch"
             },
             "vconnect/module-allinone": {
                 "Fixed allowed methods in carrier model": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch",

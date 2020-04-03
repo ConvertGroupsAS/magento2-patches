@@ -1,0 +1,25 @@
+--- Bring/ShippingGuide.php	2020-04-02 10:29:27.632345177 +0300
++++ Bring/ShippingGuide.php	2020-04-02 10:32:56.816111083 +0300
+@@ -25,7 +25,7 @@
+             ];
+
+             // Add customer number
+-            $params["customerNumber"] = $mybringCredentials["customer_number"];
++            $params["customer_number"] = $mybringCredentials["customer_number"];
+         }
+
+         $request = new Request(Request::METHOD_GET, $url, $params, $headers);
+--- Helper/Carrier.php	2020-04-02 12:05:57.127808468 +0300
++++ Helper/Carrier.php	2020-04-02 12:01:09.000000000 +0300
+@@ -190,9 +190,9 @@
+         foreach ($activeMethods as $activeMethod) {
+             $productId = $activeMethod["method_id"];
+ 
+-            if (isset($mybringCreds["customer_number"])) {
++          /*  if (isset($mybringCreds["customer_number"])) {
+                 $productId = sprintf("%s:%s", $productId, $mybringCreds["customer_number"]);
+-            }
++            }*/
+ 
+             $ids[] = $productId;
+         }
