@@ -1,0 +1,62 @@
+diff -Naur etc/di.xml etc/di.xml
+--- etc/di.xml
++++ etc/di.xml
+@@ -274,11 +274,6 @@
+                 type="Amasty\Shopby\Plugin\Catalog\Model\ResourceModel\Product\Indexer\Price\Dimensional\Configurable"/>
+     </type>
+ 
+-    <type name="Magento\CatalogRule\Model\Indexer\RuleProductPricesPersistor">
+-        <plugin name="Amasty_Shopby::PriceIndexerInvalidator"
+-                type="Amasty\Shopby\Plugin\CatalogRule\Model\Indexer\RuleProductPricesPersistor"/>
+-    </type>
+-
+     <!--===================Store Switcher Fix=================================-->
+     <type name="Magento\Directory\Block\Currency">
+         <plugin name="Amasty_Shopby::switch_currency" type="Amasty\Shopby\Plugin\Directory\Currency"/>
+diff -Naur Plugin/CatalogRule/Model/Indexer/RuleProductPricesPersistor.php /dev/null
+--- Plugin/CatalogRule/Model/Indexer/RuleProductPricesPersistor.php
++++ /dev/null
+@@ -1,43 +0,0 @@
+-<?php
+-/**
+- * @author Amasty Team
+- * @copyright Copyright (c) 2020 Amasty (https://www.amasty.com)
+- * @package Amasty_Shopby
+- */
+-
+-
+-namespace Amasty\Shopby\Plugin\CatalogRule\Model\Indexer;
+-
+-use Magento\Catalog\Model\Indexer\Product\Price\Processor;
+-use Magento\Framework\Indexer\IndexerRegistry;
+-
+-/**
+- * Class RuleProductPricesPersistor
+- * @package Amasty\Shopby\Plugin\CatalogRule\Model\Indexer
+- */
+-class RuleProductPricesPersistor
+-{
+-    /**
+-     * @var IndexerRegistry
+-     */
+-    private $indexerRegistry;
+-
+-    public function __construct(IndexerRegistry $indexerRegistry)
+-    {
+-        $this->indexerRegistry = $indexerRegistry;
+-    }
+-
+-    /**
+-     * @param $subject
+-     * @param $result
+-     * @return mixed
+-     */
+-    public function afterExecute($subject, $result)
+-    {
+-        if ($result) {
+-            $this->indexerRegistry->get(Processor::INDEXER_ID)->invalidate();
+-        }
+-
+-        return $result;
+-    }
+-}
