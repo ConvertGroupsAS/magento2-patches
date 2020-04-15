@@ -124,6 +124,7 @@ amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-fix-empty-title-for-b
 amasty/shopby-root|Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch| | 2.5.3
 amasty/shopby-seo|Patch-Amasty-ShopbySeo-2.4.6-set-category-sort.patch| Add sorting from category settings| \>=2.4.6 (didn't check older versions) <2.5.0
 bsscommerce/ajaxcart|Patch-Bss_AjaxCart-1.1.4-improvements.patch| | \=1.1.4
+colinmollenhour/cache-backend-redis|Patch-Cm_Cache_Backend_Redis-1.10.6-remove-by-chunks.patch|Fixed removal of large amount of keys by dividing to chunks| 1.10.6
 klarna/module-kco|Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch|Fix wrong function parameters order|>=5.0.5
 klarna/module-core|Patch-Klarna_Core-fix-customer-address-no-such-exception.patch|Fix no such entity with addressId error in Klarna checkout|>=4.2.3 (didn't check older versions)
 klarna/module-kco-core|Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch|Fix Incorrect dependency in class Klarna\KcoCore\Block\Info\Klarna |>=5.2 (didn't check older versions)
@@ -160,6 +161,9 @@ Full composer.json example:
             },
             "amasty/shopby-root": {
                  "Fix filters exception on category page": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch"
+            },
+            "colinmollenhour/cache-backend-redis": {
+                "Fix: Remove by Chunks - https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/153": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Cm_Cache_Backend_Redis-1.10.6-remove-by-chunks.patch"
             },
             "magento/framework-message-queue": {
                 "Fix Consumer Transactions Callbacks": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Message-Queue-Consumer-Transaction.patch"

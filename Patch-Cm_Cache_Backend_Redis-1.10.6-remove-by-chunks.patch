@@ -1,0 +1,35 @@
+diff -Naur Cm/Cache/Backend/Redis.php Cm/Cache/Backend/Redis.php
+--- Cm/Cache/Backend/Redis.php
++++ Cm/Cache/Backend/Redis.php
+@@ -688,20 +688,23 @@
+      */
+     protected function _removeByMatchingTags($tags)
+     {
++        $maxCount = 10000;
+         $ids = $this->getIdsMatchingTags($tags);
+         if($ids)
+         {
+-            $this->_redis->pipeline()->multi();
++            $ids = array_chunk($ids, $maxCount);
++            foreach ($ids as $batchedIds) {
++                $this->_redis->pipeline()->multi();
+ 
+-            // Remove data
+-            $this->_redis->del( $this->_preprocessIds($ids));
++                // Remove data
++                $this->_redis->del( $this->_preprocessIds($batchedIds));
+ 
+-            // Remove ids from list of all ids
+-            if($this->_notMatchingTags) {
+-                $this->_redis->sRem( self::SET_IDS, $ids);
++                // Remove ids from list of all ids
++                if($this->_notMatchingTags) {
++                    $this->_redis->sRem( self::SET_IDS, $batchedIds);
++                }
++                $this->_redis->exec();
+             }
+-
+-            $this->_redis->exec();
+         }
+     }
+ 
