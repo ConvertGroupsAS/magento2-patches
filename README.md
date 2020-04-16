@@ -17,6 +17,7 @@ magento/magento2-base|Patch-Magento\_Base-setup-upgrade.patch| |>= 2.1.0 >= 2.2.
 magento/magento2-base|Patch-Magento\_Base-M2.1.0-catalog-gallery-allowfullscreen-false.patch|#5808|< 2.2.0
 magento/magento2-base|Patch-Magento\_Base-M2.1.0-errors-apply-skin-fix.patch|#4305|< 2.2.0
 magento/magento2-base|Patch-Magento\_Base-2.2.x-fotorama-ios.patch|#13226|>=2.2.0 < 2.3.0
+magento/magento2-base|Patch-Magento_Base-M2.3-remove-php-memory-limit.patch| |\>=2.3.0
 magento/framework|Patch-Magento\_Framework-mview-changelog-increment.patch|pull 13577|2.1-2.3
 magento/framework|Patch-Magento\_Framework-M2.1.x-Search-Adapter-Mysql-Mapper-fix-order.patch|#9020|<2.2.0
 magento/framework|Patch-Magento\_Framework-customer-grid.patch|#10838|2.2 (probably all)
@@ -196,7 +197,8 @@ Full composer.json example:
                 "Pull request: https://github.com/magento/magento2/pull/12497": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.2-cron-prevent-already-running.patch",
                 "Fix zoom in profuct page (Todo check: MAGETWO-94989)": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.x.x-zoomed-photo-product.patch",
                 "Fix magnifier zoom calculation": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.2.5-mangnifier-zoom-distortion.patch",
-                "Add null to return value for session and cookies": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.3.x-tests-cookie-and-session-add-to-return-null-value.patch"
+                "Add null to return value for session and cookies": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.3.x-tests-cookie-and-session-add-to-return-null-value.patch",
+                "Remove PHP memory_limit": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.3-remove-php-memory-limit.patch"
             },
             "magento/module-developer": {
                 "Fix: https://github.com/magento/magento2/issues/4362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Developer-M2.1.x-disable-debug-loging.patch"

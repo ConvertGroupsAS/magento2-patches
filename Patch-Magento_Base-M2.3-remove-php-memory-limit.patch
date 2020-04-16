@@ -1,0 +1,60 @@
+diff -Naur .htaccess .htaccess
+--- .htaccess
++++ .htaccess
+@@ -41,7 +41,7 @@
+ ############################################
+ ## adjust memory limit
+ 
+-    php_value memory_limit 756M
++#    php_value memory_limit 756M
+     php_value max_execution_time 18000
+ 
+ ############################################
+@@ -64,7 +64,7 @@
+ ############################################
+ ## adjust memory limit
+ 
+-    php_value memory_limit 756M
++#    php_value memory_limit 756M
+     php_value max_execution_time 18000
+ 
+ ############################################
+diff -Naur pub/.htaccess pub/.htaccess
+--- pub/.htaccess
++++ pub/.htaccess
+@@ -37,7 +37,7 @@
+ ############################################
+ ## Adjust memory limit
+ 
+-    php_value memory_limit 756M
++#    php_value memory_limit 756M
+     php_value max_execution_time 18000
+ 
+ ############################################
+@@ -55,7 +55,7 @@
+ ############################################
+ ## Adjust memory limit
+ 
+-    php_value memory_limit 756M
++#    php_value memory_limit 756M
+     php_value max_execution_time 18000
+ 
+ ############################################
+diff -Naur pub/.user.ini pub/.user.ini
+--- pub/.user.ini
++++ pub/.user.ini
+@@ -1,4 +1,4 @@
+-memory_limit = 756M
++;memory_limit = 756M
+ max_execution_time = 18000
+ session.auto_start = off
+ suhosin.session.cryptua = off
+diff -Naur .user.ini .user.ini
+--- .user.ini
++++ .user.ini
+@@ -1,4 +1,4 @@
+-memory_limit = 756M
++;memory_limit = 756M
+ max_execution_time = 18000
+ session.auto_start = off
+ suhosin.session.cryptua = off
