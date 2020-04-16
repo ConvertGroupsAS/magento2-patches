@@ -1,0 +1,32 @@
+--- Model/Adapter/BatchDataMapper/ProductDataMapper.php
++++ Model/Adapter/BatchDataMapper/ProductDataMapper.php
+@@ -285,8 +285,10 @@
+             return $attributeLabels;
+         }
+ 
+-        foreach ($options as $option) {
+-            if (\in_array($option->getValue(), $attributeValues)) {
++        foreach ($attributeValues as $attributeValue) {
++            if (isset($options[$attributeValue])) {
++                /** @var \Magento\Eav\Model\Entity\Attribute\Option $option */
++                $option = $options[$attributeValue];
+                 $attributeLabels[] = $option->getLabel();
+             }
+         }
+@@ -304,7 +306,15 @@
+     {
+         if (!isset($this->attributeOptionsCache[$attribute->getId()])) {
+             $options = $attribute->getOptions() ?? [];
+-            $this->attributeOptionsCache[$attribute->getId()] = $options;
++            $optionsCache = [];
++
++            foreach ($options as $option) {
++                if ($option->getValue()) {
++                    $optionsCache[$option->getValue()] = $option;
++                }
++            }
++
++            $this->attributeOptionsCache[$attribute->getId()] = $optionsCache;
+         }
+ 
+         return $this->attributeOptionsCache[$attribute->getId()];
