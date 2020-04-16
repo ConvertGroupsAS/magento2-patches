@@ -1,0 +1,10 @@
+--- Model/Adapter/Index/Builder.php
++++ Model/Adapter/Index/Builder.php
+@@ -65,6 +65,7 @@
+                 'filter' => $filter,
+                 'char_filter' => $charFilter,
+             ],
++            'mapping.total_fields.limit' => 10000,
+         ];
+ 
+         return $settings;
