@@ -3,6 +3,46 @@
         "magento/framework": {
             "Fix: https://github.com/magento/magento2/issues/25076 email disposition": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.3.3-email-disposition.patch",
             "Fix: https://github.com/magento/magento2/issues/23415 undefined index total": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.3.3-undefined-index-total-error.patch"
+        },
+        "magento/magento2-base": {
+            "Add null to return value for session and cookies": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.3.x-tests-cookie-and-session-add-to-return-null-value.patch",
+            "Remove PHP memory_limit": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.3-remove-php-memory-limit.patch"
+        },
+        "magento/module-swatches": {
+            "Fix: Add ability to set visual swatch by store ID as well as textual one": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Swatches-rest-api-visual-swatches-fix.patch"
+        },
+        "magento/module-sales": {
+            "Fix: Partial creditmemo tax amount v3": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sales-creditmemo-partial-tax-refund.patch",
+            "Fix: https://github.com/magento/magento2/issues/25221 shipment track error": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sales-M2.3.3-shipping-track.patch"
+        },
+        "magento/module-store": {
+            "Fix emulation in admin store (Todo check: MAGETWO-59649)": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Store-emulation.patch"
+        },
+        "magento/module-checkout": {
+            "Fix: Add to cart form key": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3.x-cart-form-key.patch"
+        },
+        "magento/module-eav": {
+            "Pull: https://github.com/magento/magento2/pull/21901": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Eav-M2.3-api-product-multiselect.patch"
+        },
+        "magento/module-google-tag-manager": {
+            "Fix: Check block before get Product List": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch_Magento_GoogleTagManager_M2.1.0-fix-empty-product-list-block.patch"
+        },
+        "magento/module-webapi": {
+            "Log webapi exceptions": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Webapi-M2.3.x-log-exceptions.patch"
+        },
+        "magepal/magento2-gmailsmtpapp": {
+            "Fix: https://github.com/magepal/magento2-gmail-smtp-app/issues/152 header encoding": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-MagePal_GmailSmtpApp_2.6.8-headers-encoding.patch"
+        },
+        "temando/module-shipping-m2": {
+            "Check module enabled, fix log error": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Temando_Shipping-check-enabled.patch"
+        },
+        "magento/module-elasticsearch": {
+            "Ignore Elastic Search Error": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Elasticsearch-M2.3.x-Send-Error-Message.patch",
+            "Index settings - mapping.total_fields.limit = 10000": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Elasticsearch-M2.2-total-fields-limit-10000.patch",
+            "Attribute Options Optimization": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Elasticsearch-M2.3-attribute-options-optimization.patch"
+        },
+        "colinmollenhour/cache-backend-redis": {
+            "Fix: Remove by Chunks - https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/153": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Cm_Cache_Backend_Redis-1.10.6-remove-by-chunks.patch"
         }
     }
 }
