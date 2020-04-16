@@ -1,0 +1,6 @@
+{
+    "name": "convert/magento2-patches",
+    "description": "Magento 2 Patches",
+    "type": "library",
+    "require": {}
+}
