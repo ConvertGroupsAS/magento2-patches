@@ -476,6 +476,10 @@
         "Add ability to keep item in cart after adding to wishlist": {
             "file": "Patch-Magento_Wishlist-M2.x.x-wishlist-keep-item-in-cart.patch",
             "version": "*"
+        },
+        "Remove failed login attempts from the database patch": {
+            "file": "Patch-Magento_Wishlist_M2.x.x-failed-login-attempts.patch",
+            "version": "2.*"
         }
     },
     "magento/module-offline-shipping": {
