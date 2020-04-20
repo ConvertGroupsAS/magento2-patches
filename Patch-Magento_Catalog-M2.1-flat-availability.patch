@@ -1,0 +1,11 @@
+--- Model/Indexer/AbstractFlatState.php
++++ Model/Indexer/AbstractFlatState.php
+@@ -70,7 +70,6 @@
+      */
+     public function isAvailable()
+     {
+-        return $this->isAvailable && $this->isFlatEnabled()
+-            && $this->indexerRegistry->get(static::INDEXER_ID)->isValid();
++        return $this->isAvailable && $this->isFlatEnabled();
+     }
+ }
