@@ -42,6 +42,7 @@ magento/module-elasticsearch|Patch-Magento_Elasticsearch-M2.2-total-fields-limit
 magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.x-Send-Error-Message.patch| | >= 2.3.0
 magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.0-M2.3.1-prices-pass-website-id.patch| | >= 2.3.0 <= 2.3.1
 magento/module-elasticsearch|Patch-Magento_Elasticsearch-M2.3-attribute-options-optimization.patch|Attribute Options Optimization|\>= 2.3.0
+magento/module-indexer|Patch-Magento_Indexer-M2.3.1-indexer-reindex-optional-dependencies.patch|indexer:reindex command - Optional dependencies|\>= 2.3.1
 magento/module-review|Patch-Magento\_Review-M2.2-review-renderer-module-namespace.patch| |all as of 2.2.5
 magento/module-theme|Patch-Magento\_Email-M2.1.0-create-email-logo-2.patch| |< 2.1.8 (2.1.4 n/a)
 magento/module-page-cache|Patch-Magento\_PageCache-M2.1.0-element-js-error-fix.patch|#6818|< 2.1.10 < 2.2.0
@@ -284,6 +285,9 @@ Full composer.json example:
             },
             "magento/module-google-tag-manager": {
                 "Fix: Check block before get Product List": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch_Magento_GoogleTagManager_M2.1.0-fix-empty-product-list-block.patch"
+            },
+            "magento/module-indexer": {
+                "indexer:reindex command - Optional dependencies": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Indexer-M2.3.1-indexer-reindex-optional-dependencies.patch"
             },
             "magento/module-page-cache": {
                 "Fix: https://github.com/magento/magento2/issues/6818": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_PageCache-M2.1.0-element-js-error-fix.patch"

@@ -1,0 +1,100 @@
+--- Console/Command/IndexerReindexCommand.php.origin	2020-01-10 06:20:40.000000000 +0300
++++ Console/Command/IndexerReindexCommand.php	2020-04-20 17:52:02.188753742 +0300
+@@ -22,6 +22,8 @@
+  */
+ class IndexerReindexCommand extends AbstractIndexerManageCommand
+ {
++    const INPUT_OPTION_WITH_DEPENDENCIES = 'with-dependencies';
++
+     /**
+      * @var array
+      */
+@@ -66,6 +68,14 @@
+             ->setDescription('Reindexes Data')
+             ->setDefinition($this->getInputList());
+ 
++        $this->addOption(
++            static::INPUT_OPTION_WITH_DEPENDENCIES,
++            null,
++            \Symfony\Component\Console\Input\InputArgument::OPTIONAL,
++            'Reindex also dependent and related indexers (default Magento 2 behavior)',
++            false
++        );
++
+         parent::configure();
+     }
+ 
+@@ -74,6 +84,28 @@
+      */
+     protected function execute(InputInterface $input, OutputInterface $output)
+     {
++        $withDependencies = $this->isWithDependencies($input);
++
++        if (!$withDependencies) {
++            $output->writeln('<warning>You are going to run reindex without dependencies.</warning>');
++            $output->writeln('<warning>Dependent and related indexers will be skipped.</warning>');
++            $output->writeln('Use <info>--with-dependencies=1</info> to reindex with dependent and related indexers.');
++
++            /** @var \Symfony\Component\Console\Helper\QuestionHelper $questionHelper */
++            $questionHelper = $this->getHelper('question');
++
++            $answer = $questionHelper->ask($input, $output, new \Symfony\Component\Console\Question\Question(
++                "Continue? [yes/<info>no</info>] > ",
++                'no'
++            ));
++
++            if (strpos($answer, 'y') !== 0) {
++                $output->writeln('Skipped.');
++
++                return \Magento\Framework\Console\Cli::RETURN_FAILURE;
++            }
++        }
++
+         $returnValue = Cli::RETURN_FAILURE;
+         foreach ($this->getIndexers($input) as $indexer) {
+             try {
+@@ -119,15 +151,19 @@
+ 
+         $relatedIndexers = [];
+         $dependentIndexers = [];
+-        foreach ($indexers as $indexer) {
+-            $relatedIndexers = array_merge(
+-                $relatedIndexers,
+-                $this->getRelatedIndexerIds($indexer->getId())
+-            );
+-            $dependentIndexers = array_merge(
+-                $dependentIndexers,
+-                $this->getDependentIndexerIds($indexer->getId())
+-            );
++        $withDependencies = $this->isWithDependencies($input);
++
++        if ($withDependencies) {
++            foreach ($indexers as $indexer) {
++                $relatedIndexers = array_merge(
++                    $relatedIndexers,
++                    $this->getRelatedIndexerIds($indexer->getId())
++                );
++                $dependentIndexers = array_merge(
++                    $dependentIndexers,
++                    $this->getDependentIndexerIds($indexer->getId())
++                );
++            }
+         }
+ 
+         $invalidRelatedIndexers = [];
+@@ -300,4 +336,15 @@
+         }
+         return $this->dependencyInfoProvider;
+     }
++
++    /**
++     * @param \Symfony\Component\Console\Input\InputInterface $input
++     *
++     * @return bool
++     */
++    protected function isWithDependencies(
++        \Symfony\Component\Console\Input\InputInterface $input
++    ) {
++        return $input->getOption(static::INPUT_OPTION_WITH_DEPENDENCIES);
++    }
+ }
