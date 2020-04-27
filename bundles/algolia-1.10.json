@@ -1,8 +1,6 @@
 {
-    "patches": {
-        "algolia/algoliasearch-magento-2": {
-            "Product helper setSettings warning fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.6.0-product-helper-warning.patch",
-            "Configurable product original price fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.6.0-configurable-price.patch"
-        }
+    "algolia/algoliasearch-magento-2": {
+        "Product helper setSettings warning fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.6.0-product-helper-warning.patch",
+        "Configurable product original price fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.6.0-configurable-price.patch"
     }
 }
