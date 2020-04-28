@@ -121,6 +121,7 @@ algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.7-catalogrule-inde
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch| |1.9
 algolia/algoliasearch-magento-2|Patch-Algolia-AlgoliaSearch-1.10.0-out_of_stock_configurable.patch| |1.10.0
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-configurable-price.patch|Fixed issue with wrong prices for configurable products|1.10.0
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-1.12.0-unsubscribe-price-index.patch|Unsubscribe Price Index - https://github.com/algolia/algoliasearch-magento-2/pull/870|1.10.0-1.12.0
 amasty/shopby|Patch-Amasty_Shopby-2.10.5-remove-price-indexer.patch|Remove auto price indexer for v2.10.5|2.10.5
 amasty/shopby|Patch-Amasty_Shopby-2.12.5-remove-price-indexer.patch|Remove auto price indexer for v2.12.5|2.12.5
 amasty/shopby|Patch-Amasty_Shopby-2.13.7-remove-price-indexer.patch|Remove auto price indexer for v2.13.7|2.13.7
@@ -151,7 +152,8 @@ Full composer.json example:
         "magento-force": "override",
         "patches": {
             "algolia/algoliasearch-magento-2": {
-                "Fixed processing of queue jobs": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch"
+                "Fixed processing of queue jobs": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch",
+                "Unsubscribe Price Index - https://github.com/algolia/algoliasearch-magento-2/pull/870": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.10.0-1.12.0-unsubscribe-price-index.patch"
             },
             "amasty/module-improved-layered-navigation-root": {
                 "Fix: Remove unnecessary configurable block": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch"
