@@ -106,6 +106,7 @@ magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.8-fix
 magento/module-configurable-product|Patch-Magento_Configurable_M2.1.x-fix-get-price.patch|#5519|<2.1.10
 magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch|#7614|<2.2
 magento/module-config|Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch|#19070| 2.2.5 2.2.6
+magento/module-page-builder|Patch-Magento_PageBuilder-M2.3.4-fix-preview-mode.patch|Fix: Preview Mode|\>=2.3.4
 magento/module-persistent-history|Patch-Magento_PersistentHistory-no-such-entity-with-address-id-fix.patch|#15115|2.2.x-2.3.0
 magento/module-sitemap|Patch-Magento_Sitemap-M2.2.x-fix-sitemap-links.patch|#15115|2.2.x
 
@@ -291,6 +292,9 @@ Full composer.json example:
             "magento/module-indexer": {
                 "indexer:reindex command - Optional dependencies": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Indexer-M2.3.1-indexer-reindex-optional-dependencies.patch"
             },
+            "magento/module-page-builder": {
+                "Fix: Preview Mode": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_PageBuilder-M2.3.4-fix-preview-mode.patch"
+            }
             "magento/module-page-cache": {
                 "Fix: https://github.com/magento/magento2/issues/6818": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_PageCache-M2.1.0-element-js-error-fix.patch"
             },

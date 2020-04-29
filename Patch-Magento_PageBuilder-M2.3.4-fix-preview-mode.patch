@@ -1,0 +1,11 @@
+--- Model/Stage/Preview.php
++++ Model/Stage/Preview.php
+@@ -70,7 +70,7 @@
+     /**
+      * @var bool
+      */
+-    private $isPreview;
++    private $isPreview = false;
+ 
+     /**
+      * Retrieve the area in which the preview needs to be ran in
