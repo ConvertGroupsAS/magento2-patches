@@ -1,5 +1,5 @@
---- Console/Command/IndexerReindexCommand.php.origin	2020-01-10 06:20:40.000000000 +0300
-+++ Console/Command/IndexerReindexCommand.php	2020-04-20 17:52:02.188753742 +0300
+--- Console/Command/IndexerReindexCommand.php
++++ Console/Command/IndexerReindexCommand.php
 @@ -22,6 +22,8 @@
   */
  class IndexerReindexCommand extends AbstractIndexerManageCommand
@@ -9,51 +9,35 @@
      /**
       * @var array
       */
-@@ -66,6 +68,14 @@
+@@ -66,6 +68,13 @@
              ->setDescription('Reindexes Data')
              ->setDefinition($this->getInputList());
  
 +        $this->addOption(
 +            static::INPUT_OPTION_WITH_DEPENDENCIES,
 +            null,
-+            \Symfony\Component\Console\Input\InputArgument::OPTIONAL,
-+            'Reindex also dependent and related indexers (default Magento 2 behavior)',
-+            false
++            \Symfony\Component\Console\Input\InputOption::VALUE_NONE,
++            'Reindex also dependent and related indexers (default Magento 2 behavior)'
 +        );
 +
          parent::configure();
      }
  
-@@ -74,6 +84,28 @@
+@@ -74,6 +83,13 @@
       */
      protected function execute(InputInterface $input, OutputInterface $output)
      {
 +        $withDependencies = $this->isWithDependencies($input);
 +
 +        if (!$withDependencies) {
-+            $output->writeln('<warning>You are going to run reindex without dependencies.</warning>');
-+            $output->writeln('<warning>Dependent and related indexers will be skipped.</warning>');
-+            $output->writeln('Use <info>--with-dependencies=1</info> to reindex with dependent and related indexers.');
-+
-+            /** @var \Symfony\Component\Console\Helper\QuestionHelper $questionHelper */
-+            $questionHelper = $this->getHelper('question');
-+
-+            $answer = $questionHelper->ask($input, $output, new \Symfony\Component\Console\Question\Question(
-+                "Continue? [yes/<info>no</info>] > ",
-+                'no'
-+            ));
-+
-+            if (strpos($answer, 'y') !== 0) {
-+                $output->writeln('Skipped.');
-+
-+                return \Magento\Framework\Console\Cli::RETURN_FAILURE;
-+            }
++            $output->writeln('<info>Dependent and related indexers will be ingored.</info>');
++            $output->writeln('Use <info>--with-dependencies</info> to reindex with dependent and related indexers.');
 +        }
 +
          $returnValue = Cli::RETURN_FAILURE;
          foreach ($this->getIndexers($input) as $indexer) {
              try {
-@@ -119,15 +151,19 @@
+@@ -119,15 +135,19 @@
  
          $relatedIndexers = [];
          $dependentIndexers = [];
@@ -82,7 +66,7 @@
          }
  
          $invalidRelatedIndexers = [];
-@@ -300,4 +336,15 @@
+@@ -300,4 +320,15 @@
          }
          return $this->dependencyInfoProvider;
      }
