@@ -1,0 +1,39 @@
+--- Controller/Account/LoginPost.php	(revision 27f2363d53c441fc4377d61578a3651c0a504f3e)
++++ Controller/Account/LoginPost.php	(revision 7baa634062cbee1d64503dc23e0bef7676bd8617)
+@@ -67,6 +67,11 @@
+      */
+     private $cookieMetadataManager;
+
++    /**
++     * @var CustomerUrl
++     */
++    private $customerUrl;
++
+     /**
+      * @param Context $context
+      * @param Session $customerSession
+@@ -200,10 +205,11 @@
+                     }
+                 } catch (EmailNotConfirmedException $e) {
+                     $value = $this->customerUrl->getEmailConfirmationUrl($login['username']);
+-                    $message = __(
++                    $this->messageManager->addError(__(
+                         'This account is not confirmed. <a href="%1">Click here</a> to resend confirmation email.',
+                         $value
+-                    );
++                    ));
++                    $this->session->setUsername($login['username']);
+                 } catch (AuthenticationException $e) {
+                     $message = __(
+                         'The account sign-in was incorrect or your account is disabled temporarily. '
+--- Test/Unit/Controller/Account/LoginPostTest.php	(revision 7baa634062cbee1d64503dc23e0bef7676bd8617)
++++ Test/Unit/Controller/Account/LoginPostTest.php	(revision b44f9ba21ca0cba017277c715fbc715a256fdc3b)
+@@ -557,7 +557,7 @@
+                     $url
+                 );
+                 $this->messageManager->expects($this->once())
+-                    ->method('addErrorMessage')
++                    ->method('addError')
+                     ->with($message)
+                     ->willReturnSelf();
+
