@@ -81,6 +81,7 @@ magento/module-catalog-inventory|Patch-Magento\_CatalogInventory\_M2.1.3-hide-ou
 magento/module-catalog-inventory|Patch-Magento\_CatalogInventory-M2.1.x-stock-item-events-fix.patch|#4857|<2.2.0
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch|Fix: Update stock item on product save|>=2.2.0 <2.2.4
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch|#12205|>=2.2.0 <2.2.5
+magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.3.3-2.3.4-fix-stock-indexer-deleting-new-records.patch|#15984|2.3.3-2.3.4
 magento/module-catalog-rule|Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch|Q-67970|>= 2.1.0 >= 2.2.0
 magento/module-catalog-staging|Patch-Magento_Catalog_Staging-timestam.patch| | ?
 magento/module-catalog-url-rewrite|Patch-Magento\_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|#7874|>=2.1.4 < 2.1.9
@@ -232,7 +233,8 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/8566": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory_M2.1.3-hide-out-of-stock.patch",
                 "Fix: https://github.com/magento/magento2/issues/4857": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.1.x-stock-item-events-fix.patch",
                 "Fix: Update stock item on product save": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch",
-                "Fix: https://github.com/magento/magento2/issues/12205": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch"
+                "Fix: https://github.com/magento/magento2/issues/12205": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch",
+                "Fix: https://github.com/magento/magento2/issues/15984": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.3.3-2.3.4-fix-stock-indexer-deleting-new-records.patch"
             },
             "magento/module-catalog-rule": {
                 "Fix: https://magento.stackexchange.com/questions/67970/catalog-price-rules-disappear-after-mid-night": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch"
