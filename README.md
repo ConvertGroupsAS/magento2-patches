@@ -272,8 +272,8 @@ Full composer.json example:
                 "Fix: skip empty Custom Options SKUs to avoid adding extra delimiters to configurable product SKU": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.2.x-skip-empty-custom-options-skus.patch",
                 "Fix: https://github.com/magento/magento2/pull/16838": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Catalog-M2.1.x-2.2.7-fix-save-customizable-options.patch",
                 "Allow to use invalid Flat Indexer": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.1-flat-availability.patch",
-                "Catalog Category Flat chunk limit": "patches/Patch-Magento_Catalog-M2.3-category-flat-chunk-limit.patch",
-                "Fix: Category Image Upload": "patches/Patch-Magento_Catalog-M2.3-fix-category-image-upload.patch"
+                "Catalog Category Flat chunk limit": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.3-category-flat-chunk-limit.patch",
+                "Fix: Category Image Upload": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.3-fix-category-image-upload.patch"
             },
             "magento/module-catalog-inventory": {
                 "Fix: https://github.com/magento/magento2/issues/8566": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory_M2.1.3-hide-out-of-stock.patch",
@@ -281,7 +281,7 @@ Full composer.json example:
                 "Fix: Update stock item on product save": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch",
                 "Fix: https://github.com/magento/magento2/issues/12205": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch",
                 "Fix: https://github.com/magento/magento2/issues/15984": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.3.3-2.3.4-fix-stock-indexer-deleting-new-records.patch",
-                "Fix: Use Config Manage Stock in new Stock Item": "patches/Patch-Magento_CatalogInventory-M2.2-new-item-use-config-manage-stock.patch"
+                "Fix: Use Config Manage Stock in new Stock Item": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.2-new-item-use-config-manage-stock.patch"
             },
             "magento/module-catalog-rule": {
                 "Fix: https://magento.stackexchange.com/questions/67970/catalog-price-rules-disappear-after-mid-night": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch"
@@ -349,12 +349,12 @@ Full composer.json example:
             },
             "magento/module-review": {
                 "Fix review namespace": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Review-M2.2-review-renderer-module-namespace.patch",
-                "Fix: Product Collection Observer - Check module status": "patches/Patch-Magento_Review-M2.3-observer-catalog-check-is-active.patch"
+                "Fix: Product Collection Observer - Check module status": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Review-M2.3-observer-catalog-check-is-active.patch"
             },
             "magento/module-sales": {
                 "Fix: Partial creditmemo tax amount": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sales-creditmemo-partial-tax-refund.patch",
-                "Canceled amount in Invoice Subtotal": "patches/Patch-Magento_Sales-M2.2-invoice-subtotal-canceled.patch",
-                "Canceled amount in Invoice Tax": "patches/Patch-Magento_Sales-M2.3-invoice-tax-canceled.patch"
+                "Canceled amount in Invoice Subtotal": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sales-M2.2-invoice-subtotal-canceled.patch",
+                "Canceled amount in Invoice Tax": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sales-M2.3-invoice-tax-canceled.patch"
             },
             "magento/module-sales-rule": {
                 "Fix: https://github.com/magento/magento2/issues/6762": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_SalesRule-M2.1.6-fix-to-date-parameter.patch"
@@ -424,13 +424,13 @@ Full composer.json example:
                 "Fix: double save company error": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Company-M2.3.3-company-double-save-error.patch"
             },
             "magento/module-backend": {
-                "Menu Log Level - Debug": "patches/Patch-Magento_Backend-M2.3-menu-log-level.patch"
+                "Menu Log Level - Debug": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Backend-M2.3-menu-log-level.patch"
             },
             "klarna/module-core": {
                 "Fix no such entity with addressId error in Klarna checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Core-fix-customer-address-no-such-exception.patch"
             },
             "klarna/module-base": {
-                "Fix rounding and discount tax calculation": "patches/Patch-Klarna_Base-fix-round-to-int-and-tax-calculation.patch"
+                "Fix rounding and discount tax calculation": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Base-fix-round-to-int-and-tax-calculation.patch"
             },
             "klarna/module-kco-core": {
                 "Fix Incorrect dependency in class Klarna_KcoCore_Block_Info_Klarna": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch",
@@ -438,8 +438,8 @@ Full composer.json example:
             },       
             "klarna/module-kco": {
                 "ReloadSummary action wrong order of parameters": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch",
-                "Fix: Total Base Calculation Plugin - Check is KCO enabled": "patches/Patch-Klarna_Kco-8-fix-total-base-calculation-plugin.patch",
-                "Fix: shipping method reload", "patches/Patch-Klarna_Kco-fix-shipping-methods-reload-and-widget-update.patch"
+                "Fix: Total Base Calculation Plugin - Check is KCO enabled": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-8-fix-total-base-calculation-plugin.patch",
+                "Fix: shipping method reload", "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-fix-shipping-methods-reload-and-widget-update.patch"
             },
             "bsscommerce/ajaxcart": {
                 "Add event + multiple add to cart (reorder) fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Bss_AjaxCart-1.1.4-improvements.patch",
