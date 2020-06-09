@@ -1,0 +1,74 @@
+--- Helper/DataConverter.php	2020-02-07 19:50:46.000000000 +0300
++++ Helper/DataConverter.php	2020-02-27 14:17:19.150006124 +0300
+@@ -21,7 +21,7 @@
+      */
+     public function toApiFloat($float)
+     {
+-        return round($float * 100);
++        return (int) round($float * 100);
+     }
+
+     /**
+
+--- Model/Checkout/Orderline/Items/Discount.php	2020-02-07 19:50:46.000000000 +0300
++++ Model/Checkout/Orderline/Items/Discount.php	2020-02-28 11:12:19.656878831 +0300
+@@ -155,10 +155,10 @@
+         );
+         $total = $totals['discount'];
+
+-        $parameter->setDiscountUnitPrice(-$this->helper->toApiFloat($discount['unit_price']))
+-            ->setDiscountTaxRate($this->helper->toApiFloat($discount['tax_rate']))
+-            ->setDiscountTotalAmount(-$this->helper->toApiFloat($discount['total_amount']))
+-            ->setDiscountTaxAmount(-$this->helper->toApiFloat($discount['tax_amount']))
++        $parameter->setDiscountUnitPrice(-$discount['unit_price'])
++            ->setDiscountTaxRate($discount['tax_rate'])
++            ->setDiscountTotalAmount(-$discount['total_amount'])
++            ->setDiscountTaxAmount(-$discount['tax_amount'])
+             ->setDiscountTitle((string)$total->getTitle())
+             ->setDiscountReference($total->getCode());
+
+--- Model/Calculator/Discounts.php	2020-02-07 19:50:46.000000000 +0300
++++ Model/Calculator/Discounts.php	2020-02-28 10:09:44.852988400 +0300
+@@ -72,7 +72,21 @@
+      */
+     public function getDiscountTaxAmount($items, $total, $taxRate)
+     {
+-        return -($total->getValue() - ($total->getValue() / (1 + $taxRate)));
++        $taxAmount = 0;
++        foreach ($items as $item) {
++            if ($item->getBaseDiscountAmount() == 0) {
++                continue;
++            }
++            $taxAmount += $item->getDiscountTaxCompensationAmount();
++        }
++
++        if ($taxAmount === 0) {
++            if ($taxRate > 1) {
++                $taxRate = $taxRate / 100;
++            }
++            $taxAmount = -($total->getValue() - ($total->getValue() / (1 + $taxRate)));
++        }
++        return $taxAmount;
+     }
+
+     /**
+@@ -194,14 +208,17 @@
+
+         if ($this->klarnaConfig->isSeparateTaxLine($store) || $this->isTaxBeforeDiscount($store)) {
+             $taxRate = 0;
+-            $taxAmount = 0;
+         } elseif ($this->isPriceExcludesVat($store)) {
+             $unitPrice += $taxAmount;
+             $totalAmount += $taxAmount;
+         }
++        $taxRate = $this->dataConverter->toApiFloat($taxRate);
++        $totalAmount = $this->dataConverter->toApiFloat($totalAmount);
++        //recalculate tax amount to match rounded rate and total amount
++        $taxAmount = (int) round($totalAmount - $totalAmount * 10000 / (10000 + $taxRate));
+
+         return [
+-            'unit_price' => $unitPrice,
++            'unit_price' => $this->dataConverter->toApiFloat($unitPrice),
+             'total_amount' => $totalAmount,
+             'tax_rate' => $taxRate,
+             'tax_amount' => $taxAmount

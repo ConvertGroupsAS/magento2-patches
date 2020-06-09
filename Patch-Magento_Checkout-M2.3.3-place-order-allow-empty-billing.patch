@@ -1,0 +1,13 @@
+--- view/frontend/web/js/view/payment/default.orig.js	2019-09-19 12:30:52.000000000 +0300
++++ view/frontend/web/js/view/payment/default.js	2019-12-03 14:46:58.582820208 +0300
+@@ -134,8 +134,8 @@
+             }
+ 
+             if (this.validate() &&
+-                additionalValidators.validate() &&
+-                this.isPlaceOrderActionAllowed() === true
++                additionalValidators.validate() /* && PATCHED
++                this.isPlaceOrderActionAllowed() === true*/
+             ) {
+                 this.isPlaceOrderActionAllowed(false);
+ 

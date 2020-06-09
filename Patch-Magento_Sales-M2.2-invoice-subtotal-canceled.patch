@@ -1,0 +1,13 @@
+--- Model/Order/Invoice/Total/Subtotal.php
++++ Model/Order/Invoice/Total/Subtotal.php
+@@ -35,8 +35,8 @@
+             $baseSubtotalInclTax += $item->getBaseRowTotalInclTax();
+         }
+ 
+-        $allowedSubtotal = $order->getSubtotal() - $order->getSubtotalInvoiced();
+-        $baseAllowedSubtotal = $order->getBaseSubtotal() - $order->getBaseSubtotalInvoiced();
++        $allowedSubtotal = $order->getSubtotal() - $order->getSubtotalInvoiced() - $order->getSubtotalCanceled();
++        $baseAllowedSubtotal = $order->getBaseSubtotal() - $order->getBaseSubtotalInvoiced() - $order->getBaseSubtotalCanceled();
+         //Note: The $subtotalInclTax and $baseSubtotalInclTax are not adjusted from those provide by the line items
+         //because the "InclTax" is displayed before any tax adjustments based on discounts, shipping, etc.
+ 

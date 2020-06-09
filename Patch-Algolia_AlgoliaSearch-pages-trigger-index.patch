@@ -1,0 +1,117 @@
+--- Model/Indexer/Page.php	2019-02-20 11:46:32.000000000 +0300
++++ Model/Indexer/Page.php	2019-09-20 16:36:59.000000000 +0300
+@@ -43,13 +43,9 @@ class Page implements Magento\Framework\
+         $this->output = $output;
+     }
+ 
+-    public function execute($ids)
++    public function execute($ids)
+     {
+-    }
+-
+-    public function executeFull()
+-    {
+-        if (!$this->configHelper->getApplicationID()
++      if (!$this->configHelper->getApplicationID()
+             || !$this->configHelper->getAPIKey()
+             || !$this->configHelper->getSearchOnlyAPIKey()) {
+             $errorMessage = 'Algolia reindexing failed: 
+@@ -74,17 +70,29 @@ class Page implements Magento\Framework\
+             }
+ 
+             if ($this->isPagesInAdditionalSections($storeId)) {
+-                $this->queue->addToQueue($this->fullAction, 'rebuildStorePageIndex', ['store_id' => $storeId], 1);
++                $this->queue->addToQueue(
++                    $this->fullAction,
++                    'rebuildStorePageIndex',
++                    ['store_id' => $storeId, 'page_ids' => $ids],
++                    is_array($ids) ? count($ids) : 1
++                );
+             }
+         }
+     }
+ 
++    public function executeFull()
++    {
++        $this->execute(null);
++    }
++
+     public function executeList(array $ids)
+     {
++        $this->execute($ids);
+     }
+ 
+     public function executeRow($id)
+     {
++        $this->execute([$id]);
+     }
+ 
+     private function isPagesInAdditionalSections($storeId)
+--- Model/Indexer/PageObserver.php	1970-01-01 03:00:00.000000000 +0300
++++ Model/Indexer/PageObserver.php	2019-09-20 16:42:26.000000000 +0300
+@@ -0,0 +1,42 @@
++<?php
++
++namespace Algolia\AlgoliaSearch\Model\Indexer;
++
++use Magento\Framework\Indexer\IndexerRegistry;
++use Magento\Framework\Model\AbstractModel;
++
++class PageObserver
++{
++    private $indexer;
++
++    public function __construct(IndexerRegistry $indexerRegistry)
++    {
++        $this->indexer = $indexerRegistry->get('algolia_pages');
++    }
++
++    public function beforeSave(
++        \Magento\Cms\Model\ResourceModel\Page $pageResource,
++        AbstractModel $page
++    ) {
++        $pageResource->addCommitCallback(function () use ($page) {
++            if (!$this->indexer->isScheduled()) {
++                $this->indexer->reindexRow($page->getId());
++            }
++        });
++
++        return [$page];
++    }
++
++    public function beforeDelete(
++        \Magento\Cms\Model\ResourceModel\Page $pageResource,
++        AbstractModel $page
++    ) {
++        $pageResource->addCommitCallback(function () use ($page) {
++            if (!$this->indexer->isScheduled()) {
++                $this->indexer->reindexRow($page->getId());
++            }
++        });
++
++        return [$page];
++    }
++}
+--- etc/di.xml	2019-02-20 11:46:32.000000000 +0300
++++ etc/di.xml	2019-09-20 16:43:43.000000000 +0300
+@@ -1,5 +1,8 @@
+ <?xml version="1.0"?>
+ <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
++    <type name="Magento\Cms\Model\ResourceModel\Page">
++        <plugin name="algoliaPages" type="Algolia\AlgoliaSearch\Model\Indexer\PageObserver"/>
++    </type>    
+     <type name="Magento\Catalog\Model\ResourceModel\Product">
+         <plugin name="algoliaProducts" type="Algolia\AlgoliaSearch\Model\Indexer\ProductObserver"/>
+     </type>
+--- etc/mview.xml	2019-02-20 11:46:32.000000000 +0300
++++ etc/mview.xml	2019-09-20 16:44:50.000000000 +0300
+@@ -3,6 +3,9 @@
+     <view id="algolia_suggestions" class="Algolia\AlgoliaSearch\Model\Indexer\Suggestion" group="indexer">
+     </view>
+     <view id="algolia_pages" class="Algolia\AlgoliaSearch\Model\Indexer\Page" group="indexer">
++        <subscriptions>
++            <table name="cms_page" entity_column="page_id" />
++        </subscriptions>
+     </view>
+     <view id="algolia_additional_sections" class="Algolia\AlgoliaSearch\Model\Indexer\Page" group="indexer">
+     </view>

@@ -1,0 +1,13 @@
+--- Model/Order/Invoice/Total/Tax.php.origin	2019-09-19 12:30:56.000000000 +0300
++++ Model/Order/Invoice/Total/Tax.php	2020-01-21 16:35:58.580543200 +0300
+@@ -95,8 +95,8 @@
+             $invoice->setShippingDiscountTaxCompensationAmount($order->getShippingDiscountTaxCompensationAmount());
+             $invoice->setBaseShippingDiscountTaxCompensationAmnt($order->getBaseShippingDiscountTaxCompensationAmnt());
+         }
+-        $allowedTax = $order->getTaxAmount() - $order->getTaxInvoiced();
+-        $allowedBaseTax = $order->getBaseTaxAmount() - $order->getBaseTaxInvoiced();
++        $allowedTax = $order->getTaxAmount() - $order->getTaxInvoiced() - $order->getTaxCanceled();
++        $allowedBaseTax = $order->getBaseTaxAmount() - $order->getBaseTaxInvoiced() - $order->getBaseTaxCanceled();
+ 
+         if ($invoice->isLast()) {
+             $totalTax = $allowedTax;

@@ -1,0 +1,10 @@
+--- Model/CompanyRepository.orig.php	2019-09-19 12:55:02.000000000 +0300
++++ Model/CompanyRepository.php	2019-11-18 17:00:19.193131108 +0300
+@@ -66,6 +66,7 @@
+     {
+         unset($this->instances[$company->getId()]);
+         $this->companySaver->save($company);
++        unset($this->instances[$company->getId()]); // save handlers triggered CompanyRepository::get, clear cache
+         return $company;
+     }
+ 

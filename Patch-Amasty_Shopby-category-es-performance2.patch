@@ -1,0 +1,18 @@
+diff --git a/Model/Layer/Filter/Category.php b/Model/Layer/Filter/Category.php
+index 855d80e..4d9bf20 100644
+--- a/Model/Layer/Filter/Category.php
++++ b/Model/Layer/Filter/Category.php
+@@ -610,6 +610,13 @@ class Category extends \Magento\Catalog\Model\Layer\Filter\AbstractFilter
+         $requestBuilder->removePlaceholder(CategoryHelper::ATTRIBUTE_CODE);
+         $requestBuilder->bind(CategoryHelper::ATTRIBUTE_CODE, $categoryId);
+         $requestBuilder->setAggregationsOnly(CategoryHelper::ATTRIBUTE_CODE);
++
++        /** @var \Magento\Search\Model\EngineResolver $searchEngine */
++        $searchEngine = \Magento\Framework\App\ObjectManager::getInstance()->get(\Magento\Search\Model\EngineResolver::class);
++        if (\in_array($searchEngine->getCurrentSearchEngine(), ['elasticsearch', 'elasticsearch5', 'elasticsearch6'])) {
++            $requestBuilder->setSize(0); // fix for ES aggregation performance
++        }
++
+         $queryRequest = $requestBuilder->create();
+ 
+         return $queryRequest;

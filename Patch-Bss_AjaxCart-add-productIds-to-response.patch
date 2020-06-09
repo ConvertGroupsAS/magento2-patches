@@ -1,0 +1,10 @@
+--- Controller/Index/Index.php.orig	2019-10-25 14:02:22.000000000 +0300
++++ Controller/Index/Index.php	2020-04-10 11:29:24.187028602 +0300
+@@ -359,6 +359,7 @@
+ 
+             $result['popup'] = $html;
+             $result['sku'] = $resultItem->getSku();
++            $result['productIds'] = [$productId];
+ 
+             $resultJson = $this->resultFactory->create(ResultFactory::TYPE_JSON);
+             $resultJson->setData($result);

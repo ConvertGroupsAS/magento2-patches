@@ -1,0 +1,11 @@
+--- view/base/web/js/label.js	2020-03-27 17:04:50.000000000 +0300
++++ view/base/web/js/label.js	2020-04-22 12:54:25.631698660 +0300
+@@ -1,6 +1,7 @@
+ define([
+     'jquery',
+-    'underscore'
++    'underscore',
++    'jquery-ui-modules/widget'
+ ], function ($, _) {
+
+     $.widget('mage.amShowLabel', {

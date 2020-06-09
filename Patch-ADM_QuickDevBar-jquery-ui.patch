@@ -1,0 +1,11 @@
+--- view/base/web/js/quickdevbar.orig.js	2019-10-29 12:21:10.512000000 +0300
++++ view/base/web/js/quickdevbar.js	2019-12-16 17:48:14.583467937 +0300
+@@ -1,7 +1,7 @@
+ 
+ /* */
+ define(["jquery",
+-        "jquery/ui",
++        "jquery-ui-modules/tabs",
+          "filtertable",
+          "metadata",
+          "tablesorter",

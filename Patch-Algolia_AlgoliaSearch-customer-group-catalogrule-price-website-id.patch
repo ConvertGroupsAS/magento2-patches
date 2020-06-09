@@ -1,0 +1,10 @@
+--- Helper/Entity/Product/PriceManager/ProductWithoutChildren.php	2019-09-14 14:25:03.415094182 +0300
++++ Helper/Entity/Product/PriceManager/ProductWithoutChildren.fixed.php	2019-09-14 14:27:07.475294250 +0300
+@@ -248,6 +248,7 @@
+             $groupId = (int) $group->getData('customer_group_id');
+ 
+             $product->setData('customer_group_id', $groupId);
++            $product->setData('website_id', $product->getStore()->getWebsiteId());
+ 
+             $discountedPrice = $product->getPriceModel()->getFinalPrice(1, $product);
+             if ($currencyCode !== $this->baseCurrencyCode) {

@@ -1,0 +1,21 @@
+diff -Naur Model/Menu/Director/Director.php Model/Menu/Director/Director.php
+--- Model/Menu/Director/Director.php
++++ Model/Menu/Director/Director.php
+@@ -32,3 +32,3 @@ class Director extends \Magento\Backend\
+         if (isset($this->_messagePatterns[$data['type']])) {
+-            $logger->info(
++            $logger->debug(
+                 sprintf($this->_messagePatterns[$data['type']], $command->getId())
+diff -Naur Model/Menu.php Model/Menu.php
+--- Model/Menu.php
++++ Model/Menu.php
+@@ -88,3 +88,3 @@ class Menu extends \ArrayObject
+                 $this->offsetSet($index, $item);
+-                $this->_logger->info(
++                $this->_logger->debug(
+                     sprintf('Add of item with id %s was processed', $item->getId())
+@@ -153,3 +153,3 @@ class Menu extends \ArrayObject
+                 $result = true;
+-                $this->_logger->info(
++                $this->_logger->debug(
+                     sprintf('Remove on item with id %s was processed', $item->getId())

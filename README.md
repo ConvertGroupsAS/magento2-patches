@@ -29,6 +29,7 @@ magento/framework|Patch-Magento\_Framework-M2.1.x-Curl-Post-Json.patch|#8373|< 2
 magento/framework|Patch-Magento\_Framework-M2.2.x-PRODSECBUG-2198.patch| < 2.2.8
 magento/framework|Patch-Magento\_Framework-M2.3.1-fix-elasticsearch-generation.patch| >= 2.3.1 < 2.3.2
 magento/framework|Patch-Magento\_Framework-M2.2.6-Fix-session-from-2.2.7.patch|#12362| 2.2.6
+magento/framework|Patch-Magento_Framework-result-page.patch|Allow to add body class while block render|
 magento/framework-message-queue|Patch-Message-Queue-Consumer-Transaction.patch| |EE Only < 2.2.0
 magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-delete.patch|pull 14751|>= 2.2.0 < 2.2.5
 magento/module-cron|Patch-Magento\_Cron-M2.1.4-cron-generate-schedule.patch|#4173|all as of 2.1.7 < 2.2.0
@@ -44,6 +45,7 @@ magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.0-M2.3.1-prices-p
 magento/module-elasticsearch|Patch-Magento_Elasticsearch-M2.3-attribute-options-optimization.patch|Attribute Options Optimization|\>= 2.3.0
 magento/module-indexer|Patch-Magento_Indexer-M2.3.1-indexer-reindex-optional-dependencies.patch|indexer:reindex command - Optional dependencies|\>= 2.3.1
 magento/module-review|Patch-Magento\_Review-M2.2-review-renderer-module-namespace.patch| |all as of 2.2.5
+magento/module-review|Patch-Magento_Review-M2.3-observer-catalog-check-is-active.patch|Fix: Product Collection Observer - Check module status|
 magento/module-theme|Patch-Magento\_Email-M2.1.0-create-email-logo-2.patch| |< 2.1.8 (2.1.4 n/a)
 magento/module-page-cache|Patch-Magento\_PageCache-M2.1.0-element-js-error-fix.patch|#6818|< 2.1.10 < 2.2.0
 magento/module-widget|Patch-Magento\_Widget-M2.1.0-widgets-restore-conditions.patch|#2913|< 2.1.9 (2.1.4 n/a)
@@ -77,11 +79,14 @@ magento/module-catalog|Patch-Magento\_Catalog-improve-root-category-indexer-2.2.
 magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-skip-empty-custom-options-skus.patch | | 2.2.5
 magento/module-catalog|Patch-Magento-Catalog-M2.1.x-2.2.7-fix-save-customizable-options.patch| pull #16838 | >= 2.1.* <=2.3.1
 magento/module-catalog|Patch-Magento_Catalog-M2.1-flat-availability.patch|Allow to use invalid Flat Indexer| \>= 2.1
+magento/module-catalog|Patch-Magento_Catalog-M2.3-category-flat-chunk-limit.patch|Catalog Category Flat chunk limit|
+magento/module-catalog|Patch-Magento_Catalog-M2.3-fix-category-image-upload.patch|Fix: Category Image Upload|
 magento/module-catalog-inventory|Patch-Magento\_CatalogInventory\_M2.1.3-hide-out-of-stock.patch|#8566|>=2.1.0 < 2.2.0
 magento/module-catalog-inventory|Patch-Magento\_CatalogInventory-M2.1.x-stock-item-events-fix.patch|#4857|<2.2.0
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch|Fix: Update stock item on product save|>=2.2.0 <2.2.4
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch|#12205|>=2.2.0 <2.2.5
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.3.3-2.3.4-fix-stock-indexer-deleting-new-records.patch|#15984|2.3.3-2.3.4
+magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2-new-item-use-config-manage-stock.patch|Fix: Use Config Manage Stock in new Stock Item|
 magento/module-catalog-rule|Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch|Q-67970|>= 2.1.0 >= 2.2.0
 magento/module-catalog-staging|Patch-Magento_Catalog_Staging-timestam.patch| | ?
 magento/module-catalog-url-rewrite|Patch-Magento\_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|#7874|>=2.1.4 < 2.1.9
@@ -90,6 +95,8 @@ magento/module-swatches|Patch-Magento\_Swatches-rest-api-visual-swatches-fix.pat
 magento/module-swatches|Patch-Magento_Swatches-rest-api-visual-swatches-fix_2.2.6.patch| |>= 2.2.6
 magento/module-swatches|Patch-Magento\_Swatches-M2.1.x-zero-value-attribute-options-fix.patch|#10266|<= 2.1.10
 magento/module-sales|Patch-Magento\_Sales-creditmemo-partial-tax-refund.patch|#10982|2.1-2.3
+magento/module-sales|Patch-Magento_Sales-M2.2-invoice-subtotal-canceled.patch|Canceled amount in Invoice Subtotal|
+magento/module-sales|Patch-Magento_Sales-M2.3-invoice-tax-canceled.patch|Canceled amount in Invoice Tax|
 magento/module-staging|Patch-Magento_Staging-M2.2-fix-duplicated-rollback.patch||2.2
 magento/module-store|Patch-Magento\_Store-emulation.patch|MAGETWO-59649|2.1-2.3
 magento/module-developer|Patch-Magento\_Developer-M2.1.x-disable-debug-loging.patch|#4362|< 2.2.3 < 2.2.0 ???
@@ -97,6 +104,9 @@ magento/module-checkout|Patch-Magento\_Checkout-cart-form-key.patch|disable form
 magento/module-checkout|Patch-Magento\_Checkout-M2.3.x-cart-form-key.patch|disable form key validation|>= 2.3.0
 magento/module-checkout|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch|#12362| >= 2.2.0 < 2.2.6
 magento/module-checkout|Patch-Magento\_Checkout-M2.3.3-replace-ES6-code.patch|#22119| >=2.3.0 <2.3.4
+magento/module-checkout|Patch-Magento_Checkout-M2.3-billing-same-as-shipping-manually-v2.patch|Don't change checkbox billing-same-as-shipping automatically|
+magento/module-checkout|Patch-Magento_Checkout-M2.3.3-place-order-allow-empty-billing.patch|Allow placing order with empty billing address|
+magento/module-checkout|Patch-Magento_Checkout-M2.3.3-save-shipping-method-not-found.patch|Don't throw carrier not found error|
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.1.2-configurable-options-sort.patch|#7441|2.1.x
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.2.x-priceBox-prior-to-initialization.patch|#8018|2.2.x
 magento/module-configurable-product|Patch-Magento\_Configurable-M2.1.3-lowest-price-provider.patch Patch-Magento\_Configurable-M2.1.6-lowest-price-provider.patch|#13933  #9796|<= 2.1.5  < 2.2.0
@@ -107,9 +117,11 @@ magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.8-fix
 magento/module-configurable-product|Patch-Magento_Configurable_M2.1.x-fix-get-price.patch|#5519|<2.1.10
 magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch|#7614|<2.2
 magento/module-config|Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch|#19070| 2.2.5 2.2.6
+magento/module-company|Patch-Magento_Company-M2.3.3-company-double-save-error.patch|Fix: double save company error|
 magento/module-page-builder|Patch-Magento_PageBuilder-M2.3.4-fix-preview-mode.patch|Fix: Preview Mode|\>=2.3.4
 magento/module-persistent-history|Patch-Magento_PersistentHistory-no-such-entity-with-address-id-fix.patch|#15115|2.2.x-2.3.0
 magento/module-sitemap|Patch-Magento_Sitemap-M2.2.x-fix-sitemap-links.patch|#15115|2.2.x
+magento/module-backend|Patch-Magento_Backend-M2.3-menu-log-level.patch|Menu Log Level - Debug|
 
 **3th party modules:**
 
@@ -124,17 +136,28 @@ algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.p
 algolia/algoliasearch-magento-2|Patch-Algolia-AlgoliaSearch-1.10.0-out_of_stock_configurable.patch| |1.10.0
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-configurable-price.patch|Fixed issue with wrong prices for configurable products|1.10.0
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-1.12.0-unsubscribe-price-index.patch|Unsubscribe Price Index - https://github.com/algolia/algoliasearch-magento-2/pull/870|1.10.0-1.12.0
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-add-store-to-facets.patch||
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-customer-group-catalogrule-price-website-id.patch|https://github.com/algolia/algoliasearch-magento-2/pull/853|
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-emulation-clean-scope.patch|https://github.com/algolia/algoliasearch-magento-2/pull/857|
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-pages-trigger-index.patch|Page indexer listeners on mview|
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-remove-show-all-products.patch|Remove show all products|
 amasty/shopby|Patch-Amasty_Shopby-2.10.5-remove-price-indexer.patch|Remove auto price indexer for v2.10.5|2.10.5
 amasty/shopby|Patch-Amasty_Shopby-2.12.5-remove-price-indexer.patch|Remove auto price indexer for v2.12.5|2.12.5
 amasty/shopby|Patch-Amasty_Shopby-2.13.7-remove-price-indexer.patch|Remove auto price indexer for v2.13.7|2.13.7
+amasty/shopby|Patch-Amasty_Shopby-category-es-performance2.patch|ES performance fixes for category filter|
 amasty/module-improved-layered-navigation-root|Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch| |all as of 1.15.1
 amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-missing-option-error-fix.patch|  | \>=2.6.0 < 2.6.5
 amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-fix-empty-title-for-brand-page.patch|  | \>=2.6.5
 amasty/shopby-root|Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch| | 2.5.3
 amasty/shopby-seo|Patch-Amasty-ShopbySeo-2.4.6-set-category-sort.patch| Add sorting from category settings| \>=2.4.6 (didn't check older versions) <2.5.0
+amasty/label|Patch-Amasty_Label-compatibility-with-M2.3.patch|Fix: require jQuery widget|
 bsscommerce/ajaxcart|Patch-Bss_AjaxCart-1.1.4-improvements.patch| | \=1.1.4
+bsscommerce/ajaxcart|Patch-Bss_AjaxCart-add-productIds-to-response.patch|Fix GTM compatibility|
 colinmollenhour/cache-backend-redis|Patch-Cm_Cache_Backend_Redis-1.10.6-remove-by-chunks.patch|Fixed removal of large amount of keys by dividing to chunks| 1.10.6
+klarna/module-base|Patch-Klarna_Base-fix-round-to-int-and-tax-calculation.patch|Fix rounding and discount tax calculation|
 klarna/module-kco|Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch|Fix wrong function parameters order|>=5.0.5
+klarna/module-kco|Patch-Klarna_Kco-8-fix-total-base-calculation-plugin.patch|Fix: Total Base Calculation Plugin - Check is KCO enabled|
+klarna/module-kco|Patch-Klarna_Kco-fix-shipping-methods-reload-and-widget-update.patch|Fix shipping method reload|
 klarna/module-core|Patch-Klarna_Core-fix-customer-address-no-such-exception.patch|Fix no such entity with addressId error in Klarna checkout|>=4.2.3 (didn't check older versions)
 klarna/module-kco-core|Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch|Fix Incorrect dependency in class Klarna\KcoCore\Block\Info\Klarna |>=5.2 (didn't check older versions)
 klarna/module-kco-core|Patch-Klarna-KcoCore-log-json-encode.patch|Convert logs from array to json format |>=5.2.1 (didn't check older versions)
@@ -144,7 +167,7 @@ vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch
 vconnect/module-allinone|Patch-Vconnect_Allinone-allowed-methods-fix.patch|Fixed allowed methods in carrier model| >=2.2.0 < 2.3.0
 vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch|Address fix for findPoints call| >=2.3.0
 vconnect/module-allinone|Patch-Vconnect_Allinone-fix-js-for-ie.patch|Fixed JS for IE| >=2.2.0
-
+vpietri/adm-quickdevbar|Patch-ADM_QuickDevBar-jquery-ui.patch||
 
 Full composer.json example:
 
@@ -155,7 +178,24 @@ Full composer.json example:
         "patches": {
             "algolia/algoliasearch-magento-2": {
                 "Fixed processing of queue jobs": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch",
-                "Unsubscribe Price Index - https://github.com/algolia/algoliasearch-magento-2/pull/870": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.10.0-1.12.0-unsubscribe-price-index.patch"
+                "Unsubscribe Price Index - https://github.com/algolia/algoliasearch-magento-2/pull/870": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.10.0-1.12.0-unsubscribe-price-index.patch",
+                "Special price with configurable product fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.11.0-configurable-product-special-price-fix.patch",
+                "Resolve conflict with Amasty": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch",
+                "Configurable product out of stock": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia-AlgoliaSearch-1.12.1-out_of_stock_configurable.patch",
+                "Configurable product price fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch",
+                "Configurable product price fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch",
+                "Configurable product out of stock": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia-AlgoliaSearch-1.10.0-out_of_stock_configurable.patch",
+                "Fixed issue with wrong prices for configurable products": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.10.0-configurable-price.patch",
+                "Remove auto price indexer for v2.10.5": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_Shopby-2.10.5-remove-price-indexer.patch",
+                "Remove auto price indexer for v2.12.5": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_Shopby-2.12.5-remove-price-indexer.patch",
+                "Set storeId for get facets": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-add-store-to-facets.patch",
+                "Catalogrule price for customer groups: https://github.com/algolia/algoliasearch-magento-2/pull/853": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-customer-group-catalogrule-price-website-id.patch",
+                "Clean scope code resolver: https://github.com/algolia/algoliasearch-magento-2/pull/857": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-emulation-clean-scope.patch",
+                "Page indexer listeners on mview": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-pages-trigger-index.patch",
+                "Remove show all products": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-remove-show-all-products.patch"
+            },
+            "amasty/shopby": {
+                "ES performance fixes for category filter": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_Shopby-category-es-performance2.patch"
             },
             "amasty/module-improved-layered-navigation-root": {
                 "Fix: Remove unnecessary configurable block": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch"
@@ -171,6 +211,9 @@ Full composer.json example:
             },
             "amasty/shopby-root": {
                  "Fix filters exception on category page": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch"
+            },
+            "amasty/label": {
+                "Fix: require jQuery widget": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_Label-compatibility-with-M2.3.patch"
             },
             "colinmollenhour/cache-backend-redis": {
                 "Fix: Remove by Chunks - https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/153": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Cm_Cache_Backend_Redis-1.10.6-remove-by-chunks.patch"
@@ -189,7 +232,8 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/12362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-drop-session-fix.patch",
                 "Fix: https://github.com/magento/magento2/issues/12362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.6-Fix-session-from-2.2.7.patch",
                 "Fix: SQL injection vulnerability": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-PRODSECBUG-2198.patch",
-                "Fix: https://github.com/magento/magento2/issues/21916": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.3.1-fix-elasticsearch-generation.patch"
+                "Fix: https://github.com/magento/magento2/issues/21916": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.3.1-fix-elasticsearch-generation.patch",
+                "Allow to add body class while block render": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-result-page.patch"
             },
             "magento/magento2-base": {
                 "Fix MAGE_DIRS for CLI": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-cli.patch",
@@ -227,14 +271,17 @@ Full composer.json example:
                 "Fix: Brand page for multystore": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-improve-root-category-indexer-2.2.8.patch",
                 "Fix: skip empty Custom Options SKUs to avoid adding extra delimiters to configurable product SKU": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.2.x-skip-empty-custom-options-skus.patch",
                 "Fix: https://github.com/magento/magento2/pull/16838": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Catalog-M2.1.x-2.2.7-fix-save-customizable-options.patch",
-                "Allow to use invalid Flat Indexer": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.1-flat-availability.patch"
+                "Allow to use invalid Flat Indexer": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.1-flat-availability.patch",
+                "Catalog Category Flat chunk limit": "patches/Patch-Magento_Catalog-M2.3-category-flat-chunk-limit.patch",
+                "Fix: Category Image Upload": "patches/Patch-Magento_Catalog-M2.3-fix-category-image-upload.patch"
             },
             "magento/module-catalog-inventory": {
                 "Fix: https://github.com/magento/magento2/issues/8566": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory_M2.1.3-hide-out-of-stock.patch",
                 "Fix: https://github.com/magento/magento2/issues/4857": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.1.x-stock-item-events-fix.patch",
                 "Fix: Update stock item on product save": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch",
                 "Fix: https://github.com/magento/magento2/issues/12205": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch",
-                "Fix: https://github.com/magento/magento2/issues/15984": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.3.3-2.3.4-fix-stock-indexer-deleting-new-records.patch"
+                "Fix: https://github.com/magento/magento2/issues/15984": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.3.3-2.3.4-fix-stock-indexer-deleting-new-records.patch",
+                "Fix: Use Config Manage Stock in new Stock Item": "patches/Patch-Magento_CatalogInventory-M2.2-new-item-use-config-manage-stock.patch"
             },
             "magento/module-catalog-rule": {
                 "Fix: https://magento.stackexchange.com/questions/67970/catalog-price-rules-disappear-after-mid-night": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch"
@@ -301,10 +348,13 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/6818": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_PageCache-M2.1.0-element-js-error-fix.patch"
             },
             "magento/module-review": {
-                "Fix review namespace": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Review-M2.2-review-renderer-module-namespace.patch"
+                "Fix review namespace": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Review-M2.2-review-renderer-module-namespace.patch",
+                "Fix: Product Collection Observer - Check module status": "patches/Patch-Magento_Review-M2.3-observer-catalog-check-is-active.patch"
             },
             "magento/module-sales": {
-                "Fix: Partial creditmemo tax amount": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sales-creditmemo-partial-tax-refund.patch"
+                "Fix: Partial creditmemo tax amount": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sales-creditmemo-partial-tax-refund.patch",
+                "Canceled amount in Invoice Subtotal": "patches/Patch-Magento_Sales-M2.2-invoice-subtotal-canceled.patch",
+                "Canceled amount in Invoice Tax": "patches/Patch-Magento_Sales-M2.3-invoice-tax-canceled.patch"
             },
             "magento/module-sales-rule": {
                 "Fix: https://github.com/magento/magento2/issues/6762": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_SalesRule-M2.1.6-fix-to-date-parameter.patch"
@@ -365,34 +415,38 @@ Full composer.json example:
                 "Fix: Add to cart form key": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3.x-cart-form-key.patch",
                 "Fix: https://github.com/magento/magento2/issues/12362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-drop-session-fix.patch",
                 "Fix: https://github.com/magento/magento2/pull/18503": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.2.x-quote-data-of-undefined.patch",
-                "Fix: https://github.com/magento/magento2/issues/22119": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3.3-replace-ES6-code.patch"
+                "Fix: https://github.com/magento/magento2/issues/22119": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3.3-replace-ES6-code.patch",
+                "Don't change checkbox billing-same-as-shipping automatically": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3-billing-same-as-shipping-manually-v2.patch",
+                "Allow placing order with empty billing address": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3.3-place-order-allow-empty-billing.patch",
+                "Don't throw carrier not found error": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3.3-save-shipping-method-not-found.patch"
+            },
+            "magento/module-company": {
+                "Fix: double save company error": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Company-M2.3.3-company-double-save-error.patch"
+            },
+            "magento/module-backend": {
+                "Menu Log Level - Debug": "patches/Patch-Magento_Backend-M2.3-menu-log-level.patch"
             },
             "klarna/module-core": {
                 "Fix no such entity with addressId error in Klarna checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Core-fix-customer-address-no-such-exception.patch"
+            },
+            "klarna/module-base": {
+                "Fix rounding and discount tax calculation": "patches/Patch-Klarna_Base-fix-round-to-int-and-tax-calculation.patch"
             },
             "klarna/module-kco-core": {
                 "Fix Incorrect dependency in class Klarna_KcoCore_Block_Info_Klarna": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch",
                 "Convert logs from array to json format": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna-KcoCore-log-json-encode.patch"
             },       
             "klarna/module-kco": {
-                "ReloadSummary action wrong order of parameters": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch"
+                "ReloadSummary action wrong order of parameters": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch",
+                "Fix: Total Base Calculation Plugin - Check is KCO enabled": "patches/Patch-Klarna_Kco-8-fix-total-base-calculation-plugin.patch",
+                "Fix: shipping method reload", "patches/Patch-Klarna_Kco-fix-shipping-methods-reload-and-widget-update.patch"
             },
             "bsscommerce/ajaxcart": {
-                "Add event + multiple add to cart (reorder) fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Bss_AjaxCart-1.1.4-improvements.patch"
+                "Add event + multiple add to cart (reorder) fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Bss_AjaxCart-1.1.4-improvements.patch",
+                "Fix GTM compatibility": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Bss_AjaxCart-add-productIds-to-response.patch"
             },
             "dotmailer/dotmailer-magento2-extension": {
                 "Fix utf8 encoding in the subject of email": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Dotdigitalgroup_email-subject-fix.patch"
-            },
-            "algolia/algoliasearch-magento-2": {
-                "Special price with configurable product fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.11.0-configurable-product-special-price-fix.patch",
-                "Resolve conflict with Amasty": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch",
-                "Configurable product out of stock": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia-AlgoliaSearch-1.12.1-out_of_stock_configurable.patch",
-                "Configurable product price fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch",
-                "Configurable product price fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch",
-                "Configurable product out of stock": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia-AlgoliaSearch-1.10.0-out_of_stock_configurable.patch",
-                "Fixed issue with wrong prices for configurable products": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-1.10.0-configurable-price.patch",
-                "Remove auto price indexer for v2.10.5": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_Shopby-2.10.5-remove-price-indexer.patch",
-                "Remove auto price indexer for v2.12.5": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_Shopby-2.12.5-remove-price-indexer.patch"
             },
             "magento/module-config": {
                 "Fix: https://github.com/magento/magento2/issues/19070": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch"
@@ -411,6 +465,9 @@ Full composer.json example:
                 "Address fix for findPoints call": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch"
                 "Fixed JS for IE": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vconnect_Allinone-fix-js-for-ie.patch",
                 "Fixed Postnord refreshing": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vconnect_Allinone-prevent-postnord-refreshing-v2.patch"
+            },
+            "vpietri/adm-quickdevbar": {
+              "jQuery/ui": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-ADM_QuickDevBar-jquery-ui.patch"
             }
         }
     }

@@ -1,0 +1,44 @@
+--- Observer/CatalogProductListCollectionAppendSummaryFieldsObserver.php.origin	2020-01-10 06:20:42.000000000 +0300
++++ Observer/CatalogProductListCollectionAppendSummaryFieldsObserver.php	2020-02-28 16:27:06.537874026 +0300
+@@ -30,15 +30,23 @@
+     private $storeManager;
+ 
+     /**
++     * @var \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
++     */
++    protected $scopeConfig;
++
++    /**
+      * @param SummaryFactory $sumResourceFactory
+      * @param StoreManagerInterface $storeManager
++     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
+      */
+     public function __construct(
+         SummaryFactory $sumResourceFactory,
+-        StoreManagerInterface $storeManager
++        StoreManagerInterface $storeManager,
++        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
+     ) {
+         $this->sumResourceFactory = $sumResourceFactory;
+         $this->storeManager = $storeManager;
++        $this->scopeConfig = $scopeConfig;
+     }
+ 
+     /**
+@@ -50,6 +58,16 @@
+      */
+     public function execute(EventObserver $observer)
+     {
++        $isReviewEnabled = $this->scopeConfig->isSetFlag(
++            \Magento\Review\Observer\PredispatchReviewObserver::XML_PATH_REVIEW_ACTIVE,
++            \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
++            $this->storeManager->getStore()
++        );
++
++        if (!$isReviewEnabled) {
++            return $this;
++        }
++
+         $productCollection = $observer->getEvent()->getCollection();
+         $this->sumResourceFactory->create()->appendSummaryFieldsToCollection(
+             $productCollection,

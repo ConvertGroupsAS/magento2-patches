@@ -1,0 +1,44 @@
+--- Plugin/Carrier/UpdateShippingGateway/TotalBaseCalculatorPlugin.php
++++ Plugin/Carrier/UpdateShippingGateway/TotalBaseCalculatorPlugin.php
+@@ -25,13 +25,29 @@
+     private $kssShipping;
+ 
+     /**
++     * @var \Magento\Store\Model\StoreManager $storeManager
++     */
++    protected $storeManager;
++
++    /**
++     * @var \Klarna\Kco\Model\Provider\Base\Config $kcoConfig
++     */
++    protected $kcoConfig;
++
++    /**
+      * @param KssShipping $kssShipping
++     * @param \Magento\Store\Model\StoreManager $storeManager
++     * @param \Klarna\Kco\Model\Provider\Base\Config $kcoConfig
+      * @codeCoverageIgnore
+      */
+     public function __construct(
+-        KssShipping $kssShipping
++        KssShipping $kssShipping,
++        \Magento\Store\Model\StoreManager $storeManager,
++        \Klarna\Kco\Model\Provider\Base\Config $kcoConfig
+     ) {
+         $this->kssShipping = $kssShipping;
++        $this->storeManager = $storeManager;
++        $this->kcoConfig = $kcoConfig;
+     }
+ 
+     /**
+@@ -53,6 +69,9 @@
+         $storeId,
+         $round
+     ): TaxDetailsItemInterface {
+-        return $this->kssShipping->updateShippingValues($result);
++        $store = $this->storeManager->getStore();
++        $isKlarnaCheckoutPaymentEnabled = $this->kcoConfig->isKlarnaCheckoutPaymentEnabled($store);
++
++        return $isKlarnaCheckoutPaymentEnabled ? $this->kssShipping->updateShippingValues($result) : $result;
+     }
+ }

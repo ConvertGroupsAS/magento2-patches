@@ -1,0 +1,11 @@
+--- Helper/Entity/ProductHelper.php	2019-05-29 18:47:57.778785105 +0300
++++ Helper/Entity/ProductHelper.php	2019-06-07 16:24:40.116609085 +0300
+@@ -953,7 +953,7 @@
+ 
+         $currencies = $this->currencyManager->getConfigAllowCurrencies();
+ 
+-        $facets = $this->configHelper->getFacets();
++        $facets = $this->configHelper->getFacets($storeId);
+         foreach ($facets as $facet) {
+             if ($facet['attribute'] === 'price') {
+                 foreach ($currencies as $currency_code) {

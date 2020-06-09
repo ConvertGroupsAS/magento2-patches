@@ -1,0 +1,10 @@
+--- Model/Category/Attribute/Backend/Image.php
++++ Model/Category/Attribute/Backend/Image.php
+@@ -123,7 +123,6 @@
+             // use relative path for image attribute so we know it's outside of category dir when we fetch it
+             // phpcs:ignore Magento2.Functions.DiscouragedFunction
+             $value[0]['url'] = parse_url($value[0]['url'], PHP_URL_PATH);
+-            $value[0]['name'] = $value[0]['url'];
+         }
+ 
+         if ($imageName = $this->getUploadedImageName($value)) {

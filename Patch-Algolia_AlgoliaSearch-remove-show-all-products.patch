@@ -1,0 +1,11 @@
+--- view/frontend/web/instantsearch.orig.js	2019-02-20 11:46:32.000000000 +0300
++++ view/frontend/web/instantsearch.js	2019-05-28 16:12:26.829680349 +0300
+@@ -216,7 +216,7 @@
+ 							}
+ 							
+ 							content += '</div>';
+-							content += algoliaConfig.translations.or + ' <a href="' + algoliaConfig.baseUrl + '/catalogsearch/result/?q=__empty__">' + algoliaConfig.translations.seeAll + '</a>'
++							// content += algoliaConfig.translations.or + ' <a href="' + algoliaConfig.baseUrl + '/catalogsearch/result/?q=__empty__">' + algoliaConfig.translations.seeAll + '</a>'
+ 							
+ 							content += '</div>';
+ 							

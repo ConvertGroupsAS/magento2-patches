@@ -1,0 +1,10 @@
+--- Helper/Data.orig.php	2019-02-20 11:46:32.000000000 +0300
++++ Helper/Data.php	2019-09-18 18:32:10.757035874 +0300
+@@ -577,6 +577,7 @@
+         $this->logger->start('START EMULATION');
+ 
+         $this->emulation->startEnvironmentEmulation($storeId, Area::AREA_FRONTEND, true);
++        \Magento\Framework\App\ObjectManager::getInstance()->get(\Magento\Framework\App\Config\ScopeCodeResolver::class)->clean();
+         $this->emulationRuns = true;
+ 
+         $this->logger->stop('START EMULATION');

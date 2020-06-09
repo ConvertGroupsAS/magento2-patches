@@ -1,0 +1,21 @@
+--- View/Result/Page.php	2019-08-13 16:54:31.241113259 +0300
++++ View/Result/Page.patch.php	2019-08-13 17:04:30.990296763 +0300
+@@ -241,6 +241,9 @@
+     {
+         $this->pageConfig->publicBuild();
+         if ($this->getPageLayout()) {
++            $output = $this->getLayout()->getOutput();
++            $this->assign('layoutContent', $output);
++
+             $config = $this->getConfig();
+             $this->addDefaultBodyClasses();
+             $addBlock = $this->getLayout()->getBlock('head.additional'); // todo
+@@ -255,8 +258,6 @@
+                 'loaderIcon' => $this->getViewFileUrl('images/loader-2.gif'),
+             ]);
+ 
+-            $output = $this->getLayout()->getOutput();
+-            $this->assign('layoutContent', $output);
+             $output = $this->renderPage();
+             $this->translateInline->processResponseBody($output);
+             $response->appendBody($output);

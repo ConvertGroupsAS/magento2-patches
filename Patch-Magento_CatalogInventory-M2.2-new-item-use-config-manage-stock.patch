@@ -1,0 +1,13 @@
+--- Model/Stock/StockItemRepository.php
++++ Model/Stock/StockItemRepository.php
+@@ -161,6 +161,10 @@
+             $typeId = $product->getTypeId() ?: $product->getTypeInstance()->getTypeId();
+             $isQty = $this->stockConfiguration->isQty($typeId);
+             if ($isQty) {
++                if ($stockItem->getItemId() === null && $stockItem->getData(\Magento\CatalogInventory\Api\Data\StockItemInterface::USE_CONFIG_MANAGE_STOCK) === null) {
++                    $stockItem->setUseConfigManageStock(true);
++                }
++
+                 $isInStock = $this->stockStateProvider->verifyStock($stockItem);
+                 if ($stockItem->getManageStock() && !$isInStock) {
+                     $stockItem->setIsInStock(false)->setStockStatusChangedAutomaticallyFlag(true);

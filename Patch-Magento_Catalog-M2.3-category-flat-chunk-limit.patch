@@ -1,0 +1,11 @@
+--- Model/Indexer/Category/Flat/Action/Full.php
++++ Model/Indexer/Category/Flat/Action/Full.php
+@@ -66,7 +66,7 @@
+                 }
+             }
+             /** @TODO Do something with chunks */
+-            $categoriesIdsChunks = array_chunk($categoriesIds[$store->getRootCategoryId()], 500);
++            $categoriesIdsChunks = array_chunk($categoriesIds[$store->getRootCategoryId()], 2000);
+ 
+             foreach ($categoriesIdsChunks as $categoriesIdsChunk) {
+                 $attributesData = $this->getAttributeValues($categoriesIdsChunk, $store->getId());

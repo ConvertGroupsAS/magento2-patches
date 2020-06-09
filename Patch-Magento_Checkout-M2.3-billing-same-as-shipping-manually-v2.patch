@@ -1,0 +1,44 @@
+--- view/frontend/web/js/view/billing-address.orig.js	2019-09-19 12:30:52.000000000 +0300
++++ view/frontend/web/js/view/billing-address.js	2019-11-25 22:13:19.606375803 +0300
+@@ -82,23 +82,24 @@
+                     saveInAddressBook: 1
+                 });
+ 
+-            quote.billingAddress.subscribe(function (newAddress) {
+-                if (quote.isVirtual()) {
+-                    this.isAddressSameAsShipping(false);
+-                } else {
+-                    this.isAddressSameAsShipping(
+-                        newAddress != null &&
+-                        newAddress.getCacheKey() == quote.shippingAddress().getCacheKey() //eslint-disable-line eqeqeq
+-                    );
+-                }
+-
+-                if (newAddress != null && newAddress.saveInAddressBook !== undefined) {
+-                    this.saveInAddressBook(newAddress.saveInAddressBook);
+-                } else {
+-                    this.saveInAddressBook(1);
+-                }
+-                this.isAddressDetailsVisible(true);
+-            }, this);
++            // Convert patch - don't change checkboxes automatically
++            // quote.billingAddress.subscribe(function (newAddress) {
++            //     if (quote.isVirtual()) {
++            //         this.isAddressSameAsShipping(false);
++            //     } else {
++            //         this.isAddressSameAsShipping(
++            //             newAddress != null &&
++            //             newAddress.getCacheKey() == quote.shippingAddress().getCacheKey() //eslint-disable-line eqeqeq
++            //         );
++            //     }
++            //
++            //     if (newAddress != null && newAddress.saveInAddressBook !== undefined) {
++            //         this.saveInAddressBook(newAddress.saveInAddressBook);
++            //     } else {
++            //         this.saveInAddressBook(1);
++            //     }
++            //     this.isAddressDetailsVisible(true);
++            // }, this);
+ 
+             return this;
+         },
