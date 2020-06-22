@@ -1,0 +1,12 @@
+--- view/frontend/web/js/action/set-payment-information-extended.js	2020-04-13 17:35:38.000000000 +0300
++++ view/frontend/web/js/action/set-payment-information-extended.js	2020-06-19 16:21:12.819394005 +0300
+@@ -50,6 +50,9 @@
+          * Checkout for guest and registered customer.
+          */
+         if (!customer.isLoggedIn()) {
++            if (!quote.guestEmail) {
++                return;
++            }
+             serviceUrl = urlBuilder.createUrl('/guest-carts/:cartId/set-payment-information', {
+                 cartId: quote.getQuoteId()
+             });
