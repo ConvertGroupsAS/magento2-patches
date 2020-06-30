@@ -90,6 +90,7 @@ magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2-new-item-us
 magento/module-catalog-rule|Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch|Q-67970|>= 2.1.0 >= 2.2.0
 magento/module-catalog-staging|Patch-Magento_Catalog_Staging-timestam.patch| | ?
 magento/module-catalog-url-rewrite|Patch-Magento\_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|#7874|>=2.1.4 < 2.1.9
+magento/module-webapi|Patch-Magento\_Webapi-M2.3.x-log-exceptions.patch||2.3.*
 magento/module-catalog-widget|Patch-Magento\_CatalogWidget-M2.1.0-widgets-restore-conditions.patch|#2913|< 2.1.8 (2.1.4 n/a)
 magento/module-swatches|Patch-Magento\_Swatches-rest-api-visual-swatches-fix.patch| |>= 2.1.4
 magento/module-swatches|Patch-Magento_Swatches-rest-api-visual-swatches-fix_2.2.6.patch| |>= 2.2.6
@@ -385,6 +386,9 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/16119": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.2.x-invalid-date-range-fix.patch",
                 "Fix reset of disabled attributes": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Ui_fix-reset-disabled-attributes.patch"
             },
+            "magento/module-webapi": {
+                "Log webapi exceptions": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Webapi-M2.3.x-log-exceptions.patch"
+            },
             "magento/module-widget": {
                 "Fix: https://github.com/magento/magento2/issues/2913": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Widget-M2.1.0-widgets-restore-conditions.patch"
             },
@@ -435,7 +439,7 @@ Full composer.json example:
             "klarna/module-kco-core": {
                 "Fix Incorrect dependency in class Klarna_KcoCore_Block_Info_Klarna": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch",
                 "Convert logs from array to json format": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna-KcoCore-log-json-encode.patch"
-            },       
+            },
             "klarna/module-kco": {
                 "ReloadSummary action wrong order of parameters": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch",
                 "Fix: Total Base Calculation Plugin - Check is KCO enabled": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-8-fix-total-base-calculation-plugin.patch",
