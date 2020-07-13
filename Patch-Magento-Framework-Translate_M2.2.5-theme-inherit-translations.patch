@@ -1,0 +1,84 @@
+--- Translate.php
++++ Translate.php
+@@ -328,17 +328,78 @@ class Translate implements \Magento\Framework\TranslateInterface
+ 
+     /**
+      * Load current theme translation
++     * Fix: Child theme does not inherit translations from parent theme 
+      *
+      * @return $this
+      */
+     protected function _loadThemeTranslation()
+     {
+-        $file = $this->_getThemeTranslationFile($this->getLocale());
+-        if ($file) {
+-            $this->_addData($this->_getFileData($file));
++        $themeFiles = $this->getThemeTranslationFilesList($this->getLocale());
++
++        /** @var string $file */
++        foreach ($themeFiles as $file) {
++            if ($file) {
++                $this->_addData($this->_getFileData($file));
++            }
+         }
++
+         return $this;
+     }
++    
++    /**
++     * 
++     * Fix: Child theme does not inherit translations from parent theme
++     * 
++     */
++    private function getThemeTranslationFilesList($locale)
++    {
++        $translationFiles = [];
++
++        /** @var \Magento\Framework\View\Design\ThemeInterface $theme */
++        foreach ($this->getParentThemesList() as $theme) {
++            $config = $this->_config;
++            $config['theme'] = $theme->getCode();
++            $translationFiles[] = $this->getThemeTranslationFileName($locale, $config);
++        }
++
++        $translationFiles[] = $this->getThemeTranslationFileName($locale, $this->_config);
++
++        return $translationFiles;
++    }
++
++
++    /**
++     * 
++     * Fix: Child theme does not inherit translations from parent theme
++     * 
++     */
++    private function getParentThemesList()
++    {
++        $themes = [];
++
++        $parentTheme = $this->_viewDesign->getDesignTheme()->getParentTheme();
++        while($parentTheme) {
++            $themes[] = $parentTheme;
++            $parentTheme = $parentTheme->getParentTheme();
++        }
++        $themes = array_reverse($themes);
++
++        return $themes;
++    }
++
++    /**
++     * 
++     * Fix: Child theme does not inherit translations from parent theme
++     * 
++     */
++    private function getThemeTranslationFileName($locale, $config)
++    {
++        return $this->_viewFileSystem->getLocaleFileName(
++            'i18n' . '/' . $locale . '.csv',
++            $config
++        );
++    }
++
+ 
+     /**
+      * Load translation dictionary from language packages
