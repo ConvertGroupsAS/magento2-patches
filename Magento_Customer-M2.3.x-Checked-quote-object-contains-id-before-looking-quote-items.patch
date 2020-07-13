@@ -1,0 +1,19 @@
+--- Block/Adminhtml/Edit/Tab/Cart.orig.php	2020-04-13 17:35:40.000000000 +0300
++++ Block/Adminhtml/Edit/Tab/Cart.php	2020-07-13 13:19:45.000000000 +0300
+@@ -105,14 +105,13 @@
+     {
+         $quote = $this->getQuote();
+ 
+-        if ($quote) {
++        if ($quote && $quote->getId()) {
+             $collection = $quote->getItemsCollection(false);
++            $collection->addFieldToFilter('parent_item_id', ['null' => true]);
+         } else {
+             $collection = $this->_dataCollectionFactory->create();
+         }
+ 
+-        $collection->addFieldToFilter('parent_item_id', ['null' => true]);
+-
+         $this->setCollection($collection);
+ 
+         return parent::_prepareCollection();
