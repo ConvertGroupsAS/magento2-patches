@@ -108,6 +108,7 @@ magento/module-checkout|Patch-Magento\_Checkout-M2.3.3-replace-ES6-code.patch|#2
 magento/module-checkout|Patch-Magento_Checkout-M2.3-billing-same-as-shipping-manually-v2.patch|Don't change checkbox billing-same-as-shipping automatically|
 magento/module-checkout|Patch-Magento_Checkout-M2.3.3-place-order-allow-empty-billing.patch|Allow placing order with empty billing address|
 magento/module-checkout|Patch-Magento_Checkout-M2.3.3-save-shipping-method-not-found.patch|Don't throw carrier not found error|
+magento/module-checkout|Patch-Magento_Checkout-M2.3.x-checkout-login-form.patch|Login form of the checkout page is shown without any associating user account|
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.1.2-configurable-options-sort.patch|#7441|2.1.x
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.2.x-priceBox-prior-to-initialization.patch|#8018|2.2.x
 magento/module-configurable-product|Patch-Magento\_Configurable-M2.1.3-lowest-price-provider.patch Patch-Magento\_Configurable-M2.1.6-lowest-price-provider.patch|#13933  #9796|<= 2.1.5  < 2.2.0
@@ -420,6 +421,7 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/12362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-drop-session-fix.patch",
                 "Fix: https://github.com/magento/magento2/pull/18503": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.2.x-quote-data-of-undefined.patch",
                 "Fix: https://github.com/magento/magento2/issues/22119": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3.3-replace-ES6-code.patch",
+                "Fix: https://github.com/magento/magento2/issues/29364": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3.x-checkout-login-form.patch",
                 "Don't change checkbox billing-same-as-shipping automatically": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3-billing-same-as-shipping-manually-v2.patch",
                 "Allow placing order with empty billing address": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3.3-place-order-allow-empty-billing.patch",
                 "Don't throw carrier not found error": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.3.3-save-shipping-method-not-found.patch"

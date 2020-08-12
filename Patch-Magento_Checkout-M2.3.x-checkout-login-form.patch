@@ -1,0 +1,29 @@
+diff -ruN view/frontend/web/template/form/element/email.html view/frontend/web/template/form/element/email.html
+--- view/frontend/web/template/form/element/email.html	2020-04-13 17:35:38.000000000 +0300
++++ view/frontend/web/template/form/element/email.html	2020-08-11 15:47:46.481628652 +0300
+@@ -23,6 +23,7 @@
+                        data-bind="
+                             textInput: email,
+                             hasFocus: emailFocused,
++                            afterRender: emailHasChanged,
+                             mageInit: {'mage/trim-input':{}}"
+                        name="username"
+                        data-validate="{required:true, 'validate-email':true}"
+diff -ruN view/frontend/web/js/view/form/element/email.js view/frontend/web/js/view/form/element/email.js
+--- view/frontend/web/js/view/form/element/email.js	2020-04-13 17:35:38.000000000 +0300
++++ view/frontend/web/js/view/form/element/email.js	2020-08-11 15:29:10.975000000 +0300
+@@ -192,9 +192,11 @@
+          * @returns {Boolean} - initial visibility state.
+          */
+         resolveInitialPasswordVisibility: function () {
+-            if (checkoutData.getInputFieldEmailValue() !== '' && checkoutData.getCheckedEmailValue() === '') {
+-                return true;
+-            }
++
++            // patch for the issue: https://github.com/magento/magento2/issues/29364
++            // if (checkoutData.getInputFieldEmailValue() !== '' && checkoutData.getCheckedEmailValue() === '') {
++            //     return true;
++            // }
+
+             if (checkoutData.getInputFieldEmailValue() !== '') {
+                 return checkoutData.getInputFieldEmailValue() === checkoutData.getCheckedEmailValue();

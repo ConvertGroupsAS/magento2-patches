@@ -546,6 +546,10 @@
         "Fix: https://github.com/magento/magento2/issues/22119": {
             "file": "Patch-Magento_Checkout-M2.3.3-replace-ES6-code.patch",
             "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/29364": {
+            "file": "Patch-Magento_Checkout-M2.3.x-checkout-login-form.patch",
+            "version": "*"
         }
     },
     "klarna/module-core": {
