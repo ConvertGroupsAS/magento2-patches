@@ -1,0 +1,11 @@
+--- Controller/Add/Stock.original.php	2020-10-29 17:30:28.900822805 +0800
++++ Controller/Add/Stock.php	2020-10-29 17:30:35.740799275 +0800
+@@ -19,7 +19,7 @@
+ /**
+  * Controller for notifying about stock.
+  */
+-class Stock extends AddController implements HttpGetActionInterface
++class Stock extends AddController
+ {
+     /**
+      * @var \Magento\Catalog\Api\ProductRepositoryInterface
