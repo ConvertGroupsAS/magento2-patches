@@ -170,7 +170,7 @@ vconnect/module-allinone|Patch-Vconnect_Allinone-allowed-methods-fix.patch|Fixed
 vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch|Address fix for findPoints call| >=2.3.0
 vconnect/module-allinone|Patch-Vconnect_Allinone-fix-js-for-ie.patch|Fixed JS for IE| >=2.2.0
 vpietri/adm-quickdevbar|Patch-ADM_QuickDevBar-jquery-ui.patch||
-
+weltpixel/m2-weltpixel-backend|Patch-ADM_QuickDevBar-jquery-ui.patch||1.8.5-1.9.1
 Full composer.json example:
 
 ```
@@ -474,6 +474,9 @@ Full composer.json example:
             },
             "vpietri/adm-quickdevbar": {
               "jQuery/ui": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-ADM_QuickDevBar-jquery-ui.patch"
+            },
+            "weltpixel/m2-weltpixel-backend": {
+              "Remove shell_exec from code": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Weltpixel_Backend-1.8.5-1.9.1-remove-shell_exec.patch"
             }
         }
     }

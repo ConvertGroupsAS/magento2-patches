@@ -659,5 +659,11 @@
             "file": "Patch-Vconnect_Allinone-prevent-postnord-refreshing-v2.patch",
             "version": "*"
         }
+    },
+    "weltpixel/m2-weltpixel-backend": {
+        "Remove shell_exec from code": {
+            "file": "Patch-Weltpixel_Backend-1.8.5-1.9.1-remove-shell_exec.patch",
+            "version": "1.8.5-1.9.1"
+        }
     }
 }

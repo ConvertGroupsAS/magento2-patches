@@ -1,0 +1,15 @@
+--- Helper/Developer.php
++++ Helper/Developer.php
+@@ -62,8 +62,10 @@
+      */
+     public function getCurrentServerUserGroup()
+     {
+-        $groups = explode(' ', shell_exec('groups'));
+-        return $groups[0];
++        $groupid   = posix_getegid();
++        $groupinfo = posix_getgrgid($groupid);
++
++        return $groupinfo['name'];
+     }
+ 
+     /**
