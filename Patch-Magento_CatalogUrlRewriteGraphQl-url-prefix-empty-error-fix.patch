@@ -1,0 +1,22 @@
+--- Model/Resolver/CategoryUrlSuffix.php	2020-12-03 11:19:17.000000000 +0300
++++ Model/Resolver/CategoryUrlSuffix.php	2020-12-03 11:13:29.000000000 +0300
+@@ -75,7 +75,7 @@ class CategoryUrlSuffix implements Resol
+                 self::$xml_path_category_url_suffix,
+                 ScopeInterface::SCOPE_STORE,
+                 $storeId
+-            );
++            ) ?? '';
+         }
+         return $this->categoryUrlSuffix[$storeId];
+     }
+--- Model/Resolver/ProductUrlSuffix.php	2020-12-03 11:18:48.000000000 +0300
++++ Model/Resolver/ProductUrlSuffix.php	2020-12-03 11:13:32.000000000 +0300
+@@ -75,7 +75,7 @@ class ProductUrlSuffix implements Resolv
+                 self::$xml_path_product_url_suffix,
+                 ScopeInterface::SCOPE_STORE,
+                 $storeId
+-            );
++            ) ?? '';
+         }
+         return $this->productUrlSuffix[$storeId];
+     }
