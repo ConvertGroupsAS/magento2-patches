@@ -1,0 +1,12 @@
+--- Model/Quote/Item/CartItemProcessor.php	2020-04-13 17:35:40.000000000 +0300
++++ Model/Quote/Item/CartItemProcessor.php	2020-12-30 15:27:21.711642614 +0300
+@@ -68,6 +68,9 @@
+             $options = $cartItem->getProductOption()->getExtensionAttributes()->getConfigurableItemOptions();
+             if (is_array($options)) {
+                 $requestData = [];
++
++                $requestData['id'] = $cartItem->getItemId();
++
+                 foreach ($options as $option) {
+                     $requestData['super_attribute'][$option->getOptionId()] = (string) $option->getOptionValue();
+                 }
