@@ -1,0 +1,10 @@
+--- Model/CartItemProcessor.php
++++ Model/Current File
+@@ -59,6 +59,7 @@
+             $options = $cartItem->getProductOption()->getExtensionAttributes()->getBundleOptions();
+             if (is_array($options)) {
+                 $requestData = [];
++                $requestData['id'] = $cartItem->getItemId();
+                 foreach ($options as $option) {
+                     /** @var \Magento\Bundle\Api\Data\BundleOptionInterface $option */
+                     foreach ($option->getOptionSelections() as $selection) {

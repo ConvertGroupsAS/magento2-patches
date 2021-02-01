@@ -117,7 +117,8 @@ magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix
 magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices_M2.2.6.patch|#15654|>=2.2.6
 magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.8-fix-min-max-prices.patch|#15654| =2.2.8
 magento/module-configurable-product|Patch-Magento_Configurable_M2.1.x-fix-get-price.patch|#5519|<2.1.10
-magento/module-configurable-product|PPatch-Magento_ConfigurableProduct-quote-item-qty-doubling-fix.patch|#5519|>2.3.x
+magento/module-configurable-product|Patch-Magento_ConfigurableProduct-quote-item-qty-doubling-fix.patch|#5519|>2.3.x
+magento/module-configurable-product|Patch-Magento_BundleProduct-quote-item-qty-doubling-fix.patch|#5519|>2.3.x
 magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch|#7614|<2.2
 magento/module-config|Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch|#19070| 2.2.5 2.2.6
 magento/module-company|Patch-Magento_Company-M2.3.3-company-double-save-error.patch|Fix: double save company error|
@@ -312,6 +313,9 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/5519": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Configurable_M2.1.x-fix-get-price.patch",
                 "Fix: https://github.com/magento/magento2/issues/8018": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_ConfigurableProduct-M2.2.x-priceBox-prior-to-initialization.patch",
                 "Fix: Configurable product quantity is doubling in the Quote item": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_ConfigurableProduct-quote-item-qty-doubling-fix.patch"
+            },
+            "magento/module-bundle": {
+                "Fix: Bundle product quantity is doubling in the Quote item": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_BundleProduct-quote-item-qty-doubling-fix.patch"
             },
             "magento/module-cron": {
                 "Fix: https://github.com/magento/magento2/issues/4173": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Cron-M2.1.4-cron-generate-schedule.patch",
