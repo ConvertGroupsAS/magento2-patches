@@ -1,0 +1,19 @@
+--- Model/QuoteRepository.php	2021-01-12 17:04:56.000000000 +0300
++++ Model/QuoteRepository.php	2021-01-28 16:33:07.000000000 +0300
+@@ -158,7 +158,7 @@ class QuoteRepository implements QuoteRe
+     }
+ 
+     /**
+-     * @param int $vippsQuoteId
++     * @param int $monitoringQuoteId
+      *
+      * @return Quote
+      * @throws NoSuchEntityException
+@@ -166,6 +166,7 @@ class QuoteRepository implements QuoteRe
+     public function load(int $monitoringQuoteId)
+     {
+         $monitoringQuote = $this->quoteFactory->create();
++        $this->quoteResource->load($monitoringQuote, $monitoringQuoteId);
+ 
+         if (!$monitoringQuote->getId()) {
+             throw NoSuchEntityException::singleField('entity_id', $monitoringQuoteId);
