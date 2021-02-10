@@ -57,6 +57,8 @@ magento/module-sales-rule|Patch-Magento\_SalesRule-M2.1.6-fix-to-date-parameter.
 magento/module-google-tag-manager|Patch\_Magento\_GoogleTagManager\_M2.1.0-fix-empty-product-list-block.patch| |EE Only
 magento/module-customer|Patch-Magento\_Customer-M2.1.9-array-street-line.patch (Patch-Magento\_Customer-array-street-line.patch)Patch-Webshipr\_Shipping-get-shipping-address-fix.patch|pull #10582 2.1.9 - error saving shipping address in checkout|>= 2.1.9 < 2.2.2
 magento/module-customer|Patch-Magento\_Customer-M2.1.9-generate-new-formkey-wishlist.patch|#11825|>=2.1.9 >=2.2.0 <2.2.4(maybe)
+magento/module-customer|Patch-Magento\_Customer-M2.4.1-context-customer-group-id-fix.patch||>=2.4.1 <2.4.3(maybe)
+magento/module-customer-graph-ql|Patch-Magento\_CustomerGraphQl-M2.4.1-context-customer-group-id-fix.patch||>=2.4.1 <2.4.3(maybe)
 magento/module-wishlist|Patch-Magento\_Wishlist-M2.x.x-add-to-wishlist-login-register.patch|#11825|>=2.1.9 >=2.2.0 <2.2.4(maybe)
 magento/module-wishlist|Patch-Magento\_Wishlist-M2.x.x-wishlist-keep-item-in-cart.patch| |\>=2.1.0
 magento/module-wishlist|Patch-Magento\_Wishlist_M2.x.x-failed-login-attempts.patch| |\>=2.2.* 2.3.*
@@ -326,7 +328,11 @@ Full composer.json example:
             "magento/module-customer": {
                 "Fix: https://github.com/magento/magento2/pull/10582": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Customer-M2.1.9-array-street-line.patch",
                 "Fix: https://github.com/magento/magento2/issues/11825": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Customer-M2.1.9-generate-new-formkey-wishlist.patch",
-                "Fix: Disable cache for customer section data": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch_Magento_Customer-M2.1.4-customer-section-load-fix.patch"
+                "Fix: Disable cache for customer section data": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch_Magento_Customer-M2.1.4-customer-section-load-fix.patch",
+                "Fix: Added Customer Group Id to GraphQl Context": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Customer-M2.4.1-context-customer-group-id-fix.patch" 
+            },
+            "magento/module-customer-graph-ql": {
+               "Fix: Added Customer Group Id to GraphQl Context": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CustomerGraphQl-M2.4.1-context-customer-group-id-fix.patch" 
             },
             "magento/module-directory": {
                 "Fix: https://github.com/magento/magento2/issues/6694": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Directory_M2.1-zip-codes.patch"

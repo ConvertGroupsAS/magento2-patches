@@ -1,0 +1,104 @@
+--- Model/Group/Resolver.php	1970-01-01 03:00:00.000000000 +0300
++++ Model/Group/Resolver.php	2020-12-23 00:17:26.000000000 +0300
+@@ -0,0 +1,40 @@
++<?php
++/**
++ * Copyright © Magento, Inc. All rights reserved.
++ * See COPYING.txt for license details.
++ */
++declare(strict_types=1);
++
++namespace Magento\Customer\Model\Group;
++
++use Magento\Customer\Model\ResourceModel\Group\Resolver as ResolverResource;
++
++/**
++ * Lightweight service for getting current customer group based on customer id
++ */
++class Resolver
++{
++    /**
++     * @var ResolverResource
++     */
++    private $resolverResource;
++
++    /**
++     * @param ResolverResource $resolverResource
++     */
++    public function __construct(ResolverResource $resolverResource)
++    {
++        $this->resolverResource = $resolverResource;
++    }
++
++    /**
++     * Return customer group id
++     *
++     * @param int $customerId
++     * @return int|null
++     */
++    public function resolve(int $customerId) : ?int
++    {
++        return $this->resolverResource->resolve($customerId);
++    }
++}
+--- Model/ResourceModel/Group/Resolver.php	1970-01-01 03:00:00.000000000 +0300
++++ Model/ResourceModel/Group/Resolver.php	2020-12-23 00:16:39.000000000 +0300
+@@ -0,0 +1,58 @@
++<?php
++/**
++ * Copyright © Magento, Inc. All rights reserved.
++ * See COPYING.txt for license details.
++ */
++declare(strict_types=1);
++
++namespace Magento\Customer\Model\ResourceModel\Group;
++
++use Magento\Framework\App\ResourceConnection;
++
++/**
++ * Resource model for customer group resolver service
++ */
++class Resolver
++{
++    /**
++     * @var ResourceConnection
++     */
++    private $resourceConnection;
++
++    /**
++     * @param ResourceConnection $resourceConnection
++     */
++    public function __construct(
++        ResourceConnection $resourceConnection
++    ) {
++        $this->resourceConnection = $resourceConnection;
++    }
++
++    /**
++     * Resolve customer group from db
++     *
++     * @param int $customerId
++     * @return int|null
++     */
++    public function resolve(int $customerId) : ?int
++    {
++        $result = null;
++
++        $connection = $this->resourceConnection->getConnection();
++        $tableName = $this->resourceConnection->getTableName('customer_entity');
++
++        $query = $connection
++            ->select()
++            ->from(
++                ['main_table' => $tableName],
++                ['main_table.group_id']
++            )
++            ->where('main_table.entity_id = ?', $customerId);
++        $groupId = $connection->fetchOne($query);
++        if ($groupId) {
++            $result = (int) $groupId;
++        }
++
++        return $result;
++    }
++}
