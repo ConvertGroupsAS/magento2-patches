@@ -1,0 +1,22 @@
+--- SearchAdapter/Adapter.orig.php	2021-01-07 21:56:58.000000000 +0300
++++ SearchAdapter/Adapter.php	2021-03-27 11:48:01.165570620 +0300
+@@ -119,6 +119,19 @@
+             $this->logger->critical($e);
+             // return empty search result in case an exception is thrown from Elasticsearch
+             $rawResponse = self::$emptyRawResponse;
++            // patch - all aggregations, return 503 error so that full page cache doesn't cache, show error message
++            foreach ($request->getAggregation() as $bucket) {
++                $rawResponse['aggregations'][$bucket->getName()] = [
++                    'buckets' => [],
++                    'count' => 0,
++                    'min' => 0,
++                    'max' => 0,
++                ];
++            }
++            \Magento\Framework\App\ObjectManager::getInstance()->get(\Magento\Framework\Message\ManagerInterface::class)
++                ->addErrorMessage(__('The server is temporarily unavailable. Please try the search box to find what you are looking for.'));
++            \Magento\Framework\App\ObjectManager::getInstance()->get(\Magento\Framework\App\Response\Http::class)
++                ->setHttpResponseCode(503);
+         }
+
+         $rawDocuments = $rawResponse['hits']['hits'] ?? [];
