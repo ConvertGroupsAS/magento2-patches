@@ -26,8 +26,8 @@ magento/framework|Patch-Magento\_Framework-M2.2.x-fix-sessions.patch|[PR #2226](
 magento/framework|Patch-Magento\_Framework-M2.2.5-force-unset-translation.patch| |>=2.2.5
 magento/framework|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch"|[#12362](https://github.com/magento/magento2/issues/12362)| >= 2.2.0 < 2.2.6
 magento/framework|Patch-Magento\_Framework-M2.1.x-Curl-Post-Json.patch|[PR #8373](https://github.com/magento/magento2/pull/8373)|< 2.2.0
-magento/framework|Patch-Magento\_Framework-M2.2.x-PRODSECBUG-2198.patch| < 2.2.8
-magento/framework|Patch-Magento\_Framework-M2.3.1-fix-elasticsearch-generation.patch| >= 2.3.1 < 2.3.2
+magento/framework|Patch-Magento\_Framework-M2.2.x-PRODSECBUG-2198.patch| |< 2.2.8
+magento/framework|Patch-Magento\_Framework-M2.3.1-fix-elasticsearch-generation.patch| |>= 2.3.1 < 2.3.2
 magento/framework|Patch-Magento\_Framework-M2.2.6-Fix-session-from-2.2.7.patch|[#12362](https://github.com/magento/magento2/issues/12362)| 2.2.6
 magento/framework|Patch-Magento_Framework-result-page.patch|Allow to add body class while block render|
 magento/framework-message-queue|Patch-Message-Queue-Consumer-Transaction.patch| |EE Only < 2.2.0
@@ -40,9 +40,9 @@ magento/module-email|Patch-Magento\_Email-M2.1.0-create-email-logo-1.patch| |< 2
 magento/module-email|Patch-Magento\_Email-M2.2.x-cant-update-logo.patch|[PR #15137](https://github.com/magento/magento2/pull/15137) |< 2.2.6 (2.2.4 n/a)
 magento/module-email|Patch-Magento\_Email-M2.2.8-2.3.2-No-Sid-In-Messages.patch| |>= 2.2.8 <=2.3.2
 magento/module-elasticsearch|Patch-Magento_Elasticsearch-M2.2-total-fields-limit-10000.patch|Increase default fields limit|>= 2.2.0
-magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.x-Send-Error-Message.patch| | >= 2.3.0
-magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.0-M2.3.1-prices-pass-website-id.patch| | >= 2.3.0 <= 2.3.1
-magento/module-elasticsearch|Patch-Magento_Elasticsearch-M2.3-attribute-options-optimization.patch|Attribute Options Optimization|\>= 2.3.0
+magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.x-Send-Error-Message.patch| |>= 2.3.0
+magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.0-M2.3.1-prices-pass-website-id.patch| |>= 2.3.0 <= 2.3.1
+magento/module-elasticsearch|Patch-Magento_Elasticsearch-M2.3-attribute-options-optimization.patch|Attribute Options Optimization|>= 2.3.0
 magento/module-elasticsearch-7|Patch-Magento_Elasticsearch7-disable-full-page-cache-show-error.patch|Elasticsearch error returns 503 code and message|\>= 2.3.5
 magento/module-indexer|Patch-Magento_Indexer-M2.3.1-indexer-reindex-optional-dependencies.patch|indexer:reindex command - Optional dependencies|\>= 2.3.1
 magento/module-review|Patch-Magento\_Review-M2.2-review-renderer-module-namespace.patch| |all as of 2.2.5
@@ -77,9 +77,9 @@ magento/module-catalog|Patch-Magento\_Catalog-M2.1.4-product-flat-indexer.patch|
 magento/module-catalog|Patch-Magento\_Catalog-M2.1.0-image-attribute-backend-model-hardcoded-attribute-code-removal.patch|[#5438](https://github.com/magento/magento2/issues/5438)|< 2.1.8 (2.1.4 n/a)
 magento/module-catalog|Patch-Magento\_Catalog-M2.1.3-category-indexer-range.patch|[#8018](https://github.com/magento/magento2/issues/8018)|>= 2.1.0 >= 2.2.0
 magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-related-products-visibility-in-admin.patch|[#13720](https://github.com/magento/magento2/issues/13720)|>= 2.2.1 >= 2.3.0
-magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-PRODSECBUG-2198.patch| | < 2.2.8
+magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-PRODSECBUG-2198.patch| |< 2.2.8
 magento/module-catalog|Patch-Magento\_Catalog-improve-root-category-indexer-2.2.8.patch| | > 2.2.8
-magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-skip-empty-custom-options-skus.patch | | 2.2.5
+magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-skip-empty-custom-options-skus.patch| | 2.2.5
 magento/module-catalog|Patch-Magento-Catalog-M2.1.x-2.2.7-fix-save-customizable-options.patch|[PR #16838](https://github.com/magento/magento2/pull/16838)| >= 2.1.* <=2.3.1
 magento/module-catalog|Patch-Magento_Catalog-M2.1-flat-availability.patch|Allow to use invalid Flat Indexer| \>= 2.1
 magento/module-catalog|Patch-Magento_Catalog-M2.3-category-flat-chunk-limit.patch|Catalog Category Flat chunk limit|
