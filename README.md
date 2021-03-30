@@ -6,7 +6,7 @@ Patches to be applied by https://github.com/cweagans/composer-patches
 **Module**|**Name**|**Fixes**|**Affected versions**
 :-----:|:-----:|:-----:|:-----:
 magento/magento2-base|Patch-Magento\_Base-cli.patch Patch-Magento\_Base-M2.2.x-cli.patch| |< 2.2.0 >=2.2.0
-magento/magento2-base|Patch-Magento\_Base-M2.1.0-widgets-values-utf8-decode.patch|#4232|< 2.1.8 (2.1.4 n/a)
+magento/magento2-base|Patch-Magento\_Base-M2.1.0-widgets-values-utf8-decode.patch|[#4232](https://github.com/magento/magento2/issues/4232)|< 2.1.8 (2.1.4 n/a)
 magento/magento2-base|Patch-Magento\_Base-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2 < 2.2.6
 magento/magento2-base|Patch-Magento\_Base-M2.x.x-zoomed-photo-product.patch |MAGETWO-94989| < 2.1-2.3
 magento/magento2-base|Patch-Magento\_Base-M2.2.5-mangnifier-zoom-distortion.patch | | > 2.2.5
@@ -145,10 +145,10 @@ algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.7-catalogrule-inde
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch| |1.9
 algolia/algoliasearch-magento-2|Patch-Algolia-AlgoliaSearch-1.10.0-out_of_stock_configurable.patch| |1.10.0
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-configurable-price.patch|Fixed issue with wrong prices for configurable products|1.10.0
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-1.12.0-unsubscribe-price-index.patch|[https://github.com/algolia/algoliasearch-magento-2/pull/870](#870)|1.10.0-1.12.0
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-1.12.0-unsubscribe-price-index.patch|[#870](https://github.com/algolia/algoliasearch-magento-2/pull/870)|1.10.0-1.12.0
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-add-store-to-facets.patch||
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-customer-group-catalogrule-price-website-id.patch|[https://github.com/algolia/algoliasearch-magento-2/pull/853](#853)|
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-emulation-clean-scope.patch|[https://github.com/algolia/algoliasearch-magento-2/pull/857](#857)|
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-customer-group-catalogrule-price-website-id.patch|[#853](https://github.com/algolia/algoliasearch-magento-2/pull/853)|
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-emulation-clean-scope.patch|[#857](https://github.com/algolia/algoliasearch-magento-2/pull/857#857)|
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-pages-trigger-index.patch|Page indexer listeners on mview|
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-remove-show-all-products.patch|Remove show all products|
 amasty/shopby|Patch-Amasty_Shopby-2.10.5-remove-price-indexer.patch|Remove auto price indexer for v2.10.5|2.10.5
@@ -177,8 +177,8 @@ vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch
 vconnect/module-allinone|Patch-Vconnect_Allinone-allowed-methods-fix.patch|Fixed allowed methods in carrier model| >=2.2.0 < 2.3.0
 vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch|Address fix for findPoints call| >=2.3.0
 vconnect/module-allinone|Patch-Vconnect_Allinone-fix-js-for-ie.patch|Fixed JS for IE| >=2.2.0
-vipps/module-payment|Patch-Vipps_ModulePayment-2.4.6-fix-place-order-quote-mask.patch|https://github.com/vippsas/vipps-magento/pull/89| >=2.3
-vipps/module-payment|Patch-Vipps_ModulePayment-2.4.5-no-quote-found-exception.patch|https://github.com/vippsas/vipps-magento/pull/88| >=2.4.5
+vipps/module-payment|Patch-Vipps_ModulePayment-2.4.6-fix-place-order-quote-mask.patch|[#89](https://github.com/vippsas/vipps-magento/pull/89)| >=2.3
+vipps/module-payment|Patch-Vipps_ModulePayment-2.4.5-no-quote-found-exception.patch|[#88](https://github.com/vippsas/vipps-magento/pull/88)| >=2.4.5
 vpietri/adm-quickdevbar|Patch-ADM_QuickDevBar-jquery-ui.patch||
 weltpixel/m2-weltpixel-backend|Patch-ADM_QuickDevBar-jquery-ui.patch||1.8.5-1.9.1
 Full composer.json example:
