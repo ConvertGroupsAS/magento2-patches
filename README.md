@@ -7,37 +7,37 @@ Patches to be applied by https://github.com/cweagans/composer-patches
 :-----:|:-----:|:-----:|:-----:
 magento/magento2-base|Patch-Magento\_Base-cli.patch Patch-Magento\_Base-M2.2.x-cli.patch| |< 2.2.0 >=2.2.0
 magento/magento2-base|Patch-Magento\_Base-M2.1.0-widgets-values-utf8-decode.patch|[#4232](https://github.com/magento/magento2/issues/4232)|< 2.1.8 (2.1.4 n/a)
-magento/magento2-base|Patch-Magento\_Base-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2 < 2.2.6
+magento/magento2-base|Patch-Magento\_Base-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|[PR  #12497](https://github.com/magento/magento2/pull/12497)|2.2 < 2.2.6
 magento/magento2-base|Patch-Magento\_Base-M2.x.x-zoomed-photo-product.patch |MAGETWO-94989| < 2.1-2.3
 magento/magento2-base|Patch-Magento\_Base-M2.2.5-mangnifier-zoom-distortion.patch | | > 2.2.5
 magento/magento2-base|Path-Magento\_Base-tests-cookie-and-session-add-to-return-null-value.patch| | >= 2.3.0
 magento/magento2-base|Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame.patch| |>= 2.1.0 >= 2.2.0
 magento/magento2-base|Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame_M2.2.6.patch| |>= 2.1.0 >= 2.2.6
 magento/magento2-base|Patch-Magento\_Base-setup-upgrade.patch| |>= 2.1.0 >= 2.2.0
-magento/magento2-base|Patch-Magento\_Base-M2.1.0-catalog-gallery-allowfullscreen-false.patch|#5808|< 2.2.0
-magento/magento2-base|Patch-Magento\_Base-M2.1.0-errors-apply-skin-fix.patch|#4305|< 2.2.0
-magento/magento2-base|Patch-Magento\_Base-2.2.x-fotorama-ios.patch|#13226|>=2.2.0 < 2.3.0
-magento/magento2-base|Patch-Magento_Base-M2.3-remove-php-memory-limit.patch| |\>=2.3.0
-magento/framework|Patch-Magento\_Framework-mview-changelog-increment.patch|pull 13577|2.1-2.3
+magento/magento2-base|Patch-Magento\_Base-M2.1.0-catalog-gallery-allowfullscreen-false.patch|[#5808](https://github.com/magento/magento2/issues/5808)|< 2.2.0
+magento/magento2-base|Patch-Magento\_Base-M2.1.0-errors-apply-skin-fix.patch|[#4305](https://github.com/magento/magento2/issues/4305)|< 2.2.0
+magento/magento2-base|Patch-Magento\_Base-2.2.x-fotorama-ios.patch|[#13226](https://github.com/magento/magento2/issues/13226)|>=2.2.0 < 2.3.0
+magento/magento2-base|Patch-Magento_Base-M2.3-remove-php-memory-limit.patch| |>=2.3.0
+magento/framework|Patch-Magento\_Framework-mview-changelog-increment.patch|[PR #13577](https://github.com/magento/magento2/pull/13577)|2.1-2.3
 magento/framework|Patch-Magento\_Framework-M2.1.x-Search-Adapter-Mysql-Mapper-fix-order.patch|#9020|<2.2.0
-magento/framework|Patch-Magento\_Framework-customer-grid.patch|#10838|2.2 (probably all)
-magento/framework|Patch-Magento\_Framework-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2
-magento/framework|Patch-Magento\_Framework-M2.2.x-fix-sessions.patch|Pull #2226|>=2.2.0 (2.2.2, 2.2.3 n/a)
+magento/framework|Patch-Magento\_Framework-customer-grid.patch|[#10838](https://github.com/magento/magento2/issues/10838)|2.2 (probably all)
+magento/framework|Patch-Magento\_Framework-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|[PR  #12497](https://github.com/magento/magento2/pull/12497)|2.2
+magento/framework|Patch-Magento\_Framework-M2.2.x-fix-sessions.patch|[PR #2226](https://github.com/magento/magento2/pull/2226)|>=2.2.0 (2.2.2, 2.2.3 n/a)
 magento/framework|Patch-Magento\_Framework-M2.2.5-force-unset-translation.patch| |>=2.2.5
-magento/framework|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch"|#12362| >= 2.2.0 < 2.2.6
-magento/framework|Patch-Magento\_Framework-M2.1.x-Curl-Post-Json.patch|#8373|< 2.2.0
+magento/framework|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch"|[#12362](https://github.com/magento/magento2/issues/12362)| >= 2.2.0 < 2.2.6
+magento/framework|Patch-Magento\_Framework-M2.1.x-Curl-Post-Json.patch|[PR #8373](https://github.com/magento/magento2/pull/8373)|< 2.2.0
 magento/framework|Patch-Magento\_Framework-M2.2.x-PRODSECBUG-2198.patch| < 2.2.8
 magento/framework|Patch-Magento\_Framework-M2.3.1-fix-elasticsearch-generation.patch| >= 2.3.1 < 2.3.2
-magento/framework|Patch-Magento\_Framework-M2.2.6-Fix-session-from-2.2.7.patch|#12362| 2.2.6
+magento/framework|Patch-Magento\_Framework-M2.2.6-Fix-session-from-2.2.7.patch|[#12362](https://github.com/magento/magento2/issues/12362)| 2.2.6
 magento/framework|Patch-Magento_Framework-result-page.patch|Allow to add body class while block render|
 magento/framework-message-queue|Patch-Message-Queue-Consumer-Transaction.patch| |EE Only < 2.2.0
 magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-delete.patch|pull 14751|>= 2.2.0 < 2.2.5
-magento/module-cron|Patch-Magento\_Cron-M2.1.4-cron-generate-schedule.patch|#4173|all as of 2.1.7 < 2.2.0
-magento/module-cron|Patch-Magento\_Cron-M2.2.0-2.2.3-prevent-already-running-v2.patch Patch-Magento\_Cron-M2.2.4-prevent-already-running-v2.patch (install all 3 patches *-prevent-already-running)|pull #12497|2.2.0-2.2.4 < 2.2.6
-magento/module-directory|Patch-Magento\_Directory\_M2.1-zip-codes.patch|#6694|2.0.11+ < 2.2.0
-magento/module-eav|Patch-Magento\_Eav-M2.3-api-product-multiselect.patch|pull 21901|>= 2.3.0
+magento/module-cron|Patch-Magento\_Cron-M2.1.4-cron-generate-schedule.patch|[#4173](https://github.com/magento/magento2/issues/4173)|all as of 2.1.7 < 2.2.0
+magento/module-cron|Patch-Magento\_Cron-M2.2.0-2.2.3-prevent-already-running-v2.patch Patch-Magento\_Cron-M2.2.4-prevent-already-running-v2.patch (install all 3 patches *-prevent-already-running)|[PR #12497](https://github.com/magento/magento2/pull/12497)|2.2.0-2.2.4 < 2.2.6
+magento/module-directory|Patch-Magento\_Directory\_M2.1-zip-codes.patch|[#6694](https://github.com/magento/magento2/issues/6694)|2.0.11+ < 2.2.0
+magento/module-eav|Patch-Magento\_Eav-M2.3-api-product-multiselect.patch|[PR #21901](https://github.com/magento/magento2/pull/21901)|>= 2.3.0
 magento/module-email|Patch-Magento\_Email-M2.1.0-create-email-logo-1.patch| |< 2.1.8 (2.1.4 n/a)
-magento/module-email|Patch-Magento\_Email-M2.2.x-cant-update-logo.patch|pull 15137 |< 2.2.6 (2.2.4 n/a)
+magento/module-email|Patch-Magento\_Email-M2.2.x-cant-update-logo.patch|[PR #15137](https://github.com/magento/magento2/pull/15137) |< 2.2.6 (2.2.4 n/a)
 magento/module-email|Patch-Magento\_Email-M2.2.8-2.3.2-No-Sid-In-Messages.patch| |>= 2.2.8 <=2.3.2
 magento/module-elasticsearch|Patch-Magento_Elasticsearch-M2.2-total-fields-limit-10000.patch|Increase default fields limit|>= 2.2.0
 magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.x-Send-Error-Message.patch| | >= 2.3.0
@@ -48,89 +48,89 @@ magento/module-indexer|Patch-Magento_Indexer-M2.3.1-indexer-reindex-optional-dep
 magento/module-review|Patch-Magento\_Review-M2.2-review-renderer-module-namespace.patch| |all as of 2.2.5
 magento/module-review|Patch-Magento_Review-M2.3-observer-catalog-check-is-active.patch|Fix: Product Collection Observer - Check module status|
 magento/module-theme|Patch-Magento\_Email-M2.1.0-create-email-logo-2.patch| |< 2.1.8 (2.1.4 n/a)
-magento/module-page-cache|Patch-Magento\_PageCache-M2.1.0-element-js-error-fix.patch|#6818|< 2.1.10 < 2.2.0
-magento/module-widget|Patch-Magento\_Widget-M2.1.0-widgets-restore-conditions.patch|#2913|< 2.1.9 (2.1.4 n/a)
-magento/module-cms|Patch-Magento\_Cms-page-layout-handles.patch|#9247|< 2.2.0
+magento/module-page-cache|Patch-Magento\_PageCache-M2.1.0-element-js-error-fix.patch|[#6818](https://github.com/magento/magento2/issues/6818)|< 2.1.10 < 2.2.0
+magento/module-widget|Patch-Magento\_Widget-M2.1.0-widgets-restore-conditions.patch|[#2913](https://github.com/magento/magento2/issues/2913)|< 2.1.9 (2.1.4 n/a)
+magento/module-cms|Patch-Magento\_Cms-page-layout-handles.patch|[PR #9247](https://github.com/magento/magento2/pull/9247)|< 2.2.0
 magento/module-tax|Patch-Magento-Tax-M2.1.0-free-shipping-availability-on-backend.patch|?|>=2.1.4 >=2.2.0
 magento/module-tax|Patch-Magento\_Tax-M2.X.X-sequence-fix.patch| |< 2.2.0
-magento/module-quote|Patch-Magento\_Quote-M2.2.0-2.2.3-totals-extension-attributes.patch|#12819|2.2.0-2.2.3
-magento/module-sales-rule|Patch-Magento\_SalesRule-M2.1.6-fix-to-date-parameter.patch|#6762|< 2.2.0
+magento/module-quote|Patch-Magento\_Quote-M2.2.0-2.2.3-totals-extension-attributes.patch|[#12819](https://github.com/magento/magento2/issues/12819)|2.2.0-2.2.3
+magento/module-sales-rule|Patch-Magento\_SalesRule-M2.1.6-fix-to-date-parameter.patch|[#6762](https://github.com/magento/magento2/issues/6762)|< 2.2.0
 magento/module-google-tag-manager|Patch\_Magento\_GoogleTagManager\_M2.1.0-fix-empty-product-list-block.patch| |EE Only
-magento/module-customer|Patch-Magento\_Customer-M2.1.9-array-street-line.patch (Patch-Magento\_Customer-array-street-line.patch)Patch-Webshipr\_Shipping-get-shipping-address-fix.patch|pull #10582 2.1.9 - error saving shipping address in checkout|>= 2.1.9 < 2.2.2
-magento/module-customer|Patch-Magento\_Customer-M2.1.9-generate-new-formkey-wishlist.patch|#11825|>=2.1.9 >=2.2.0 <2.2.4(maybe)
+magento/module-customer|Patch-Magento\_Customer-M2.1.9-array-street-line.patch (Patch-Magento\_Customer-array-street-line.patch)Patch-Webshipr\_Shipping-get-shipping-address-fix.patch|[PR #10582](https://github.com/magento/magento2/pull/10582)|>= 2.1.9 < 2.2.2
+magento/module-customer|Patch-Magento\_Customer-M2.1.9-generate-new-formkey-wishlist.patch|[#11825](https://github.com/magento/magento2/issues/11825)|>=2.1.9 >=2.2.0 <2.2.4(maybe)
 magento/module-customer|Patch-Magento\_Customer-M2.4.1-context-customer-group-id-fix.patch||>=2.4.1 <2.4.3(maybe)
 magento/module-customer-graph-ql|Patch-Magento\_CustomerGraphQl-M2.4.1-context-customer-group-id-fix.patch||>=2.4.1 <2.4.3(maybe)
-magento/module-wishlist|Patch-Magento\_Wishlist-M2.x.x-add-to-wishlist-login-register.patch|#11825|>=2.1.9 >=2.2.0 <2.2.4(maybe)
+magento/module-wishlist|Patch-Magento\_Wishlist-M2.x.x-add-to-wishlist-login-register.patch|[#11825](https://github.com/magento/magento2/issues/11825)|>=2.1.9 >=2.2.0 <2.2.4(maybe)
 magento/module-wishlist|Patch-Magento\_Wishlist-M2.x.x-wishlist-keep-item-in-cart.patch| |\>=2.1.0
 magento/module-wishlist|Patch-Magento\_Wishlist_M2.x.x-failed-login-attempts.patch| |\>=2.2.* 2.3.*
-magento/module-ui|Patch-Magento\_Ui-M2.1.0-allow-backend-to-know-the-origin-input-of-the-upload-request.patch|#5438|< 2.1.8 (2.1.4 n/a)
+magento/module-ui|Patch-Magento\_Ui-M2.1.0-allow-backend-to-know-the-origin-input-of-the-upload-request.patch|[#5438](https://github.com/magento/magento2/issues/5438)|< 2.1.8 (2.1.4 n/a)
 magento/module-ui|Patch-Magento\_Ui-M2.1.9-country-select-extra-empty-option.patch|2.1.9 buggy implementation link|>= 2.1.9 <2.2.0 ???
-magento/module-ui|Patch-Magento\_Ui-M2.1.x-layout-cache-empty-menu.patch|#8554|< 2.2.0
-magento/module-ui|Patch-Magento\_Ui-M2.2.x-invalid-date-range-fix.patch|#16119|< 2.3.0
+magento/module-ui|Patch-Magento\_Ui-M2.1.x-layout-cache-empty-menu.patch|[#8554](https://github.com/magento/magento2/issues/8554)|< 2.2.0
+magento/module-ui|Patch-Magento\_Ui-M2.2.x-invalid-date-range-fix.patch|[#16119](https://github.com/magento/magento2/issues/16119)|< 2.3.0
 magento/module-ui|Patch-Magento-Ui_fix-reset-disabled-attributes.patch| |< 2.2.5
 magento/module-catalog|Patch-Magento\_Catalog-rest-api-auto-enable-product-fix.patch| |< 2.2.0 all as of 2.1.9
 magento/module-catalog|Patch-Magento\_Catalog-rest-api-single-store-fix.patch| |>= 2.1.0 >= 2.2.0 < 2.2.6
-magento/module-catalog|Patch-Magento\_Catalog-M2.1-fix-product-auto-startdates.patch|#4387|< 2.1.10 < 2.2.0
-magento/module-catalog|Patch-Magento\_Catalog-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|#7874|>=2.1.4 < 2.1.9
+magento/module-catalog|Patch-Magento\_Catalog-M2.1-fix-product-auto-startdates.patch|[#4387](https://github.com/magento/magento2/issues/4387)|< 2.1.10 < 2.2.0
+magento/module-catalog|Patch-Magento\_Catalog-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|[#7874](https://github.com/magento/magento2/issues/7874)|>=2.1.4 < 2.1.9
 magento/module-catalog|Patch-Magento-Catalog-M2.1.x-toolbar-default-sorting.patch|fix toolbar default sorting|>=2.1.0 <2.2.0
 magento/module-catalog|Patch-Magento\_Catalog-M2.1.4-product-flat-indexer.patch|?|>= 2.1.0
-magento/module-catalog|Patch-Magento\_Catalog-M2.1.0-image-attribute-backend-model-hardcoded-attribute-code-removal.patch|#5438|< 2.1.8 (2.1.4 n/a)
-magento/module-catalog|Patch-Magento\_Catalog-M2.1.3-category-indexer-range.patch|#8018|>= 2.1.0 >= 2.2.0
-magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-related-products-visibility-in-admin.patch|#13720|>= 2.2.1 >= 2.3.0
+magento/module-catalog|Patch-Magento\_Catalog-M2.1.0-image-attribute-backend-model-hardcoded-attribute-code-removal.patch|[#5438](https://github.com/magento/magento2/issues/5438)|< 2.1.8 (2.1.4 n/a)
+magento/module-catalog|Patch-Magento\_Catalog-M2.1.3-category-indexer-range.patch|[#8018](https://github.com/magento/magento2/issues/8018)|>= 2.1.0 >= 2.2.0
+magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-related-products-visibility-in-admin.patch|[#13720](https://github.com/magento/magento2/issues/13720)|>= 2.2.1 >= 2.3.0
 magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-PRODSECBUG-2198.patch| < 2.2.8
 magento/module-catalog|Patch-Magento\_Catalog-improve-root-category-indexer-2.2.8.patch| > 2.2.8
 magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-skip-empty-custom-options-skus.patch | | 2.2.5
-magento/module-catalog|Patch-Magento-Catalog-M2.1.x-2.2.7-fix-save-customizable-options.patch| pull #16838 | >= 2.1.* <=2.3.1
+magento/module-catalog|Patch-Magento-Catalog-M2.1.x-2.2.7-fix-save-customizable-options.patch|[PR #16838](https://github.com/magento/magento2/pull/16838)| >= 2.1.* <=2.3.1
 magento/module-catalog|Patch-Magento_Catalog-M2.1-flat-availability.patch|Allow to use invalid Flat Indexer| \>= 2.1
 magento/module-catalog|Patch-Magento_Catalog-M2.3-category-flat-chunk-limit.patch|Catalog Category Flat chunk limit|
 magento/module-catalog|Patch-Magento_Catalog-M2.3-fix-category-image-upload.patch|Fix: Category Image Upload|
-magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-sorting-fix.patch|#30775|>=2.3.5 < 2.4.3 (maybe)
+magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-sorting-fix.patch|[#30775](https://github.com/magento/magento2/issues/30775)|>=2.3.5 < 2.4.3 (maybe)
 magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-category-place-first.patch|Move Category filter on first place||
-magento/module-catalog-inventory|Patch-Magento\_CatalogInventory\_M2.1.3-hide-out-of-stock.patch|#8566|>=2.1.0 < 2.2.0
-magento/module-catalog-inventory|Patch-Magento\_CatalogInventory-M2.1.x-stock-item-events-fix.patch|#4857|<2.2.0
+magento/module-catalog-inventory|Patch-Magento\_CatalogInventory\_M2.1.3-hide-out-of-stock.patch|[#8566](https://github.com/magento/magento2/issues/8566)|>=2.1.0 < 2.2.0
+magento/module-catalog-inventory|Patch-Magento\_CatalogInventory-M2.1.x-stock-item-events-fix.patch|[#4857](https://github.com/magento/magento2/issues/4857)|<2.2.0
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch|Fix: Update stock item on product save|>=2.2.0 <2.2.4
-magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch|#12205|>=2.2.0 <2.2.5
-magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.3.3-2.3.4-fix-stock-indexer-deleting-new-records.patch|#15984|2.3.3-2.3.4
+magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch|[#12205](https://github.com/magento/magento2/issues/4857)|>=2.2.0 <2.2.5
+magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.3.3-2.3.4-fix-stock-indexer-deleting-new-records.patch|[#15984](https://github.com/magento/magento2/issues/15984)|2.3.3-2.3.4
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2-new-item-use-config-manage-stock.patch|Fix: Use Config Manage Stock in new Stock Item|
 magento/module-catalog-rule|Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch|Q-67970|>= 2.1.0 >= 2.2.0
 magento/module-catalog-staging|Patch-Magento_Catalog_Staging-timestam.patch| | ?
-magento/module-catalog-url-rewrite|Patch-Magento\_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|#7874|>=2.1.4 < 2.1.9
+magento/module-catalog-url-rewrite|Patch-Magento\_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|[#7874](https://github.com/magento/magento2/issues/7874)|>=2.1.4 < 2.1.9
 magento/module-catalog-url-rewrite|Patch-Magento\_CatalogUrlRewrite-update-url-key-for-products.patch|Fix Url rewrite generation in Magento CE||
 magento/module-webapi|Patch-Magento\_Webapi-M2.3.x-log-exceptions.patch||2.3.*
-magento/module-catalog-widget|Patch-Magento\_CatalogWidget-M2.1.0-widgets-restore-conditions.patch|#2913|< 2.1.8 (2.1.4 n/a)
+magento/module-catalog-widget|Patch-Magento\_CatalogWidget-M2.1.0-widgets-restore-conditions.patch|[#2913](https://github.com/magento/magento2/issues/2913)|< 2.1.8 (2.1.4 n/a)
 magento/module-swatches|Patch-Magento\_Swatches-rest-api-visual-swatches-fix.patch| |>= 2.1.4
 magento/module-swatches|Patch-Magento_Swatches-rest-api-visual-swatches-fix_2.2.6.patch| |>= 2.2.6
-magento/module-swatches|Patch-Magento\_Swatches-M2.1.x-zero-value-attribute-options-fix.patch|#10266|<= 2.1.10
-magento/module-sales|Patch-Magento\_Sales-creditmemo-partial-tax-refund.patch|#10982|2.1-2.3
+magento/module-swatches|Patch-Magento\_Swatches-M2.1.x-zero-value-attribute-options-fix.patch|[#10266](https://github.com/magento/magento2/issues/10266)|<= 2.1.10
+magento/module-sales|Patch-Magento\_Sales-creditmemo-partial-tax-refund.patch|[#10982](https://github.com/magento/magento2/issues/10982)|2.1-2.3
 magento/module-sales|Patch-Magento_Sales-M2.2-invoice-subtotal-canceled.patch|Canceled amount in Invoice Subtotal|
 magento/module-sales|Patch-Magento_Sales-M2.3-invoice-tax-canceled.patch|Canceled amount in Invoice Tax|
 magento/module-staging|Patch-Magento_Staging-M2.2-fix-duplicated-rollback.patch||2.2
 magento/module-store|Patch-Magento\_Store-emulation.patch|MAGETWO-59649|2.1-2.3
-magento/module-developer|Patch-Magento\_Developer-M2.1.x-disable-debug-loging.patch|#4362|< 2.2.3 < 2.2.0 ???
+magento/module-developer|Patch-Magento\_Developer-M2.1.x-disable-debug-loging.patch|[#4362](https://github.com/magento/magento2/issues/4362)|< 2.2.3 < 2.2.0 ???
 magento/module-checkout|Patch-Magento\_Checkout-cart-form-key.patch|disable form key validation|>= 2.1.0 >= 2.2.0
 magento/module-checkout|Patch-Magento\_Checkout-M2.3.x-cart-form-key.patch|disable form key validation|>= 2.3.0
-magento/module-checkout|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch|#12362| >= 2.2.0 < 2.2.6
-magento/module-checkout|Patch-Magento\_Checkout-M2.3.3-replace-ES6-code.patch|#22119| >=2.3.0 <2.3.4
+magento/module-checkout|Patch-Magento\_Framework-M2.2.x-drop-session-fix.patch|[#12362](https://github.com/magento/magento2/issues/12362)| >= 2.2.0 < 2.2.6
+magento/module-checkout|Patch-Magento\_Checkout-M2.3.3-replace-ES6-code.patch|[#22119](https://github.com/magento/magento2/issues/22119)| >=2.3.0 <2.3.4
 magento/module-checkout|Patch-Magento_Checkout-M2.3-billing-same-as-shipping-manually-v2.patch|Don't change checkbox billing-same-as-shipping automatically|
 magento/module-checkout|Patch-Magento_Checkout-M2.3.3-place-order-allow-empty-billing.patch|Allow placing order with empty billing address|
 magento/module-checkout|Patch-Magento_Checkout-M2.3.3-save-shipping-method-not-found.patch|Don't throw carrier not found error|
 magento/module-checkout|Patch-Magento_Checkout-M2.3.x-checkout-login-form.patch|Login form of the checkout page is shown without any associating user account|
-magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.1.2-configurable-options-sort.patch|#7441|2.1.x
-magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.2.x-priceBox-prior-to-initialization.patch|#8018|2.2.x
-magento/module-configurable-product|Patch-Magento\_Configurable-M2.1.3-lowest-price-provider.patch Patch-Magento\_Configurable-M2.1.6-lowest-price-provider.patch|#13933  #9796|<= 2.1.5  < 2.2.0
+magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.1.2-configurable-options-sort.patch|[#7441](https://github.com/magento/magento2/issues/7441)|2.1.x
+magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.2.x-priceBox-prior-to-initialization.patch|[#8018](https://github.com/magento/magento2/issues/8018)|2.2.x
+magento/module-configurable-product|Patch-Magento\_Configurable-M2.1.3-lowest-price-provider.patch Patch-Magento\_Configurable-M2.1.6-lowest-price-provider.patch|[#13933](https://github.com/magento/magento2/issues/13933) [#9796](https://github.com/magento/magento2/issues/9796)|<= 2.1.5  < 2.2.0
 magento/module-configurable-product|Patch-Magento\_ConfigurableProduct-M2.2.x-fix-empty-price-in-category-page.patch|On development stage|>=2.2.1
-magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices.patch|#15654|>=2.2.0 <2.3.0
-magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices_M2.2.6.patch|#15654|>=2.2.6
-magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.8-fix-min-max-prices.patch|#15654| =2.2.8
-magento/module-configurable-product|Patch-Magento_Configurable_M2.1.x-fix-get-price.patch|#5519|<2.1.10
-magento/module-configurable-product|Patch-Magento_ConfigurableProduct-quote-item-qty-doubling-fix.patch|#5519|>2.3.x
-magento/module-configurable-product|Patch-Magento_BundleProduct-quote-item-qty-doubling-fix.patch|#5519|>2.3.x
-magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch|#7614|<2.2
-magento/module-config|Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch|#19070| 2.2.5 2.2.6
+magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices.patch|[#15654](https://github.com/magento/magento2/issues/9796)|>=2.2.0 <2.3.0
+magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.x-fix-min-max-prices_M2.2.6.patch|[#15654](https://github.com/magento/magento2/issues/9796)|>=2.2.6
+magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.8-fix-min-max-prices.patch|[#15654](https://github.com/magento/magento2/issues/9796)| =2.2.8
+magento/module-configurable-product|Patch-Magento_Configurable_M2.1.x-fix-get-price.patch|[#5519](https://github.com/magento/magento2/issues/5519)|<2.1.10
+magento/module-configurable-product|Patch-Magento_ConfigurableProduct-quote-item-qty-doubling-fix.patch||>2.3.x
+magento/module-configurable-product|Patch-Magento_BundleProduct-quote-item-qty-doubling-fix.patch||>2.3.x
+magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch|[#7614](https://github.com/magento/magento2/issues/7614)|<2.2
+magento/module-config|Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch|[#19070](https://github.com/magento/magento2/issues/https://github.com/magento/magento2/issues/7614)| 2.2.5 2.2.6
 magento/module-company|Patch-Magento_Company-M2.3.3-company-double-save-error.patch|Fix: double save company error|
 magento/module-page-builder|Patch-Magento_PageBuilder-M2.3.4-fix-preview-mode.patch|Fix: Preview Mode|\>=2.3.4
-magento/module-persistent-history|Patch-Magento_PersistentHistory-no-such-entity-with-address-id-fix.patch|#15115|2.2.x-2.3.0
-magento/module-sitemap|Patch-Magento_Sitemap-M2.2.x-fix-sitemap-links.patch|#15115|2.2.x
+magento/module-persistent-history|Patch-Magento_PersistentHistory-no-such-entity-with-address-id-fix.patch|[#15115](https://github.com/magento/magento2/issues/https://github.com/magento/magento2/issues/https://github.com/magento/magento2/issues/https://github.com/magento/magento2/issues/7614)|2.2.x-2.3.0
+magento/module-sitemap|Patch-Magento_Sitemap-M2.2.x-fix-sitemap-links.patch|[#19565](https://github.com/magento/magento2/issues/19565)|2.2.x
 magento/module-backend|Patch-Magento_Backend-M2.3-menu-log-level.patch|Menu Log Level - Debug|
 
 **3th party modules:**
@@ -145,10 +145,10 @@ algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.7-catalogrule-inde
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch| |1.9
 algolia/algoliasearch-magento-2|Patch-Algolia-AlgoliaSearch-1.10.0-out_of_stock_configurable.patch| |1.10.0
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-configurable-price.patch|Fixed issue with wrong prices for configurable products|1.10.0
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-1.12.0-unsubscribe-price-index.patch|[#870](https://github.com/algolia/algoliasearch-magento-2/pull/870)|1.10.0-1.12.0
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-1.12.0-unsubscribe-price-index.patch|[PR #870](https://github.com/algolia/algoliasearch-magento-2/pull/870)|1.10.0-1.12.0
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-add-store-to-facets.patch||
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-customer-group-catalogrule-price-website-id.patch|[#853](https://github.com/algolia/algoliasearch-magento-2/pull/853)|
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-emulation-clean-scope.patch|[#857](https://github.com/algolia/algoliasearch-magento-2/pull/857#857)|
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-customer-group-catalogrule-price-website-id.patch|[PR #853](https://github.com/algolia/algoliasearch-magento-2/pull/853)|
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-emulation-clean-scope.patch|[PR #857](https://github.com/algolia/algoliasearch-magento-2/pull/857)|
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-pages-trigger-index.patch|Page indexer listeners on mview|
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-remove-show-all-products.patch|Remove show all products|
 amasty/shopby|Patch-Amasty_Shopby-2.10.5-remove-price-indexer.patch|Remove auto price indexer for v2.10.5|2.10.5
@@ -177,8 +177,8 @@ vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch
 vconnect/module-allinone|Patch-Vconnect_Allinone-allowed-methods-fix.patch|Fixed allowed methods in carrier model| >=2.2.0 < 2.3.0
 vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch|Address fix for findPoints call| >=2.3.0
 vconnect/module-allinone|Patch-Vconnect_Allinone-fix-js-for-ie.patch|Fixed JS for IE| >=2.2.0
-vipps/module-payment|Patch-Vipps_ModulePayment-2.4.6-fix-place-order-quote-mask.patch|[#89](https://github.com/vippsas/vipps-magento/pull/89)| >=2.3
-vipps/module-payment|Patch-Vipps_ModulePayment-2.4.5-no-quote-found-exception.patch|[#88](https://github.com/vippsas/vipps-magento/pull/88)| >=2.4.5
+vipps/module-payment|Patch-Vipps_ModulePayment-2.4.6-fix-place-order-quote-mask.patch|[PR #89](https://github.com/vippsas/vipps-magento/pull/89)| >=2.3
+vipps/module-payment|Patch-Vipps_ModulePayment-2.4.5-no-quote-found-exception.patch|[PR #88](https://github.com/vippsas/vipps-magento/pull/88)| >=2.4.5
 vpietri/adm-quickdevbar|Patch-ADM_QuickDevBar-jquery-ui.patch||
 weltpixel/m2-weltpixel-backend|Patch-ADM_QuickDevBar-jquery-ui.patch||1.8.5-1.9.1
 Full composer.json example:
