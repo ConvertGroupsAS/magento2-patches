@@ -19,7 +19,7 @@ magento/magento2-base|Patch-Magento\_Base-M2.1.0-errors-apply-skin-fix.patch|[#4
 magento/magento2-base|Patch-Magento\_Base-2.2.x-fotorama-ios.patch|[#13226](https://github.com/magento/magento2/issues/13226)|>=2.2.0 < 2.3.0
 magento/magento2-base|Patch-Magento_Base-M2.3-remove-php-memory-limit.patch| |>=2.3.0
 magento/framework|Patch-Magento\_Framework-mview-changelog-increment.patch|[PR #13577](https://github.com/magento/magento2/pull/13577)|2.1-2.3
-magento/framework|Patch-Magento\_Framework-M2.1.x-Search-Adapter-Mysql-Mapper-fix-order.patch|#9020|<2.2.0
+magento/framework|Patch-Magento\_Framework-M2.1.x-Search-Adapter-Mysql-Mapper-fix-order.patch|[#9020](https://github.com/magento/magento2/issues/9020)|<2.2.0
 magento/framework|Patch-Magento\_Framework-customer-grid.patch|[#10838](https://github.com/magento/magento2/issues/10838)|2.2 (probably all)
 magento/framework|Patch-Magento\_Framework-M2.2-cron-prevent-already-running.patch (install all 3 patches *-prevent-already-running)|[PR  #12497](https://github.com/magento/magento2/pull/12497)|2.2
 magento/framework|Patch-Magento\_Framework-M2.2.x-fix-sessions.patch|[PR #2226](https://github.com/magento/magento2/pull/2226)|>=2.2.0 (2.2.2, 2.2.3 n/a)
@@ -31,7 +31,7 @@ magento/framework|Patch-Magento\_Framework-M2.3.1-fix-elasticsearch-generation.p
 magento/framework|Patch-Magento\_Framework-M2.2.6-Fix-session-from-2.2.7.patch|[#12362](https://github.com/magento/magento2/issues/12362)| 2.2.6
 magento/framework|Patch-Magento_Framework-result-page.patch|Allow to add body class while block render|
 magento/framework-message-queue|Patch-Message-Queue-Consumer-Transaction.patch| |EE Only < 2.2.0
-magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-delete.patch|pull 14751|>= 2.2.0 < 2.2.5
+magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-delete.patch|[PR #14751](https://github.com/magento/magento2/pull/14751)|>= 2.2.0 < 2.2.5
 magento/module-cron|Patch-Magento\_Cron-M2.1.4-cron-generate-schedule.patch|[#4173](https://github.com/magento/magento2/issues/4173)|all as of 2.1.7 < 2.2.0
 magento/module-cron|Patch-Magento\_Cron-M2.2.0-2.2.3-prevent-already-running-v2.patch Patch-Magento\_Cron-M2.2.4-prevent-already-running-v2.patch (install all 3 patches *-prevent-already-running)|[PR #12497](https://github.com/magento/magento2/pull/12497)|2.2.0-2.2.4 < 2.2.6
 magento/module-directory|Patch-Magento\_Directory\_M2.1-zip-codes.patch|[#6694](https://github.com/magento/magento2/issues/6694)|2.0.11+ < 2.2.0
@@ -77,8 +77,8 @@ magento/module-catalog|Patch-Magento\_Catalog-M2.1.4-product-flat-indexer.patch|
 magento/module-catalog|Patch-Magento\_Catalog-M2.1.0-image-attribute-backend-model-hardcoded-attribute-code-removal.patch|[#5438](https://github.com/magento/magento2/issues/5438)|< 2.1.8 (2.1.4 n/a)
 magento/module-catalog|Patch-Magento\_Catalog-M2.1.3-category-indexer-range.patch|[#8018](https://github.com/magento/magento2/issues/8018)|>= 2.1.0 >= 2.2.0
 magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-related-products-visibility-in-admin.patch|[#13720](https://github.com/magento/magento2/issues/13720)|>= 2.2.1 >= 2.3.0
-magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-PRODSECBUG-2198.patch| < 2.2.8
-magento/module-catalog|Patch-Magento\_Catalog-improve-root-category-indexer-2.2.8.patch| > 2.2.8
+magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-PRODSECBUG-2198.patch| | < 2.2.8
+magento/module-catalog|Patch-Magento\_Catalog-improve-root-category-indexer-2.2.8.patch| | > 2.2.8
 magento/module-catalog|Patch-Magento\_Catalog-M2.2.x-skip-empty-custom-options-skus.patch | | 2.2.5
 magento/module-catalog|Patch-Magento-Catalog-M2.1.x-2.2.7-fix-save-customizable-options.patch|[PR #16838](https://github.com/magento/magento2/pull/16838)| >= 2.1.* <=2.3.1
 magento/module-catalog|Patch-Magento_Catalog-M2.1-flat-availability.patch|Allow to use invalid Flat Indexer| \>= 2.1
@@ -181,6 +181,7 @@ vipps/module-payment|Patch-Vipps_ModulePayment-2.4.6-fix-place-order-quote-mask.
 vipps/module-payment|Patch-Vipps_ModulePayment-2.4.5-no-quote-found-exception.patch|[PR #88](https://github.com/vippsas/vipps-magento/pull/88)| >=2.4.5
 vpietri/adm-quickdevbar|Patch-ADM_QuickDevBar-jquery-ui.patch||
 weltpixel/m2-weltpixel-backend|Patch-ADM_QuickDevBar-jquery-ui.patch||1.8.5-1.9.1
+
 Full composer.json example:
 
 ```
