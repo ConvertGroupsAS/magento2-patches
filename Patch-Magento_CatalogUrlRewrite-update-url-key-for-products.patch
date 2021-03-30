@@ -1,0 +1,11 @@
+--- Setup/Patch/Data/UpdateUrlKeyForProducts.php	2020-10-15 12:08:18.842771192 +0300
++++ Setup/Patch/Data/UpdateUrlKeyForProducts.php	2020-10-15 12:05:55.294457495 +0300
+@@ -58,7 +58,7 @@
+         $table = $this->moduleDataSetup->getTable('catalog_product_entity_varchar');
+         $select = $this->moduleDataSetup->getConnection()->select()->from(
+             $table,
+-            ['value_id', 'value']
++            ['value_id', 'value', 'row_id']
+         )->where(
+             'attribute_id = ?',
+             $this->eavSetup->getAttributeId($productTypeId, 'url_key')
