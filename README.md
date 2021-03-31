@@ -86,16 +86,18 @@ magento/module-catalog|Patch-Magento_Catalog-M2.3-category-flat-chunk-limit.patc
 magento/module-catalog|Patch-Magento_Catalog-M2.3-fix-category-image-upload.patch|Fix: Category Image Upload|
 magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-sorting-fix.patch|[#30775](https://github.com/magento/magento2/issues/30775)|>=2.3.5 < 2.4.3 (maybe)
 magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-category-place-first.patch|Move Category filter on first place||
+magento/module-catalog-graph-ql|patches/Patch-Magento\_CatalogGraphQl-aggregations-price-category-translate-lables.patch|Translate Labels for Price and Category Filters||
 magento/module-catalog-inventory|Patch-Magento\_CatalogInventory\_M2.1.3-hide-out-of-stock.patch|[#8566](https://github.com/magento/magento2/issues/8566)|>=2.1.0 < 2.2.0
 magento/module-catalog-inventory|Patch-Magento\_CatalogInventory-M2.1.x-stock-item-events-fix.patch|[#4857](https://github.com/magento/magento2/issues/4857)|<2.2.0
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch|Fix: Update stock item on product save|>=2.2.0 <2.2.4
-magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch|[#12205](https://github.com/magento/magento2/issues/4857)|>=2.2.0 <2.2.5
+magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch|[#12205](https://github.com/magento/magento2/issues/12205)|>=2.2.0 <2.2.5
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.3.3-2.3.4-fix-stock-indexer-deleting-new-records.patch|[#15984](https://github.com/magento/magento2/issues/15984)|2.3.3-2.3.4
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2-new-item-use-config-manage-stock.patch|Fix: Use Config Manage Stock in new Stock Item|
 magento/module-catalog-rule|Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch|Q-67970|>= 2.1.0 >= 2.2.0
 magento/module-catalog-staging|Patch-Magento_Catalog_Staging-timestam.patch| | ?
 magento/module-catalog-url-rewrite|Patch-Magento\_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|[#7874](https://github.com/magento/magento2/issues/7874)|>=2.1.4 < 2.1.9
 magento/module-catalog-url-rewrite|Patch-Magento\_CatalogUrlRewrite-update-url-key-for-products.patch|Fix Url rewrite generation in Magento CE||
+magento/module-graph-ql|Patch-Magento\_GraphQl-load-translations-for-store-scope-fix.patch|[#31351](https://github.com/magento/magento2/issues/31351)| |
 magento/module-webapi|Patch-Magento\_Webapi-M2.3.x-log-exceptions.patch||2.3.*
 magento/module-catalog-widget|Patch-Magento\_CatalogWidget-M2.1.0-widgets-restore-conditions.patch|[#2913](https://github.com/magento/magento2/issues/2913)|< 2.1.8 (2.1.4 n/a)
 magento/module-swatches|Patch-Magento\_Swatches-rest-api-visual-swatches-fix.patch| |>= 2.1.4
@@ -365,6 +367,9 @@ Full composer.json example:
             },
             "magento/module-google-tag-manager": {
                 "Fix: Check block before get Product List": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch_Magento_GoogleTagManager_M2.1.0-fix-empty-product-list-block.patch"
+            },
+            "magento/module-graph-ql": {
+                "Fix: https://github.com/magento/magento2/issues/31351": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_GraphQl-load-translations-for-store-scope-fix.patch"
             },
             "magento/module-indexer": {
                 "indexer:reindex command - Optional dependencies": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Indexer-M2.3.1-indexer-reindex-optional-dependencies.patch"

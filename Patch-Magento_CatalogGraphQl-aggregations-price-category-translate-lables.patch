@@ -1,0 +1,22 @@
+--- DataProvider/Product/LayeredNavigation/Builder/Category.php	2021-01-07 21:56:58.000000000 +0300
++++ DataProvider/Product/LayeredNavigation/Builder/Category.php	2021-03-31 10:55:05.000000000 +0300
+@@ -118,7 +118,7 @@ class Category implements LayerBuilderIn
+         }
+ 
+         $result = $this->layerFormatter->buildLayer(
+-            self::$bucketMap[self::CATEGORY_BUCKET]['label'],
++            __(self::$bucketMap[self::CATEGORY_BUCKET]['label']),
+             \count($categoryIds),
+             self::$bucketMap[self::CATEGORY_BUCKET]['request_name']
+         );
+--- DataProvider/Product/LayeredNavigation/Builder/Price.php	2021-01-07 21:56:58.000000000 +0300
++++ DataProvider/Product/LayeredNavigation/Builder/Price.php	2021-03-31 10:55:06.000000000 +0300
+@@ -58,7 +58,7 @@ class Price implements LayerBuilderInter
+         }
+ 
+         $result = $this->layerFormatter->buildLayer(
+-            self::$bucketMap[self::PRICE_BUCKET]['label'],
++            __(self::$bucketMap[self::PRICE_BUCKET]['label']),
+             \count($bucket->getValues()),
+             self::$bucketMap[self::PRICE_BUCKET]['request_name']
+         );
