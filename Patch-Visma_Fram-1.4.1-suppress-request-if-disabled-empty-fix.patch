@@ -1,0 +1,72 @@
+--- Model/FramConfigProvider.php	2021-04-07 16:14:57.736000000 +0300
++++ Model/FramConfigProvider.php	2021-04-07 16:16:10.192333031 +0300
+@@ -84,22 +84,42 @@
+             }
+         }
+
+-        $output = [
+-            'fram' =>
+-                [
+-                    'enabled' => $this->isActive(),
+-                    'intro' => $this->assetResource->getIntroText(),
+-                    'placeholder' => $this->assetResource->getPlaceholderText(),
+-                    'button' => $this->assetResource->getButtonText(),
+-                    'logo' => $this->assetResource->getLogo(),
+-                    'brandcolor' => $this->assetResource->getBrandColor(),
+-                    'explain_content' => $this->assetResource->getExplainContent(),
+-                    'explain_icon' => $this->assetResource->getExplainIconSvg(),
+-                    'email' => $email,
+-                    'check_url' => $this->getUrl("visma_fram/subscription/check"),
+-                    'trial_url' => $this->getUrl("visma_fram/subscription/trial"),
+-                ]
+-        ];
++        if ($this->isActive()) {
++            $output = [
++                'fram' =>
++                    [
++                        'enabled' => $this->isActive(),
++                        'intro' => $this->assetResource->getIntroText(),
++                        'placeholder' => $this->assetResource->getPlaceholderText(),
++                        'button' => $this->assetResource->getButtonText(),
++                        'logo' => $this->assetResource->getLogo(),
++                        'brandcolor' => $this->assetResource->getBrandColor(),
++                        'explain_content' => $this->assetResource->getExplainContent(),
++                        'explain_icon' => $this->assetResource->getExplainIconSvg(),
++                        'email' => $email,
++                        'check_url' => $this->getUrl("visma_fram/subscription/check"),
++                        'trial_url' => $this->getUrl("visma_fram/subscription/trial"),
++                    ]
++            ];
++        } else {
++            $output = [
++                'fram' =>
++                    [
++                        'enabled' => $this->isActive(),
++                        'intro' => '',
++                        'placeholder' => '',
++                        'button' => '',
++                        'logo' => '',
++                        'brandcolor' => '',
++                        'explain_content' => '',
++                        'explain_icon' => '',
++                        'email' => $email,
++                        'check_url' => $this->getUrl("visma_fram/subscription/check"),
++                        'trial_url' => $this->getUrl("visma_fram/subscription/trial"),
++                    ]
++            ];
++        }
++
+         return $output;
+     }
+
+--- Model/AssetResource.php	2021-04-07 16:22:30.317000000 +0300
++++ Model/AssetResource.php	2021-04-07 16:23:17.393351321 +0300
+@@ -37,7 +37,7 @@
+      */
+     private function getData($key)
+     {
+-        if (count($this->data) == 0) {
++        if (empty($this->data)) {
+             $this->data = $this->framApi->resources();
+         }
+
