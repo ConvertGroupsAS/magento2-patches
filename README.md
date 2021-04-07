@@ -183,6 +183,7 @@ vipps/module-payment|Patch-Vipps_ModulePayment-2.4.6-fix-place-order-quote-mask.
 vipps/module-payment|Patch-Vipps_ModulePayment-2.4.5-no-quote-found-exception.patch|[PR #88](https://github.com/vippsas/vipps-magento/pull/88)| >=2.4.5
 vpietri/adm-quickdevbar|Patch-ADM_QuickDevBar-jquery-ui.patch||
 weltpixel/m2-weltpixel-backend|Patch-ADM_QuickDevBar-jquery-ui.patch||1.8.5-1.9.1
+visma/module-fram|Patch-Visma_Fram-1.4.1-suppress-request-if-disabled-empty-fix.patch|Check module enabled, empty responce fix|\>=1.4.1
 
 Full composer.json example:
 
@@ -514,6 +515,9 @@ Full composer.json example:
             },
             "weltpixel/m2-weltpixel-backend": {
               "Remove shell_exec from code": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Weltpixel_Backend-1.8.5-1.9.1-remove-shell_exec.patch"
+            },
+            "visma/module-fram": {
+                "Check module enabled, empty responce fix": "patches/Patch-Visma_Fram-1.4.1-suppress-request-if-disabled-empty-fix.patch"
             }
         }
     }
