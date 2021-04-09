@@ -106,6 +106,7 @@ magento/module-swatches|Patch-Magento\_Swatches-M2.1.x-zero-value-attribute-opti
 magento/module-sales|Patch-Magento\_Sales-creditmemo-partial-tax-refund.patch|[#10982](https://github.com/magento/magento2/issues/10982)|2.1-2.3
 magento/module-sales|Patch-Magento_Sales-M2.2-invoice-subtotal-canceled.patch|Canceled amount in Invoice Subtotal|
 magento/module-sales|Patch-Magento_Sales-M2.3-invoice-tax-canceled.patch|Canceled amount in Invoice Tax|
+magento/module-sales|Patch_Magento_Refund_Invoice_Without_0_Quantities.patch|Refund with 0 qty|< 2.4.2
 magento/module-staging|Patch-Magento_Staging-M2.2-fix-duplicated-rollback.patch||2.2
 magento/module-store|Patch-Magento\_Store-emulation.patch|MAGETWO-59649|2.1-2.3
 magento/module-developer|Patch-Magento\_Developer-M2.1.x-disable-debug-loging.patch|[#4362](https://github.com/magento/magento2/issues/4362)|< 2.2.3 < 2.2.0 ???
@@ -389,7 +390,8 @@ Full composer.json example:
             "magento/module-sales": {
                 "Fix: Partial creditmemo tax amount": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sales-creditmemo-partial-tax-refund.patch",
                 "Canceled amount in Invoice Subtotal": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sales-M2.2-invoice-subtotal-canceled.patch",
-                "Canceled amount in Invoice Tax": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sales-M2.3-invoice-tax-canceled.patch"
+                "Canceled amount in Invoice Tax": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Sales-M2.3-invoice-tax-canceled.patch",
+                "Fix: https://github.com/magento/magento2/issues/23069": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch_Magento_Refund_Invoice_Without_0_Quantities.patch"
             },
             "magento/module-sales-rule": {
                 "Fix: https://github.com/magento/magento2/issues/6762": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_SalesRule-M2.1.6-fix-to-date-parameter.patch"

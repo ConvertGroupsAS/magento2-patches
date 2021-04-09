@@ -1,0 +1,11 @@
+--- Model/Order/Creditmemo/Validation/QuantityValidator.orig.php	2020-04-13 17:35:42.000000000 +0300
++++ Model/Order/Creditmemo/Validation/QuantityValidator.php	2021-04-09 18:29:28.618683636 +0300
+@@ -96,7 +96,7 @@
+
+         if ($entity->getGrandTotal() <= 0) {
+             $messages[] = __('The credit memo\'s total must be positive.');
+-        } elseif ($totalQuantity <= 0 && !$this->canRefundShipping($order)) {
++        } elseif ($totalQuantity < 0 && !$this->canRefundShipping($order)) {
+             $messages[] = __('You can\'t create a creditmemo without products.');
+         }
+
