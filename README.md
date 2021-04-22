@@ -29,7 +29,8 @@ magento/framework|Patch-Magento\_Framework-M2.1.x-Curl-Post-Json.patch|[PR #8373
 magento/framework|Patch-Magento\_Framework-M2.2.x-PRODSECBUG-2198.patch| |< 2.2.8
 magento/framework|Patch-Magento\_Framework-M2.3.1-fix-elasticsearch-generation.patch| |>= 2.3.1 < 2.3.2
 magento/framework|Patch-Magento\_Framework-M2.2.6-Fix-session-from-2.2.7.patch|[#12362](https://github.com/magento/magento2/issues/12362)| 2.2.6
-magento/framework|Patch-Magento_Framework-result-page.patch|Allow to add body class while block render|
+magento/framework|Patch-Magento\_Framework-result-page.patch|Allow to add body class while block render|
+magento/framework|Patch-Magento\_Framework-M2.4.x-performance-graphql-schema-parsing-fix.patch|[PR #31879](https://github.com/magento/magento2/pull/31879)|
 magento/framework-message-queue|Patch-Message-Queue-Consumer-Transaction.patch| |EE Only < 2.2.0
 magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-delete.patch|[PR #14751](https://github.com/magento/magento2/pull/14751)|>= 2.2.0 < 2.2.5
 magento/module-cron|Patch-Magento\_Cron-M2.1.4-cron-generate-schedule.patch|[#4173](https://github.com/magento/magento2/issues/4173)|all as of 2.1.7 < 2.2.0
@@ -93,6 +94,7 @@ magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch|[#12205](https://github.com/magento/magento2/issues/12205)|>=2.2.0 <2.2.5
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.3.3-2.3.4-fix-stock-indexer-deleting-new-records.patch|[#15984](https://github.com/magento/magento2/issues/15984)|2.3.3-2.3.4
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2-new-item-use-config-manage-stock.patch|Fix: Use Config Manage Stock in new Stock Item|
+magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.4.x-invalidate-cache-parent-product-on-stock-update.patch|Fix: Invalidate parent product cache on stock update|
 magento/module-catalog-rule|Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch|Q-67970|>= 2.1.0 >= 2.2.0
 magento/module-catalog-staging|Patch-Magento_Catalog_Staging-timestam.patch| | ?
 magento/module-catalog-url-rewrite|Patch-Magento\_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|[#7874](https://github.com/magento/magento2/issues/7874)|>=2.1.4 < 2.1.9
@@ -250,7 +252,8 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/12362": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.6-Fix-session-from-2.2.7.patch",
                 "Fix: SQL injection vulnerability": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.2.x-PRODSECBUG-2198.patch",
                 "Fix: https://github.com/magento/magento2/issues/21916": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.3.1-fix-elasticsearch-generation.patch",
-                "Allow to add body class while block render": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-result-page.patch"
+                "Allow to add body class while block render": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-result-page.patch",
+                "Pull: https://github.com/magento/magento2/pull/31879": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4.x-performance-graphql-schema-parsing-fix.patch"
             },
             "magento/magento2-base": {
                 "Fix MAGE_DIRS for CLI": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-cli.patch",
@@ -303,7 +306,8 @@ Full composer.json example:
                 "Fix: Update stock item on product save": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.2.0-2.2.3-fix-update-stock-item-on-product-save.patch",
                 "Fix: https://github.com/magento/magento2/issues/12205": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.2.0-2.2.4-stock-index.patch",
                 "Fix: https://github.com/magento/magento2/issues/15984": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.3.3-2.3.4-fix-stock-indexer-deleting-new-records.patch",
-                "Fix: Use Config Manage Stock in new Stock Item": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.2-new-item-use-config-manage-stock.patch"
+                "Fix: Use Config Manage Stock in new Stock Item": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.2-new-item-use-config-manage-stock.patch",
+                "Fix: Invalidate parent product cache on stock update V2": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.4.x-invalidate-cache-parent-product-on-stock-update.patch"
             },
             "magento/module-catalog-rule": {
                 "Fix: https://magento.stackexchange.com/questions/67970/catalog-price-rules-disappear-after-mid-night": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch"

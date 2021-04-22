@@ -1,0 +1,14 @@
+--- Model/Indexer/Stock/CacheCleaner.php	2021-04-21 13:13:03.000000000 +0300
++++ Model/Indexer/Stock/CacheCleaner.php	2021-04-21 13:08:18.000000000 +0300
+@@ -154,6 +154,11 @@
+                     $productIds[] = $statusAfter['parent_id'];
+                 }
+             }
++
++            //always invalidate parent product 
++            if (isset($statusAfter['parent_id'])) {
++                $productIds[] = $statusAfter['parent_id'];
++            }
+         }
+ 
+         return $productIds;
