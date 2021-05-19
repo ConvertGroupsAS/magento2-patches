@@ -1,0 +1,14 @@
+--- Model/Order/Invoice/Total/Discount.php	2021-01-07 21:56:58.000000000 +0300
++++ Model/Order/Invoice/Total/Discount.php	2021-05-13 09:30:28.000000000 +0300
+@@ -71,9 +71,9 @@
+         $invoice->setDiscountAmount(-$totalDiscountAmount);
+         $invoice->setBaseDiscountAmount(-$baseTotalDiscountAmount);
+ 
+-        $grandTotal = $invoice->getGrandTotal() - $totalDiscountAmount < 0.0001
++        $grandTotal = abs($invoice->getGrandTotal() - $totalDiscountAmount) < 0.0001
+             ? 0 : $invoice->getGrandTotal() - $totalDiscountAmount;
+-        $baseGrandTotal = $invoice->getBaseGrandTotal() - $baseTotalDiscountAmount < 0.0001
++        $baseGrandTotal = abs($invoice->getBaseGrandTotal() - $baseTotalDiscountAmount) < 0.0001
+             ? 0 : $invoice->getBaseGrandTotal() - $baseTotalDiscountAmount;
+         $invoice->setGrandTotal($grandTotal);
+         $invoice->setBaseGrandTotal($baseGrandTotal);
