@@ -1,0 +1,35 @@
+--- Model/Resolver/Product/SpecialPrice.php
++++ Model/Resolver/Product/SpecialPrice.php
+@@ -7,6 +7,7 @@
+
+ namespace Magento\CatalogGraphQl\Model\Resolver\Product;
+
++use Magento\Framework\Exception\LocalizedException;
+ use Magento\Framework\GraphQl\Config\Element\Field;
+ use Magento\Framework\GraphQl\Query\ResolverInterface;
+ use Magento\Framework\GraphQl\Schema\Type\ResolveInfo;
+@@ -25,6 +26,11 @@ public function resolve(Field $field, $context, ResolveInfo $info, array $value
+     {
+         /** @var ProductInterface $product */
+         $product = $value['model'];
++
++        if (!isset($value['model'])) {
++            throw new LocalizedException(__('"model" value should be specified'));
++        }
++
+         /** @var PricingSpecialPrice $specialPrice */
+         $specialPrice = $product->getPriceInfo()->getPrice(PricingSpecialPrice::PRICE_CODE);
+
+--- Model/Resolver/Products/DataProvider/Product/CollectionProcessor/RequiredColumnsProcessor.php
++++ Model/Resolver/Products/DataProvider/Product/CollectionProcessor/RequiredColumnsProcessor.php
+@@ -36,8 +36,8 @@ public function process(
+         ContextInterface $context = null
+     ): Collection {
+         $collection->addAttributeToSelect('special_price');
+-        $collection->addAttributeToSelect('special_price_from');
+-        $collection->addAttributeToSelect('special_price_to');
++        $collection->addAttributeToSelect('special_from_date');
++        $collection->addAttributeToSelect('special_to_date');
+         $collection->addAttributeToSelect('tax_class_id');
+
+         return $collection;
