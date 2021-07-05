@@ -138,7 +138,7 @@ magento/module-page-builder|Patch-Magento_PageBuilder-M2.3.4-fix-preview-mode.pa
 magento/module-persistent-history|Patch-Magento_PersistentHistory-no-such-entity-with-address-id-fix.patch|[#15115](https://github.com/magento/magento2/issues/https://github.com/magento/magento2/issues/https://github.com/magento/magento2/issues/https://github.com/magento/magento2/issues/7614)|2.2.x-2.3.0
 magento/module-sitemap|Patch-Magento_Sitemap-M2.2.x-fix-sitemap-links.patch|[#19565](https://github.com/magento/magento2/issues/19565)|2.2.x
 magento/module-backend|Patch-Magento_Backend-M2.3-menu-log-level.patch|Menu Log Level - Debug|
-magento/module-catalog-graph-ql|Patch-Magento_CatalogGraphQl-special-price.patch|[#29631](https://github.com/magento/magento2/issues/29631)|2.3.5-p2-2.4.2
+magento/module-catalog-graph-ql|Patch-Magento_CatalogGraphQl-M2.4.x-special-price-from-to-dates.patch|[#29631](https://github.com/magento/magento2/issues/29631)|2.3.5-p2 < 2.4.2
 
 **3th party modules:**
 
@@ -301,7 +301,7 @@ Full composer.json example:
                "Fix: https://github.com/magento/magento2/issues/30775": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogGraphQl-aggregations-sorting-fix.patch",
                "Fix: Move Category aggregation to first place": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogGraphQl-aggregations-category-place-first.patch",
                "Fix: Translate Price and Category filter label on backend": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogGraphQl-aggregations-price-category-translate-lables.patch"
-               "Fix: https://github.com/magento/magento2/issues/29631": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogGraphQl-special-price.patch"
+               "Fix: https://github.com/magento/magento2/issues/29631": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogGraphQl-M2.4.x-special-price-from-to-dates.patch"
             },
             "magento/module-catalog-inventory": {
                 "Fix: https://github.com/magento/magento2/issues/8566": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory_M2.1.3-hide-out-of-stock.patch",
