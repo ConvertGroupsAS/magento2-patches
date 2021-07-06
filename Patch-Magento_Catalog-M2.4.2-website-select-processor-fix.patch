@@ -1,0 +1,11 @@
+--- Model/ResourceModel/Product/Website/SelectProcessor.php
++++ Model/ResourceModel/Product/Website/SelectProcessor.php
+@@ -54,7 +54,7 @@
+      */
+     public function process(Select $select)
+     {
+-        $linkField = $this->metadataPool->getMetadata(ProductInterface::class)->getLinkField();
++        $linkField = $this->metadataPool->getMetadata(ProductInterface::class)->getIdentifierField();
+         $select->joinInner(
+             ['pw' => $this->resource->getTableName('catalog_product_website')],
+             'pw.product_id = ' . BaseSelectProcessorInterface::PRODUCT_TABLE_ALIAS . '.' . $linkField
