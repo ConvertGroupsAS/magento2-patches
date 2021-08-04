@@ -1,0 +1,14 @@
+--- Trollweb/Bring/Helper/Carrier.php 2021-08-04 17:24:06.024470679 +0300
++++ Trollweb/Bring/Helper/Carrier.php 2021-08-04 17:44:15.076421687 +0300
+@@ -314,7 +314,10 @@
+
+     private function formatMethodTitle($bringProduct)
+     {
+-        $title = $bringProduct["guiInformation"]["displayName"];
++        $title = "Bring";
++        if (isset($bringProduct["guiInformation"]["displayName"])) {
++            $title = $bringProduct["guiInformation"]["displayName"];
++        }
+
+         // Add timeslot to name if available
+         if (isset($bringProduct["expectedDelivery"]["expectedDeliveryDate"]["timeSlots"][0])) {

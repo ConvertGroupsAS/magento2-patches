@@ -183,6 +183,7 @@ klarna/module-kco-core|Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.p
 klarna/module-kco-core|Patch-Klarna-KcoCore-log-json-encode.patch|Convert logs from array to json format |>=5.2.1 (didn't check older versions)
 dotmailer/dotmailer-magento2-extension|Patch-Dotdigitalgroup_email-subject-fix.patch|Fix utf8 encoding in the subject of email|?
 trollweb/module-bring|Patch-Trollweb-Bring-2.3.2-Customer-number-argument-usage|Fix wrong Customer Number param in request for carriers| 2.3.2
+trollweb/module-bring|Patch-Trollweb_Bring-3.3.8-missed-method-displayName.patch|Fix missed displayName for delivery method| 3.3.8
 vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch|Fixed allowed methods in carrier model| >=2.3.0
 vconnect/module-allinone|Patch-Vconnect_Allinone-allowed-methods-fix.patch|Fixed allowed methods in carrier model| >=2.2.0 < 2.3.0
 vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch|Address fix for findPoints call| >=2.3.0
