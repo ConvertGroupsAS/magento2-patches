@@ -60,6 +60,7 @@ magento/module-google-tag-manager|Patch\_Magento\_GoogleTagManager\_M2.1.0-fix-e
 magento/module-customer|Patch-Magento\_Customer-M2.1.9-array-street-line.patch (Patch-Magento\_Customer-array-street-line.patch)Patch-Webshipr\_Shipping-get-shipping-address-fix.patch|[PR #10582](https://github.com/magento/magento2/pull/10582)|>= 2.1.9 < 2.2.2
 magento/module-customer|Patch-Magento\_Customer-M2.1.9-generate-new-formkey-wishlist.patch|[#11825](https://github.com/magento/magento2/issues/11825)|>=2.1.9 >=2.2.0 <2.2.4(maybe)
 magento/module-customer|Patch-Magento\_Customer-M2.4.1-context-customer-group-id-fix.patch||>=2.4.1 <2.4.3(maybe)
+magento/module-customer|Patch-Magento\_Customer-M2.4.x-errors-in-customer-data-component-not-initialized-fix.patch|[PR #31940](https://github.com/magento/magento2/pull/31940)|>=2.4.0 <=2.4.3
 magento/module-customer-graph-ql|Patch-Magento\_CustomerGraphQl-M2.4.1-context-customer-group-id-fix.patch||>=2.4.1 <2.4.3(maybe)
 magento/module-wishlist|Patch-Magento\_Wishlist-M2.x.x-add-to-wishlist-login-register.patch|[#11825](https://github.com/magento/magento2/issues/11825)|>=2.1.9 >=2.2.0 <2.2.4(maybe)
 magento/module-wishlist|Patch-Magento\_Wishlist-M2.x.x-wishlist-keep-item-in-cart.patch| |\>=2.1.0
@@ -161,6 +162,7 @@ algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-customer-group-catal
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-emulation-clean-scope.patch|[PR #857](https://github.com/algolia/algoliasearch-magento-2/pull/857)|
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-pages-trigger-index.patch|Page indexer listeners on mview|
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-remove-show-all-products.patch|Remove show all products|
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-check-request-path-to-empty.patch|[PR #1149](https://github.com/algolia/algoliasearch-magento-2/pull/1149)|
 amasty/shopby|Patch-Amasty_Shopby-2.10.5-remove-price-indexer.patch|Remove auto price indexer for v2.10.5|2.10.5
 amasty/shopby|Patch-Amasty_Shopby-2.12.5-remove-price-indexer.patch|Remove auto price indexer for v2.12.5|2.12.5
 amasty/shopby|Patch-Amasty_Shopby-2.13.7-remove-price-indexer.patch|Remove auto price indexer for v2.13.7|2.13.7
@@ -174,6 +176,7 @@ amasty/label|Patch-Amasty_Label-compatibility-with-M2.3.patch|Fix: require jQuer
 bsscommerce/ajaxcart|Patch-Bss_AjaxCart-1.1.4-improvements.patch| | \=1.1.4
 bsscommerce/ajaxcart|Patch-Bss_AjaxCart-add-productIds-to-response.patch|Fix GTM compatibility|
 colinmollenhour/cache-backend-redis|Patch-Cm_Cache_Backend_Redis-1.10.6-remove-by-chunks.patch|Fixed removal of large amount of keys by dividing to chunks| 1.10.6
+clerk/magento2|Patch-Clerk_Clerk-image-init-properly.patch|Initialize image properly and add placeholder|
 klarna/module-base|Patch-Klarna_Base-fix-round-to-int-and-tax-calculation.patch|Fix rounding and discount tax calculation|
 klarna/module-kco|Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch|Fix wrong function parameters order|>=5.0.5
 klarna/module-kco|Patch-Klarna_Kco-8-fix-total-base-calculation-plugin.patch|Fix: Total Base Calculation Plugin - Check is KCO enabled|
@@ -217,7 +220,8 @@ Full composer.json example:
                 "Catalogrule price for customer groups: https://github.com/algolia/algoliasearch-magento-2/pull/853": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-customer-group-catalogrule-price-website-id.patch",
                 "Clean scope code resolver: https://github.com/algolia/algoliasearch-magento-2/pull/857": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-emulation-clean-scope.patch",
                 "Page indexer listeners on mview": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-pages-trigger-index.patch",
-                "Remove show all products": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-remove-show-all-products.patch"
+                "Remove show all products": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-remove-show-all-products.patch",
+                "Check request param to empty instead strict equal": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-check-request-path-to-empty.patch"
             },
             "amasty/shopby": {
                 "ES performance fixes for category filter": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_Shopby-category-es-performance2.patch"
@@ -243,6 +247,9 @@ Full composer.json example:
             "colinmollenhour/cache-backend-redis": {
                 "Fix: Remove by Chunks - https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/153": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Cm_Cache_Backend_Redis-1.10.6-remove-by-chunks.patch"
             },
+            "clerk/magento2": {
+                "Initialize image properly and add placeholder": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Clerk_Clerk-image-init-properly.patch"
+            } 
             "magento/framework-message-queue": {
                 "Fix Consumer Transactions Callbacks": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Message-Queue-Consumer-Transaction.patch"
             },
@@ -354,6 +361,7 @@ Full composer.json example:
             "magento/module-customer": {
                 "Fix: https://github.com/magento/magento2/pull/10582": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Customer-M2.1.9-array-street-line.patch",
                 "Fix: https://github.com/magento/magento2/issues/11825": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Customer-M2.1.9-generate-new-formkey-wishlist.patch",
+                "Fix: https://github.com/magento/magento2/pull/31940": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Customer-M2.4.x-errors-in-customer-data-component-not-initialized-fix.patch",
                 "Fix: Disable cache for customer section data": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch_Magento_Customer-M2.1.4-customer-section-load-fix.patch",
                 "Fix: Added Customer Group Id to GraphQl Context": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Customer-M2.4.1-context-customer-group-id-fix.patch" 
             },

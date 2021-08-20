@@ -1,0 +1,11 @@
+--- Model/Product/Url.php	2020-11-26 16:52:32.000000000 +0300
++++ Model/Product/Url.php	2021-04-21 09:14:42.000000000 +0300
+@@ -62,7 +62,7 @@
+             $routeParams['_scope'] = $urlDataObject->getStoreId();
+         } else {
+             $requestPath = $product->getRequestPath();
+-            if ($requestPath === '') {
++            if (empty($requestPath) && $requestPath !== false) {
+                 $filterData = [
+                     UrlRewrite::ENTITY_ID   => $product->getId(),
+                     UrlRewrite::ENTITY_TYPE => ProductUrlRewriteGenerator::ENTITY_TYPE,
