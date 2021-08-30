@@ -1,0 +1,97 @@
+--- Console/Command/RegenerateUrlRewrites.php.orig	2020-04-14 14:30:24.000000000 +0300
++++ Console/Command/RegenerateUrlRewrites.php	2021-08-06 15:43:07.239407670 +0300
+@@ -107,7 +107,7 @@
+                     null,
+                     InputOption::VALUE_NONE,
+                     'Prevent url_key regeneration'
+-                ),       
++                ),
+             ]);
+     }
+ 
+@@ -213,10 +213,11 @@
+         }
+ 
+         if (isset($options[self::INPUT_KEY_PRODUCTS_RANGE])) {
+-            $this->_commandOptions['productsFilter'] = $this->_generateIdsRangeArray(
+-                $options[self::INPUT_KEY_PRODUCTS_RANGE],
+-                'product'
+-            );
++//            $this->_commandOptions['productsFilter'] = $this->_generateIdsRangeArray(
++//                $options[self::INPUT_KEY_PRODUCTS_RANGE],
++//                'product'
++//            );
++            $this->_commandOptions['productsFilter'] = explode(',', $options[self::INPUT_KEY_PRODUCTS_RANGE]);
+             $distinctOptionsUsed++;
+         }
+ 
+@@ -327,12 +328,12 @@
+     private function _getLogicalConflictError($option1, $option2, $option3)
+     {
+         return __(
+-                "ERROR: you can not use this options together (logical conflict):\n'--%o1' with '--%o2'/'--%o3'",
+-                [
+-                    'o1' => $option1,
+-                    'o2' => $option2,
+-                    'o3' => $option3
+-                ]
+-            );
++            "ERROR: you can not use this options together (logical conflict):\n'--%o1' with '--%o2'/'--%o3'",
++            [
++                'o1' => $option1,
++                'o2' => $option2,
++                'o3' => $option3
++            ]
++        );
+     }
+ }
+--- Model/RegenerateProductRewrites.php.orig	2020-04-14 14:30:24.000000000 +0300
++++ Model/RegenerateProductRewrites.php	2021-08-06 15:44:00.939668246 +0300
+@@ -188,8 +188,18 @@
+         // if "request_path" is not null or equal to "false" then Magento do not serach and do not use Url Rewrites
+         $updateAttributes = ['url_path' => null];
+         if (!$this->regenerateOptions['noRegenUrlKey']) {
+-            $generatedKey = $this->_getProductUrlPathGenerator()->getUrlKey($entity->setUrlKey(null));
+-            $updateAttributes['url_key'] = $generatedKey;
++            /** @var \Magento\Catalog\Model\Product $entity */
++            $resource = $entity->getResource();
++            $attribute = $resource->getAttribute('url_key');
++            $urlKey = $entity->getUrlKey();
++            if (!$attribute->getEntity()->checkAttributeUniqueValue($attribute, $entity)) {
++                do {
++                    $urlKey = $this->modifyUrl($urlKey);
++                    $entity->setUrlKey($urlKey);
++                } while (!$attribute->getEntity()->checkAttributeUniqueValue($attribute, $entity));
++            }
++            $entity->setUrlKey(null);
++            $updateAttributes['url_key'] = $urlKey;
+         }
+ 
+         $this->_getProductAction()->updateAttributes(
+@@ -214,6 +224,19 @@
+     }
+ 
+     /**
++     * Modify URL key.
++     *
++     * @param string $urlKey
++     * @return string
++     */
++    protected function modifyUrl(string $urlKey) : string
++    {
++        return preg_match('/(.*)-(\d+)$/', $urlKey, $matches)
++            ? $matches[1] . '-' . ($matches[2] + 1)
++            : $urlKey . '-1';
++    }
++
++    /**
+      * @return \Magento\Catalog\Model\ResourceModel\Product\Action
+      */
+     protected function _getProductAction()
+@@ -274,4 +297,4 @@
+ 
+         return $productsCollection;
+     }
+-}
+\ No newline at end of file
++}
