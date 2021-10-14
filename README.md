@@ -133,6 +133,7 @@ magento/module-configurable-product|Patch-Magento_ConfigurableProduct-M2.2.8-fix
 magento/module-configurable-product|Patch-Magento_Configurable_M2.1.x-fix-get-price.patch|[#5519](https://github.com/magento/magento2/issues/5519)|<2.1.10
 magento/module-configurable-product|Patch-Magento_ConfigurableProduct-quote-item-qty-doubling-fix.patch||>2.3.x
 magento/module-configurable-product|Patch-Magento_BundleProduct-quote-item-qty-doubling-fix.patch||>2.3.x
+magento/module-configurable-product-graph-ql|Patch-Magento_ConfigurableProductGraphQL-fix-breaking-response-if-no-variant.patch||>2.3.0
 magento/module-cache-invalidate|Patch-Magento_CacheInvalidate-M2.1.x-purge-cache.patch|[#7614](https://github.com/magento/magento2/issues/7614)|<2.2
 magento/module-config|Patch-Magento_Config-Fix-of-Saving-clone-field-M2.2.6.patch|[#19070](https://github.com/magento/magento2/issues/https://github.com/magento/magento2/issues/7614)| 2.2.5 2.2.6
 magento/module-company|Patch-Magento_Company-M2.3.3-company-double-save-error.patch|Fix: double save company error|
@@ -350,6 +351,10 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/8018": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_ConfigurableProduct-M2.2.x-priceBox-prior-to-initialization.patch",
                 "Fix: Configurable product quantity is doubling in the Quote item": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_ConfigurableProduct-quote-item-qty-doubling-fix.patch"
             },
+            "magento/module-configurable-product-graph-ql": {
+                "Fix breaking response if no variants": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_ConfigurableProductGraphQL-fix-breaking-response-if-no-variant.patch"
+
+            }
             "magento/module-bundle": {
                 "Fix: Bundle product quantity is doubling in the Quote item": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_BundleProduct-quote-item-qty-doubling-fix.patch"
             },

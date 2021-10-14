@@ -1,0 +1,99 @@
+--- Model/Resolver/Product/Price/Provider.php
++++ Model/Resolver/Product/Price/Provider.php
+@@ -7,13 +7,15 @@
+ 
+ namespace Magento\ConfigurableProductGraphQl\Model\Resolver\Product\Price;
+ 
++use Magento\CatalogGraphQl\Model\Resolver\Product\Price\ProviderInterface;
+ use Magento\Catalog\Pricing\Price\FinalPrice;
+ use Magento\Catalog\Pricing\Price\RegularPrice;
++use Magento\ConfigurableProduct\Pricing\Price\ConfigurableOptionsProviderInterface;
+ use Magento\ConfigurableProduct\Pricing\Price\ConfigurableRegularPrice;
++use Magento\Framework\App\ObjectManager;
++use Magento\Framework\Pricing\Amount\AmountFactory;
+ use Magento\Framework\Pricing\Amount\AmountInterface;
+ use Magento\Framework\Pricing\SaleableInterface;
+-use Magento\CatalogGraphQl\Model\Resolver\Product\Price\ProviderInterface;
+-use Magento\ConfigurableProduct\Pricing\Price\ConfigurableOptionsProviderInterface;
+ 
+ /**
+  * Provides product prices for configurable products
+@@ -21,6 +23,11 @@
+ class Provider implements ProviderInterface
+ {
+     /**
++     * Default amount if there is no option
++     */
++    const DEFAULT_AMOUNT = 0;
++
++    /**
+      * @var ConfigurableOptionsProviderInterface
+      */
+     private $optionsProvider;
+@@ -36,6 +43,13 @@
+     private $maximumFinalAmounts = [];
+ 
+     /**
++     * Default Amount object
++     *
++     * @var AmountInterface
++     */
++    private $defaultAmount;
++
++    /**
+      * @param ConfigurableOptionsProviderInterface $optionsProvider
+      */
+     public function __construct(
+@@ -50,14 +64,14 @@
+     public function getMinimalFinalPrice(SaleableInterface $product): AmountInterface
+     {
+         if (!isset($this->minimumFinalAmounts[$product->getId()])) {
+-            $minimumAmount = null;
++            $minimumAmount = $this->getDefaultAmount();
+             foreach ($this->optionsProvider->getProducts($product) as $variant) {
+                 $variantAmount = $variant->getPriceInfo()->getPrice(FinalPrice::PRICE_CODE)->getAmount();
+                 if (!$minimumAmount || ($variantAmount->getValue() < $minimumAmount->getValue())) {
+                     $minimumAmount = $variantAmount;
+-                    $this->minimumFinalAmounts[$product->getId()] = $variantAmount;
+                 }
+             }
++            $this->minimumFinalAmounts[$product->getId()] = $minimumAmount;
+         }
+ 
+         return $this->minimumFinalAmounts[$product->getId()];
+@@ -79,14 +93,14 @@
+     public function getMaximalFinalPrice(SaleableInterface $product): AmountInterface
+     {
+         if (!isset($this->maximumFinalAmounts[$product->getId()])) {
+-            $maximumAmount = null;
++            $maximumAmount = $this->getDefaultAmount();
+             foreach ($this->optionsProvider->getProducts($product) as $variant) {
+                 $variantAmount = $variant->getPriceInfo()->getPrice(FinalPrice::PRICE_CODE)->getAmount();
+                 if (!$maximumAmount || ($variantAmount->getValue() > $maximumAmount->getValue())) {
+                     $maximumAmount = $variantAmount;
+-                    $this->maximumFinalAmounts[$product->getId()] = $variantAmount;
+                 }
+             }
++            $this->maximumFinalAmounts[$product->getId()] = $maximumAmount;
+         }
+ 
+         return $this->maximumFinalAmounts[$product->getId()];
+@@ -109,4 +123,18 @@
+     {
+         return $product->getPriceInfo()->getPrice(RegularPrice::PRICE_CODE)->getAmount();
+     }
++
++    /**
++     * Default amount to use if there is no option
++     *
++     * @return AmountInterface
++     */
++    public function getDefaultAmount(): AmountInterface
++    {
++        if (!$this->defaultAmount) {
++            $this->defaultAmount = ObjectManager::getInstance()->get(AmountFactory::class)
++                ->create(self::DEFAULT_AMOUNT);
++        }
++        return $this->defaultAmount;
++    }
+ }
