@@ -26,40 +26,24 @@
       * @param ConfigurableOptionsProviderInterface $optionsProvider
       */
      public function __construct(
-@@ -50,14 +62,14 @@
-     public function getMinimalFinalPrice(SaleableInterface $product): AmountInterface
-     {
-         if (!isset($this->minimumFinalAmounts[$product->getId()])) {
--            $minimumAmount = null;
-+            $minimumAmount = $this->getDefaultAmount();
-             foreach ($this->optionsProvider->getProducts($product) as $variant) {
-                 $variantAmount = $variant->getPriceInfo()->getPrice(FinalPrice::PRICE_CODE)->getAmount();
-                 if (self::DEFAULT_AMOUNT==$minimumAmount->getValue() || ($variantAmount->getValue() < $minimumAmount->getValue())) {
-                     $minimumAmount = $variantAmount;
--                    $this->minimumFinalAmounts[$product->getId()] = $variantAmount;
-                 }
+@@ -60,7 +72,7 @@
              }
-+            $this->minimumFinalAmounts[$product->getId()] = $minimumAmount;
          }
  
-         return $this->minimumFinalAmounts[$product->getId()];
-@@ -79,14 +91,14 @@
-     public function getMaximalFinalPrice(SaleableInterface $product): AmountInterface
-     {
-         if (!isset($this->maximumFinalAmounts[$product->getId()])) {
--            $maximumAmount = null;
-+            $maximumAmount = $this->getDefaultAmount();
-             foreach ($this->optionsProvider->getProducts($product) as $variant) {
-                 $variantAmount = $variant->getPriceInfo()->getPrice(FinalPrice::PRICE_CODE)->getAmount();
-                 if (($variantAmount->getValue() > $maximumAmount->getValue())) {
-                     $maximumAmount = $variantAmount;
--                    $this->maximumFinalAmounts[$product->getId()] = $variantAmount;
-                 }
+-        return $this->minimumFinalAmounts[$product->getId()];
++        return $this->minimumFinalAmounts[$product->getId()] ?? $this->getDefaultAmount();
+     }
+ 
+     /**
+@@ -89,7 +101,7 @@
              }
-+            $this->maximumFinalAmounts[$product->getId()] = $maximumAmount;
          }
  
-         return $this->maximumFinalAmounts[$product->getId()];
+-        return $this->maximumFinalAmounts[$product->getId()];
++        return $this->maximumFinalAmounts[$product->getId()] ?? $this->getDefaultAmount();
+     }
+ 
+     /**
 @@ -109,4 +121,19 @@
      {
          return $product->getPriceInfo()->getPrice(RegularPrice::PRICE_CODE)->getAmount();
