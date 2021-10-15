@@ -34,7 +34,7 @@
 +            $minimumAmount = $this->getDefaultAmount();
              foreach ($this->optionsProvider->getProducts($product) as $variant) {
                  $variantAmount = $variant->getPriceInfo()->getPrice(FinalPrice::PRICE_CODE)->getAmount();
-                 if (!$minimumAmount || ($variantAmount->getValue() < $minimumAmount->getValue())) {
+                 if (self::DEFAULT_AMOUNT==$minimumAmount->getValue() || ($variantAmount->getValue() < $minimumAmount->getValue())) {
                      $minimumAmount = $variantAmount;
 -                    $this->minimumFinalAmounts[$product->getId()] = $variantAmount;
                  }
@@ -51,7 +51,7 @@
 +            $maximumAmount = $this->getDefaultAmount();
              foreach ($this->optionsProvider->getProducts($product) as $variant) {
                  $variantAmount = $variant->getPriceInfo()->getPrice(FinalPrice::PRICE_CODE)->getAmount();
-                 if (!$maximumAmount || ($variantAmount->getValue() > $maximumAmount->getValue())) {
+                 if (($variantAmount->getValue() > $maximumAmount->getValue())) {
                      $maximumAmount = $variantAmount;
 -                    $this->maximumFinalAmounts[$product->getId()] = $variantAmount;
                  }
