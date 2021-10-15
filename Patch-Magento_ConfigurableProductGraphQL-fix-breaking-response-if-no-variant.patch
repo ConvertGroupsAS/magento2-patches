@@ -1,24 +1,6 @@
 --- Model/Resolver/Product/Price/Provider.php
 +++ Model/Resolver/Product/Price/Provider.php
-@@ -7,13 +7,15 @@
- 
- namespace Magento\ConfigurableProductGraphQl\Model\Resolver\Product\Price;
- 
-+use Magento\CatalogGraphQl\Model\Resolver\Product\Price\ProviderInterface;
- use Magento\Catalog\Pricing\Price\FinalPrice;
- use Magento\Catalog\Pricing\Price\RegularPrice;
-+use Magento\ConfigurableProduct\Pricing\Price\ConfigurableOptionsProviderInterface;
- use Magento\ConfigurableProduct\Pricing\Price\ConfigurableRegularPrice;
-+use Magento\Framework\App\ObjectManager;
-+use Magento\Framework\Pricing\Amount\AmountFactory;
- use Magento\Framework\Pricing\Amount\AmountInterface;
- use Magento\Framework\Pricing\SaleableInterface;
--use Magento\CatalogGraphQl\Model\Resolver\Product\Price\ProviderInterface;
--use Magento\ConfigurableProduct\Pricing\Price\ConfigurableOptionsProviderInterface;
- 
- /**
-  * Provides product prices for configurable products
-@@ -21,6 +23,11 @@
+@@ -21,6 +21,11 @@
  class Provider implements ProviderInterface
  {
      /**
@@ -30,7 +12,7 @@
       * @var ConfigurableOptionsProviderInterface
       */
      private $optionsProvider;
-@@ -36,6 +43,13 @@
+@@ -36,6 +41,13 @@
      private $maximumFinalAmounts = [];
  
      /**
@@ -44,7 +26,7 @@
       * @param ConfigurableOptionsProviderInterface $optionsProvider
       */
      public function __construct(
-@@ -50,14 +64,14 @@
+@@ -50,14 +62,14 @@
      public function getMinimalFinalPrice(SaleableInterface $product): AmountInterface
      {
          if (!isset($this->minimumFinalAmounts[$product->getId()])) {
@@ -61,7 +43,7 @@
          }
  
          return $this->minimumFinalAmounts[$product->getId()];
-@@ -79,14 +93,14 @@
+@@ -79,14 +91,14 @@
      public function getMaximalFinalPrice(SaleableInterface $product): AmountInterface
      {
          if (!isset($this->maximumFinalAmounts[$product->getId()])) {
@@ -78,7 +60,7 @@
          }
  
          return $this->maximumFinalAmounts[$product->getId()];
-@@ -109,4 +123,18 @@
+@@ -109,4 +121,19 @@
      {
          return $product->getPriceInfo()->getPrice(RegularPrice::PRICE_CODE)->getAmount();
      }
@@ -91,7 +73,8 @@
 +    public function getDefaultAmount(): AmountInterface
 +    {
 +        if (!$this->defaultAmount) {
-+            $this->defaultAmount = ObjectManager::getInstance()->get(AmountFactory::class)
++            $this->defaultAmount = \Magento\Framework\App\ObjectManager::getInstance()
++                ->get(\Magento\Framework\Pricing\Amount\AmountFactory::class)
 +                ->create(self::DEFAULT_AMOUNT);
 +        }
 +        return $this->defaultAmount;
