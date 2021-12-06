@@ -1,0 +1,20 @@
+--- etc/config.xml	2020-12-22 11:13:40.000000000 +0300
++++ etc/config.xml	2021-02-16 16:16:32.227906667 +0300
+@@ -12,7 +12,7 @@
+ <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+     <default>
+         <carriers>
+-            <klarna_shipping_method_gateway>
++            <klarna>
+                 <active>1</active>
+                 <allowed_methods>delivery</allowed_methods>
+                 <methods>delivery</methods>
+@@ -20,7 +20,7 @@
+                 <name>Shipping Method Gateway</name>
+                 <title>Klarna</title>
+                 <handling_type>F</handling_type>
+-            </klarna_shipping_method_gateway>
++            </klarna>
+         </carriers>
+         <payment>
+             <klarna_kco>
