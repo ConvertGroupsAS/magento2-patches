@@ -1,0 +1,15 @@
+--- a/Model/Template/Filter.php
++++ b/Model/Template/Filter.php
+@@ -618,6 +618,12 @@ public function transDirective($construction)
+         }
+ 
+         $text = __($text, $params)->render();
++
++        $pattern = '/{{.*?}}/';
++        do {
++            $text = preg_replace($pattern, '', (string)$text);
++        } while (preg_match($pattern, $text));
++
+         return $this->applyModifiers($text, $modifiers);
+     }
+ 
