@@ -477,7 +477,8 @@ Full composer.json example:
                 "Menu Log Level - Debug": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Backend-M2.3-menu-log-level.patch"
             },
             "klarna/module-core": {
-                "Fix no such entity with addressId error in Klarna checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Core-fix-customer-address-no-such-exception.patch"
+                "Fix no such entity with addressId error in Klarna checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Core-fix-customer-address-no-such-exception.patch",
+                "Fix klarna_logs table. https://docs.klarna.com/platform-solutions/adobe-commerce/adobe-commerce-23x-243/notice-for-users-of-magento-v243/": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Core-klarna-logs-column-size-cleanlogs.patch"
             },
             "klarna/module-base": {
                 "Fix rounding and discount tax calculation": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Base-fix-round-to-int-and-tax-calculation.patch"

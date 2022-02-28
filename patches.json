@@ -556,6 +556,10 @@
         "Fix no such entity with addressId error in Klarna checkout": {
             "file": "Patch-Klarna_Core-fix-customer-address-no-such-exception.patch",
             "version": "*"
+        },
+        "Fix klaran_logs table": {
+            "file": "Patch-Klarna_Core-klarna-logs-column-size-cleanlogs.patch",
+            "version": "*"
         }
     },
     "klarna/module-kco-core": {
