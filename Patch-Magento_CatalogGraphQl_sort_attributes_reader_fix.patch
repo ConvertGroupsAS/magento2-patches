@@ -1,0 +1,13 @@
+--- Model/Config/SortAttributeReader.php
++++ Model/Config/SortAttributeReader.php
+@@ -58,7 +58,8 @@
+     {
+         $map = $this->mapper->getMappedTypes(self::ENTITY_TYPE);
+         $config =[];
+-        $attributes = $this->attributesCollection->addSearchableAttributeFilter()->addFilter('used_for_sort_by', 1);
++        // Patch: fix sorting attributes
++        $attributes = $this->attributesCollection->addFilter('used_for_sort_by', 1);
+         /** @var \Magento\Catalog\Model\ResourceModel\Eav\Attribute $attribute */
+         foreach ($attributes as $attribute) {
+             $attributeCode = $attribute->getAttributeCode();
+

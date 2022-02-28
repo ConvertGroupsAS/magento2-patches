@@ -1,0 +1,66 @@
+--- Model/Resolver/Product/Price/Provider.php
++++ Model/Resolver/Product/Price/Provider.php
+@@ -21,6 +21,11 @@
+ class Provider implements ProviderInterface
+ {
+     /**
++     * Default amount if there is no option
++     */
++    const DEFAULT_AMOUNT = 0;
++
++    /**
+      * @var ConfigurableOptionsProviderInterface
+      */
+     private $optionsProvider;
+@@ -36,6 +41,13 @@
+     private $maximumFinalAmounts = [];
+ 
+     /**
++     * Default Amount object
++     *
++     * @var AmountInterface
++     */
++    private $defaultAmount;
++
++    /**
+      * @param ConfigurableOptionsProviderInterface $optionsProvider
+      */
+     public function __construct(
+@@ -60,7 +72,7 @@
+             }
+         }
+ 
+-        return $this->minimumFinalAmounts[$product->getId()];
++        return $this->minimumFinalAmounts[$product->getId()] ?? $this->getDefaultAmount();
+     }
+ 
+     /**
+@@ -89,7 +101,7 @@
+             }
+         }
+ 
+-        return $this->maximumFinalAmounts[$product->getId()];
++        return $this->maximumFinalAmounts[$product->getId()] ?? $this->getDefaultAmount();
+     }
+ 
+     /**
+@@ -109,4 +121,19 @@
+     {
+         return $product->getPriceInfo()->getPrice(RegularPrice::PRICE_CODE)->getAmount();
+     }
++
++    /**
++     * Default amount to use if there is no option
++     *
++     * @return AmountInterface
++     */
++    public function getDefaultAmount(): AmountInterface
++    {
++        if (!$this->defaultAmount) {
++            $this->defaultAmount = \Magento\Framework\App\ObjectManager::getInstance()
++                ->get(\Magento\Framework\Pricing\Amount\AmountFactory::class)
++                ->create(self::DEFAULT_AMOUNT);
++        }
++        return $this->defaultAmount;
++    }
+ }

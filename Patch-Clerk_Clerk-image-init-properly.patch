@@ -1,0 +1,26 @@
+--- Helper/Image.php	2021-03-02 12:21:41.000000000 +0300
++++ Helper/Image.php	2021-04-21 09:09:25.000000000 +0300
+@@ -53,11 +53,11 @@
+ 
+         //Get image thumbnail from settings
+         $imageType = $this->scopeConfig->getValue(Config::XML_PATH_PRODUCT_SYNCHRONIZATION_IMAGE_TYPE, ScopeInterface::SCOPE_STORE);
+-        $helper = $this->helperFactory->create();
++        /** @var \Magento\Catalog\Helper\Image $helper */
++        $helper = $this->helperFactory->create()->init($item, $imageType);
+ 
+         if ($imageType) {
+-            /** @var \Magento\Catalog\Helper\Image $helper */
+-            $imageUrl = $helper->init($item, $imageType)->getUrl();;
++            $imageUrl = $helper->getUrl();
+             if ($imageUrl == $helper->getDefaultPlaceholderUrl()) {
+                 // allow to try other types
+                 $imageUrl = null;
+@@ -68,7 +68,7 @@
+             $store = $this->storeManager->getStore();
+             $itemImage = $item->getImage() ?? $item->getSmallImage() ?? $item->getThumbnail();
+ 
+-            if ($itemImage === 'no_selection') {
++            if ($itemImage === 'no_selection' || !$itemImage) {
+                 $imageUrl = $helper->getDefaultPlaceholderUrl('small_image');
+             } else {
+                 $imageUrl = $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $itemImage;

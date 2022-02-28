@@ -1,0 +1,11 @@
+--- Model/Api/Ordermanagement.php 2021-12-02 18:48:23.142479702 +0300
++++ Model/Api/Ordermanagement.php 2021-12-02 19:04:44.530520928 +0300
+@@ -364,7 +364,7 @@
+         ];
+
+         if ($creditMemo->getCustomerNote() !== null) {
+-            $data['description'] = $creditMemo->getCustomerNote();
++            $data['description'] = (strlen($creditMemo->getCustomerNote()) > 255) ? substr($creditMemo->getCustomerNote(),0,252).'...' : $creditMemo->getCustomerNote();
+         }
+
+         $data = $this->prepareOrderLines($data, $creditMemo);
