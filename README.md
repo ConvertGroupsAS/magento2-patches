@@ -192,6 +192,7 @@ klarna/module-kco|Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch|F
 klarna/module-kco|Patch-Klarna_Kco-8-fix-total-base-calculation-plugin.patch|Fix: Total Base Calculation Plugin - Check is KCO enabled|
 klarna/module-kco|Patch-Klarna_Kco-fix-shipping-methods-reload-and-widget-update.patch|Fix shipping method reload|
 klarna/module-core|Patch-Klarna_Core-fix-customer-address-no-such-exception.patch|Fix no such entity with addressId error in Klarna checkout|>=4.2.3 (didn't check older versions)
+klarna/module-core|Patch-Klarna_Core-klarna-logs-column-size-cleanlogs.patch| Fix based on https://docs.klarna.com/platform-solutions/adobe-commerce/adobe-commerce-23x-243/notice-for-users-of-magento-v243/| <= 6.2.4
 klarna/module-kco-core|Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch|Fix Incorrect dependency in class Klarna\KcoCore\Block\Info\Klarna |>=5.2 (didn't check older versions)
 klarna/module-kco-core|Patch-Klarna-KcoCore-log-json-encode.patch|Convert logs from array to json format |>=5.2.1 (didn't check older versions)
 dotmailer/dotmailer-magento2-extension|Patch-Dotdigitalgroup_email-subject-fix.patch|Fix utf8 encoding in the subject of email|?
@@ -516,7 +517,8 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/33749#issuecomment-908145941": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Backend-M2.4.3-authentication.patch"
             },
             "klarna/module-core": {
-                "Fix no such entity with addressId error in Klarna checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Core-fix-customer-address-no-such-exception.patch"
+                "Fix no such entity with addressId error in Klarna checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Core-fix-customer-address-no-such-exception.patch",
+                "Fix klarna_logs table. https://docs.klarna.com/platform-solutions/adobe-commerce/adobe-commerce-23x-243/notice-for-users-of-magento-v243/": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Core-klarna-logs-column-size-cleanlogs.patch"
             },
             "klarna/module-base": {
                 "Fix rounding and discount tax calculation": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Base-fix-round-to-int-and-tax-calculation.patch"
