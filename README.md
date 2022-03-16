@@ -32,6 +32,8 @@ magento/framework|Patch-Magento\_Framework-M2.2.6-Fix-session-from-2.2.7.patch|[
 magento/framework|Patch-Magento\_Framework-result-page.patch|Allow to add body class while block render|
 magento/framework|Patch-Magento\_Framework-M2.4.x-performance-graphql-schema-parsing-fix.patch|[PR #31879](https://github.com/magento/magento2/pull/31879)|
 magento/framework|Patch-Magento\_Patch-Magento_framework-M2.3.3-M2.4.3-security|(https://helpx.adobe.com/security/products/magento/apsb22-12.html)|>= 2.2.8 <=2.3.2
+magento/framework|Patch-Magento\_Patch-Magento_framework-M2.3.4-p1-M2.4.2-p1-security|(https://helpx.adobe.com/security/products/magento/apsb22-12.html)|>= 2.3.4-p1 <=2.4.2-p1
+magento/framework|Patch-Magento\_Patch-Magento_framework-M2.4.3-p1-security|(https://helpx.adobe.com/security/products/magento/apsb22-12.html)|>= 2.4.3-p1
 magento/framework-message-queue|Patch-Message-Queue-Consumer-Transaction.patch| |EE Only < 2.2.0
 magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-delete.patch|[PR #14751](https://github.com/magento/magento2/pull/14751)|>= 2.2.0 < 2.2.5
 magento/module-cron|Patch-Magento\_Cron-M2.1.4-cron-generate-schedule.patch|[#4173](https://github.com/magento/magento2/issues/4173)|all as of 2.1.7 < 2.2.0
@@ -42,6 +44,9 @@ magento/module-email|Patch-Magento\_Email-M2.1.0-create-email-logo-1.patch| |< 2
 magento/module-email|Patch-Magento\_Email-M2.2.x-cant-update-logo.patch|[PR #15137](https://github.com/magento/magento2/pull/15137) |< 2.2.6 (2.2.4 n/a)
 magento/module-email|Patch-Magento\_Email-M2.2.8-2.3.2-No-Sid-In-Messages.patch| |>= 2.2.8 <=2.3.2
 magento/module-email|Patch-Magento\_Patch-Magento_email-M2.3.3-M2.4.3-security| (https://helpx.adobe.com/security/products/magento/apsb22-12.html) |>= 2.3.3 <=2.4.3
+magento/module-email|Patch-Magento\_Patch-Magento_email-M2.3.3-p1-M2.3.4-p1-security| (https://helpx.adobe.com/security/products/magento/apsb22-12.html) |>= 2.3.3-p1 <= 2.3.4-p1
+magento/module-email|Patch-Magento\_Patch-Magento_email-M2.3.4-p2-M2.4.2-p1-security| (https://helpx.adobe.com/security/products/magento/apsb22-12.html) |>= 2.3.4-p2 <= 2.4.2-p1
+magento/module-email|Patch-Magento\_Patch-Magento_email-M2.4.3-p1-M2.4.3-security| (https://helpx.adobe.com/security/products/magento/apsb22-12.html) |>= 2.4.3-p1
 magento/module-elasticsearch|Patch-Magento_Elasticsearch-M2.2-total-fields-limit-10000.patch|Increase default fields limit|>= 2.2.0
 magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.x-Send-Error-Message.patch| |>= 2.3.0
 magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.0-M2.3.1-prices-pass-website-id.patch| |>= 2.3.0 <= 2.3.1
@@ -272,7 +277,9 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/21916": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.3.1-fix-elasticsearch-generation.patch",
                 "Allow to add body class while block render": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-result-page.patch",
                 "Pull: https://github.com/magento/magento2/pull/31879": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4.x-performance-graphql-schema-parsing-fix.patch",
-                "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_framework-M2.3.3-M2.4.3-security.patch"
+                "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_framework-M2.3.3-M2.4.3-security-not-actual.patch",
+                "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_framework-M2.3.4-p1-M2.4.2-p1_APSB22-12-security.patch",
+                "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_framework-M2.4.3-p1_APSB22-12-security.patch"
             },
             "magento/magento2-base": {
                 "Fix MAGE_DIRS for CLI": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-cli.patch",
@@ -389,7 +396,10 @@ Full composer.json example:
                 "https://github.com/magento/magento2/issues/5352": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Email-M2.1.0-create-email-logo-1.patch",
                 "https://github.com/magento/magento2/issues/14968": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Email-M2.2.x-cant-update-logo.patch",
                 "Disable adding ?SID in email message urls": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Email-M2.2.8-2.3.2-No-Sid-In-Messages.patch",
-                "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_email-M2.3.3-M2.4.3-security.patch"
+                "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_email-M2.3.3-M2.4.3-security-notactual.patch"
+                "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Module-email-M2.3.3-p1-M2.3.4-p1_APSB22-12-security.patch"
+                "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Module-email-M2.3.4-p2-M2.4.2-p1_APSB22-12-security.patch"
+                "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Module-email-M2.4.3-p1_APSB22-12-security.patch"
             },
             "magento/module-elasticsearch": {
                 "Ignore Elastic Search Error": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Elasticsearch-M2.3.x-Send-Error-Message.patch",

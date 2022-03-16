@@ -1,0 +1,209 @@
+--- a/Model/Template/Filter.php
++++ b/Model/Template/Filter.php
+@@ -379,14 +379,14 @@
+     }
+ 
+     /**
+-     * Retrieve Block html directive
+-     *
+      * @param array $construction
++     *
+      * @return string
++     *
+      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+      * @SuppressWarnings(PHPMD.NPathComplexity)
+      */
+-    public function blockDirective($construction)
++    private function resolveBlockDirective($construction)
+     {
+         $skipParams = ['class', 'id', 'output'];
+         $blockParameters = $this->getParameters($construction[2]);
+@@ -427,12 +427,26 @@
+     }
+ 
+     /**
+-     * Retrieve layout html directive
++     * Retrieve Block html directive
+      *
++     * @param array $construction
++     * @return string
++     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
++     * @SuppressWarnings(PHPMD.NPathComplexity)
++     */
++    public function blockDirective($construction)
++    {
++        $result = $this->resolveBlockDirective($construction);
++
++        return preg_replace("/{{/", "&#123;&#123;", $result);
++    }
++
++    /**
+      * @param string[] $construction
++     *
+      * @return string
+      */
+-    public function layoutDirective($construction)
++    private function resolveLayoutDirective($construction)
+     {
+         $this->_directiveParams = $this->getParameters($construction[2]);
+         if (!isset($this->_directiveParams['area'])) {
+@@ -449,6 +463,19 @@
+     }
+ 
+     /**
++     * Retrieve layout html directive
++     *
++     * @param string[] $construction
++     * @return string
++     */
++    public function layoutDirective($construction)
++    {
++        $result = $this->resolveLayoutDirective($construction);
++
++        return preg_replace("/{{/", "&#123;&#123;", $result);
++    }
++
++    /**
+      * Retrieve layout html directive callback
+      *
+      * @return string
+@@ -515,7 +542,7 @@
+     {
+         $params = $this->getParameters($construction[2]);
+         $url = $this->_assetRepo->getUrlWithParams($params['url'], $params);
+-        return $url;
++        return $this->sanitizeValue($url);
+     }
+ 
+     /**
+@@ -528,8 +555,11 @@
+     {
+         // phpcs:disable Magento2.Functions.DiscouragedFunction
+         $params = $this->getParameters(html_entity_decode($construction[2], ENT_QUOTES));
+-        return $this->_storeManager->getStore()
+-            ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . $params['url'];
++        return $this->sanitizeValue(
++            $this->_storeManager->getStore()
++                ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . $params['url']
++        );
++
+     }
+ 
+     /**
+@@ -567,7 +597,7 @@
+             unset($params['url']);
+         }
+ 
+-        return $this->urlModel->getUrl($path, $params);
++        return $this->sanitizeValue($this->urlModel->getUrl($path, $params));
+     }
+ 
+     /**
+@@ -605,7 +635,8 @@
+         }
+ 
+         $text = __($text, $params)->render();
+-        return $this->applyModifiers($text, $modifiers);
++
++        return $this->applyModifiers($this->sanitizeValue($text), $modifiers);
+     }
+ 
+     /**
+@@ -649,7 +680,10 @@
+             $construction[2] . ($construction['filters'] ?? ''),
+             'escape'
+         );
+-        return $this->applyModifiers($this->getVariable($directive, ''), $modifiers);
++
++        $result = $this->sanitizeValue($this->getVariable($directive, ''));
++
++        return $this->applyModifiers($result, $modifiers);
+     }
+ 
+     /**
+@@ -730,20 +764,11 @@
+     }
+ 
+     /**
+-     * HTTP Protocol directive
+-     *
+-     * Usage:
+-     *
+-     *     {{protocol}} - current protocol http or https
+-     *     {{protocol url="www.domain.com/"}} - domain URL with current protocol
+-     *     {{protocol http="http://url" https="https://url"}}
+-     *     {{protocol store="1"}} - Optional parameter which gets protocol from provide store based on store ID or code
+-     *
+      * @param string[] $construction
+      * @throws \Magento\Framework\Exception\MailException
+      * @return string
+      */
+-    public function protocolDirective($construction)
++    private function resolveProtocolDirective($construction)
+     {
+         $params = $this->getParameters($construction[2]);
+         $store = null;
+@@ -771,6 +796,27 @@
+     }
+ 
+     /**
++     * HTTP Protocol directive
++     *
++     * Usage:
++     *
++     *     {{protocol}} - current protocol http or https
++     *     {{protocol url="www.domain.com/"}} - domain URL with current protocol
++     *     {{protocol http="http://url" https="https://url"}}
++     *     {{protocol store="1"}} - Optional parameter which gets protocol from provide store based on store ID or code
++     *
++     * @param string[] $construction
++     * @throws \Magento\Framework\Exception\MailException
++     * @return string
++     */
++    public function protocolDirective($construction)
++    {
++        return $this->sanitizeValue(
++            $this->resolveProtocolDirective($construction)
++        );
++    }
++
++    /**
+      * Store config directive
+      *
+      * @param string[] $construction
+@@ -788,7 +834,7 @@
+                 $storeId
+             );
+         }
+-        return $configValue;
++        return $this->sanitizeValue($configValue);
+     }
+ 
+     /**
+@@ -829,7 +875,8 @@
+                 $customVarValue = $value;
+             }
+         }
+-        return $customVarValue;
++
++        return $this->sanitizeValue($customVarValue);
+     }
+ 
+     /**
+@@ -1030,6 +1077,16 @@
+     }
+ 
+     /**
++     * @param string $value
++     *
++     * @return string|bool
++     */
++    private function sanitizeValue($value)
++    {
++        return is_bool($value) ? $value : str_replace(['{', '}'], '', (string) $value);
++    }
++
++    /**
+      * Filter the string as template
+      *
+      * Overrides parent method in order to handle exceptions

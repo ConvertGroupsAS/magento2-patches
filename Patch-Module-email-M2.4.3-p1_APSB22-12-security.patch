@@ -1,0 +1,214 @@
+--- a/Model/Template/Filter.php
++++ b/Model/Template/Filter.php
+@@ -392,14 +392,14 @@ public function getStoreId()
+     }
+
+     /**
+-     * Retrieve Block html directive
+-     *
+      * @param array $construction
++     *
+      * @return string
++     *
+      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+      * @SuppressWarnings(PHPMD.NPathComplexity)
+      */
+-    public function blockDirective($construction)
++    private function resolveBlockDirective($construction)
+     {
+         $skipParams = ['class', 'id', 'output'];
+         $blockParameters = $this->getParameters($construction[2]);
+@@ -440,12 +440,26 @@ public function blockDirective($construction)
+     }
+
+     /**
+-     * Retrieve layout html directive
++     * Retrieve Block html directive
+      *
++     * @param array $construction
++     * @return string
++     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
++     * @SuppressWarnings(PHPMD.NPathComplexity)
++     */
++    public function blockDirective($construction)
++    {
++        $result = $this->resolveBlockDirective($construction);
++
++        return preg_replace("/{{/", "&#123;&#123;", $result);
++    }
++
++    /**
+      * @param string[] $construction
++     *
+      * @return string
+      */
+-    public function layoutDirective($construction)
++    private function resolveLayoutDirective($construction)
+     {
+         $this->_directiveParams = $this->getParameters($construction[2]);
+         if (!isset($this->_directiveParams['area'])) {
+@@ -461,6 +475,19 @@ public function layoutDirective($construction)
+         }
+     }
+
++    /**
++     * Retrieve layout html directive
++     *
++     * @param string[] $construction
++     * @return string
++     */
++    public function layoutDirective($construction)
++    {
++        $result = $this->resolveLayoutDirective($construction);
++
++        return preg_replace("/{{/", "&#123;&#123;", $result);
++    }
++
+     /**
+      * Retrieve layout html directive callback
+      *
+@@ -528,7 +555,7 @@ public function viewDirective($construction)
+     {
+         $params = $this->getParameters($construction[2]);
+         $url = $this->_assetRepo->getUrlWithParams($params['url'], $params);
+-        return $url;
++        return $this->sanitizeValue($url);
+     }
+
+     /**
+@@ -541,8 +568,10 @@ public function mediaDirective($construction)
+     {
+         // phpcs:disable Magento2.Functions.DiscouragedFunction
+         $params = $this->getParameters(html_entity_decode($construction[2], ENT_QUOTES));
+-        return $this->_storeManager->getStore()
+-            ->getBaseUrl(UrlInterface::URL_TYPE_MEDIA) . $params['url'];
++        return $this->sanitizeValue(
++            $this->_storeManager->getStore()
++                ->getBaseUrl(UrlInterface::URL_TYPE_MEDIA) . $params['url']
++        );
+     }
+
+     /**
+@@ -580,7 +609,7 @@ public function storeDirective($construction)
+             unset($params['url']);
+         }
+
+-        return $this->urlModel->getUrl($path, $params);
++        return $this->sanitizeValue($this->urlModel->getUrl($path, $params));
+     }
+
+     /**
+@@ -619,12 +648,7 @@ public function transDirective($construction)
+
+         $text = __($text, $params)->render();
+
+-        $pattern = '/{{.*?}}/';
+-        do {
+-            $text = preg_replace($pattern, '', (string)$text);
+-        } while (preg_match($pattern, $text));
+-
+-        return $this->applyModifiers($text, $modifiers);
++        return $this->applyModifiers($this->sanitizeValue($text), $modifiers);
+     }
+
+     /**
+@@ -668,7 +692,10 @@ public function varDirective($construction)
+             $construction[2] . ($construction['filters'] ?? ''),
+             'escape'
+         );
+-        return $this->applyModifiers($this->getVariable($directive, ''), $modifiers);
++
++        $result = $this->sanitizeValue($this->getVariable($directive, ''));
++
++        return $this->applyModifiers($result, $modifiers);
+     }
+
+     /**
+@@ -749,21 +776,14 @@ public function modifierEscape($value, $type = 'html')
+     }
+
+     /**
+-     * HTTP Protocol directive
+-     *
+-     * Usage:
+-     *
+-     *     {{protocol}} - current protocol http or https
+-     *     {{protocol url="www.domain.com/"}} - domain URL with current protocol
+-     *     {{protocol http="http://url" https="https://url"}}
+-     *     {{protocol store="1"}} - Optional parameter which gets protocol from provide store based on store ID or code
+-     *
+      * @param string[] $construction
++     *
+      * @return string
++     *
+      * @throws MailException
+      * @throws NoSuchEntityException
+      */
+-    public function protocolDirective($construction)
++    private function resolveProtocolDirective($construction)
+     {
+         $params = $this->getParameters($construction[2]);
+
+@@ -794,6 +814,28 @@ public function protocolDirective($construction)
+         return $protocol;
+     }
+
++    /**
++     * HTTP Protocol directive
++     *
++     * Usage:
++     *
++     *     {{protocol}} - current protocol http or https
++     *     {{protocol url="www.domain.com/"}} - domain URL with current protocol
++     *     {{protocol http="http://url" https="https://url"}}
++     *     {{protocol store="1"}} - Optional parameter which gets protocol from provide store based on store ID or code
++     *
++     * @param string[] $construction
++     * @return string
++     * @throws MailException
++     * @throws NoSuchEntityException
++     */
++    public function protocolDirective($construction)
++    {
++        return $this->sanitizeValue(
++            $this->resolveProtocolDirective($construction)
++        );
++    }
++
+     /**
+      * Validate protocol directive HTTP parameters.
+      *
+@@ -843,7 +885,7 @@ public function configDirective($construction)
+                 $storeId
+             );
+         }
+-        return $configValue;
++        return $this->sanitizeValue($configValue);
+     }
+
+     /**
+@@ -884,7 +926,8 @@ public function customvarDirective($construction)
+                 $customVarValue = $value;
+             }
+         }
+-        return $customVarValue;
++
++        return $this->sanitizeValue($customVarValue);
+     }
+
+     /**
+@@ -1113,4 +1156,14 @@ public function filter($value)
+         }
+         return $value;
+     }
++
++    /**
++     * @param string $value
++     *
++     * @return string|bool
++     */
++    private function sanitizeValue($value)
++    {
++        return is_bool($value) ? $value : str_replace(['{', '}'], '', (string) $value);
++    }
+ }
