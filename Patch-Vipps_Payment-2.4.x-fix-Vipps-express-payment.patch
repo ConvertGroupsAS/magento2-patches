@@ -1,0 +1,16 @@
+Index: Controller/Payment/InitExpress.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Controller/Payment/InitExpress.php	(date 1658845275873)
++++ Controller/Payment/InitExpress.php	(date 1658845275873)
+@@ -190,7 +190,7 @@
+             ]
+         );
+ 
+-        if (!$quote->getCheckoutMethod()) {
++        if (!$quote->getCheckoutMethod(true)) {
+             if ($this->customerSession->isLoggedIn()) {
+                 $quote->setCheckoutMethod(Onepage::METHOD_CUSTOMER);
+             } elseif ($this->checkoutHelper->isAllowedGuestCheckout($quote)) {

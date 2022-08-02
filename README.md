@@ -204,6 +204,8 @@ vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch|Add
 vconnect/module-allinone|Patch-Vconnect_Allinone-fix-js-for-ie.patch|Fixed JS for IE| >=2.2.0
 vipps/module-payment|Patch-Vipps_ModulePayment-2.4.6-fix-place-order-quote-mask.patch|[PR #89](https://github.com/vippsas/vipps-magento/pull/89)| >=2.3
 vipps/module-payment|Patch-Vipps_ModulePayment-2.4.5-no-quote-found-exception.patch|[PR #88](https://github.com/vippsas/vipps-magento/pull/88)| >=2.4.5
+vipps/module-payment|Patch-Vipps_Payment-2.4.x-fix-Klarna-payment-customer.patch|[PR #133](https://github.com/vippsas/vipps-magento/pull/133)| >=2.2
+vipps/module-payment|Patch-Vipps_Payment-2.4.x-fix-Vipps-express-payment.patch|[PR #133](https://github.com/vippsas/vipps-magento/pull/133)| >=2.2
 vpietri/adm-quickdevbar|Patch-ADM_QuickDevBar-jquery-ui.patch||
 weltpixel/m2-weltpixel-backend|Patch-ADM_QuickDevBar-jquery-ui.patch||1.8.5-1.9.1
 visma/module-fram|Patch-Visma_Fram-1.4.1-suppress-request-if-disabled-empty-fix.patch|Check module enabled, empty responce fix|\>=1.4.1
@@ -559,7 +561,9 @@ Full composer.json example:
             },
             "vipps/module-payment": {
               "Fix: Quote Mask on Place Order": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vipps_ModulePayment-2.4.6-fix-place-order-quote-mask.patch",
-              "Fix: No Quote exception on callback": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vipps_ModulePayment-2.4.5-no-quote-found-exception.patch"
+              "Fix: No Quote exception on callback": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vipps_ModulePayment-2.4.5-no-quote-found-exception.patch",
+              "Fix: Klarna payment order creation for logged-in customer": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vipps_Payment-2.4.x-fix-Klarna-payment-customer.patch",
+              "Fix: Vipps express checkout order creation": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vipps_Payment-2.4.x-fix-Vipps-express-payment.patch"
             },
             "vpietri/adm-quickdevbar": {
               "jQuery/ui": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-ADM_QuickDevBar-jquery-ui.patch"

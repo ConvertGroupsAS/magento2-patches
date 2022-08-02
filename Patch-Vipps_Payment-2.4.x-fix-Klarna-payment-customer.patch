@@ -1,0 +1,29 @@
+Index: Controller/Payment/Klarna/InitRegular.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Controller/Payment/Klarna/InitRegular.php	(date 1658845316349)
++++ Controller/Payment/Klarna/InitRegular.php	(date 1658845316349)
+@@ -221,10 +221,10 @@
+         $this->setCheckoutMethod($quote);
+ 
+         $maskedQuoteId = $this->quoteIdToMaskedQuoteId->execute((int)$quote->getId());
+-        switch ($quote->getCheckoutMethod()) {
++        switch ($quote->getCheckoutMethod(true)) {
+             case Onepage::METHOD_CUSTOMER:
+                 $this->paymentInformationManagement->savePaymentInformationAndPlaceOrder(
+-                    $maskedQuoteId,
++                    $quote->getId(),
+                     $quote->getPayment()
+                 );
+                 break;
+@@ -246,7 +246,7 @@
+      */
+     private function setCheckoutMethod(Quote $quote)
+     {
+-        if (!$quote->getCheckoutMethod()) {
++        if (!$quote->getCheckoutMethod(true)) {
+             if ($this->customerSession->isLoggedIn()) {
+                 $quote->setCheckoutMethod(Onepage::METHOD_CUSTOMER);
+             } elseif ($this->checkoutHelper->isAllowedGuestCheckout($quote)) {
