@@ -53,6 +53,7 @@ magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.0-M2.3.1-prices-p
 magento/module-elasticsearch|Patch-Magento_Elasticsearch-M2.3-attribute-options-optimization.patch|Attribute Options Optimization|>= 2.3.0
 magento/module-elasticsearch-7|Patch-Magento_Elasticsearch7-disable-full-page-cache-show-error.patch|Elasticsearch error returns 503 code and message|\>= 2.3.5
 magento/module-indexer|Patch-Magento_Indexer-M2.3.1-indexer-reindex-optional-dependencies.patch|indexer:reindex command - Optional dependencies|\>= 2.3.1
+magento/module-related-product-graph-ql|Patch-Magento_RelatedProductGraphQl-M2.4.0-2.4.1-remove-related-products-not-in-maplist|#28892| >= 2.4.0 <= 2.4.2
 magento/module-review|Patch-Magento\_Review-M2.2-review-renderer-module-namespace.patch| |all as of 2.2.5
 magento/module-review|Patch-Magento_Review-M2.3-observer-catalog-check-is-active.patch|Fix: Product Collection Observer - Check module status|
 magento/module-theme|Patch-Magento\_Email-M2.1.0-create-email-logo-2.patch| |< 2.1.8 (2.1.4 n/a)

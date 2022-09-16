@@ -376,6 +376,12 @@
             "version": "*"
         }
     },
+    "magento/module-related-product-graph-ql": {
+        "Fix: https://github.com/magento/magento2/issues/28892": {
+            "file": "Patch-Magento_RelatedProductGraphQl-M2.4.0-2.4.1-remove-related-products-not-in-maplist.patch",
+            "version": "*"
+        }
+    },
     "magento/module-review": {
         "Fix review namespace": {
             "file": "Patch-Magento_Review-M2.2-review-renderer-module-namespace.patch",
