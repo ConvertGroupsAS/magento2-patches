@@ -1,0 +1,10 @@
+--- etc/di.xml	2022-10-28 15:14:48.000000000 +0200
++++ etc/di.xml	2022-10-28 15:15:19.000000000 +0200
+@@ -46,6 +46,6 @@
+     </type>
+     <type name="Magento\CatalogInventory\Model\ResourceModel\Stock\Item">
+         <plugin name="update_source_stock_for_configurable_product"
+-                type="Magento\InventoryConfigurableProduct\Plugin\CatalogInventory\UpdateSourceItemAtLegacyStockItemSavePlugin" />
++                type="Magento\InventoryConfigurableProduct\Plugin\CatalogInventory\UpdateSourceItemAtLegacyStockItemSavePlugin" sortOrder="100"/>
+     </type>
+ </config>

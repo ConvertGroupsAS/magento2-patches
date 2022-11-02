@@ -266,6 +266,12 @@
             "version": "*"
         }
     },
+    "magento/module-cms-url-rewrite": {
+        "Pull request: https://github.com/magento/magento2/pull/14751": {
+            "file": "Patch-M2.2-Magento_CmsUrlRewrite-global-rewrite-delete.patch",
+            "version": "*"
+        }
+    },
     "magento/module-configurable-product": {
         "https://github.com/magento/magento2/issues/7441": {
             "file": "Patch-Magento_ConfigurableProduct-M2.1.2-configurable-options-sort.patch",
@@ -361,6 +367,16 @@
         },
         "Website prices: https://github.com/magento/magento2/pull/21216": {
             "file": "Patch-Magento_Elasticsearch-M2.3.0-M2.3.1-prices-pass-website-id.patch",
+            "version": "*"
+        },
+        "Catalog page error:": {
+            "file": "Patch-Magento2.4.5-elasticsearch.patch",
+            "version": "*"
+        }
+    },
+    "magento/module-inventory-configurable-product": {
+        "Fix inventory configurable product plugin sort order": {
+            "file": "Patch-Magento2.4.5-inventory-configurable-product-plugin.patch",
             "version": "*"
         }
     },

@@ -1,0 +1,12 @@
+--- /dev/null
++++ ../Model/ResourceModel/Fulltext/Collection/SearchResultApplier.php
+@@ -187,6 +187,9 @@
+             }
+
+             if ($categoryId) {
++                if (is_array($categoryId)) {
++                    $categoryId = $categoryId[0];
++                }
+                 $resultSet = $this->categoryProductByCustomSortOrder($categoryId);
+                 foreach ($resultSet as $item) {
+                     $ids[] = (int)$item['entity_id'];
