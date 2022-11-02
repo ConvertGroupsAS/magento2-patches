@@ -266,12 +266,6 @@
             "version": "*"
         }
     },
-    "magento/module-cms-url-rewrite": {
-        "Pull request: https://github.com/magento/magento2/pull/14751": {
-            "file": "Patch-M2.2-Magento_CmsUrlRewrite-global-rewrite-delete.patch",
-            "version": "*"
-        }
-    },
     "magento/module-configurable-product": {
         "https://github.com/magento/magento2/issues/7441": {
             "file": "Patch-Magento_ConfigurableProduct-M2.1.2-configurable-options-sort.patch",
