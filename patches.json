@@ -682,6 +682,10 @@
         "Fix: Vipps express checkout order creation": {
             "file": "Patch-Vipps_Payment-2.4.x-fix-Vipps-express-payment.patch",
             "version": "*"
+        },
+        "Fix: Fix QuoteRepositoryInterface namespaces usage": {
+            "file": "Patch-Vipps_Payment-2.4.36-fix-use-class-error.patch",
+            "version": "*"
         }
     },
     "weltpixel/m2-weltpixel-backend": {
