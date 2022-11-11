@@ -586,6 +586,10 @@
         "ReloadSummary action wrong order of parameters": {
             "file": "Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch",
             "version": "*"
+        },
+        "Add order variable to success event": {
+            "file": "Patch-Klarna_Kco-Add-order-variable-to-event-in-success-controller.patch",
+            "version": "*"
         }
     },
     "bsscommerce/ajaxcart": {
