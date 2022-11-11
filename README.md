@@ -189,6 +189,7 @@ colinmollenhour/cache-backend-redis|Patch-Cm_Cache_Backend_Redis-1.10.6-remove-b
 clerk/magento2|Patch-Clerk_Clerk-image-init-properly.patch|Initialize image properly and add placeholder|
 klarna/module-base|Patch-Klarna_Base-fix-round-to-int-and-tax-calculation.patch|Fix rounding and discount tax calculation|
 klarna/module-kco|Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch|Fix wrong function parameters order|>=5.0.5
+klarna/module-kco|Patch-Klarna_Kco-9.1.3-Add-order-veriable-to-event-in-success-controller.patch|Add order variable to success event|9.1.3
 klarna/module-kco|Patch-Klarna_Kco-8-fix-total-base-calculation-plugin.patch|Fix: Total Base Calculation Plugin - Check is KCO enabled|
 klarna/module-kco|Patch-Klarna_Kco-fix-shipping-methods-reload-and-widget-update.patch|Fix shipping method reload|
 klarna/module-core|Patch-Klarna_Core-fix-customer-address-no-such-exception.patch|Fix no such entity with addressId error in Klarna checkout|>=4.2.3 (didn't check older versions)
@@ -533,6 +534,7 @@ Full composer.json example:
                 "ReloadSummary action wrong order of parameters": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch",
                 "Fix: Total Base Calculation Plugin - Check is KCO enabled": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-8-fix-total-base-calculation-plugin.patch",
                 "Fix: shipping method reload", "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-fix-shipping-methods-reload-and-widget-update.patch"
+                "Add order variable to success event": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-9.1.3-Add-order-veriable-to-event-in-success-controller.patch"
             },
             "bsscommerce/ajaxcart": {
                 "Add event + multiple add to cart (reorder) fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Bss_AjaxCart-1.1.4-improvements.patch",
