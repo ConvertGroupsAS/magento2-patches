@@ -1,0 +1,13 @@
+diff --git a/Observer/AdminhtmlBlockHtmlBeforeObserver.php b/Observer/AdminhtmlBlockHtmlBeforeObserver.php
+index 974b4ec..1978e66 100644
+--- a/Observer/AdminhtmlBlockHtmlBeforeObserver.php
++++ b/Observer/AdminhtmlBlockHtmlBeforeObserver.php
+@@ -118,6 +118,9 @@ class AdminhtmlBlockHtmlBeforeObserver implements ObserverInterface
+     {
+         /** @var $block Template */
+         $block = $observer->getBlock();
++        if (!$block->getNameInLayout()) {
++            return;
++        }
+
+         $this->_filterByBlockName($block);
