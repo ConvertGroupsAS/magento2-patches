@@ -366,6 +366,11 @@
         "Catalog page error:": {
             "file": "Patch-Magento2.4.5-elasticsearch.patch",
             "version": "*"
+        },
+        "Catalog page error V2": {
+            "file": "Patch-Magento2.4.5-elasticsearch-v2.patch",
+            "version": "*",
+            "description": "Elasticsearch category products filtering fix. Incompatible with Patch-Magento2.4.5-elasticsearch.patch"
         }
     },
     "magento/module-inventory-configurable-product": {
