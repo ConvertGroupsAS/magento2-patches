@@ -1,0 +1,12 @@
+--- Model/Resolver/Products/DataProvider/ExtractDataFromCategoryTree.php	2021-01-07 21:56:58.000000000 +0300
++++ Model/Resolver/Products/DataProvider/ExtractDataFromCategoryTree.php	2021-04-30 07:47:16.000000000 +0300
+@@ -132,6 +132,9 @@
+         $tree[$pathElements[$index]]['id'] = $pathElements[$index];
+         if ($index === count($pathElements) - 1) {
+             $tree[$pathElements[$index]] = $this->categoryHydrator->hydrateCategory($this->iteratingCategory);
++            if (isset($tree[$pathElements[$index]]['children']) && !is_array($tree[$pathElements[$index]]['children'])) {
++                $tree[$pathElements[$index]]['children'] = [];
++            }
+             $tree[$pathElements[$index]]['model'] = $this->iteratingCategory;
+         }
+         $currentIndex = $index;

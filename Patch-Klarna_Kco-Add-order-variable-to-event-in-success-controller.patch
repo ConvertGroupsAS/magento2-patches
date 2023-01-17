@@ -1,0 +1,24 @@
+diff --git a/vendor/klarna/module-kco/Controller/Klarna/Success.php b/vendor/klarna/module-kco/Controller/Klarna/Success.php
+index 078fe71913f..6ab3bdfd35c 100644
+--- a/vendor/klarna/module-kco/Controller/Klarna/Success.php
++++ b/vendor/klarna/module-kco/Controller/Klarna/Success.php
+@@ -148,6 +148,7 @@
+     private function fireEvents(CheckoutSession $session): void
+     {
+         $lastOrderId = $session->getLastOrderId();
++        $order = $session->getLastRealOrder();
+         $this->_eventManager->dispatch(
+             'checkout_kco_controller_success_action',
+             ['order_ids' => [$lastOrderId]]
+@@ -155,7 +156,10 @@
+         // Fire off onepage success event also to handle for GA as well as anyone else that might be listening
+         $this->_eventManager->dispatch(
+             'checkout_onepage_controller_success_action',
+-            ['order_ids' => [$lastOrderId]]
++            [
++                'order_ids' => [$lastOrderId],
++                'order' => $order
++            ]
+         );
+     }
+ }

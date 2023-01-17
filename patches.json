@@ -386,6 +386,12 @@
             "version": "*"
         }
     },
+    "magento/module-price-permissions": {
+        "Fix: https://github.com/magento/magento2/issues/35542": {
+            "file": "Patch-Magento_PricePermissions-stripos-null-value.patch",
+            "version": "*"
+        }
+    },
     "magento/module-review": {
         "Fix review namespace": {
             "file": "Patch-Magento_Review-M2.2-review-renderer-module-namespace.patch",
@@ -585,6 +591,10 @@
     "klarna/module-kco": {
         "ReloadSummary action wrong order of parameters": {
             "file": "Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch",
+            "version": "*"
+        },
+        "Add order variable to success event": {
+            "file": "Patch-Klarna_Kco-Add-order-variable-to-event-in-success-controller.patch",
             "version": "*"
         }
     },
