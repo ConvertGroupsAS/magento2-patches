@@ -1,0 +1,22 @@
+--- Model/ResourceModel/Fulltext/Collection/SearchResultApplier.php	2022-07-21 08:45:08.000000000 +0200
++++ Model/ResourceModel/Fulltext/Collection/SearchResultApplier.php	2023-01-17 15:40:27.000000000 +0100
+@@ -105,14 +105,12 @@
+             return;
+         }
+
+-        $ids = $this->getProductIdsBySaleability();
+-
+-        if (count($ids) == 0) {
+-            $items = $this->sliceItems($this->searchResult->getItems(), $this->size, $this->currentPage);
+-            foreach ($items as $item) {
+-                $ids[] = (int)$item->getId();
+-            }
++        $ids = [];
++        $items = $this->sliceItems($this->searchResult->getItems(), $this->size, $this->currentPage);
++        foreach ($items as $item) {
++            $ids[] = (int)$item->getId();
+         }
++
+         $orderList = implode(',', $ids);
+         $this->collection->getSelect()
+             ->where('e.entity_id IN (?)', $ids)
