@@ -152,6 +152,7 @@ magento/module-sitemap|Patch-Magento_Sitemap-M2.2.x-fix-sitemap-links.patch|[#19
 magento/module-backend|Patch-Magento_Backend-M2.4.3-authentication|"Invalid security or form key. Please refresh the page." message|2.4.3
 magento/module-backend|Patch-Magento_Backend-M2.3-menu-log-level.patch|Menu Log Level - Debug|
 magento/module-related-product-graph-ql|Patch-Magento_RelatedProductGraphQl-M2.4.x-missed-sorting-by-position-fix.patch|[#33010](https://github.com/magento/magento2/issues/33010)|>2.4.0
+magento/module-quote|Patch-Magento_Quote-M2.4.x-invalid-customer-address-id-fix.patch|[#23618](https://github.com/magento/magento2/issues/23618)|>2.4.0
 
 
 **3th party modules:**
@@ -497,7 +498,8 @@ Full composer.json example:
             "magento/module-quote": {
                 "Fix: Reset broken shipping address in quote": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Quote-M2.1.x-reset-broken-shipping-address.patch",
                 "Fix: Broken product links in cart on different stores": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Quote-M2.1.x-cart-product-links-fix.patch",
-                "Fix: https://github.com/magento/magento2/issues/12819": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Quote-M2.2.0-2.2.3-totals-extension-attributes.patch"
+                "Fix: https://github.com/magento/magento2/issues/12819": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Quote-M2.2.0-2.2.3-totals-extension-attributes.patch",
+                "Fix: https://github.com/magento/magento2/issues/23618": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Quote-M2.4.x-invalid-customer-address-id-fix.patch",
             },
             "magento/module-checkout": {
                 "Fix: addresses from other store on checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Checkout-M2.1.x-filter-addresses.patch",

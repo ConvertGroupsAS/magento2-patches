@@ -1,0 +1,11 @@
+--- Model/QuoteAddressValidator.php	2022-09-05 05:54:59.275923884 +0000
++++ Model/QuoteAddressValidator.php	2023-01-13 15:05:55.008212938 +0000
+@@ -127,6 +127,7 @@
+      */
+     public function validateForCart(CartInterface $cart, AddressInterface $address): void
+     {
+-        $this->doValidate($address, $cart->getCustomerIsGuest() ? null : $cart->getCustomer()->getId());
++        $isGuest = !($cart->getCustomer() && $cart->getCustomer()->getId());
++        $this->doValidate($address, $isGuest ? null : $cart->getCustomer()->getId());
+     }
+ }
