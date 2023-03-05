@@ -1,0 +1,13 @@
+--- Observer/AdminhtmlBlockHtmlBeforeObserver.php	2022-12-15 08:55:28.425972546 +0100
++++ Observer/AdminhtmlBlockHtmlBeforeObserver.php	2022-12-15 08:55:03.356161495 +0100
+@@ -119,6 +119,10 @@
+         /** @var $block Template */
+         $block = $observer->getBlock();
+ 
++        if (!$block->getNameInLayout()) {
++            return;
++        }
++        
+         $this->_filterByBlockName($block);
+ 
+         // Handle prices that are shown when admin reviews customers shopping cart

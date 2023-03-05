@@ -1,0 +1,12 @@
+--- Model/ResourceModel/Fulltext/Collection/SearchResultApplier.php	2022-07-21 08:45:08.000000000 +0200
++++ Model/ResourceModel/Fulltext/Collection/SearchResultApplier.php	2022-10-20 12:57:27.911611428 +0200
+@@ -187,6 +187,9 @@
+             }
+ 
+             if ($categoryId) {
++                if(is_array($categoryId)) {
++                    $categoryId = array_pop($categoryId);
++                }
+                 $resultSet = $this->categoryProductByCustomSortOrder($categoryId);
+                 foreach ($resultSet as $item) {
+                     $ids[] = (int)$item['entity_id'];

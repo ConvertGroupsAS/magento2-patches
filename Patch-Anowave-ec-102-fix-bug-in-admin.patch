@@ -1,0 +1,34 @@
+diff --git a/vendor/anowave/ec/Model/ResourceModel/Consent/Grid/Collection.php b/vendor/anowave/ec/Model/ResourceModel/Consent/Grid/Collection.php
+index 121c8f710..e0b1ed53b 100644
+--- a/vendor/anowave/ec/Model/ResourceModel/Consent/Grid/Collection.php
++++ b/vendor/anowave/ec/Model/ResourceModel/Consent/Grid/Collection.php
+@@ -32,7 +32,7 @@ use Magento\Framework\Api\Search\AggregationInterface;
+ use Psr\Log\LoggerInterface;
+ 
+ 
+-abstract class Collection extends \Anowave\Ec\Model\ResourceModel\Consent\Collection implements SearchResultInterface
++class Collection extends \Anowave\Ec\Model\ResourceModel\Consent\Collection implements SearchResultInterface
+ {
+     /**
+      * Aggregations
+diff --git a/vendor/anowave/ec/etc/di.xml b/vendor/anowave/ec/etc/di.xml
+index f5b913c3b..3c3c76b98 100644
+--- a/vendor/anowave/ec/etc/di.xml
++++ b/vendor/anowave/ec/etc/di.xml
+@@ -3,14 +3,14 @@
+ 	<type name="Magento\Sales\Api\OrderManagementInterface">
+         <plugin name="ec" type="Anowave\Ec\Plugin\Order\PlaceAfter" sortOrder="99" />
+     </type>
+-    <virtualType name="Anowave\Ec\Model\ResourceModel\Consent\Collection">
++    <type name="Anowave\Ec\Model\ResourceModel\Consent\Collection">
+         <arguments>
+             <argument name="mainTable" xsi:type="string">ae_ec_gdpr</argument>
+             <argument name="eventPrefix" xsi:type="string">track_consent_grid_collection</argument>
+         	<argument name="eventObject" xsi:type="string">consent_grid_collection</argument>
+             <argument name="resourceModel" xsi:type="string">Anowave\Ec\Model\ResourceModel\Consent</argument>
+         </arguments>
+-    </virtualType>
++    </type>
+     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+         <arguments>
+             <argument name="collections" xsi:type="array">

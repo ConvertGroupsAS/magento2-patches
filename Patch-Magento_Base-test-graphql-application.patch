@@ -1,0 +1,29 @@
+--- dev/tests/integration/framework/Magento/TestFramework/Application.orig.php	2021-07-13 21:09:52.000000000 +0300
++++ dev/tests/integration/framework/Magento/TestFramework/Application.php	2021-10-12 15:32:33.078250886 +0300
+@@ -189,7 +189,7 @@
+     ) {
+         if (getcwd() != BP . '/dev/tests/integration') {
+             // phpcs:ignore Magento2.Functions.DiscouragedFunction
+-            chdir(BP . '/dev/tests/integration');
++            // chdir(BP . '/dev/tests/integration'); // patch
+         }
+         $this->_shell = $shell;
+         $this->installConfigFile = $installConfigFile;
+@@ -555,7 +555,7 @@
+ 
+         // run install script
+         $this->_shell->execute(
+-            PHP_BINARY . ' -f %s setup:install -vvv ' . implode(' ', array_keys($installParams)),
++            PHP_BINARY . ' -f %s setup:install -vvv --no-interaction ' . implode(' ', array_keys($installParams)), // patch
+             array_merge([BP . '/bin/magento'], array_values($installParams))
+         );
+ 
+@@ -649,7 +649,7 @@
+      */
+     private function copyGlobalConfigFile()
+     {
+-        $targetFile = $this->_configDir . '/config.local.php';
++        $targetFile = $this->_configDir . '/config.php'; // patch
+         // phpcs:ignore Magento2.Functions.DiscouragedFunction
+         copy($this->globalConfigFile, $targetFile);
+     }

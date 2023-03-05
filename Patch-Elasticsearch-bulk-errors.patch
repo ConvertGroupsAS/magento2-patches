@@ -1,0 +1,16 @@
+--- src/Elasticsearch/Connections/Connection.orig.php	2021-02-11 14:04:51.000000000 +0300
++++ src/Elasticsearch/Connections/Connection.php	2021-12-21 14:50:04.268695665 +0300
+@@ -338,6 +338,13 @@
+ 
+                         // No error, deserialize
+                         $response['body'] = $this->serializer->deserialize($response['body'], $response['transfer_stats']);
++
++                        // patch - https://github.com/elastic/elasticsearch-php/issues/1123
++                        if ($response['body']['errors'] ?? null) {
++                            $exception = new BadRequest400Exception();
++                            $this->logRequestFail($request, $response, $exception);
++                            throw $exception;
++                        }
+                     }
+                     $this->logRequestSuccess($request, $response);
+ 

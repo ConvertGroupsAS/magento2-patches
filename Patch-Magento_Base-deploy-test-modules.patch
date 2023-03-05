@@ -1,0 +1,23 @@
+--- dev/tests/integration/framework/deployTestModules.orig.php	2021-07-13 21:09:52.000000000 +0300
++++ dev/tests/integration/framework/deployTestModules.php	2022-02-24 17:20:25.099675583 +0300
+@@ -12,8 +12,8 @@
+  */
+ 
+ /** Copy test modules to app/code/Magento to make them visible for Magento instance */
+-$pathToCommittedTestModules = $testFrameworkDir . '/../_files/Magento';
+-$pathToInstalledMagentoInstanceModules = $testFrameworkDir . '/../../../../app/code/Magento';
++$pathToCommittedTestModules = $testFrameworkDir . '/../_files';
++$pathToInstalledMagentoInstanceModules = $testFrameworkDir . '/../../../../app/code';
+ $iterator = new RecursiveIteratorIterator(
+     new RecursiveDirectoryIterator($pathToCommittedTestModules, RecursiveDirectoryIterator::FOLLOW_SYMLINKS)
+ );
+@@ -66,6 +66,9 @@
+  */
+ function deleteTestModules($pathToCommittedTestModules, $pathToInstalledMagentoInstanceModules)
+ {
++    // patch
++    shell_exec('rm -rf app/code/Magento/Test* app/code/Convert/Test*');
++    return;
+     $filesystem = new \Symfony\Component\Filesystem\Filesystem();
+     $iterator = new DirectoryIterator($pathToCommittedTestModules);
+     /** @var SplFileInfo $file */

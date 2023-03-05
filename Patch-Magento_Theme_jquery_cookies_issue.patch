@@ -1,0 +1,10 @@
+--- view/base/requirejs-config.js	2022-12-07 10:36:32.243787503 +0100
++++ view/base/requirejs-config.js	2022-12-07 10:36:39.583907935 +0100
+@@ -68,7 +68,6 @@
+         'jquery/validate': 'jquery/jquery.validate',
+         'jquery/file-uploader': 'jquery/fileUploader/jquery.fileuploader',
+         'prototype': 'legacy-build.min',
+-        'jquery/jquery.cookie': 'js-cookie/cookie-wrapper',
+         'jquery/jquery-storageapi': 'js-storage/storage-wrapper',
+         'text': 'mage/requirejs/text',
+         'domReady': 'requirejs/domReady',

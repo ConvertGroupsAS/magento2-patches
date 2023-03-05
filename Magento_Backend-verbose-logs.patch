@@ -1,0 +1,43 @@
+--- Model/Menu.orig.php	2021-01-07 21:56:58.000000000 +0300
++++ Model/Menu.php	2021-05-30 20:44:22.984811140 +0300
+@@ -86,9 +86,9 @@
+             $index = (int) $index;
+             if (!isset($this[$index])) {
+                 $this->offsetSet($index, $item);
+-                $this->_logger->info(
+-                    sprintf('Add of item with id %s was processed', $item->getId())
+-                );
++//                $this->_logger->info(
++//                    sprintf('Add of item with id %s was processed', $item->getId())
++//                );
+             } else {
+                 $this->add($item, $parentId, $index + 1);
+             }
+@@ -151,9 +151,9 @@
+             if ($item->getId() == $itemId) {
+                 unset($this[$key]);
+                 $result = true;
+-                $this->_logger->info(
+-                    sprintf('Remove on item with id %s was processed', $item->getId())
+-                );
++//                $this->_logger->info(
++//                    sprintf('Remove on item with id %s was processed', $item->getId())
++//                );
+                 break;
+             }
+ 
+--- Model/Menu/Director/Director.orig.php	2021-01-07 21:56:58.000000000 +0300
++++ Model/Menu/Director/Director.php	2021-05-30 20:43:30.100950456 +0300
+@@ -30,9 +30,9 @@
+     {
+         $command = $this->_commandFactory->create($data['type'], ['data' => $data]);
+         if (isset($this->_messagePatterns[$data['type']])) {
+-            $logger->info(
+-                sprintf($this->_messagePatterns[$data['type']], $command->getId())
+-            );
++//            $logger->info(
++//                sprintf($this->_messagePatterns[$data['type']], $command->getId())
++//            );
+         }
+         return $command;
+     }

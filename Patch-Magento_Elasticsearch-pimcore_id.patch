@@ -1,0 +1,10 @@
+--- Model/Adapter/BatchDataMapper/ProductDataMapper.orig.php	2022-05-04 17:33:27.930000000 +0300
++++ Model/Adapter/BatchDataMapper/ProductDataMapper.php	2022-05-04 17:33:33.758102099 +0300
+@@ -76,6 +76,7 @@
+         'status',
+         'visibility',
+         'tax_class_id',
++        'pimcore_id', // patch
+     ];
+ 
+     /**

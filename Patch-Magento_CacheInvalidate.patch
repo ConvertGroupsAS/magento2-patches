@@ -1,0 +1,17 @@
+--- Model/PurgeCache.orig.php	2022-04-05 16:20:06.796000000 +0300
++++ Model/PurgeCache.php	2022-04-05 16:22:22.091970921 +0300
+@@ -139,7 +139,13 @@
+                     '1.1',
+                     $headers
+                 );
+-                $socketAdapter->read();
++                // patch start
++                $response = $socketAdapter->read();
++                $expected = 'HTTP/1.1 200 Purged';
++                if (substr($response, 0, strlen($expected)) !== $expected) {
++                    \Magento\Framework\App\ObjectManager::getInstance()->get(\Psr\Log\LoggerInterface::class)->error('Varnish purge problem', ['response' => mb_substr($response, 0, 1024)]);
++                }
++                // patch end
+                 $socketAdapter->close();
+             } catch (\Exception $e) {
+                 $unresponsiveServerError[] = "Cache host: " . $server->getHost() . ":" . $server->getPort() .

@@ -1,0 +1,11 @@
+--- Model/Customer/CreateCustomerAccount.orig.php	2021-07-13 21:08:00.000000000 +0300
++++ Model/Customer/CreateCustomerAccount.php	2021-11-28 21:49:29.809412327 +0300
+@@ -91,7 +91,7 @@
+         try {
+             $customer = $this->createAccount($data, $store);
+         } catch (LocalizedException $e) {
+-            throw new GraphQlInputException(__($e->getMessage()));
++            throw $e instanceof \GraphQL\Error\ClientAware ? $e : new GraphQlInputException(__($e->getMessage())); // patch
+         }
+ 
+         if (isset($data['is_subscribed'])) {

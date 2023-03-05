@@ -1,0 +1,11 @@
+--- Cache/InvalidateLogger.orig.php	2021-01-07 21:57:00.000000000 +0300
++++ Cache/InvalidateLogger.php	2021-05-30 21:37:02.886450684 +0300
+@@ -43,7 +43,7 @@
+      */
+     public function execute($invalidateInfo)
+     {
+-        $this->logger->debug('cache_invalidate: ', $this->makeParams($invalidateInfo));
++        //$this->logger->debug('cache_invalidate: ', $this->makeParams($invalidateInfo)); // patch
+     }
+ 
+     /**

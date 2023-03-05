@@ -1,0 +1,19 @@
+--- Model/ResourceModel/Item/Report/Collection.php	2022-12-15 12:23:45.976263334 +0100
++++ Model/ResourceModel/Item/Report/Collection.php	2022-12-15 12:23:40.652387450 +0100
+@@ -244,10 +244,12 @@
+ 
+         foreach ($this->_items as $item) {
+             $product = $productCollection->getItemById($item->getProductId());
+-            /* @var $item \Magento\MultipleWishlist\Model\Item $item*/
+-            $item->setProductName($product->getName());
+-            $item->setProductPrice($product->getPrice());
+-            $item->setProductSku($product->getSku());
++            if($product) {
++                /* @var $item \Magento\MultipleWishlist\Model\Item $item*/
++                $item->setProductName($product->getName());
++                $item->setProductPrice($product->getPrice());
++                $item->setProductSku($product->getSku());
++            }
+         }
+     }
+ }

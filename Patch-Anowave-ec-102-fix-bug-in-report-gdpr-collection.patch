@@ -1,0 +1,19 @@
+--- etc/di.xml	2022-12-15 10:50:03.319300073 +0100
++++ etc/di.xml	2022-12-15 10:49:53.963610297 +0100
+@@ -3,14 +3,14 @@
+ 	<type name="Magento\Sales\Api\OrderManagementInterface">
+         <plugin name="ec" type="Anowave\Ec\Plugin\Order\PlaceAfter" sortOrder="99" />
+     </type>
+-    <virtualType name="Anowave\Ec\Model\ResourceModel\Consent\Collection">
++    <type name="Anowave\Ec\Model\ResourceModel\Consent\Collection">
+         <arguments>
+             <argument name="mainTable" xsi:type="string">ae_ec_gdpr</argument>
+             <argument name="eventPrefix" xsi:type="string">track_consent_grid_collection</argument>
+         	<argument name="eventObject" xsi:type="string">consent_grid_collection</argument>
+             <argument name="resourceModel" xsi:type="string">Anowave\Ec\Model\ResourceModel\Consent</argument>
+         </arguments>
+-    </virtualType>
++    </type>
+     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+         <arguments>
+             <argument name="collections" xsi:type="array">

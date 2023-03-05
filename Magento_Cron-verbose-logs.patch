@@ -1,0 +1,50 @@
+--- Observer/ProcessCronQueueObserver.orig.php	2021-01-07 21:56:58.000000000 +0300
++++ Observer/ProcessCronQueueObserver.php	2021-05-30 21:45:10.881000300 +0300
+@@ -350,7 +350,7 @@
+         $this->eventManager->dispatch('cron_job_run', ['job_name' => 'cron/' . $groupId . '/' . $jobCode]);
+ 
+         try {
+-            $this->logger->info(sprintf('Cron Job %s is run', $jobCode));
++            //$this->logger->info(sprintf('Cron Job %s is run', $jobCode)); // patch
+             //phpcs:ignore Magento2.Functions.DiscouragedFunction
+             call_user_func_array($callback, [$schedule]);
+         } catch (\Throwable $e) {
+@@ -384,13 +384,13 @@
+             )
+         );
+ 
+-        $this->logger->info(
+-            sprintf(
+-                'Cron Job %s is successfully finished. Statistics: %s',
+-                $jobCode,
+-                $this->getProfilingStat($jobCode)
+-            )
+-        );
++//        $this->logger->info(
++//            sprintf(
++//                'Cron Job %s is successfully finished. Statistics: %s',
++//                $jobCode,
++//                $this->getProfilingStat($jobCode)
++//            )
++//        ); // patch
+     }
+ 
+     /**
+@@ -577,7 +577,7 @@
+         }
+ 
+         if ($count) {
+-            $this->logger->info(sprintf('%d cron jobs were cleaned', $count));
++//            $this->logger->info(sprintf('%d cron jobs were cleaned', $count)); // patch
+         }
+     }
+ 
+@@ -692,7 +692,7 @@
+                 ]
+             );
+ 
+-            $this->logger->info(sprintf('%d cron jobs were cleaned', $count));
++//            $this->logger->info(sprintf('%d cron jobs were cleaned', $count)); // patch
+         }
+     }
+ 

@@ -1,0 +1,26 @@
+diff --git a/Plugin/GuestPaymentInformationManagementPlugin.php b/Plugin/GuestPaymentInformationManagementPlugin.php
+index 10925ea..7d87a23 100644
+--- a/Plugin/GuestPaymentInformationManagementPlugin.php
++++ b/Plugin/GuestPaymentInformationManagementPlugin.php
+@@ -101,7 +101,7 @@ class GuestPaymentInformationManagementPlugin
+         $billingData = $this->convertAddressValueToFlatArray($billingAddress->getData());
+         $billingKeys = array_flip(array_keys($billingData));
+         $shippingData = array_intersect_key($quoteShippingAddressData, $billingKeys);
+-        $removeKeys = ['region_code', 'save_in_address_book'];
++        $removeKeys = ['region_code', 'save_in_address_book', 'extension_attributes'];
+         $billingData = array_diff_key($billingData, array_flip($removeKeys));
+         $difference = array_diff($billingData,$shippingData);
+         return empty($difference);
+diff --git a/Plugin/PaymentInformationManagementPlugin.php b/Plugin/PaymentInformationManagementPlugin.php
+index 2f82faf..83f1936 100644
+--- a/Plugin/PaymentInformationManagementPlugin.php
++++ b/Plugin/PaymentInformationManagementPlugin.php
+@@ -131,7 +131,7 @@ class PaymentInformationManagementPlugin
+                 $billingData = $this->convertAddressValueToFlatArray($billingAddressData);
+                 $billingKeys = array_flip(array_keys($billingData));
+                 $shippingData = array_intersect_key($quoteShippingAddressData, $billingKeys);
+-                $removeKeys = ['region_code', 'save_in_address_book'];
++                $removeKeys = ['region_code', 'save_in_address_book', 'extension_attributes'];
+                 $billingData = array_diff_key($billingData, array_flip($removeKeys));
+                 $difference = array_diff($billingData, $shippingData);
+                 $sameAsBillingFlag = empty($difference);
