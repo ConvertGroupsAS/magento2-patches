@@ -216,6 +216,10 @@
         "Fix: https://github.com/magento/magento2/pull/16838": {
             "file": "Patch-Magento-Catalog-M2.1.x-2.2.7-fix-save-customizable-options.patch",
             "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/36471": {
+            "file": "Patch-Magento-Catalog-M2.4.5-fix-for-price-indexer-getting-stuck.patch",
+            "version": "*"
         }
     },
     "magento/module-catalog-inventory": {
