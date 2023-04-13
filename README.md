@@ -103,6 +103,7 @@ magento/module-catalog|Patch-Magento_Catalog-M2.1-flat-availability.patch|Allow 
 magento/module-catalog|Patch-Magento_Catalog-M2.3-category-flat-chunk-limit.patch|Catalog Category Flat chunk limit|
 magento/module-catalog|Patch-Magento_Catalog-M2.3-fix-category-image-upload.patch|Fix: Category Image Upload|
 magento/module-catalog|Patch-Magento_Catalog-M2.4.2-website-select-processor-fix.patch|Fix: Use Indentifer field for Website processor|>2.1.0
+magento/module-catalog|Patch-Magento-Catalog-M2.4.5-fix-for-price-indexer-getting-stuck.patch|Fix: https://github.com/magento/magento2/issues/36471| 2.4.5
 magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-sorting-fix.patch|[#30775](https://github.com/magento/magento2/issues/30775)|>=2.3.5 < 2.4.3 (maybe)
 magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-category-place-first.patch|Move Category filter on first place||
 magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-price-category-translate-lables.patch|Translate Labels for Price and Category Filters||
