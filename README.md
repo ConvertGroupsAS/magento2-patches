@@ -70,6 +70,7 @@ magento/module-tax|Patch-Magento-Tax-M2.1.0-free-shipping-availability-on-backen
 magento/module-tax|Patch-Magento\_Tax-M2.X.X-sequence-fix.patch| |< 2.2.0
 magento/module-quote|Patch-Magento\_Quote-M2.2.0-2.2.3-totals-extension-attributes.patch|[#12819](https://github.com/magento/magento2/issues/12819)|2.2.0-2.2.3
 magento/module-sales-rule|Patch-Magento\_SalesRule-M2.1.6-fix-to-date-parameter.patch|[#6762](https://github.com/magento/magento2/issues/6762)|< 2.2.0
+magento/module-sales-rule|Patch-Magento\_SalesRule-M2.4.3-fix-discount-amount.patch|[#30719](https://github.com/magento/magento2/issues/30719)| 2.4.3
 magento/module-google-tag-manager|Patch\_Magento\_GoogleTagManager\_M2.1.0-fix-empty-product-list-block.patch| |EE Only
 magento/module-customer|Patch-Magento\_Customer-M2.1.9-array-street-line.patch (Patch-Magento\_Customer-array-street-line.patch)Patch-Webshipr\_Shipping-get-shipping-address-fix.patch|[PR #10582](https://github.com/magento/magento2/pull/10582)|>= 2.1.9 < 2.2.2
 magento/module-customer|Patch-Magento\_Customer-M2.1.9-generate-new-formkey-wishlist.patch|[#11825](https://github.com/magento/magento2/issues/11825)|>=2.1.9 >=2.2.0 <2.2.4(maybe)

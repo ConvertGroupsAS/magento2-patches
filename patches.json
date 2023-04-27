@@ -417,6 +417,10 @@
         "Fix: https://github.com/magento/magento2/issues/6762": {
             "file": "Patch-Magento_SalesRule-M2.1.6-fix-to-date-parameter.patch",
             "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/30719": {
+            "file": "Patch-Magento_SalesRule-M2.4.3-fix-discount-amount.patch",
+            "version": "*"
         }
     },
     "magento/module-staging": {
