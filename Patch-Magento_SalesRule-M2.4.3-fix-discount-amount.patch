@@ -1,0 +1,13 @@
+diff --git a/vendor/magento/module-sales-rule/Model/Rule/Action/Discount/CartFixed.php b/vendor/magento/module-sales-rule/Model/Rule/Action/Discount/CartFixed.php
+index 0adeedc32..121543593 100644
+--- a/vendor/magento/module-sales-rule/Model/Rule/Action/Discount/CartFixed.php
++++ b/vendor/magento/module-sales-rule/Model/Rule/Action/Discount/CartFixed.php
+@@ -96,7 +96,7 @@ class CartFixed extends AbstractDiscount
+         if (!isset($cartRules[$rule->getId()])) {
+             $cartRules[$rule->getId()] = $rule->getDiscountAmount();
+         }
+-        $availableDiscountAmount = (float) $cartRules[$rule->getId()];
++        $availableDiscountAmount = (float) $rule->getDiscountAmount();
+         $discountType = self::$discountType . $rule->getId();
+ 
+         if ($availableDiscountAmount > 0) {
