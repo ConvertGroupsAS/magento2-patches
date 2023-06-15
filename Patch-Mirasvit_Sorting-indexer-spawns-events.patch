@@ -1,0 +1,10 @@
+--- src/Sorting/etc/mview.xml.old	2023-06-12 15:09:54.205648781 +0200
++++ src/Sorting/etc/mview.xml	2023-06-13 09:31:43.063676481 +0200
+@@ -11,7 +11,6 @@
+             <table name="catalog_product_entity_text" entity_column="entity_id"/>
+             <table name="catalog_product_entity_tier_price" entity_column="entity_id"/>
+             <table name="catalog_product_entity_varchar" entity_column="entity_id"/>
+-            <table name="catalog_product_index_price" entity_column="entity_id"/>
+             <table name="sales_order_item" entity_column="product_id"/>
+         </subscriptions>
+     </view>

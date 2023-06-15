@@ -1,0 +1,10 @@
+--- etc/mview.xml.old	2022-10-17 09:30:14.000000000 +0200
++++ etc/mview.xml	2023-06-13 09:36:32.163380307 +0200
+@@ -54,7 +54,6 @@
+             <table name="cataloginventory_stock_item" entity_column="product_id" />
+ 
+             <!-- price -->
+-            <table name="catalog_product_index_price" entity_column="entity_id" />
+             <table name="catalogrule_product_price" entity_column="product_id" />
+ 
+             <!-- category -->

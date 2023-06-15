@@ -174,61 +174,63 @@ paypal/module-braintree-core|Patch-Paypal-braintree-2.4.5-admin-report.patch|Fix
 
 **3th party modules:**
 
-**Module**|**Name**|**Fixes**|**Affected versions**
-:-----:|:-----:|:-----:|:-----:
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch|Fix configurable product price|\>=1.8.0
-algolia/algoliasearch-magento-2|Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch|Resolve conflict with Amasty modules (due searchFilterList virtualType Overriding)|1.12.1
-algolia/algoliasearch-magento-2|Patch-Algolia-AlgoliaSearch-1.12.1-out_of_stock_configurable.patch| Fix configurable product checking for indexation|1.12.1
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.11.0-configurable-product-special-price-fix.patch|Special price with configurable product fix| >=1.11.0
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.7-catalogrule-index-mview.patch|Subscribe to price index to reindex catalog rule changes on schedule|1.7.0-1.9.1
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch| |1.9
-algolia/algoliasearch-magento-2|Patch-Algolia-AlgoliaSearch-1.10.0-out_of_stock_configurable.patch| |1.10.0
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-configurable-price.patch|Fixed issue with wrong prices for configurable products|1.10.0
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-1.12.0-unsubscribe-price-index.patch|[PR #870](https://github.com/algolia/algoliasearch-magento-2/pull/870)|1.10.0-1.12.0
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-add-store-to-facets.patch||
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-customer-group-catalogrule-price-website-id.patch|[PR #853](https://github.com/algolia/algoliasearch-magento-2/pull/853)|
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-emulation-clean-scope.patch|[PR #857](https://github.com/algolia/algoliasearch-magento-2/pull/857)|
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-pages-trigger-index.patch|Page indexer listeners on mview|
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-remove-show-all-products.patch|Remove show all products|
-algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-check-request-path-to-empty.patch|[PR #1149](https://github.com/algolia/algoliasearch-magento-2/pull/1149)|
-amasty/shopby|Patch-Amasty_Shopby-2.10.5-remove-price-indexer.patch|Remove auto price indexer for v2.10.5|2.10.5
-amasty/shopby|Patch-Amasty_Shopby-2.12.5-remove-price-indexer.patch|Remove auto price indexer for v2.12.5|2.12.5
-amasty/shopby|Patch-Amasty_Shopby-2.13.7-remove-price-indexer.patch|Remove auto price indexer for v2.13.7|2.13.7
-amasty/shopby|Patch-Amasty_Shopby-category-es-performance2.patch|ES performance fixes for category filter|
-amasty/module-improved-layered-navigation-root|Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch| |all as of 1.15.1
-amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-missing-option-error-fix.patch|  | \>=2.6.0 < 2.6.5
-amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-fix-empty-title-for-brand-page.patch|  | \>=2.6.5
-amasty/shopby-root|Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch| | 2.5.3
-amasty/shopby-seo|Patch-Amasty-ShopbySeo-2.4.6-set-category-sort.patch| Add sorting from category settings| \>=2.4.6 (didn't check older versions) <2.5.0
-amasty/label|Patch-Amasty_Label-compatibility-with-M2.3.patch|Fix: require jQuery widget|
-anowave/ec|Patch-Anowave-ec-102-fix-bug-in-admin.patch|Fix Anowave/ec bug in Admin reports|
-bsscommerce/ajaxcart|Patch-Bss_AjaxCart-1.1.4-improvements.patch| | \=1.1.4
-bsscommerce/ajaxcart|Patch-Bss_AjaxCart-add-productIds-to-response.patch|Fix GTM compatibility|
-colinmollenhour/cache-backend-redis|Patch-Cm_Cache_Backend_Redis-1.10.6-remove-by-chunks.patch|Fixed removal of large amount of keys by dividing to chunks| 1.10.6
-clerk/magento2|Patch-Clerk_Clerk-image-init-properly.patch|Initialize image properly and add placeholder|
-klarna/module-base|Patch-Klarna_Base-fix-round-to-int-and-tax-calculation.patch|Fix rounding and discount tax calculation|
-klarna/module-kco|Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch|Fix wrong function parameters order|>=5.0.5
-klarna/module-kco|Patch-Klarna_Kco-Add-order-variable-to-event-in-success-controller.patch|Add order variable to success event|
-klarna/module-kco|Patch-Klarna_Kco-8-fix-total-base-calculation-plugin.patch|Fix: Total Base Calculation Plugin - Check is KCO enabled|
-klarna/module-kco|Patch-Klarna_Kco-fix-shipping-methods-reload-and-widget-update.patch|Fix shipping method reload|
-klarna/module-core|Patch-Klarna_Core-fix-customer-address-no-such-exception.patch|Fix no such entity with addressId error in Klarna checkout|>=4.2.3 (didn't check older versions)
-klarna/module-core|Patch-Klarna_Core-klarna-logs-column-size-cleanlogs.patch| Fix based on https://docs.klarna.com/platform-solutions/adobe-commerce/adobe-commerce-23x-243/notice-for-users-of-magento-v243/| <= 6.2.4
-klarna/module-kco-core|Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch|Fix Incorrect dependency in class Klarna\KcoCore\Block\Info\Klarna |>=5.2 (didn't check older versions)
-klarna/module-kco-core|Patch-Klarna-KcoCore-log-json-encode.patch|Convert logs from array to json format |>=5.2.1 (didn't check older versions)
-dotmailer/dotmailer-magento2-extension|Patch-Dotdigitalgroup_email-subject-fix.patch|Fix utf8 encoding in the subject of email|?
-trollweb/module-bring|Patch-Trollweb-Bring-2.3.2-Customer-number-argument-usage|Fix wrong Customer Number param in request for carriers| 2.3.2
-trollweb/module-bring|Patch-Trollweb_Bring-3.3.8-missed-method-displayName.patch|Fix missed displayName for delivery method| 3.3.8
-vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch|Fixed allowed methods in carrier model| >=2.3.0
-vconnect/module-allinone|Patch-Vconnect_Allinone-allowed-methods-fix.patch|Fixed allowed methods in carrier model| >=2.2.0 < 2.3.0
-vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch|Address fix for findPoints call| >=2.3.0
-vconnect/module-allinone|Patch-Vconnect_Allinone-fix-js-for-ie.patch|Fixed JS for IE| >=2.2.0
-vipps/module-payment|Patch-Vipps_ModulePayment-2.4.6-fix-place-order-quote-mask.patch|[PR #89](https://github.com/vippsas/vipps-magento/pull/89)| >=2.3
-vipps/module-payment|Patch-Vipps_ModulePayment-2.4.5-no-quote-found-exception.patch|[PR #88](https://github.com/vippsas/vipps-magento/pull/88)| >=2.4.5
-vipps/module-payment|Patch-Vipps_Payment-2.4.x-fix-Klarna-payment-customer.patch|[PR #133](https://github.com/vippsas/vipps-magento/pull/133)| >=2.2
-vipps/module-payment|Patch-Vipps_Payment-2.4.x-fix-Vipps-express-payment.patch|[PR #133](https://github.com/vippsas/vipps-magento/pull/133)| >=2.2
-vpietri/adm-quickdevbar|Patch-ADM_QuickDevBar-jquery-ui.patch||
-weltpixel/m2-weltpixel-backend|Patch-ADM_QuickDevBar-jquery-ui.patch||1.8.5-1.9.1
-visma/module-fram|Patch-Visma_Fram-1.4.1-suppress-request-if-disabled-empty-fix.patch|Check module enabled, empty responce fix|\>=1.4.1
+**Module**|**Name**|                                                            **Fixes**                                                            |**Affected versions**
+:-----:|:-----:|:-------------------------------------------------------------------------------------------------------------------------------:|:-----:
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch|                                                 Fix configurable product price                                                  |\>=1.8.0
+algolia/algoliasearch-magento-2|Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch|                       Resolve conflict with Amasty modules (due searchFilterList virtualType Overriding)                        |1.12.1
+algolia/algoliasearch-magento-2|Patch-Algolia-AlgoliaSearch-1.12.1-out_of_stock_configurable.patch|                                        Fix configurable product checking for indexation                                         |1.12.1
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.11.0-configurable-product-special-price-fix.patch|                                           Special price with configurable product fix                                           | >=1.11.0
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.7-catalogrule-index-mview.patch|                              Subscribe to price index to reindex catalog rule changes on schedule                               |1.7.0-1.9.1
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch|                                                                                                                                 |1.9
+algolia/algoliasearch-magento-2|Patch-Algolia-AlgoliaSearch-1.10.0-out_of_stock_configurable.patch|                                                                                                                                 |1.10.0
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-configurable-price.patch|                                     Fixed issue with wrong prices for configurable products                                     |1.10.0
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-1.10.0-1.12.0-unsubscribe-price-index.patch|                             [PR #870](https://github.com/algolia/algoliasearch-magento-2/pull/870)                              |1.10.0-1.12.0
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-add-store-to-facets.patch|                                                                                                                                 |
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-customer-group-catalogrule-price-website-id.patch|                             [PR #853](https://github.com/algolia/algoliasearch-magento-2/pull/853)                              |
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-emulation-clean-scope.patch|                             [PR #857](https://github.com/algolia/algoliasearch-magento-2/pull/857)                              |
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-pages-trigger-index.patch|                                                 Page indexer listeners on mview                                                 |
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-remove-show-all-products.patch|                                                    Remove show all products                                                     |
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-check-request-path-to-empty.patch|                            [PR #1149](https://github.com/algolia/algoliasearch-magento-2/pull/1149)                             |
+amasty/shopby|Patch-Amasty_Shopby-2.10.5-remove-price-indexer.patch|                                              Remove auto price indexer for v2.10.5                                              |2.10.5
+amasty/shopby|Patch-Amasty_Shopby-2.12.5-remove-price-indexer.patch|                                              Remove auto price indexer for v2.12.5                                              |2.12.5
+amasty/shopby|Patch-Amasty_Shopby-2.13.7-remove-price-indexer.patch|                                              Remove auto price indexer for v2.13.7                                              |2.13.7
+amasty/shopby|Patch-Amasty_Shopby-category-es-performance2.patch|                                            ES performance fixes for category filter                                             |
+amasty/module-improved-layered-navigation-root|Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch|                                                                                                                                 |all as of 1.15.1
+amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-missing-option-error-fix.patch|                                                                                                                                 | \>=2.6.0 < 2.6.5
+amasty/module-shop-by-brand|Patch-Amasty_ShopbyBrand-2.6.x-fix-empty-title-for-brand-page.patch|                                                                                                                                 | \>=2.6.5
+amasty/shopby-root|Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch|                                                                                                                                 | 2.5.3
+amasty/shopby-seo|Patch-Amasty-ShopbySeo-2.4.6-set-category-sort.patch|                                               Add sorting from category settings                                                | \>=2.4.6 (didn't check older versions) <2.5.0
+amasty/label|Patch-Amasty_Label-compatibility-with-M2.3.patch|                                                   Fix: require jQuery widget                                                    |
+anowave/ec|Patch-Anowave-ec-102-fix-bug-in-admin.patch|                                               Fix Anowave/ec bug in Admin reports                                               |
+bsscommerce/ajaxcart|Patch-Bss_AjaxCart-1.1.4-improvements.patch|                                                                                                                                 | \=1.1.4
+bsscommerce/ajaxcart|Patch-Bss_AjaxCart-add-productIds-to-response.patch|                                                      Fix GTM compatibility                                                      |
+colinmollenhour/cache-backend-redis|Patch-Cm_Cache_Backend_Redis-1.10.6-remove-by-chunks.patch|                                   Fixed removal of large amount of keys by dividing to chunks                                   | 1.10.6
+clerk/magento2|Patch-Clerk_Clerk-image-init-properly.patch|                                          Initialize image properly and add placeholder                                          |
+klarna/module-base|Patch-Klarna_Base-fix-round-to-int-and-tax-calculation.patch|                                            Fix rounding and discount tax calculation                                            |
+klarna/module-kco|Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch|                                               Fix wrong function parameters order                                               |>=5.0.5
+klarna/module-kco|Patch-Klarna_Kco-Add-order-variable-to-event-in-success-controller.patch|                                               Add order variable to success event                                               |
+klarna/module-kco|Patch-Klarna_Kco-8-fix-total-base-calculation-plugin.patch|                                    Fix: Total Base Calculation Plugin - Check is KCO enabled                                    |
+klarna/module-kco|Patch-Klarna_Kco-fix-shipping-methods-reload-and-widget-update.patch|                                                   Fix shipping method reload                                                    |
+klarna/module-core|Patch-Klarna_Core-fix-customer-address-no-such-exception.patch|                                   Fix no such entity with addressId error in Klarna checkout                                    |>=4.2.3 (didn't check older versions)
+klarna/module-core|Patch-Klarna_Core-klarna-logs-column-size-cleanlogs.patch| Fix based on https://docs.klarna.com/platform-solutions/adobe-commerce/adobe-commerce-23x-243/notice-for-users-of-magento-v243/ | <= 6.2.4
+klarna/module-kco-core|Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch|                               Fix Incorrect dependency in class Klarna\KcoCore\Block\Info\Klarna                                |>=5.2 (didn't check older versions)
+klarna/module-kco-core|Patch-Klarna-KcoCore-log-json-encode.patch|                                             Convert logs from array to json format                                              |>=5.2.1 (didn't check older versions)
+mirasvit/module-sorting|Patch-Mirasvit_Sorting-indexer-spawns-events.patch|                                        Mirasvit Sorting making swell its changelog table                                        | 2.4.5
+nosto/module-nostotagging|Patch-Nosto_Tagging-indexer-spawns-events.patch|                                             Nosto making swell its changelog table                                              | 2.4.5
+dotmailer/dotmailer-magento2-extension|Patch-Dotdigitalgroup_email-subject-fix.patch|                                            Fix utf8 encoding in the subject of email                                            |?
+trollweb/module-bring|Patch-Trollweb-Bring-2.3.2-Customer-number-argument-usage|                                     Fix wrong Customer Number param in request for carriers                                     | 2.3.2
+trollweb/module-bring|Patch-Trollweb_Bring-3.3.8-missed-method-displayName.patch|                                           Fix missed displayName for delivery method                                            | 3.3.8
+vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch|                                             Fixed allowed methods in carrier model                                              | >=2.3.0
+vconnect/module-allinone|Patch-Vconnect_Allinone-allowed-methods-fix.patch|                                             Fixed allowed methods in carrier model                                              | >=2.2.0 < 2.3.0
+vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch|                                                 Address fix for findPoints call                                                 | >=2.3.0
+vconnect/module-allinone|Patch-Vconnect_Allinone-fix-js-for-ie.patch|                                                         Fixed JS for IE                                                         | >=2.2.0
+vipps/module-payment|Patch-Vipps_ModulePayment-2.4.6-fix-place-order-quote-mask.patch|                                   [PR #89](https://github.com/vippsas/vipps-magento/pull/89)                                    | >=2.3
+vipps/module-payment|Patch-Vipps_ModulePayment-2.4.5-no-quote-found-exception.patch|                                   [PR #88](https://github.com/vippsas/vipps-magento/pull/88)                                    | >=2.4.5
+vipps/module-payment|Patch-Vipps_Payment-2.4.x-fix-Klarna-payment-customer.patch|                                  [PR #133](https://github.com/vippsas/vipps-magento/pull/133)                                   | >=2.2
+vipps/module-payment|Patch-Vipps_Payment-2.4.x-fix-Vipps-express-payment.patch|                                  [PR #133](https://github.com/vippsas/vipps-magento/pull/133)                                   | >=2.2
+vpietri/adm-quickdevbar|Patch-ADM_QuickDevBar-jquery-ui.patch|                                                                                                                                 |
+weltpixel/m2-weltpixel-backend|Patch-ADM_QuickDevBar-jquery-ui.patch|                                                                                                                                 |1.8.5-1.9.1
+visma/module-fram|Patch-Visma_Fram-1.4.1-suppress-request-if-disabled-empty-fix.patch|                                            Check module enabled, empty responce fix                                             |\>=1.4.1
 
 Full composer.json example:
 
@@ -626,6 +628,12 @@ Full composer.json example:
             },
             "visma/module-fram": {
                 "Check module enabled, empty responce fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Visma_Fram-1.4.1-suppress-request-if-disabled-empty-fix.patch"
+            },
+            "mirasvit/module-sorting": {
+              "Fix indexers spawn thousands event": "patches/Patch-Mirasvit_Sorting-indexer-spawns-events.patch"
+            },
+            "nosto/module-nostotagging": {
+              "Fix indexers spawn thousands event": "patches/Patch-Nosto_Tagging-indexer-spawns-events.patch"
             }
         }
     }
