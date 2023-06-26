@@ -117,6 +117,7 @@ magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2.0-2.2.4-sto
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.3.3-2.3.4-fix-stock-indexer-deleting-new-records.patch|[#15984](https://github.com/magento/magento2/issues/15984)|2.3.3-2.3.4
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.2-new-item-use-config-manage-stock.patch|Fix: Use Config Manage Stock in new Stock Item|
 magento/module-catalog-inventory|Patch-Magento_CatalogInventory-M2.4.x-invalidate-cache-parent-product-on-stock-update.patch|Fix: Invalidate parent product cache on stock update|
+magento/module-inventory-cache|Patch-Magento_InventoryCache-M2.4.5-fix-cache-invalidation.patch|Fix inventory indexer is cleaning all caches in scheduled mode|2.4.5-2.4.6
 magento/module-catalog-rule|Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch|Q-67970|>= 2.1.0 >= 2.2.0
 magento/module-catalog-staging|Patch-Magento_Catalog_Staging-timestam.patch| | ?
 magento/module-catalog-url-rewrite|Patch-Magento\_CatalogUrlRewrite-M2.1.4-regeneration-without-changes-fix.patch (install 2 patches *-regeneration-without-changes-fix)|[#7874](https://github.com/magento/magento2/issues/7874)|>=2.1.4 < 2.1.9
@@ -372,6 +373,9 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/15984": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.3.3-2.3.4-fix-stock-indexer-deleting-new-records.patch",
                 "Fix: Use Config Manage Stock in new Stock Item": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.2-new-item-use-config-manage-stock.patch",
                 "Fix: Invalidate parent product cache on stock update V2": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogInventory-M2.4.x-invalidate-cache-parent-product-on-stock-update.patch"
+            },
+            "magento/module-inventory-cache": {
+                "Fix inventory indexer is cleaning all caches in scheduled mode": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_InventoryCache-M2.4.5-fix-cache-invalidation.patch"
             },
             "magento/module-catalog-rule": {
                 "Fix: https://magento.stackexchange.com/questions/67970/catalog-price-rules-disappear-after-mid-night": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Catalog-Rule-M2.1.X-cron-job.patch"
