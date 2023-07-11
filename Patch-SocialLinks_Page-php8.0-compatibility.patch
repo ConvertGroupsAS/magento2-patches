@@ -1,0 +1,12 @@
+--- src/Page.php	2020-06-02 19:55:19.000000000 +0800
++++ src/Page.php	2023-07-11 15:01:34.891288841 +0800
+@@ -52,6 +52,9 @@
+      */
+     protected static function normalize($value)
+     {
++        if (empty($value)) {
++            $value = '';
++        }
+         return trim(strip_tags(htmlspecialchars_decode(preg_replace('/\s+/', ' ', $value))));
+     }
+ 
