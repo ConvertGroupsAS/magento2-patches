@@ -1,0 +1,130 @@
+--- Mview/View.php.old	2023-06-14 09:16:37.097799351 +0200
++++ Mview/View.php	2023-06-14 13:23:51.153000921 +0200
+@@ -13,6 +13,7 @@
+ use Magento\Framework\DataObject;
+ use Magento\Framework\Mview\View\ChangeLogBatchWalkerFactory;
+ use Magento\Framework\Mview\View\ChangeLogBatchWalkerInterface;
++use Magento\Framework\Mview\View\ChangeLogCleaner;
+ use Magento\Framework\Mview\View\ChangelogTableNotExistsException;
+ use Magento\Framework\Mview\View\SubscriptionFactory;
+ use Exception;
+@@ -69,6 +70,10 @@
+      * @var ChangeLogBatchWalkerFactory
+      */
+     private $changeLogBatchWalkerFactory;
++    /**
++     * @var ChangeLogCleaner
++     */
++    private $changeLogCleaner;
+ 
+     /**
+      * @param ConfigInterface $config
+@@ -79,6 +84,7 @@
+      * @param array $data
+      * @param array $changelogBatchSize
+      * @param ChangeLogBatchWalkerFactory $changeLogBatchWalkerFactory
++     * @param ChangeLogCleaner $changeLogCleaner
+      */
+     public function __construct(
+         ConfigInterface $config,
+@@ -88,7 +94,8 @@
+         SubscriptionFactory $subscriptionFactory,
+         array $data = [],
+         array $changelogBatchSize = [],
+-        ChangeLogBatchWalkerFactory $changeLogBatchWalkerFactory = null
++        ChangeLogBatchWalkerFactory $changeLogBatchWalkerFactory = null,
++        ChangeLogCleaner $changeLogCleaner = null
+     ) {
+         $this->config = $config;
+         $this->actionFactory = $actionFactory;
+@@ -99,6 +106,8 @@
+         parent::__construct($data);
+         $this->changeLogBatchWalkerFactory = $changeLogBatchWalkerFactory ?:
+             ObjectManager::getInstance()->get(ChangeLogBatchWalkerFactory::class);
++        $this->changeLogCleaner = $changeLogCleaner ?:
++            ObjectManager::getInstance()->get(ChangeLogCleaner::class);
+     }
+ 
+     /**
+@@ -258,6 +267,9 @@
+         }
+ 
+         $lastVersionId = (int)$this->getState()->getVersionId();
++        if ($currentVersionId <= $lastVersionId) {
++            return;
++        }
+         $action = $this->actionFactory->get($this->getActionClass());
+ 
+         try {
+@@ -303,16 +315,15 @@
+             : self::DEFAULT_BATCH_SIZE;
+ 
+         $vsFrom = $lastVersionId;
+-        while ($vsFrom < $currentVersionId) {
+-            $walker = $this->getWalker();
++        $walker = $this->getWalker();
++        do {
+             $ids = $walker->walk($this->getChangelog(), $vsFrom, $currentVersionId, $batchSize);
+-
+             if (empty($ids)) {
+                 break;
+             }
+-            $vsFrom += $batchSize;
+             $action->execute($ids);
+-        }
++            $this->changeLogCleaner->partialClean($this->getChangelog(), $currentVersionId, $ids);
++        } while ($ids);
+     }
+ 
+     /**
+--- /dev/null	2023-06-14 07:41:59.324000023 +0200
++++ Mview/View/ChangeLogCleaner.php	2023-06-14 13:28:17.845407690 +0200
+@@ -0,0 +1,48 @@
++<?php
++
++namespace Magento\Framework\Mview\View;
++
++use Magento\Framework\App\ResourceConnection;
++
++class ChangeLogCleaner
++{
++    /**
++     * Default batch size for duplicates deletion
++     */
++    const DEFAULT_BATCH_SIZE = 10000;
++
++    /**
++    * @var ResourceConnection
++    +*/
++    private $resourceConnection;
++
++    /**
++     * @param ResourceConnection $resourceConnection
++     */
++    public function __construct(
++        ResourceConnection $resourceConnection
++    ) {
++        $this->resourceConnection = $resourceConnection;
++    }
++
++    /**
++     * @param ChangelogInterface $changelog
++     * @param int $versionId
++     * @param array $ids
++     * @return int
++     */
++    public function partialClean(ChangelogInterface $changelog, int $versionId, array $ids)
++    {
++        $changelog->getColumnName();
++        $connection = $this->resourceConnection->getConnection();
++        $changelogTableName = $this->resourceConnection->getTableName($changelog->getName());
++
++        return $connection->delete(
++            $changelogTableName,
++            [
++                'version_id <= ?' => $versionId,
++                $connection->quoteInto("{$changelog->getColumnName()} IN (?)", $ids),
++            ]
++        );
++    }
++}
