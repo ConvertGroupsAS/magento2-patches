@@ -1,15 +1,14 @@
 --- Model/Condition/AbstractCondition.php	2022-07-21 08:45:10.000000000 +0200
 +++ Model/Condition/AbstractCondition.php	2023-08-08 16:36:17.303889988 +0200
-@@ -905,9 +905,12 @@
+@@ -905,9 +905,11 @@
       */
      public function validate(\Magento\Framework\Model\AbstractModel $model)
      {
 -        if (!$model->hasData($this->getAttribute())) {
 -            $model->load($model->getId());
 -        }
-+        // Temporary fix to avoid useless product loads, because attributes must be already loaded at \Magento\Quote\Model\ResourceModel\Quote\Item\Collection::_assignProducts
++        // Fix to avoid useless product loads, because attributes must be already loaded at \Magento\Quote\Model\ResourceModel\Quote\Item\Collection::_assignProducts
 +        // For "missed" attributes in `catalog_product_entity_*` table, hasData(..) method will always return false
-+        // Broken attributes: ['item_buyer_group', 'supplieraxid', 'book_group', 'product_new', 'is_not_discountable']
 +        //if (!$model->hasData($this->getAttribute())) {
 +        //    $model->load($model->getId());
 +        //}
