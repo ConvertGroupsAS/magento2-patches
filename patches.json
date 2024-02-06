@@ -600,7 +600,7 @@
             "file": "Patch-Klarna-KcoCore-log-json-encode.patch",
             "version": "*"
         }
-    },       
+    },
     "klarna/module-kco": {
         "ReloadSummary action wrong order of parameters": {
             "file": "Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch",
@@ -711,6 +711,12 @@
         "Remove shell_exec from code": {
             "file": "Patch-Weltpixel_Backend-1.8.5-1.9.1-remove-shell_exec.patch",
             "version": "1.8.5-1.9.1"
+        }
+    },
+    "magento/module-rule": {
+        "Fix performance issue with tens product loads for each item in the cart": {
+            "file": "Patch-Magento_Rule-product-load-performance-issue.patch",
+            "version": "*"
         }
     }
 }

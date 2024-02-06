@@ -171,6 +171,7 @@ magento/module-price-permissions|Patch-Magento_Price_Permissions_2.4.5.patch|Fix
 magento/module-quote|Patch-Magento_Quote-M2.4.x-invalid-customer-address-id-fix.patch|[#1123](https://github.com/magento/magento2/issues/23618)|>2.4.0
 elasticsearch/elasticsearch|Patch-Elasticsearch-bulk-errors.patch|[#23618](https://github.com/elastic/elasticsearch-php/issues/1123)|
 paypal/module-braintree-core|Patch-Paypal-braintree-2.4.5-admin-report.patch|Fix Braintree bug in Admin reports|
+magento/module-rule|Patch-Magento_Rule-product-load-performance-issue.patch|Fix performance issue with tens product loads for each item in the cart|
 
 
 **3th party modules:**
