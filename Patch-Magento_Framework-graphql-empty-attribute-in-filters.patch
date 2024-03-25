@@ -1,0 +1,13 @@
+diff --git a/vendor/magento/framework/Search/Request/Binder.php b/vendor/magento/framework/Search/Request/Binder.php
+--- a/vendor/magento/framework/Search/Request/Binder.php	2022-09-12 21:47:34
++++ b/vendor/magento/framework/Search/Request/Binder.php	2024-03-18 15:56:04
+@@ -84,9 +84,6 @@
+         array_walk_recursive($bindData, function (&$item) {
+             $item = $item !== null ? trim($item) : '';
+         });
+-        $bindData = array_filter($bindData, function ($element) {
+-            return is_array($element) ? count($element) : strlen($element);
+-        });
+
+         foreach ($data as $key => $value) {
+             if (is_array($value)) {
