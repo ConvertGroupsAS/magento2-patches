@@ -601,6 +601,12 @@
             "version": "*"
         }
     },
+    "klarna/module-base": {
+        "Fix incorrect NO locale mapping for Klarna 2.2x": {
+            "file": "Patch-Klarna_Kco-2.2.x-fixed-no-locale-mapping.patch",
+            "version": "*"
+        }
+    },
     "klarna/module-kco": {
         "ReloadSummary action wrong order of parameters": {
             "file": "Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch",

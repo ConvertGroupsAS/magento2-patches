@@ -1,0 +1,17 @@
+--- Model/Api/MagentoToKlarnaLocaleMapper.php	2024-05-21 16:35:11
++++ Model/Api/MagentoToKlarnaLocaleMapper.php	2024-05-21 16:37:19
+@@ -37,13 +37,9 @@
+      */
+     public function getLocale(): string
+     {
+-        $localesToConvert = [
+-            'nb_no' => 'no_NO',
+-        ];
+-
+         $locale = $this->localeResolver->getLocale();
+
+-        return str_replace('_', '-', $localesToConvert[strtolower($locale)] ?? $locale);
++        return str_replace('_', '-', $locale);
+     }
+
+     /**
