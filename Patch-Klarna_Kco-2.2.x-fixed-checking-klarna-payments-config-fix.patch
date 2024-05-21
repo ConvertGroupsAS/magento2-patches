@@ -1,0 +1,11 @@
+--- Model/System/Message/ApiConfig/Validator.php	2024-04-25 09:27:54
++++ Model/System/Message/ApiConfig/Validator.php	2024-05-21 13:57:41
+@@ -108,7 +108,7 @@
+     private function isKpEnabled($store = null)
+     {
+         $scope = ($store === null ? ScopeConfigInterface::SCOPE_TYPE_DEFAULT : ScopeInterface::SCOPE_STORES);
+-        return $this->scopeConfig->isSetFlag('payment/' . Kco::METHOD_CODE . '/active', $scope, $store);
++        return $this->scopeConfig->isSetFlag(Config::CONFIG_XML_PATH_KLARNA_KP_ENABLED, $scope, $store);
+     }
+ 
+     /**
