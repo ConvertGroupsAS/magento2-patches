@@ -1,0 +1,20 @@
+--- Model/Queue.php
++++ Model/Queue.php
+@@ -392,6 +392,9 @@
+             $fullReindexJobs = $this->fetchJobs($fullReindexJobsLimit, true);
+             $fullReindexJobsCount = count($fullReindexJobs);
+
++            // continue full reindex jobs without a break
++            $lastFullReindexJobId = max($this->getJobsIdsFromMergedJobs($fullReindexJobs));
++
+             $realtimeJobsLimit = (int) $maxJobs - $fullReindexJobsCount;
+
+             $realtimeJobs = $this->fetchJobs($realtimeJobsLimit, false);
+@@ -401,7 +404,6 @@
+
+             if ($jobsCount > 0 && $jobsCount < $maxJobs) {
+                 $restLimit = $maxJobs - $jobsCount;
+-                $lastFullReindexJobId = max($this->getJobsIdsFromMergedJobs($jobs));
+
+                 $restFullReindexJobs = $this->fetchJobs($restLimit, true, $lastFullReindexJobId);
+
