@@ -1,0 +1,11 @@
+--- Model/Queue.php
++++ Model/Queue.php	(date 1718521678000)
+@@ -401,7 +401,7 @@
+
+             if ($jobsCount > 0 && $jobsCount < $maxJobs) {
+                 $restLimit = $maxJobs - $jobsCount;
+-                $lastFullReindexJobId = max($this->getJobsIdsFromMergedJobs($jobs));
++                $lastFullReindexJobId = max($this->getJobsIdsFromMergedJobs($fullReindexJobs));
+
+                 $restFullReindexJobs = $this->fetchJobs($restLimit, true, $lastFullReindexJobId);
+

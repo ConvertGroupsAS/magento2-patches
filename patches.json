@@ -669,6 +669,10 @@
         "Remove auto price indexer for v2.12.5": {
             "file": "Patch-Amasty_Shopby-2.12.5-remove-price-indexer.patch",
             "version": "*"
+        },
+        "Processing full reindex queue jobs for v3.11.0": {
+            "file": "Patch-Algolia_AlgoliaSearch-3.11.0-full-reindex-queue-jobs-processing.patch",
+            "version": "*"
         }
     },
     "magento/module-config": {
