@@ -6,7 +6,7 @@
                  $restLimit = $maxJobs - $jobsCount;
 -                $lastFullReindexJobId = max($this->getJobsIdsFromMergedJobs($jobs));
 +
-+                if (count($fullReindexJobs) > 0) {
++                if ($fullReindexJobsCount > 0) {
 +                    $lastFullReindexJobId = max($this->getJobsIdsFromMergedJobs($fullReindexJobs));
 +                } else {
 +                    $lastFullReindexJobId = max($this->getJobsIdsFromMergedJobs($jobs));
