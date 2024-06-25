@@ -669,6 +669,10 @@
         "Remove auto price indexer for v2.12.5": {
             "file": "Patch-Amasty_Shopby-2.12.5-remove-price-indexer.patch",
             "version": "*"
+        },
+        "Replace compromised polyfill js domain for Algolia Search less than v3.13.2": {
+            "file": "Patch-Algolia_AlgoliaSearch-replace-compromised-polyfill-domain.patch",
+            "version": "*"
         }
     },
     "magento/module-config": {

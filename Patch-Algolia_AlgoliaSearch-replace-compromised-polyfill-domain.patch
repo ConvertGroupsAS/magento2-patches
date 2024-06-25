@@ -1,0 +1,18 @@
+--- view/frontend/templates/internals/configuration.phtml	2022-10-28 12:32:08
++++ view/frontend/templates/internals/configuration.phtml	2024-06-25 11:09:58
+@@ -5,7 +5,7 @@
+ $configuration = $block->getConfiguration();
+
+ ?>
+-<script src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.includes%2CPromise" crossorigin="anonymous"></script>
++<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=default%2CArray.prototype.includes%2CPromise" crossorigin="anonymous"></script>
+ <script>
+     <?php
+     if ($configuration['instant']['enabled'] === true && $configuration['isSearchPage'] === true) :
+@@ -18,4 +18,4 @@
+     ?>
+
+ 	window.algoliaConfig = <?php /* @noEscape */ echo json_encode($configuration); ?>;
+-</script>
+\ No newline at end of file
++</script>
