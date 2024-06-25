@@ -601,6 +601,12 @@
             "version": "*"
         }
     },
+    "klarna/module-base": {
+        "Fix incorrect NO locale mapping for Klarna 2.2x": {
+            "file": "Patch-Klarna_Kco-2.2.x-fixed-no-locale-mapping.patch",
+            "version": "*"
+        }
+    },
     "klarna/module-kco": {
         "ReloadSummary action wrong order of parameters": {
             "file": "Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch",
@@ -608,6 +614,10 @@
         },
         "Add order variable to success event": {
             "file": "Patch-Klarna_Kco-Add-order-variable-to-event-in-success-controller.patch",
+            "version": "*"
+        },
+        "Wrong checking configuration for Klarna Payments": {
+            "file": "Patch-Klarna_Kco-2.2.x-fixed-checking-klarna-payments-config-fix.patch",
             "version": "*"
         }
     },
