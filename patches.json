@@ -732,5 +732,11 @@
             "file": "Patch-Magento_Rule-product-load-performance-issue.patch",
             "version": "*"
         }
+    },
+    "clerk/magento2" : {
+        "Fix null body parameters in API request": {
+            "file": "Patch-Clerk-4.7.7-empty-body-params.patch",
+            "version": "*"
+        }
     }
 }
