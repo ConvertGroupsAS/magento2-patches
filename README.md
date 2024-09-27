@@ -21,6 +21,8 @@ magento/magento2-base|Patch-Magento_Base-M2.3-remove-php-memory-limit.patch| |>=
 magento/magento2-base|Patch-Magento_Base-test-graphql-application.patch|Running GraphQl API functional tests|
 magento/magento2-base|Patch-Magento_Base-deploy-test-modules.patch|Deploy test modules - Convert|
 magento/magento2-base|Patch-Magento_Base_2.4.5_jquery_cookies_issue.patch|Fix magento theme jquery cookie issue|
+magento/framework|Patch-Magento_Framework-M2.4-indexers-performance-issue|Fix indexing performance issue | 2.4.5
+magento/framework|Patch-Magento_Framework-M2.4.7-indexers-performance-issue|Fix indexing performance issue | 2.4.7
 magento/framework|Patch-Magento\_Framework-mview-changelog-increment.patch|[PR #13577](https://github.com/magento/magento2/pull/13577)|2.1-2.3
 magento/framework|Patch-Magento\_Framework-M2.1.x-Search-Adapter-Mysql-Mapper-fix-order.patch|[#9020](https://github.com/magento/magento2/issues/9020)|<2.2.0
 magento/framework|Patch-Magento\_Framework-customer-grid.patch|[#10838](https://github.com/magento/magento2/issues/10838)|2.2 (probably all)
