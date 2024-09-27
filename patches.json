@@ -765,7 +765,7 @@
             "version": "*"
         },
         "Fix: Translate Price and Category filter label on backend M2.4.7": {
-            "file": "Patch-Magento_CatalogGraphQl-M2.4.7-aggregations-price-category-translate-lables.patch",
+            "file": "Patch-Magento_CatalogGraphQl-M2.4.7-aggregations-price-category-translate-labels.patch",
             "version": "*"
         }
     }
