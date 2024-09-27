@@ -675,19 +675,19 @@
             "version": "*"
         },
         "Special price with configurable product fix v2": {
-            "file": "Patch-Algolia_AlgoliaSearch-replace-compromised-polyfill-domain.patch",
+            "file": "Patch-Algolia_AlgoliaSearch-3.14.0-configurable-product-special-price-fix.patch",
             "version": "*"
         },
         "Fix order loading": {
-            "file": "Patch-Algolia_AlgoliaSearch-replace-compromised-polyfill-domain.patch",
+            "file": "Patch-Algolia_AlgoliaSearch-3.14.0-Fix_Order_Event_On_Checkout_Success.patch",
             "version": "*"
         },
         "Fix for empty index prefix": {
-            "file": "Patch-Algolia_AlgoliaSearch-replace-compromised-polyfill-domain.patch",
+            "file": "Patch-Algolia_AlgoliaSearch-3.14.0-fix-empty-index-prefix.patch",
             "version": "*"
         },
         "Fix Increase timeout for api secured keys": {
-            "file": "Patch-Algolia_AlgoliaSearch-replace-compromised-polyfill-domain.patch",
+            "file": "Patch-Algolia_AlgoliaSearch-3.14.0-fix-api-secured-key-timeout.patch",
             "version": "*"
         }
     },
