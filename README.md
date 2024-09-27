@@ -11,6 +11,7 @@ magento/magento2-base|Patch-Magento\_Base-M2.2-cron-prevent-already-running.patc
 magento/magento2-base|Patch-Magento\_Base-M2.x.x-zoomed-photo-product.patch |MAGETWO-94989| < 2.1-2.3
 magento/magento2-base|Patch-Magento\_Base-M2.2.5-mangnifier-zoom-distortion.patch | | > 2.2.5
 magento/magento2-base|Path-Magento\_Base-tests-cookie-and-session-add-to-return-null-value.patch| | >= 2.3.0
+magento/magento2-base|Patch-Magento_Base_2.4.6.fotorama.patch| [#37232](https://github.com/magento/magento2/issues/37232) |2.4.6
 magento/magento2-base|Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame.patch| |>= 2.1.0 >= 2.2.0
 magento/magento2-base|Patch-Magento-FotoramaJS-M2.1.0-enable-single-frame_M2.2.6.patch| |>= 2.1.0 >= 2.2.6
 magento/magento2-base|Patch-Magento\_Base-setup-upgrade.patch| |>= 2.1.0 >= 2.2.0
