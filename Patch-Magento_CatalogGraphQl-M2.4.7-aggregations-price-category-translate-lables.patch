@@ -1,0 +1,24 @@
+--- a/DataProvider/Product/LayeredNavigation/Builder/Category.php	2024-09-27 17:59:39.111781899 +0200
++++ b/DataProvider/Product/LayeredNavigation/Builder/Category.php	2024-09-27 17:50:54.344536588 +0200
+@@ -151,7 +151,7 @@
+         }
+ 
+         $result = $this->layerFormatter->buildLayer(
+-            self::$bucketMap[self::CATEGORY_BUCKET]['label'],
++            __(self::$bucketMap[self::CATEGORY_BUCKET]['label']),
+             \count($categoryIds),
+             self::$bucketMap[self::CATEGORY_BUCKET]['request_name']
+         );
+--- a/DataProvider/Product/LayeredNavigation/Builder/Price.php	2024-04-03 18:20:22.000000000 +0200
++++ b/DataProvider/Product/LayeredNavigation/Builder/Price.php	2024-09-27 17:54:06.222844757 +0200
+@@ -71,8 +71,9 @@
+             return [];
+         }
+ 
++        $translatedLabel = __($attribute['attribute_label'] ?? self::$bucketMap[self::PRICE_BUCKET]['label']);
+         $result = $this->layerFormatter->buildLayer(
+-            $attribute['attribute_label'] ?? self::$bucketMap[self::PRICE_BUCKET]['label'],
++            $translatedLabel,
+             \count($bucket->getValues()),
+             self::$bucketMap[self::PRICE_BUCKET]['request_name']
+         );
