@@ -1,0 +1,11 @@
+--- Controller/AbstractAction.php	2023-06-01 15:16:40.406178090 +0200
++++ Controller/AbstractAction.php	2023-06-01 15:16:32.081952602 +0200
+@@ -691,7 +691,7 @@
+     {
+         try {
+ 
+-            $body = $this->_request_api->getBodyParams();
++            $body = $this->_request_api->getParams();
+             if($body){
+                 if(gettype($body) === 'array'){
+                     if(array_key_exists($key, $body)){
