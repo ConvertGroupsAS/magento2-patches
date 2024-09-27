@@ -1,0 +1,98 @@
+--- a/Mview/View/ChangeLogCleaner.php	1970-01-01 01:00:00.000000000 +0100
++++ b/Mview/View/ChangeLogCleaner.php	2024-09-27 16:34:34.705034260 +0200
+@@ -0,0 +1,38 @@
++<?php
++
++namespace Magento\Framework\Mview\View;
++
++use Magento\Framework\App\ResourceConnection;
++
++class ChangeLogCleaner
++{
++    /**
++     * @param ResourceConnection $resourceConnection
++     */
++    public function __construct(
++        private readonly ResourceConnection $resourceConnection
++    ) {
++        $this->resourceConnection = $resourceConnection;
++    }
++
++    /**
++     * @param ChangelogInterface $changelog
++     * @param int $versionId
++     * @param array $ids
++     * @return int
++     */
++    public function partialClean(ChangelogInterface $changelog, int $versionId, array $ids)
++    {
++        $changelog->getColumnName();
++        $connection = $this->resourceConnection->getConnection();
++        $changelogTableName = $this->resourceConnection->getTableName($changelog->getName());
++
++        return $connection->delete(
++            $changelogTableName,
++            [
++                'version_id <= ?' => $versionId,
++                $connection->quoteInto("{$changelog->getColumnName()} IN (?)", $ids),
++            ]
++        );
++    }
++}
+--- a/Mview/View.php	2024-09-27 16:37:02.823507904 +0200
++++ b/Mview/View.php	2024-09-27 16:29:54.133183266 +0200
+@@ -17,6 +17,7 @@
+ use Magento\Framework\Mview\View\SubscriptionFactory;
+ use Exception;
+ use Magento\Framework\Mview\View\SubscriptionInterface;
++use Magento\Framework\Mview\View\ChangeLogCleaner;
+ 
+ /**
+  * Mview
+@@ -66,6 +67,11 @@
+     private $changelogBatchSize;
+ 
+     /**
++     * @var ChangeLogCleaner
++     */
++    private $changeLogCleaner;
++
++    /**
+      * @var ChangelogBatchWalkerFactory
+      */
+     private $changelogBatchWalkerFactory;
+@@ -79,6 +85,7 @@
+      * @param array $data
+      * @param array $changelogBatchSize
+      * @param ChangelogBatchWalkerFactory $changelogBatchWalkerFactory
++     * @param ChangeLogCleaner $changeLogCleaner
+      */
+     public function __construct(
+         ConfigInterface $config,
+@@ -88,7 +95,8 @@
+         SubscriptionFactory $subscriptionFactory,
+         array $data = [],
+         array $changelogBatchSize = [],
+-        ChangelogBatchWalkerFactory $changelogBatchWalkerFactory = null
++        ChangelogBatchWalkerFactory $changelogBatchWalkerFactory = null,
++        ChangeLogCleaner $changeLogCleaner = null
+     ) {
+         $this->config = $config;
+         $this->actionFactory = $actionFactory;
+@@ -99,6 +107,8 @@
+         parent::__construct($data);
+         $this->changelogBatchWalkerFactory = $changelogBatchWalkerFactory ?:
+             ObjectManager::getInstance()->get(ChangelogBatchWalkerFactory::class);
++        $this->changeLogCleaner = $changeLogCleaner ?:
++            ObjectManager::getInstance()->get(ChangeLogCleaner::class);
+     }
+ 
+     /**
+@@ -309,6 +319,7 @@
+ 
+         foreach ($batches as $ids) {
+             $action->execute($ids);
++            $this->changeLogCleaner->partialClean($this->getChangelog(), $currentVersionId, $ids);
+         }
+     }
+ 
