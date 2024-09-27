@@ -110,7 +110,8 @@ magento/module-catalog|Patch-Magento_Catalog-M2.4.2-website-select-processor-fix
 magento/module-catalog|Patch-Magento-Catalog-M2.4.5-fix-for-price-indexer-getting-stuck.patch|Fix: https://github.com/magento/magento2/issues/36471| 2.4.5
 magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-sorting-fix.patch|[#30775](https://github.com/magento/magento2/issues/30775)|>=2.3.5 < 2.4.3 (maybe)
 magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-category-place-first.patch|Move Category filter on first place||
-magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-price-category-translate-lables.patch|Translate Labels for Price and Category Filters||
+magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-price-category-translate-lables.patch|Translate Labels for Price and Category Filters|>=2.4.2 < 2.4.7 (maybe)
+magento/module-catalog-graph-ql|Patch-Magento_CatalogGraphQl-M2.4.7-aggregations-price-category-translate-lables.patch|Translate Labels for Price and Category Filters|2.4.7
 magento/module-catalog-graph-ql|Patch-Magento_CatalogGraphQl-M2.4.x-special-price-from-to-dates.patch|[#29631](https://github.com/magento/magento2/issues/29631)|>2.3.5-p2 < 2.4.3
 magento/module-catalog-graph-ql|Patch-Magento_CatalogGraphQl_sort_attributes_reader_fix.patch|Fix sorting attribute reader||>2.3.x
 magento/module-catalog-inventory|Patch-Magento\_CatalogInventory\_M2.1.3-hide-out-of-stock.patch|[#8566](https://github.com/magento/magento2/issues/8566)|>=2.1.0 < 2.2.0
@@ -371,6 +372,7 @@ Full composer.json example:
                "Fix: https://github.com/magento/magento2/issues/30775": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogGraphQl-aggregations-sorting-fix.patch",
                "Fix: Move Category aggregation to first place": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogGraphQl-aggregations-category-place-first.patch",
                "Fix: Translate Price and Category filter label on backend": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogGraphQl-aggregations-price-category-translate-lables.patch",
+               "Fix: Translate Price and Category filter label on backend M2.4.7": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogGraphQl-M2.4.7-aggregations-price-category-translate-lables.patch",
                "Fix: https://github.com/magento/magento2/issues/29631": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogGraphQl-M2.4.x-special-price-from-to-dates.patch",
                "Fix: Sorting attributes reader": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogGraphQl_sort_attributes_reader_fix.patch"
             },
