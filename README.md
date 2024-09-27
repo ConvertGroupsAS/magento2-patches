@@ -316,6 +316,8 @@ Full composer.json example:
                 "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_framework-M2.3.4-p1-M2.4.2-p1_APSB22-12-security.patch",
                 "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_framework-M2.4.3-p1_APSB22-12-security.patch",
                 "Remove verbose logs": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Magento_Framework-verbose-logs.patch",
+                "Fix indexing performance m2.4.5": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4-indexers-performance-issue.patch",
+                "Fix indexing performance m2.4.7": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4.7-indexers-performance-issue.patch"
             },
             "magento/magento2-base": {
                 "Fix MAGE_DIRS for CLI": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-cli.patch",
@@ -334,7 +336,8 @@ Full composer.json example:
                 "Remove PHP memory_limit": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-M2.3-remove-php-memory-limit.patch",
                 "Running GraphQl API functional tests": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-test-graphql-application.patch",
                 "Deploy test modules - Convert": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-deploy-test-modules.patch",
-                "Fix magento theme jquery cookie issue": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base_2.4.5_jquery_cookies_issue.patch"
+                "Fix magento theme jquery cookie issue": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base_2.4.5_jquery_cookies_issue.patch",
+                "Fix https://github.com/magento/magento2/issues/37232 fotorama slider issue in magento 2.4.6": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base_2.4.6.fotorama.patch"
             },
             "magento/module-cache-invalidate": {
                 "Log Varnish purge errors": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CacheInvalidate.patch"
