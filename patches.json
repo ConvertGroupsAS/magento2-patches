@@ -673,6 +673,22 @@
         "Replace compromised polyfill js domain for Algolia Search less than v3.13.2": {
             "file": "Patch-Algolia_AlgoliaSearch-replace-compromised-polyfill-domain.patch",
             "version": "*"
+        },
+        "Special price with configurable product fix v2": {
+            "file": "Patch-Algolia_AlgoliaSearch-replace-compromised-polyfill-domain.patch",
+            "version": "*"
+        },
+        "Fix order loading": {
+            "file": "Patch-Algolia_AlgoliaSearch-replace-compromised-polyfill-domain.patch",
+            "version": "*"
+        },
+        "Fix for empty index prefix": {
+            "file": "Patch-Algolia_AlgoliaSearch-replace-compromised-polyfill-domain.patch",
+            "version": "*"
+        },
+        "Fix Increase timeout for api secured keys": {
+            "file": "Patch-Algolia_AlgoliaSearch-replace-compromised-polyfill-domain.patch",
+            "version": "*"
         }
     },
     "magento/module-config": {

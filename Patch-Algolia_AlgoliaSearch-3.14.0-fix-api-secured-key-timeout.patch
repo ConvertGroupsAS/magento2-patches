@@ -1,0 +1,10 @@
+--- a/Helper/AlgoliaHelper.php	2024-09-04 16:42:07
++++ b/Helper/AlgoliaHelper.php	2024-09-10 10:55:17
+@@ -35,7 +35,7 @@
+     /** @var int This value should be configured based on system/full_page_cache/ttl
+      *           (which is by default 86400) and/or the configuration block TTL
+      */
+-    protected const ALGOLIA_API_SECURED_KEY_TIMEOUT_SECONDS = 60 * 60 * 24; // TODO: Implement as config
++    protected const ALGOLIA_API_SECURED_KEY_TIMEOUT_SECONDS = 60 * 60 * 24 * 90; // Patch // TODO: Implement as config
+
+     protected ?SearchClient $client = null;

@@ -1,0 +1,20 @@
+--- Helper/Entity/Product/PriceManager/ProductWithoutChildren.orig.php	2024-07-12 18:25:40
++++ Helper/Entity/Product/PriceManager/ProductWithoutChildren.php	2024-08-07 12:51:37
+@@ -143,7 +143,7 @@
+             $product->setPriceCalculation(true);
+             foreach ($currencies as $currencyCode) {
+                 $this->customData[$field][$currencyCode] = [];
+-                $price = $product->getPrice();
++                $price = $product->getPriceInfo()->getPrice('regular_price')->getAmount()->getValue(); // PATCH
+                 if ($currencyCode !== $this->baseCurrencyCode) {
+                     $price = $this->convertPrice($price, $currencyCode);
+                 }
+@@ -254,7 +254,7 @@
+             $specialPrices[$groupId] = [];
+             $specialPrices[$groupId][] = $this->getRulePrice($groupId, $product, $subProducts);
+             // The price with applied catalog rules
+-            $specialPrices[$groupId][] = $product->getFinalPrice(); // The product's special price
++            $specialPrices[$groupId][] = $product->getPriceInfo()->getPrice('final_price')->getAmount()->getValue(); // PATCH The product's special price
+             $specialPrices[$groupId] = array_filter($specialPrices[$groupId], function ($price) {
+                 return $price > 0;
+             });

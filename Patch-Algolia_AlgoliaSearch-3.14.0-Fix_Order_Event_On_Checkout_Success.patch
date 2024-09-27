@@ -1,0 +1,11 @@
+--- Observer/Insights/CheckoutOnePageControllerSuccessAction.php 2024-08-15 18:30:26
++++ Observer/Insights/CheckoutOnePageControllerSuccessAction_mod.php 2024-08-15 18:30:11
+@@ -38,7 +38,7 @@
+
+         if (!$order) {
+             $orderId = $observer->getEvent()->getOrderIds()[0];
+-            $order = $this->orderFactory->create()->loadByIncrementId($orderId);
++            $order = $this->orderFactory->create()->load($orderId);
+         }
+
+         if (!$order || !$this->insightsHelper->isOrderPlacedTracked($order->getStoreId())) {

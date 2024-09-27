@@ -1,0 +1,11 @@
+--- a/Helper/ConfigHelper.php	2024-08-10 01:09:04
++++ b/Helper/ConfigHelper.php	2024-09-04 15:35:12
+@@ -1239,7 +1239,7 @@
+      * @param int|null $storeId
+      * @return string
+      */
+-    public function getIndexPrefix(int $storeId = null): string
++    public function getIndexPrefix(int $storeId = null): ?string
+     {
+         return $this->configInterface->getValue(self::INDEX_PREFIX, ScopeInterface::SCOPE_STORE, $storeId);
+     }
