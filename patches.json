@@ -758,5 +758,15 @@
             "file": "Patch-Clerk-4.8.x-empty-body-params.patch",
             "version": "4.8.1-4.8.5"
         }
+    },
+    "magento/module-catalog-graph-ql": {
+        "Fix: Translate Price and Category filter label on backend M2.4.2 >=  < 2.4.7": {
+            "file": "Patch-Magento_CatalogGraphQl-aggregations-price-category-translate-lables.patch",
+            "version": "*"
+        },
+        "Fix: Translate Price and Category filter label on backend M2.4.7": {
+            "file": "Patch-Magento_CatalogGraphQl-M2.4.7-aggregations-price-category-translate-labels.patch",
+            "version": "*"
+        }
     }
 }
