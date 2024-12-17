@@ -90,6 +90,7 @@ magento/module-ui|Patch-Magento\_Ui-M2.1.9-country-select-extra-empty-option.pat
 magento/module-ui|Patch-Magento\_Ui-M2.1.x-layout-cache-empty-menu.patch|[#8554](https://github.com/magento/magento2/issues/8554)|< 2.2.0
 magento/module-ui|Patch-Magento\_Ui-M2.2.x-invalid-date-range-fix.patch|[#16119](https://github.com/magento/magento2/issues/16119)|< 2.3.0
 magento/module-ui|Patch-Magento-Ui_fix-reset-disabled-attributes.patch| |< 2.2.5
+magento/module-ui|Patch-Magento\_Ui-M2.4.7-undefined-array-key-filters.patch|[#39013](https://github.com/magento/magento2/issues/39013)|>= 2.4.7-p1
 magento/module-catalog|Patch-Magento\_Catalog-rest-api-auto-enable-product-fix.patch| |< 2.2.0 all as of 2.1.9
 magento/module-catalog|Patch-Magento\_Catalog-rest-api-single-store-fix.patch| |>= 2.1.0 >= 2.2.0 < 2.2.6
 magento/module-catalog|Patch-Magento\_Catalog-M2.1-fix-product-auto-startdates.patch|[#4387](https://github.com/magento/magento2/issues/4387)|< 2.1.10 < 2.2.0
@@ -521,7 +522,8 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/6281": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.1.x-multiselect-empty-save.patch",
                 "Fix: https://github.com/magento/magento2/issues/8554": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.1.x-layout-cache-empty-menu.patch",
                 "Fix: https://github.com/magento/magento2/issues/16119": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.2.x-invalid-date-range-fix.patch",
-                "Fix reset of disabled attributes": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Ui_fix-reset-disabled-attributes.patch"
+                "Fix reset of disabled attributes": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Ui_fix-reset-disabled-attributes.patch",
+                "Fix: https://github.com/magento/magento2/issues/39013": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.4.7-undefined-array-key-filters.patch"
             },
             "magento/module-webapi": {
                 "Log webapi exceptions": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Webapi-M2.3.x-log-exceptions.patch"
