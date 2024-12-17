@@ -489,6 +489,10 @@
         "Fix reset of disabled attributes": {
             "file": "Patch-Magento-Ui_fix-reset-disabled-attributes.patch",
             "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/39013": {
+            "file": "Patch-Magento_Ui-M2.4.7-undefined-array-key-filters.patch",
+            "version": "*"
         }
     },
     "magento/module-widget": {
