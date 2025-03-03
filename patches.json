@@ -1,10 +1,4 @@
 {
-    "algolia/algoliasearch-magento-2": {
-        "Fixed processing of queue jobs": {
-            "file": "Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch",
-            "version": "*"
-        }
-    },
     "amasty/module-improved-layered-navigation-root": {
         "Fix: Remove unnecessary configurable block": {
             "file": "Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch",
@@ -642,6 +636,10 @@
         }
     },
     "algolia/algoliasearch-magento-2": {
+        "Fixed processing of queue jobs": {
+            "file": "Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch",
+            "version": "*"
+        },
         "Special price with configurable product fix": {
             "file": "Patch-Algolia_AlgoliaSearch-1.11.0-configurable-product-special-price-fix.patch",
             "version": "*"
@@ -650,19 +648,19 @@
             "file": "Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch",
             "version": "*"
         },
-        "Configurable product out of stock": {
+        "Configurable product out of stock 1.12": {
             "file": "Patch-Algolia-AlgoliaSearch-1.12.1-out_of_stock_configurable.patch",
             "version": "*"
         },
-        "Configurable product price fix": {
+        "Configurable product price fix 1.12": {
             "file": "Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch",
             "version": "*"
         },
-        "Configurable product price fix": {
+        "Configurable product price fix 1.8": {
             "file": "Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch",
             "version": "*"
         },
-        "Configurable product out of stock": {
+        "Configurable product out of stock 1.10": {
             "file": "Patch-Algolia-AlgoliaSearch-1.10.0-out_of_stock_configurable.patch",
             "version": "*"
         },
