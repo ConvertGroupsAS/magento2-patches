@@ -1,0 +1,11 @@
+--- view/frontend/web/recommend.js	2022-11-30 18:15:44.000000000 +0800
++++ view/frontend/web/recommend.js	2023-06-21 17:29:59.519186848 +0800
+@@ -11,7 +11,7 @@
+     const apiKey = this.config.apiKey;
+     const recommendClient = recommend(appId, apiKey);
+     const indexName = this.defaultIndexName;
+-    if ($('body').hasClass('catalog-product-view') || $('body').hasClass('checkout-cart-index')) {
++    if (window.algoliObjectId && ($('body').hasClass('catalog-product-view') || $('body').hasClass('checkout-cart-index'))) {
+             // --- Add the current product objectID here ---
+             const currentObjectID = algoliObjectId;
+             if ((this.config.recommend.enabledFBT && $('body').hasClass('catalog-product-view')) || (this.config.recommend.enabledFBTInCart && $('body').hasClass('checkout-cart-index'))) {

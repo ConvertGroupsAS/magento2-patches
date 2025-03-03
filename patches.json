@@ -695,7 +695,12 @@
         "Fix Increase timeout for api secured keys": {
             "file": "Patch-Algolia_AlgoliaSearch-3.14.0-fix-api-secured-key-timeout.patch",
             "version": "*"
+        },
+        "Fix undefined algoliObjectId": {
+            "file": "Patch-Algolia_AlgoliaSearch-3.9-fix-undefined-algoliObjectId-js-object.patch",
+            "version": "*"
         }
+        
     },
     "magento/module-config": {
         "Fix: https://github.com/magento/magento2/issues/19070": {

@@ -199,6 +199,7 @@ algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-emulation-clean-scop
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-pages-trigger-index.patch|                                                 Page indexer listeners on mview                                                 |
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-remove-show-all-products.patch|                                                    Remove show all products                                                     |
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-check-request-path-to-empty.patch|                            [PR #1149](https://github.com/algolia/algoliasearch-magento-2/pull/1149)                             |
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-3.9-fix-undefined-algoliObjectId-js-object.patch|                            Fix undefined variable algoliOvjectId in cart                             |
 amasty/shopby|Patch-Amasty_Shopby-2.10.5-remove-price-indexer.patch|                                              Remove auto price indexer for v2.10.5                                              |2.10.5
 amasty/shopby|Patch-Amasty_Shopby-2.12.5-remove-price-indexer.patch|                                              Remove auto price indexer for v2.12.5                                              |2.12.5
 amasty/shopby|Patch-Amasty_Shopby-2.13.7-remove-price-indexer.patch|                                              Remove auto price indexer for v2.13.7                                              |2.13.7
@@ -266,7 +267,8 @@ Full composer.json example:
                 "Clean scope code resolver: https://github.com/algolia/algoliasearch-magento-2/pull/857": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-emulation-clean-scope.patch",
                 "Page indexer listeners on mview": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-pages-trigger-index.patch",
                 "Remove show all products": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-remove-show-all-products.patch",
-                "Check request param to empty instead strict equal": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-check-request-path-to-empty.patch"
+                "Check request param to empty instead strict equal": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-check-request-path-to-empty.patch",
+                "Fix undefined variable algoliOvjectId in cart": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-3.9-fix-undefined-algoliObjectId-js-object.patch"
             },
             "amasty/shopby": {
                 "ES performance fixes for category filter": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_Shopby-category-es-performance2.patch"
