@@ -1,5 +1,5 @@
---- Plugin/ShippingInformationPlugin.php	2025-03-12 08:29:15.426475610 +0100
-+++ Plugin/ShippingInformationPlugin.php	2025-03-12 08:29:07.920275344 +0100
+--- src/Plugin/ShippingInformationPlugin.php	2025-03-12 08:29:15.426475610 +0100
++++ src/Plugin/ShippingInformationPlugin.php	2025-03-12 08:29:07.920275344 +0100
 @@ -53,7 +53,7 @@
          $rate
      ): ShippingMethodInterface {
