@@ -779,5 +779,35 @@
             "file": "Patch-Magento_CatalogGraphQl-M2.4.7-aggregations-price-category-translate-labels.patch",
             "version": "*"
         }
-    }
+    },
+    "trollweb/module-bring": {
+        "Fix Сustomer number argument name and usage": {
+            "file": "Patch-Trollweb-Bring-2.3.2-Customer-number-argument-usage.patch",
+            "version": "*"
+        },
+        "Fix: nullable zip code for new address": {
+            "file":"Patch-Trollweb-Bring-4.0.6-nullable-zip-code-argument.patch",
+            "version": "*"
+        },
+        "Fix: pickup add new service input argument": {
+            "file":"Patch-Trollweb-Bring-4.0.6-pickup-add-aditional-service-argument.patch",
+            "version": "*"
+        },
+        "Fix: delivered add new service input argument": {
+            "file":"Patch-Trollweb-Bring-4.0.6-delivered-add-aditional-service-argument.patch",
+            "version": "*"
+        },
+        "Fix: abstract additional service model arguments types": {
+            "file":"Patch-Trollweb-Bring-4.0.6-abstract-additional-service-arguments-types.patch",
+            "version": "*"
+        },
+        "Fix: Dimensions badly converted": {
+            "file":"Patch-Trollweb-Bring-4.0.6_Fix_Correct_convert_units.patch",
+            "version": "*"
+        },
+        "Fix: Unexpected carrier code": {
+            "file":"Patch-Trollweb-Bring-4.0.6-fix-unexpected-shipping-carrier-code.patch",
+            "version": "*"
+        }
+    },
 }

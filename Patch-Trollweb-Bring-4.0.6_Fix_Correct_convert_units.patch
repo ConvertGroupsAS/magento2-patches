@@ -1,0 +1,19 @@
+--- src/Helper/Measurement.php	2022-07-19 09:44:48.000000000 +0200
++++ src/Helper/Measurement.php	2022-12-02 13:51:05.000000000 +0100
+@@ -56,13 +56,13 @@
+         $unit = $this->config->getSizeUnit();
+
+         if ($unit == self::SIZE_UNIT_MM) {
+-            return (int)ceil($sizeValue * 10);
++            return (int)ceil($sizeValue / 10);
+         } elseif ($unit == self::SIZE_UNIT_CM) {
+             return (int)ceil($sizeValue);
+         } elseif ($unit == self::SIZE_UNIT_DM) {
+-            return (int)ceil($sizeValue / 10);
++            return (int)ceil($sizeValue * 10);
+         } elseif ($unit == self::SIZE_UNIT_M) {
+-            return (int)ceil($sizeValue / 100);
++            return (int)ceil($sizeValue * 100);
+         }
+
+         return (int)$sizeValue;

@@ -1,0 +1,14 @@
+--- src/Model/Carrier/Pickup.php	2022-07-19 09:44:48.000000000 +0200
++++ src/Model/Carrier/Pickup.php	2022-10-25 16:52:22.000000000 +0200
+@@ -182,9 +182,9 @@
+         }
+
+         if ($this->config->areAdditionalServicesEnabled((string) $request->getStoreId())) {
+-            $methods = $this->additionalServiceResolver->addAdditionalServices($methods, $request->getStoreId());
++            $result = $this->additionalServiceResolver->addAdditionalServices($result, $request->getStoreId());
+         }
+-        $methodCount = count($methods);
++        $methodCount = count($result->getAllRates());
+         $this->logger->debug("{$this->_code}: Returning {$methodCount} methods");
+         return $result;
+     }
