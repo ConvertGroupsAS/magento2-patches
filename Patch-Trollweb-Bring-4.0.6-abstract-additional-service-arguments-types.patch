@@ -1,0 +1,28 @@
+--- src/Model/AdditionalServices/AbstractAdditionalService.php	2022-07-19 09:44:48.000000000 +0200
++++ src/Model/AdditionalServices/AbstractAdditionalService.php	2022-10-27 16:13:35.000000000 +0200
+@@ -34,7 +34,7 @@
+      */
+     public function isEnabled($store): bool
+     {
+-        return $this->config->isAdditionalServiceEnabled($this->getServiceCode(), $store);
++        return $this->config->isAdditionalServiceEnabled($this->getServiceCode(), (string)$store);
+     }
+
+     /**
+@@ -43,7 +43,7 @@
+      */
+     public function getTitle($store): string
+     {
+-        return $this->config->getAdditionalServiceTitle($this->getServiceCode(), $store);
++        return $this->config->getAdditionalServiceTitle($this->getServiceCode(), (string)$store);
+     }
+
+     /**
+@@ -52,6 +52,6 @@
+      */
+     public function getDescription($store): string
+     {
+-        return $this->config->getAdditionalServiceDescription($this->getServiceCode(), $store);
++        return $this->config->getAdditionalServiceDescription($this->getServiceCode(), (string)$store);
+     }
+ }

@@ -1,0 +1,30 @@
+--- src/Helper/Carrier.php	2022-07-19 11:44:48.000000000 +0200
++++ src/Helper/Carrier.php	2023-12-14 19:57:35.444119637 +0100
+@@ -191,6 +191,10 @@
+     {
+         // Api requires DA instead of DK for danish language
+         $language = str_replace("DK", "DA", $requestData["origCountry"]);
++        if(!$requestData["destPostcode"]){
++            $requestData["destPostcode"] = $requestData["origPostcode"];
++        }
++
+ 
+         $shippingGuideParams = [
+             "fromcountry" => $requestData["origCountry"],
+@@ -366,13 +370,13 @@
+     }
+ 
+     /**
+-     * @param string $code
++     * @param string|null $code
+      * @return string|null
+      */
+-    private function formatPostcode(string $code): ?string
++    private function formatPostcode(?string $code): ?string
+     {
+         // Remove spaces from postal code
+-        return preg_replace("/\s+/", "", $code);
++        return preg_replace("/\s+/", "", $code ?? '');
+     }
+ 
+     /**
