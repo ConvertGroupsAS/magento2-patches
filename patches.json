@@ -809,5 +809,5 @@
             "file":"Patch-Trollweb-Bring-4.0.6-fix-unexpected-shipping-carrier-code.patch",
             "version": "*"
         }
-    },
+    }
 }
