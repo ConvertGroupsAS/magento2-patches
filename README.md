@@ -24,6 +24,7 @@ magento/magento2-base|Patch-Magento_Base-deploy-test-modules.patch|Deploy test m
 magento/magento2-base|Patch-Magento_Base_2.4.5_jquery_cookies_issue.patch|Fix magento theme jquery cookie issue|
 magento/framework|Patch-Magento_Framework-M2.4-indexers-performance-issue|Fix indexing performance issue | 2.4.5
 magento/framework|Patch-Magento_Framework-M2.4.7-indexers-performance-issue|Fix indexing performance issue | 2.4.7
+magento/framework|Patch-Magento_Framework-M2.4.x-upgrade-ICU-74.1-calendar-fix.patch|Fix since upgrade to ICU 74.1 https://github.com/magento/magento2/issues/38214 | >=2.4.7 < 2.4.8
 magento/framework|Patch-Magento\_Framework-mview-changelog-increment.patch|[PR #13577](https://github.com/magento/magento2/pull/13577)|2.1-2.3
 magento/framework|Patch-Magento\_Framework-M2.1.x-Search-Adapter-Mysql-Mapper-fix-order.patch|[#9020](https://github.com/magento/magento2/issues/9020)|<2.2.0
 magento/framework|Patch-Magento\_Framework-customer-grid.patch|[#10838](https://github.com/magento/magento2/issues/10838)|2.2 (probably all)
@@ -90,6 +91,7 @@ magento/module-ui|Patch-Magento\_Ui-M2.1.9-country-select-extra-empty-option.pat
 magento/module-ui|Patch-Magento\_Ui-M2.1.x-layout-cache-empty-menu.patch|[#8554](https://github.com/magento/magento2/issues/8554)|< 2.2.0
 magento/module-ui|Patch-Magento\_Ui-M2.2.x-invalid-date-range-fix.patch|[#16119](https://github.com/magento/magento2/issues/16119)|< 2.3.0
 magento/module-ui|Patch-Magento-Ui_fix-reset-disabled-attributes.patch| |< 2.2.5
+magento/module-ui|Patch-Magento\_Ui-M2.4.7-undefined-array-key-filters.patch|[#39013](https://github.com/magento/magento2/issues/39013)|>= 2.4.7-p1
 magento/module-catalog|Patch-Magento\_Catalog-rest-api-auto-enable-product-fix.patch| |< 2.2.0 all as of 2.1.9
 magento/module-catalog|Patch-Magento\_Catalog-rest-api-single-store-fix.patch| |>= 2.1.0 >= 2.2.0 < 2.2.6
 magento/module-catalog|Patch-Magento\_Catalog-M2.1-fix-product-auto-startdates.patch|[#4387](https://github.com/magento/magento2/issues/4387)|< 2.1.10 < 2.2.0
@@ -197,6 +199,7 @@ algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-emulation-clean-scop
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-pages-trigger-index.patch|                                                 Page indexer listeners on mview                                                 |
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-remove-show-all-products.patch|                                                    Remove show all products                                                     |
 algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-check-request-path-to-empty.patch|                            [PR #1149](https://github.com/algolia/algoliasearch-magento-2/pull/1149)                             |
+algolia/algoliasearch-magento-2|Patch-Algolia_AlgoliaSearch-3.9-fix-undefined-algoliObjectId-js-object.patch|                            Fix undefined variable algoliOvjectId in cart                             |
 amasty/shopby|Patch-Amasty_Shopby-2.10.5-remove-price-indexer.patch|                                              Remove auto price indexer for v2.10.5                                              |2.10.5
 amasty/shopby|Patch-Amasty_Shopby-2.12.5-remove-price-indexer.patch|                                              Remove auto price indexer for v2.12.5                                              |2.12.5
 amasty/shopby|Patch-Amasty_Shopby-2.13.7-remove-price-indexer.patch|                                              Remove auto price indexer for v2.13.7                                              |2.13.7
@@ -228,6 +231,12 @@ nosto/module-nostotagging|Patch-Nosto_Tagging-indexer-spawns-events.patch|      
 dotmailer/dotmailer-magento2-extension|Patch-Dotdigitalgroup_email-subject-fix.patch|                                            Fix utf8 encoding in the subject of email                                            |?
 trollweb/module-bring|Patch-Trollweb-Bring-2.3.2-Customer-number-argument-usage|                                     Fix wrong Customer Number param in request for carriers                                     | 2.3.2
 trollweb/module-bring|Patch-Trollweb_Bring-3.3.8-missed-method-displayName.patch|                                           Fix missed displayName for delivery method                                            | 3.3.8
+trollweb/module-bring|Patch-Trollweb-Bring-4.0.6-abstract-additional-service-arguments-types.patch|                                           Fix: abstract additional service model arguments types                                            | 4.0.6
+trollweb/module-bring|Patch-Trollweb-Bring-4.0.6-delivered-add-aditional-service-argument.patch|                                           Fix: delivered add new service input argument                                            | 4.0.6
+trollweb/module-bring|Patch-Trollweb-Bring-4.0.6-pickup-add-aditional-service-argument.patch|                                           Fix: pickup add new service input argument                                            | 4.0.6
+trollweb/module-bring|Patch-Trollweb-Bring-4.0.6-fix-unexpected-shipping-carrier-code.patch|                                           Fix: Unexpected carrier code                                            | 4.0.6
+trollweb/module-bring|Patch-Trollweb-Bring-4.0.6-nullable-zip-code-argument.patch|                                           Fix: nullable zip code for new address                                            | 4.0.6
+trollweb/module-bring|Patch-Trollweb-Bring-4.0.6_Fix_Correct_convert_units.patch|                                           Fix: Dimensions badly converted                                            | 4.0.6
 vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch|                                             Fixed allowed methods in carrier model                                              | >=2.3.0
 vconnect/module-allinone|Patch-Vconnect_Allinone-allowed-methods-fix.patch|                                             Fixed allowed methods in carrier model                                              | >=2.2.0 < 2.3.0
 vconnect/module-allinone|Patch-Vconnect_Allinone-2.3.x-find-points-fix.patch|                                                 Address fix for findPoints call                                                 | >=2.3.0
@@ -264,7 +273,8 @@ Full composer.json example:
                 "Clean scope code resolver: https://github.com/algolia/algoliasearch-magento-2/pull/857": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-emulation-clean-scope.patch",
                 "Page indexer listeners on mview": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-pages-trigger-index.patch",
                 "Remove show all products": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-remove-show-all-products.patch",
-                "Check request param to empty instead strict equal": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-check-request-path-to-empty.patch"
+                "Check request param to empty instead strict equal": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-check-request-path-to-empty.patch",
+                "Fix undefined variable algoliOvjectId in cart": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Algolia_AlgoliaSearch-3.9-fix-undefined-algoliObjectId-js-object.patch"
             },
             "amasty/shopby": {
                 "ES performance fixes for category filter": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Amasty_Shopby-category-es-performance2.patch"
@@ -318,7 +328,8 @@ Full composer.json example:
                 "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_framework-M2.4.3-p1_APSB22-12-security.patch",
                 "Remove verbose logs": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Magento_Framework-verbose-logs.patch",
                 "Fix indexing performance m2.4.5": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4-indexers-performance-issue.patch",
-                "Fix indexing performance m2.4.7": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4.7-indexers-performance-issue.patch"
+                "Fix indexing performance m2.4.7": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4.7-indexers-performance-issue.patch",
+                "Fix since upgrade to ICU 74.1 https://github.com/magento/magento2/issues/38214": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4.x-upgrade-ICU-74.1-calendar-fix.patch"
             },
             "magento/magento2-base": {
                 "Fix MAGE_DIRS for CLI": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-cli.patch",
@@ -521,7 +532,8 @@ Full composer.json example:
                 "Fix: https://github.com/magento/magento2/issues/6281": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.1.x-multiselect-empty-save.patch",
                 "Fix: https://github.com/magento/magento2/issues/8554": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.1.x-layout-cache-empty-menu.patch",
                 "Fix: https://github.com/magento/magento2/issues/16119": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.2.x-invalid-date-range-fix.patch",
-                "Fix reset of disabled attributes": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Ui_fix-reset-disabled-attributes.patch"
+                "Fix reset of disabled attributes": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Ui_fix-reset-disabled-attributes.patch",
+                "Fix: https://github.com/magento/magento2/issues/39013": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Ui-M2.4.7-undefined-array-key-filters.patch"
             },
             "magento/module-webapi": {
                 "Log webapi exceptions": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Webapi-M2.3.x-log-exceptions.patch"
@@ -621,7 +633,13 @@ Full composer.json example:
                 "Fix Braintree bug in Admin reports": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Paypal-braintree-2.4.5-admin-report.patch"
             },
             "trollweb/module-bring": {
-                "Fix Сustomer number argument name and usage": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Trollweb-Bring-2.3.2-Customer-number-argument-usage.patch"
+                "Fix Сustomer number argument name and usage": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Trollweb-Bring-2.3.2-Customer-number-argument-usage.patch",
+                "Fix: nullable zip code for new address": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Trollweb-Bring-4.0.6-nullable-zip-code-argument.patch",
+                "Fix: pickup add new service input argument": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Trollweb-Bring-4.0.6-pickup-add-aditional-service-argument.patch",
+                "Fix: delivered add new service input argument": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Trollweb-Bring-4.0.6-delivered-add-aditional-service-argument.patch",
+                "Fix: abstract additional service model arguments types": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Trollweb-Bring-4.0.6-abstract-additional-service-arguments-types.patch",
+                "Fix: Dimensions badly converted": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Trollweb-Bring-4.0.6_Fix_Correct_convert_units.patch",
+                "Fix: Unexpected carrier code": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Trollweb-Bring-4.0.6-fix-unexpected-shipping-carrier-code.patch"
             },
             "vconnect/module-allinone": {
                 "Fixed allowed methods in carrier model": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Vconnect_Allinone-2.3.x-allowed-methods-fix.patch",

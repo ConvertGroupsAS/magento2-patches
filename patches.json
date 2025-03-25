@@ -1,10 +1,4 @@
 {
-    "algolia/algoliasearch-magento-2": {
-        "Fixed processing of queue jobs": {
-            "file": "Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch",
-            "version": "*"
-        }
-    },
     "amasty/module-improved-layered-navigation-root": {
         "Fix: Remove unnecessary configurable block": {
             "file": "Patch-Amasty-ImprovedLayeredNavigationRoot-M2.1.4-block-configurable.patch",
@@ -90,6 +84,10 @@
         },
         "Fix: https://github.com/magento/magento2/issues/21916": {
             "file": "Patch-Magento_Framework-M2.3.1-fix-elasticsearch-generation.patch",
+            "version": "*"
+        },
+        "Fix since upgrade to ICU 74.1 https://github.com/magento/magento2/issues/38214": {
+            "file": "Patch-Magento_Framework-M2.4.x-upgrade-ICU-74.1-calendar-fix.patch",
             "version": "*"
         }
     },
@@ -489,6 +487,10 @@
         "Fix reset of disabled attributes": {
             "file": "Patch-Magento-Ui_fix-reset-disabled-attributes.patch",
             "version": "*"
+        },
+        "Fix: https://github.com/magento/magento2/issues/39013": {
+            "file": "Patch-Magento_Ui-M2.4.7-undefined-array-key-filters.patch",
+            "version": "*"
         }
     },
     "magento/module-widget": {
@@ -634,6 +636,10 @@
         }
     },
     "algolia/algoliasearch-magento-2": {
+        "Fixed processing of queue jobs": {
+            "file": "Patch-Algolia_AlgoliaSearch-1.9-fix-queue-jobs.patch",
+            "version": "*"
+        },
         "Special price with configurable product fix": {
             "file": "Patch-Algolia_AlgoliaSearch-1.11.0-configurable-product-special-price-fix.patch",
             "version": "*"
@@ -642,19 +648,19 @@
             "file": "Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch",
             "version": "*"
         },
-        "Configurable product out of stock": {
+        "Configurable product out of stock 1.12": {
             "file": "Patch-Algolia-AlgoliaSearch-1.12.1-out_of_stock_configurable.patch",
             "version": "*"
         },
-        "Configurable product price fix": {
+        "Configurable product price fix 1.12": {
             "file": "Patch-Algolia_Algoliasearch-1.12.1-Amasty-conflict-resolve.patch",
             "version": "*"
         },
-        "Configurable product price fix": {
+        "Configurable product price fix 1.8": {
             "file": "Patch-Algolia_AlgoliaSearch-1.8.0-configurable-price.patch",
             "version": "*"
         },
-        "Configurable product out of stock": {
+        "Configurable product out of stock 1.10": {
             "file": "Patch-Algolia-AlgoliaSearch-1.10.0-out_of_stock_configurable.patch",
             "version": "*"
         },
@@ -689,7 +695,12 @@
         "Fix Increase timeout for api secured keys": {
             "file": "Patch-Algolia_AlgoliaSearch-3.14.0-fix-api-secured-key-timeout.patch",
             "version": "*"
+        },
+        "Fix undefined algoliObjectId": {
+            "file": "Patch-Algolia_AlgoliaSearch-3.9-fix-undefined-algoliObjectId-js-object.patch",
+            "version": "*"
         }
+        
     },
     "magento/module-config": {
         "Fix: https://github.com/magento/magento2/issues/19070": {
@@ -766,6 +777,36 @@
         },
         "Fix: Translate Price and Category filter label on backend M2.4.7": {
             "file": "Patch-Magento_CatalogGraphQl-M2.4.7-aggregations-price-category-translate-labels.patch",
+            "version": "*"
+        }
+    },
+    "trollweb/module-bring": {
+        "Fix Сustomer number argument name and usage": {
+            "file": "Patch-Trollweb-Bring-2.3.2-Customer-number-argument-usage.patch",
+            "version": "*"
+        },
+        "Fix: nullable zip code for new address": {
+            "file":"Patch-Trollweb-Bring-4.0.6-nullable-zip-code-argument.patch",
+            "version": "*"
+        },
+        "Fix: pickup add new service input argument": {
+            "file":"Patch-Trollweb-Bring-4.0.6-pickup-add-aditional-service-argument.patch",
+            "version": "*"
+        },
+        "Fix: delivered add new service input argument": {
+            "file":"Patch-Trollweb-Bring-4.0.6-delivered-add-aditional-service-argument.patch",
+            "version": "*"
+        },
+        "Fix: abstract additional service model arguments types": {
+            "file":"Patch-Trollweb-Bring-4.0.6-abstract-additional-service-arguments-types.patch",
+            "version": "*"
+        },
+        "Fix: Dimensions badly converted": {
+            "file":"Patch-Trollweb-Bring-4.0.6_Fix_Correct_convert_units.patch",
+            "version": "*"
+        },
+        "Fix: Unexpected carrier code": {
+            "file":"Patch-Trollweb-Bring-4.0.6-fix-unexpected-shipping-carrier-code.patch",
             "version": "*"
         }
     }
