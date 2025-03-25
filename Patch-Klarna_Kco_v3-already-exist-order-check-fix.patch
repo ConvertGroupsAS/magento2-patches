@@ -1,0 +1,53 @@
+--- Model/Order/Order.php	2025-02-12 09:43:12
++++ Model/Order/Order.php	2025-03-25 17:14:49
+@@ -105,6 +105,10 @@
+      * @var Checkout
+      */
+     private Checkout $checkoutConfiguration;
++    /**
++     * @var \Magento\Sales\Model\OrderFactory
++     */
++    private $orderFactory;
+
+     /**
+      * @param KcoSession               $kcoSession
+@@ -119,6 +123,7 @@
+      * @param Handler                  $validation
+      * @param Action                   $action
+      * @param Checkout                 $checkoutConfiguration
++     * @param \Magento\Sales\Model\OrderFactory $orderFactory
+      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
+      * @codeCoverageIgnore
+      */
+@@ -134,7 +139,8 @@
+         KcoPaymentStatus $paymentStatus,
+         Handler $validation,
+         Action $action,
+-        Checkout $checkoutConfiguration
++        Checkout $checkoutConfiguration,
++        \Magento\Sales\Model\OrderFactory $orderFactory,
+     ) {
+         $this->kcoSession            = $kcoSession;
+         $this->initializer           = $initializer;
+@@ -148,6 +154,7 @@
+         $this->validation            = $validation;
+         $this->action                = $action;
+         $this->checkoutConfiguration = $checkoutConfiguration;
++        $this->orderFactory = $orderFactory;
+     }
+
+     /**
+@@ -181,7 +188,12 @@
+         $this->mageQuote = $this->workflowProvider->getMagentoQuote();
+
+         try {
+-            $magentoOrder = $this->mageOrderRepository->get($this->mageQuote->getReservedOrderId());
++            // Start: Convert Fix for checkoing already created orders by Increment ID.
++            $reservedOrderIncrementId = $this->mageQuote->getReservedOrderId();
++            $orderModel = $this->orderFactory->create()->loadByIncrementId($reservedOrderIncrementId);
++            $magentoOrder = $this->mageOrderRepository->get($orderModel->getId());
++            $this->mageOrder = $magentoOrder->setCanSendNewEmailFlag(false);
++            // Finish: Convert Fix for checkoing already created orders by Increment ID.
+
+             // It means the order already exists and we return it so that we do not create another one
+             return $magentoOrder;

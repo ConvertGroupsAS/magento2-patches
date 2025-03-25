@@ -1,0 +1,12 @@
+--- Model/Cart/Validations/OrderItems.php	2025-02-12 09:43:12
++++ Model/Cart/Validations/OrderItems.php	2025-03-20 22:28:05
+@@ -92,8 +92,7 @@
+      */
+     private function isItemFound(array $localOrderLine, array $requestOrderLine): bool
+     {
+-        return $localOrderLine['name'] === $requestOrderLine['name'] &&
+-            $localOrderLine['product_url'] === $requestOrderLine['product_url'] &&
++        return $localOrderLine['reference'] === $requestOrderLine['reference'] &&
+             $localOrderLine['quantity'] === $requestOrderLine['quantity'];
+     }
+ }

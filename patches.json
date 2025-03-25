@@ -621,6 +621,14 @@
         "Wrong checking configuration for Klarna Payments": {
             "file": "Patch-Klarna_Kco-2.2.x-fixed-checking-klarna-payments-config-fix.patch",
             "version": "*"
+        },
+        "Klarna V3: order items validation fix": {
+            "file": "Patch-Klarna_Kco_v3-order-items-validation-fix.patch",
+            "version": "*"
+        },
+        "Klarna V3: already exist order validation fix": {
+            "file": "Patch-Klarna_Kco_v3-already-exist-order-check-fix.patch",
+            "version": "*"
         }
     },
     "bsscommerce/ajaxcart": {
