@@ -37,7 +37,7 @@
      }
 
      /**
-@@ -181,7 +188,12 @@
+@@ -181,7 +188,17 @@
          $this->mageQuote = $this->workflowProvider->getMagentoQuote();
 
          try {
@@ -45,7 +45,12 @@
 +            // Start: Convert Fix for checkoing already created orders by Increment ID.
 +            $reservedOrderIncrementId = $this->mageQuote->getReservedOrderId();
 +            $orderModel = $this->orderFactory->create()->loadByIncrementId($reservedOrderIncrementId);
-+            $magentoOrder = $this->mageOrderRepository->get($orderModel->getId());
++
++            if (!$orderModel->getId()) {
++                throw new NoSuchEntityException('Order ID is empty.');
++            }
++
++            $magentoOrder = $this->mageOrderRepository->get((int)$orderModel->getId());
 +            $this->mageOrder = $magentoOrder->setCanSendNewEmailFlag(false);
 +            // Finish: Convert Fix for checkoing already created orders by Increment ID.
 
