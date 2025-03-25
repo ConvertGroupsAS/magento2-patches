@@ -47,7 +47,7 @@
 +            $orderModel = $this->orderFactory->create()->loadByIncrementId($reservedOrderIncrementId);
 +
 +            if (!$orderModel->getId()) {
-+                throw new NoSuchEntityException('Order ID is empty.');
++                throw new NoSuchEntityException(__('Order ID is empty.'));
 +            }
 +
 +            $magentoOrder = $this->mageOrderRepository->get((int)$orderModel->getId());
