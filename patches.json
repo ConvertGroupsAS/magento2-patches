@@ -86,6 +86,10 @@
             "file": "Patch-Magento_Framework-M2.3.1-fix-elasticsearch-generation.patch",
             "version": "*"
         },
+        "Fix GIF images for product by Gd2 adapter https://github.com/magento/magento2/pull/37319": {
+            "file": "Patch-Magento-Framework-Image_M2.4.6-gd2-gif-images-for-product.patch",
+            "version": "< 2.4.7"
+        },
         "Fix since upgrade to ICU 74.1 https://github.com/magento/magento2/issues/38214": {
             "file": "Patch-Magento_Framework-M2.4.x-upgrade-ICU-74.1-calendar-fix.patch",
             "version": "*"
