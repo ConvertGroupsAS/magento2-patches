@@ -1,0 +1,28 @@
+diff --git etc/di.xml etc/di.xml
+index 96fd4b86be7..1792399fb2c 100644
+--- etc/di.xml
++++ etc/di.xml
+@@ -578,6 +578,7 @@
+                     <item name="store_id" xsi:type="string">store_id</item>
+                     <item name="group_id" xsi:type="string">group_id</item>
+                     <item name="dob" xsi:type="string">dob</item>
++                    <item name="rp_token" xsi:type="string">rp_token</item>
+                 </item>
+                 <item name="customer_address" xsi:type="array">
+                     <item name="country_id" xsi:type="string">country_id</item>
+@@ -585,6 +586,15 @@
+             </argument>
+         </arguments>
+     </type>
++    <type name="Magento\Eav\Model\Attribute\Data\Text">
++        <arguments>
++            <argument name="allowDiacriticsForAttributes" xsi:type="array">
++                <item name="customer" xsi:type="array">
++                    <item name="email" xsi:type="string">email</item>
++                </item>
++            </argument>
++        </arguments>
++    </type>
+     <type name="Magento\AsynchronousOperations\Model\MassSchedule">
+         <plugin name="anonymousAsyncCustomerRequest"
+                 type="Magento\Customer\Plugin\AsyncRequestCustomerGroupAuthorization"
