@@ -222,6 +222,10 @@
         "Fix: https://github.com/magento/magento2/issues/36471": {
             "file": "Patch-Magento-Catalog-M2.4.5-fix-for-price-indexer-getting-stuck.patch",
             "version": "*"
+        },
+        "Fix: Disabled Categories are no longer have their names grayed https://github.com/magento/magento2/issues/39357": {
+            "file": "Patch-Magento_Catalog-M2.4.7-disabled-category-greyed.patch",
+            "version": ">=2.4.7-p3"
         }
     },
     "magento/module-catalog-inventory": {
@@ -585,6 +589,12 @@
         "Fix: https://github.com/magento/magento2/issues/29364": {
             "file": "Patch-Magento_Checkout-M2.3.x-checkout-login-form.patch",
             "version": "*"
+        }
+    },
+    "magento/theme-adminhtml-backend": {
+        "Fix: Disabled Categories are no longer have their names grayed https://github.com/magento/magento2/issues/39357": {
+            "file": "Patch-Magento_ThemeAdminhtmlBackend-M2.4.7-disabled-category-greyed.patch",
+            "version": ">=2.4.7-p3"
         }
     },
     "klarna/module-core": {
