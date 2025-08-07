@@ -1,0 +1,141 @@
+diff --git Model/Attribute/Data/Text.php Model/Attribute/Data/Text.php
+index c41a65a6bfd..cddacaba1a8 100644
+--- Model/Attribute/Data/Text.php
++++ Model/Attribute/Data/Text.php
+@@ -7,11 +7,16 @@
+ namespace Magento\Eav\Model\Attribute\Data;
+
+ use Magento\Framework\App\RequestInterface;
++use Magento\Framework\Locale\ResolverInterface;
++use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
++use Magento\Framework\Stdlib\StringUtils;
++use Psr\Log\LoggerInterface;
+
+ /**
+  * EAV Entity Attribute Text Data Model
+  *
+  * @author      Magento Core Team <core@magentocommerce.com>
++ * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+  */
+ class Text extends \Magento\Eav\Model\Attribute\Data\AbstractData
+ {
+@@ -21,17 +26,24 @@ class Text extends \Magento\Eav\Model\Attribute\Data\AbstractData
+     protected $_string;
+
+     /**
+-     * @param \Magento\Framework\Stdlib\DateTime\TimezoneInterface $localeDate
+-     * @param \Psr\Log\LoggerInterface $logger
+-     * @param \Magento\Framework\Locale\ResolverInterface $localeResolver
+-     * @param \Magento\Framework\Stdlib\StringUtils $stringHelper
++     * @var array
++     */
++    private $allowDiacriticsForAttributes;
++
++    /**
++     * @param TimezoneInterface $localeDate
++     * @param LoggerInterface $logger
++     * @param ResolverInterface $localeResolver
++     * @param StringUtils $stringHelper
++     * @param array $allowDiacriticsForAttributes
+      * @codeCoverageIgnore
+      */
+     public function __construct(
+         \Magento\Framework\Stdlib\DateTime\TimezoneInterface $localeDate,
+         \Psr\Log\LoggerInterface $logger,
+         \Magento\Framework\Locale\ResolverInterface $localeResolver,
+-        \Magento\Framework\Stdlib\StringUtils $stringHelper
++        \Magento\Framework\Stdlib\StringUtils $stringHelper,
++        array $allowDiacriticsForAttributes = []
+     ) {
+         parent::__construct($localeDate, $logger, $localeResolver);
+         $this->_string = $stringHelper;
+@@ -79,8 +91,14 @@ class Text extends \Magento\Eav\Model\Attribute\Data\AbstractData
+             return $errors;
+         }
+
+-        // if string with diacritics encode it.
+-        $value = $this->encodeDiacritics($value);
++        if (isset($this->allowDiacriticsForAttributes[$attribute->getEntityType()->getEntityTypeCode()])
++            && in_array(
++                $attribute->getAttributeCode(),
++                $this->allowDiacriticsForAttributes[$attribute->getEntityType()->getEntityTypeCode()]
++            )) {
++            // if string with diacritics encode it.
++            $value = $this->encodeDiacritics($value);
++        }
+
+         $validateLengthResult = $this->validateLength($attribute, $value);
+         $errors = array_merge($errors, $validateLengthResult);
+diff --git Test/Unit/Model/Attribute/Data/MultilineTest.php Test/Unit/Model/Attribute/Data/MultilineTest.php
+index 11e41d67660..af67bb74a19 100644
+--- Test/Unit/Model/Attribute/Data/MultilineTest.php
++++ Test/Unit/Model/Attribute/Data/MultilineTest.php
+@@ -10,6 +10,8 @@ namespace Magento\Eav\Test\Unit\Model\Attribute\Data;
+ use Magento\Eav\Model\Attribute;
+ use Magento\Eav\Model\Attribute\Data\Multiline;
+ use Magento\Eav\Model\AttributeDataFactory;
++use Magento\Eav\Model\Entity\Attribute\AbstractAttribute;
++use Magento\Eav\Model\Entity\Type;
+ use Magento\Framework\App\RequestInterface;
+ use Magento\Framework\Locale\ResolverInterface;
+ use Magento\Framework\Model\AbstractModel;
+@@ -109,7 +111,6 @@ class MultilineTest extends TestCase
+
+         /** @var MockObject|Attribute $attributeMock */
+         $attributeMock = $this->createMock(Attribute::class);
+-
+         $this->model->setEntity($entityMock);
+         $this->model->setAttribute($attributeMock);
+         $this->assertEquals($expectedResult, $this->model->outputValue($format));
+@@ -158,6 +159,8 @@ class MultilineTest extends TestCase
+             ->method('getDataUsingMethod')
+             ->willReturn("value1\nvalue2");
+
++        $entityTypeMock = $this->createMock(Type::class);
++
+         /** @var MockObject|Attribute $attributeMock */
+         $attributeMock = $this->createMock(Attribute::class);
+         $attributeMock->expects($this->any())->method('getMultilineCount')->willReturn(2);
+@@ -170,6 +173,10 @@ class MultilineTest extends TestCase
+             ->method('getIsRequired')
+             ->willReturn($isAttributeRequired);
+
++        $attributeMock->expects($this->any())
++            ->method('getEntityType')
++            ->willReturn($entityTypeMock);
++
+         $this->stringMock->expects($this->any())->method('strlen')->willReturn(5);
+
+         $this->model->setEntity($entityMock);
+diff --git Test/Unit/Model/Attribute/Data/TextTest.php Test/Unit/Model/Attribute/Data/TextTest.php
+index 5ccc9758911..8cb51876aed 100644
+--- Test/Unit/Model/Attribute/Data/TextTest.php
++++ Test/Unit/Model/Attribute/Data/TextTest.php
+@@ -10,6 +10,7 @@ namespace Magento\Eav\Test\Unit\Model\Attribute\Data;
+ use Magento\Eav\Model\Attribute;
+ use Magento\Eav\Model\Attribute\Data\Text;
+ use Magento\Eav\Model\Entity\Attribute\AbstractAttribute;
++use Magento\Eav\Model\Entity\Type;
+ use Magento\Eav\Model\Entity\TypeFactory;
+ use Magento\Framework\Exception\LocalizedException;
+ use Magento\Framework\Locale\ResolverInterface;
+@@ -223,12 +224,18 @@ class TextTest extends TestCase
+             ['eavTypeFactory' => $eavTypeFactory, 'data' => $attributeData]
+         );
+
++        $entityTypeMock = $this->createMock(Type::class);
++
+         /** @var \Magento\Eav\Model\Entity\Attribute\AbstractAttribute|MockObject $attribute
+          */
+         $attribute = $this->getMockBuilder($attributeClass)
+-            ->setMethods(['_init'])
++            ->onlyMethods(['_init', 'getEntityType'])
+             ->setConstructorArgs($arguments)
+             ->getMock();
++
++        $attribute->expects($this->any())
++            ->method('getEntityType')
++            ->willReturn($entityTypeMock);
+         return $attribute;
+     }
+ }

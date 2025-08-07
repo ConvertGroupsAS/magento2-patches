@@ -1,0 +1,20 @@
+--- Image/Adapter/Gd2.php
++++ Image/Adapter/Gd2.php	(date 1742988006752)
+@@ -343,7 +343,7 @@
+         // fill image with indexed non-alpha transparency
+         $transparentColor = false;
+
+-        if ($transparentIndex >= 0 && $transparentIndex <= imagecolorstotal($this->_imageHandler)) {
++        if ($transparentIndex >= 0 && $transparentIndex < imagecolorstotal($this->_imageHandler)) {
+             list($red, $green, $blue) = array_values(imagecolorsforindex($this->_imageHandler, $transparentIndex));
+             $transparentColor = imagecolorallocate($imageResourceTo, (int) $red, (int) $green, (int) $blue);
+         }
+@@ -387,7 +387,7 @@
+         if (IMAGETYPE_GIF === $fileType || IMAGETYPE_PNG === $fileType) {
+             // check for specific transparent color
+             $transparentIndex = imagecolortransparent($imageResource);
+-            if ($transparentIndex >= 0) {
++            if ($transparentIndex >= 0 and $transparentIndex < imagecolorstotal($imageResource)) {
+                 return $transparentIndex;
+             } elseif (IMAGETYPE_PNG === $fileType) {
+                 // assume that truecolor PNG has transparency

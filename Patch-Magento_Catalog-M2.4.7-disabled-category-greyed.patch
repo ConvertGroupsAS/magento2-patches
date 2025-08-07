@@ -1,0 +1,11 @@
+--- Block/Adminhtml/Category/Tree.php
++++ Block/Adminhtml/Category/Tree.php	(date 1745722343893)
+@@ -393,7 +393,7 @@
+         $item['store'] = (int)$this->getStore()->getId();
+         $item['path'] = $node->getData('path');
+
+-        $item['cls'] = 'folder ' . ($node->getIsActive() ? 'active-category' : 'no-active-category');
++        $item['cls'] = 'folder ' . ($node->getIsActive() ? 'active-category' : 'not-active-category');
+         //$item['allowDrop'] = ($level<3) ? true : false;
+         $allowMove = $this->_isCategoryMoveable($node);
+         $item['allowDrop'] = $allowMove;

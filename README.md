@@ -25,6 +25,7 @@ magento/magento2-base|Patch-Magento_Base_2.4.5_jquery_cookies_issue.patch|Fix ma
 magento/framework|Patch-Magento_Framework-M2.4-indexers-performance-issue|Fix indexing performance issue | 2.4.5
 magento/framework|Patch-Magento_Framework-M2.4.7-indexers-performance-issue|Fix indexing performance issue | 2.4.7
 magento/framework|Patch-Magento_Framework-M2.4.x-upgrade-ICU-74.1-calendar-fix.patch|Fix since upgrade to ICU 74.1 https://github.com/magento/magento2/issues/38214 | >=2.4.7 < 2.4.8
+magento/framework|Patch-Magento-Framework-Image_M2.4.6-gd2-gif-images-for-product.patch|Fix GIF images for product by Gd2 adapter (<= m2.4.6-p9) https://github.com/magento/magento2/pull/37319 | < 2.4.7
 magento/framework|Patch-Magento\_Framework-mview-changelog-increment.patch|[PR #13577](https://github.com/magento/magento2/pull/13577)|2.1-2.3
 magento/framework|Patch-Magento\_Framework-M2.1.x-Search-Adapter-Mysql-Mapper-fix-order.patch|[#9020](https://github.com/magento/magento2/issues/9020)|<2.2.0
 magento/framework|Patch-Magento\_Framework-customer-grid.patch|[#10838](https://github.com/magento/magento2/issues/10838)|2.2 (probably all)
@@ -110,6 +111,7 @@ magento/module-catalog|Patch-Magento_Catalog-M2.3-category-flat-chunk-limit.patc
 magento/module-catalog|Patch-Magento_Catalog-M2.3-fix-category-image-upload.patch|Fix: Category Image Upload|
 magento/module-catalog|Patch-Magento_Catalog-M2.4.2-website-select-processor-fix.patch|Fix: Use Indentifer field for Website processor|>2.1.0
 magento/module-catalog|Patch-Magento-Catalog-M2.4.5-fix-for-price-indexer-getting-stuck.patch|Fix: https://github.com/magento/magento2/issues/36471| 2.4.5
+magento/module-catalog|Patch-Magento_Catalog-M2.4.7-disabled-category-greyed.patch|Fix: Disabled Categories are no longer have their names grayed https://github.com/magento/magento2/issues/39357 | >=2.4.7-p3 < 2.4.8
 magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-sorting-fix.patch|[#30775](https://github.com/magento/magento2/issues/30775)|>=2.3.5 < 2.4.3 (maybe)
 magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-category-place-first.patch|Move Category filter on first place||
 magento/module-catalog-graph-ql|Patch-Magento\_CatalogGraphQl-aggregations-price-category-translate-lables.patch|Translate Labels for Price and Category Filters|>=2.4.2 < 2.4.7 (maybe)
@@ -178,6 +180,7 @@ magento/module-quote|Patch-Magento_Quote-M2.4.x-invalid-customer-address-id-fix.
 elasticsearch/elasticsearch|Patch-Elasticsearch-bulk-errors.patch|[#23618](https://github.com/elastic/elasticsearch-php/issues/1123)|
 paypal/module-braintree-core|Patch-Paypal-braintree-2.4.5-admin-report.patch|Fix Braintree bug in Admin reports|
 magento/module-rule|Patch-Magento_Rule-product-load-performance-issue.patch|Fix performance issue with tens product loads for each item in the cart|
+magento/theme-adminhtml-backend|Patch-Magento_ThemeAdminhtmlBackend-M2.4.7-disabled-category-greyed.patch|Fix: Disabled Categories are no longer have their names grayed https://github.com/magento/magento2/issues/39357 | >=2.4.7-p3 < 2.4.8
 
 
 **3th party modules:**
@@ -329,6 +332,7 @@ Full composer.json example:
                 "Remove verbose logs": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Magento_Framework-verbose-logs.patch",
                 "Fix indexing performance m2.4.5": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4-indexers-performance-issue.patch",
                 "Fix indexing performance m2.4.7": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4.7-indexers-performance-issue.patch",
+                "Fix GIF images for product by Gd2 adapter (<= m2.4.6-p9) https://github.com/magento/magento2/pull/37319": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Framework-Image_M2.4.6-gd2-gif-images-for-product.patch",
                 "Fix since upgrade to ICU 74.1 https://github.com/magento/magento2/issues/38214": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4.x-upgrade-ICU-74.1-calendar-fix.patch"
             },
             "magento/magento2-base": {
@@ -377,7 +381,8 @@ Full composer.json example:
                 "Allow to use invalid Flat Indexer": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.1-flat-availability.patch",
                 "Catalog Category Flat chunk limit": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.3-category-flat-chunk-limit.patch",
                 "Fix: Category Image Upload": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.3-fix-category-image-upload.patch",
-                "Fix: Use Indentifer field for Website processor": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.4.2-website-select-processor-fix.patch"
+                "Fix: Use Indentifer field for Website processor": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.4.2-website-select-processor-fix.patch",
+                "Fix: Disabled Categories are no longer have their names grayed https://github.com/magento/magento2/issues/39357": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Catalog-M2.4.7-disabled-category-greyed.patch"
             },
             "magento/module-catalog-graph-ql": {
                "Fix: https://github.com/magento/magento2/issues/30775": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CatalogGraphQl-aggregations-sorting-fix.patch",
@@ -592,6 +597,9 @@ Full composer.json example:
             },
             "magento/module-price-permissions": {
                 "Fix Price Permissions module requires Tabs in adminhtml": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Price_Permissions_2.4.5.patch"
+            },
+            "magento/theme-adminhtml-backend": {
+                "Fix: Disabled Categories are no longer have their names grayed https://github.com/magento/magento2/issues/39357": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_ThemeAdminhtmlBackend-M2.4.7-disabled-category-greyed.patch"
             },
             "anowave/ec": {
                 "Fix Anowave/ec bug in Admin reports": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Anowave-ec-102-fix-bug-in-admin.patch"
