@@ -1,0 +1,11 @@
+--- Model/Calculator/GiftWrap.php	2024-04-25 09:27:54.000000000 +0000
++++ Model/Calculator/GiftWrap.php	2024-11-11 09:43:26.667346034 +0000
+@@ -133,7 +133,7 @@
+             return 0;
+         }
+         if ($itemToProcess['tax_percent'] > 0) {
+-            return $itemToProcess['tax_percent'];
++            return (float)$itemToProcess['tax_percent'];
+         }
+         if ($itemToProcess['gift_wrap_base_tax_amount'] === 0) {
+             return 0;
