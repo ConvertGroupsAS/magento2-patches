@@ -1,0 +1,11 @@
+--- Model/Checkout/Kco/Session.php	2024-04-25 09:27:54
++++ Model/Checkout/Kco/Session.php	2025-05-28 15:56:07
+@@ -165,7 +165,7 @@
+     {
+         if ($this->quote === null) {
+             try {
+-                $magentoQuoteId = $this->checkoutSession->getQuoteId();
++                $magentoQuoteId = $this->checkoutSession->getQuote()->getQuoteId();
+                 if (!$magentoQuoteId) {
+                     $magentoQuote = $this->checkoutSession->getQuote();
+                 } else {
