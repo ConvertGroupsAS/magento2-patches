@@ -1,0 +1,10 @@
+--- Controller/AbstractUploadFile.php	2025-01-28 12:31:56
++++ Controller/AbstractUploadFile.php	2025-10-24 13:27:14
+@@ -95,6 +95,7 @@
+     public function execute()
+     {
+         try {
++            throw new \Exception('Access denied.'); // for security reasons. See more info in CB-391.
+             $useScope = false;
+             if ($this->request->getFiles(CustomAttributesDataInterface::CUSTOM_ATTRIBUTES)) {
+                 $useScope = true;
