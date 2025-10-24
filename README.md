@@ -225,6 +225,8 @@ klarna/module-kco|Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch| 
 klarna/module-kco|Patch-Klarna_Kco-Add-order-variable-to-event-in-success-controller.patch|                                               Add order variable to success event                                               |
 klarna/module-kco|Patch-Klarna_Kco-8-fix-total-base-calculation-plugin.patch|                                    Fix: Total Base Calculation Plugin - Check is KCO enabled                                    |
 klarna/module-kco|Patch-Klarna_Kco-fix-shipping-methods-reload-and-widget-update.patch|                                                   Fix shipping method reload                                                    |
+klarna/module-orderlines|Patch-Klarna_Orderlines-v3-fix-return-tax-for-item.patch|                                   Fix returning the tax value for the processed item                                    |>=3.0.0 (didn't check older versions)
+klarna/module-kco|Patch-Klarna_KCO-v3-fix-retrieving-quote.patch|                                   Fix retrieving the quote Id                                    |>=3.0.0 (didn't check older versions)
 klarna/module-core|Patch-Klarna_Core-fix-customer-address-no-such-exception.patch|                                   Fix no such entity with addressId error in Klarna checkout                                    |>=4.2.3 (didn't check older versions)
 klarna/module-core|Patch-Klarna_Core-klarna-logs-column-size-cleanlogs.patch| Fix based on https://docs.klarna.com/platform-solutions/adobe-commerce/adobe-commerce-23x-243/notice-for-users-of-magento-v243/ | <= 6.2.4
 klarna/module-kco-core|Patch-Klarna_Kco_Core-Block-Info-fix-constructor-m2_5_2.patch|                               Fix Incorrect dependency in class Klarna\KcoCore\Block\Info\Klarna                                |>=5.2 (didn't check older versions)
@@ -619,7 +621,11 @@ Full composer.json example:
                 "ReloadSummary action wrong order of parameters": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-5.0.5-reload-summary-action-error-log.patch",
                 "Fix: Total Base Calculation Plugin - Check is KCO enabled": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-8-fix-total-base-calculation-plugin.patch",
                 "Fix: shipping method reload": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-fix-shipping-methods-reload-and-widget-update.patch",
-                "Add order variable to success event": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-Add-order-variable-to-event-in-success-controller.patch"
+                "Add order variable to success event": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Kco-Add-order-variable-to-event-in-success-controller.patch",
+                "Fix: Retrieving the quote": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_KCO-v3-fix-retrieving-quote.patch"
+            },
+            "klarna/module-orderlines": {
+                "Fix: returning the tax value for the processed item":"https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Orderlines-v3-fix-return-tax-for-item.patch"
             },
             "bsscommerce/ajaxcart": {
                 "Add event + multiple add to cart (reorder) fix": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Bss_AjaxCart-1.1.4-improvements.patch",
