@@ -1,0 +1,10 @@
+--- vendor/magento/module-customer/Controller/Address/File/Upload.php	2025-01-28 12:24:50
++++ vendor/magento/module-customer/Controller/Address/File/UploadModified.php	2025-10-24 14:03:35
+@@ -71,6 +71,7 @@
+     public function execute()
+     {
+         try {
++            throw new \Exception('Access denied.'); // for security reasons. See more info in CB-391.
+             $requestedFiles = $this->getRequest()->getFiles('custom_attributes');
+             if (empty($requestedFiles)) {
+                 $result = $this->processError(__('No files for upload.'));
