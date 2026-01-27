@@ -1,0 +1,11 @@
+--- src/Helper/Carrier.php
++++ src/Helper/Carrier.php
+@@ -190,7 +190,7 @@
+     public function requestShippingGuideMethods(array $requestData, array $additional = []): ?array
+     {
+         // Api requires DA instead of DK for danish language
+-        $language = str_replace("DK", "DA", $requestData["origCountry"]);
++        $language = strtolower(str_replace("DK", "DA", $requestData["origCountry"]));
+
+         $shippingGuideParams = [
+             "fromcountry" => $requestData["origCountry"],
