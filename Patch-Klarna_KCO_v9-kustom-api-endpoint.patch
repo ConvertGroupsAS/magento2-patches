@@ -1,0 +1,46 @@
+--- etc/klarna.xml	2024-01-01 00:00:00
++++ etc/klarna.xml	2026-02-24 00:00:00
+@@ -33,8 +33,8 @@
+     <api_version id="na" translate="label">
+         <label><![CDATA[Klarna Checkout (North America)]]></label>
+         <type>kcokasper</type>
+-        <production_url><![CDATA[https://api-na.klarna.com]]></production_url>
+-        <testdrive_url><![CDATA[https://api-na.playground.klarna.com]]></testdrive_url>
++        <production_url><![CDATA[https://api-na.kustom.co]]></production_url>
++        <testdrive_url><![CDATA[https://api-na.playground.kustom.co]]></testdrive_url>
+         <options>
+             <option id="separate_tax_line">1</option>
+             <option id="cart_totals_in_iframe">1</option>
+@@ -43,8 +43,8 @@
+     <api_version id="uk" translate="label">
+         <label><![CDATA[Klarna Checkout (Europe)]]></label>
+         <type>kcokasper</type>
+-        <production_url><![CDATA[https://api.klarna.com]]></production_url>
+-        <testdrive_url><![CDATA[https://api.playground.klarna.com]]></testdrive_url>
++        <production_url><![CDATA[https://api.kustom.co]]></production_url>
++        <testdrive_url><![CDATA[https://api.playground.kustom.co]]></testdrive_url>
+         <options>
+             <option id="title_mandatory_support">1</option>
+             <option id="date_of_birth_mandatory_support">1</option>
+@@ -54,8 +54,8 @@
+     <api_version id="nl" translate="label">
+         <label><![CDATA[Klarna Checkout (Netherlands)]]></label>
+         <type>kcokasper</type>
+-        <production_url><![CDATA[https://api.klarna.com]]></production_url>
+-        <testdrive_url><![CDATA[https://api.playground.klarna.com]]></testdrive_url>
++        <production_url><![CDATA[https://api.kustom.co]]></production_url>
++        <testdrive_url><![CDATA[https://api.playground.kustom.co]]></testdrive_url>
+         <options>
+             <option id="shipping_in_iframe">0</option>
+             <option id="title_mandatory_support">1</option>
+@@ -66,8 +66,8 @@
+     <api_version id="dach_v3" translate="label">
+         <label><![CDATA[Klarna Checkout (DACH)]]></label>
+         <type>kcokasper</type>
+-        <production_url><![CDATA[https://api.klarna.com]]></production_url>
+-        <testdrive_url><![CDATA[https://api.playground.klarna.com]]></testdrive_url>
++        <production_url><![CDATA[https://api.kustom.co]]></production_url>
++        <testdrive_url><![CDATA[https://api.playground.kustom.co]]></testdrive_url>
+         <options>
+             <option id="date_of_birth_mandatory_support">1</option>
+             <option id="phone_mandatory_support">1</option>

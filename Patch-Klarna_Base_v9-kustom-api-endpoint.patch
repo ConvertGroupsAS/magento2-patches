@@ -1,0 +1,16 @@
+--- Config/ApiVersion.php	2024-01-01 00:00:00
++++ Config/ApiVersion.php	2026-02-24 00:00:00
+@@ -61,11 +61,11 @@
+     /**
+      * @var string
+      */
+-    private $production_url = 'https://api.klarna.com';
++    private $production_url = 'https://api.kustom.co';
+     /**
+      * @var string
+      */
+-    private $testdrive_url = 'https://api.playground.klarna.com';
++    private $testdrive_url = 'https://api.playground.kustom.co';
+     /**
+      * @var bool
+      */

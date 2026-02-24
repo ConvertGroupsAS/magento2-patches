@@ -1,0 +1,30 @@
+--- etc/klarna.xml	2024-01-01 00:00:00
++++ etc/klarna.xml	2026-02-24 00:00:00
+@@ -21,21 +21,21 @@
+     <api_version id="kp_na" translate="label">
+         <label><![CDATA[Klarna Payments (North America)]]></label>
+         <type>payments</type>
+-        <production_url><![CDATA[https://api-na.klarna.com]]></production_url>
+-        <testdrive_url><![CDATA[https://api-na.playground.klarna.com]]></testdrive_url>
++        <production_url><![CDATA[https://api-na.kustom.co]]></production_url>
++        <testdrive_url><![CDATA[https://api-na.playground.kustom.co]]></testdrive_url>
+         <options>
+             <option id="separate_tax_line">1</option>
+         </options>
+     </api_version>
+     <api_version id="kp_eu" translate="label">
+         <label><![CDATA[Klarna Payments (Europe)]]></label>
+         <type>payments</type>
+-        <production_url><![CDATA[https://api.klarna.com]]></production_url>
+-        <testdrive_url><![CDATA[https://api.playground.klarna.com]]></testdrive_url>
++        <production_url><![CDATA[https://api.kustom.co]]></production_url>
++        <testdrive_url><![CDATA[https://api.playground.kustom.co]]></testdrive_url>
+     </api_version>
+     <api_version id="kp_oc" translate="label">
+         <label><![CDATA[Klarna Payments (Oceania)]]></label>
+         <type>payments</type>
+-        <production_url><![CDATA[https://api-oc.klarna.com]]></production_url>
+-        <testdrive_url><![CDATA[https://api-oc.playground.klarna.com/]]></testdrive_url>
++        <production_url><![CDATA[https://api-oc.kustom.co]]></production_url>
++        <testdrive_url><![CDATA[https://api-oc.playground.kustom.co/]]></testdrive_url>
+     </api_version>

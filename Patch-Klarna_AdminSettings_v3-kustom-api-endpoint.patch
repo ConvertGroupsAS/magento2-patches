@@ -1,0 +1,9 @@
+--- Model/Configurations/Api.php	2024-01-01 00:00:00
++++ Model/Configurations/Api.php	2026-02-24 00:00:00
+@@ -202,5 +202,5 @@
+
+         $mode = $this->isTestMode($store, $currency) ? '.playground' : '';
+
+-        return 'https://api' . $endpoint . $mode . '.klarna.com';
++        return 'https://api' . $endpoint . $mode . '.kustom.co';
+     }
