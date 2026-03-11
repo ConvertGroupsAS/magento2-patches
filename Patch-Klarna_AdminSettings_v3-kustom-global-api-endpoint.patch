@@ -1,0 +1,10 @@
+--- Model/Configurations/Api.php.orig
++++ Model/Configurations/Api.php
+@@ -257,6 +257,6 @@
+             $baseUrl .= 'test.';
+         }
+
+-        return $baseUrl . 'klarna.com/';
++        return $baseUrl . 'kustom.co/';
+     }
+ }
