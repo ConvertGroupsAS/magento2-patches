@@ -1,0 +1,15 @@
+diff --git a/Model/Authentication/Api/Url.php b/Model/Authentication/Api/Url.php
+--- a/Model/Authentication/Api/Url.php
++++ b/Model/Authentication/Api/Url.php
+@@ -24,9 +24,9 @@
+     public function getTargetUrl(string $environment): string
+     {
+         if ($environment === 'production') {
+-            return 'https://login.klarna.com/';
++            return 'https://login.kustom.co/';
+         }
+
+-        return 'https://login.playground.klarna.com/';
++        return 'https://login.playground.kustom.co/';
+     }
+ }
