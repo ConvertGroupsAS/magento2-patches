@@ -1,6 +1,6 @@
---- a/Api/ImageProcessor.php	2026-03-30 16:42:04
-+++ b/Api/ImageProcessor.php	2026-03-30 16:42:54
-@@ -19,6 +19,11 @@
+--- a/Api/ImageProcessor.php	2026-03-30 16:47:31
++++ b/Api/ImageProcessor.php	2026-03-30 16:47:44
+@@ -18,6 +18,11 @@
  class ImageProcessor implements ImageProcessorInterface
  {
      /**
@@ -9,10 +9,10 @@
 +    private const ALLOWED_EXTENSIONS = ['jpg', 'jpeg', 'gif', 'png'];
 +
 +    /**
-      * MIME type/extension map
-      *
       * @var array
-@@ -155,6 +160,7 @@
+      */
+     protected $mimeTypeExtensionMap = [
+@@ -154,6 +159,7 @@
  
          try {
              $this->uploader->processFileAttributes($fileAttributes);
