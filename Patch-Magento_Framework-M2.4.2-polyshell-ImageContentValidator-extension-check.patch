@@ -1,0 +1,62 @@
+--- a/Api/ImageContentValidator.php
++++ b/Api/ImageContentValidator.php
+@@ -8,6 +8,7 @@
+
+ use Magento\Framework\Api\Data\ImageContentInterface;
+ use Magento\Framework\Exception\InputException;
++use Magento\Framework\Filesystem\Io\File as IoFile;
+ use Magento\Framework\Phrase;
+
+ /**
+@@ -16,6 +17,16 @@
+ class ImageContentValidator implements ImageContentValidatorInterface
+ {
+     /**
++     * Allowed image file extensions (polyshell mitigation APSB25-94)
++     */
++    private const ALLOWED_EXTENSIONS = ['jpg', 'jpeg', 'gif', 'png'];
++
++    /**
++     * @var IoFile
++     */
++    private $ioFile;
++
++    /**
+      * @var array
+      */
+     private $defaultMimeTypes = [
+@@ -32,11 +43,15 @@
+
+     /**
+      * @param array $allowedMimeTypes
++     * @param IoFile|null $ioFile
+      */
+     public function __construct(
+-        array $allowedMimeTypes = []
++        array $allowedMimeTypes = [],
++        ?IoFile $ioFile = null
+     ) {
+         $this->allowedMimeTypes = array_merge($this->defaultMimeTypes, $allowedMimeTypes);
++        $this->ioFile = $ioFile ?? \Magento\Framework\App\ObjectManager::getInstance()
++            ->get(IoFile::class);
+     }
+
+     /**
+@@ -63,6 +78,17 @@
+         if (!$this->isNameValid($imageContent->getName())) {
+             throw new InputException(new Phrase('Provided image name contains forbidden characters.'));
+         }
++
++        // Polyshell mitigation (APSB25-94): reject non-image file extensions
++        $fileName = $imageContent->getName();
++        $pathInfo = $this->ioFile->getPathInfo($fileName);
++        $extension = strtolower($pathInfo['extension'] ?? '');
++        if ($extension && !in_array($extension, self::ALLOWED_EXTENSIONS, true)) {
++            throw new InputException(
++                new Phrase('The image file extension "%1" is not allowed.', [$extension])
++            );
++        }
++
+         return true;
+     }
+

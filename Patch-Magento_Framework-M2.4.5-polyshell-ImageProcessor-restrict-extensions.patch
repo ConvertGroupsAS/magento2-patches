@@ -1,0 +1,22 @@
+--- a/Api/ImageProcessor.php	2026-03-30 16:42:04
++++ b/Api/ImageProcessor.php	2026-03-30 16:42:54
+@@ -19,6 +19,11 @@
+ class ImageProcessor implements ImageProcessorInterface
+ {
+     /**
++     * Allowed image file extensions (polyshell mitigation APSB25-94)
++     */
++    private const ALLOWED_EXTENSIONS = ['jpg', 'jpeg', 'gif', 'png'];
++
++    /**
+      * MIME type/extension map
+      *
+      * @var array
+@@ -155,6 +160,7 @@
+ 
+         try {
+             $this->uploader->processFileAttributes($fileAttributes);
++            $this->uploader->setAllowedExtensions(self::ALLOWED_EXTENSIONS);
+             $this->uploader->setFilesDispersion(true);
+             $this->uploader->setFilenamesCaseSensitivity(false);
+             $this->uploader->setAllowRenameFiles(true);
