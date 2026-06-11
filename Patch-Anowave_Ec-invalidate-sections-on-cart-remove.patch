@@ -1,0 +1,27 @@
+--- view/frontend/web/js/ec.js
++++ view/frontend/web/js/ec.js
+@@ -697,6 +697,16 @@
+ 								 */
+ 								(params => 
+ 								{
++									require([
++										'Magento_Customer/js/customer-data',
++										'Magento_Customer/js/section-config'
++									], function (customerData, sectionConfig) {
++										var sections = sectionConfig.getAffectedSections(params.action);
++
++										if (sections && sections.length) {
++											customerData.invalidate(sections);
++										}
++
+ 									let form = document.createElement("form");
+ 									
+ 					                form.setAttribute('method', 'post');
+@@ -723,6 +733,7 @@
+ 					                document.querySelector("body").appendChild(form);
+ 					                
+ 					                form.submit();
++									});
+ 									
+ 								})(AEC.parseJSON(element.dataset.postAction));
+ 				            },

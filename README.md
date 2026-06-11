@@ -214,6 +214,7 @@ amasty/shopby-root|Patch-Amasty_ShopbyRoot-2.5.3-fix-broken-filters.patch|      
 amasty/shopby-seo|Patch-Amasty-ShopbySeo-2.4.6-set-category-sort.patch|                                               Add sorting from category settings                                                | \>=2.4.6 (didn't check older versions) <2.5.0
 amasty/label|Patch-Amasty_Label-compatibility-with-M2.3.patch|                                                   Fix: require jQuery widget                                                    |
 anowave/ec|Patch-Anowave-ec-102-fix-bug-in-admin.patch|                                               Fix Anowave/ec bug in Admin reports                                               |
+anowave/ec|Patch-Anowave_Ec-invalidate-sections-on-cart-remove.patch|                                               Fix Anowave/ec wrong override on the form submition on the products delete in cart                                               |
 bsscommerce/ajaxcart|Patch-Bss_AjaxCart-1.1.4-improvements.patch|                                                                                                                                 | \=1.1.4
 bsscommerce/ajaxcart|Patch-Bss_AjaxCart-add-productIds-to-response.patch|                                                      Fix GTM compatibility                                                      |
 colinmollenhour/cache-backend-redis|Patch-Cm_Cache_Backend_Redis-1.10.6-remove-by-chunks.patch|                                   Fixed removal of large amount of keys by dividing to chunks                                   | 1.10.6
@@ -604,7 +605,8 @@ Full composer.json example:
                 "Fix: Disabled Categories are no longer have their names grayed https://github.com/magento/magento2/issues/39357": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_ThemeAdminhtmlBackend-M2.4.7-disabled-category-greyed.patch"
             },
             "anowave/ec": {
-                "Fix Anowave/ec bug in Admin reports": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Anowave-ec-102-fix-bug-in-admin.patch"
+                "Fix Anowave/ec bug in Admin reports": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Anowave-ec-102-fix-bug-in-admin.patch",
+                "Fix Anowave/ec wrong override on form submit causing not invalidating of the customer data sections": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Anowave_Ec-invalidate-sections-on-cart-remove.patch"
             },
             "klarna/module-core": {
                 "Fix no such entity with addressId error in Klarna checkout": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Klarna_Core-fix-customer-address-no-such-exception.patch",
