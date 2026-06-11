@@ -21,7 +21,7 @@
     },
     "anowave/ec": {
         "Fix: Invalidate customer-data sections on cart item remove (native form.submit() bypasses section invalidation)": {
-           "file": "patches/Patch-Anowave_Ec-invalidate-sections-on-cart-remove.patch",
+           "file": "Patch-Anowave_Ec-invalidate-sections-on-cart-remove.patch",
            "version": "*"
         }
     },
