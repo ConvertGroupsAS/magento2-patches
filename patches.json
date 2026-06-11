@@ -19,6 +19,12 @@
             "version": "*"
         }
     },
+    "anowave/ec": {
+        "Fix: Invalidate customer-data sections on cart item remove (native form.submit() bypasses section invalidation)": {
+           "file": "patches/Patch-Anowave_Ec-invalidate-sections-on-cart-remove.patch",
+           "version": "*"
+        }
+    },
     "amasty/module-shop-by-brand": {
          "Fix error when option was removed from attribute": {
             "file": "Patch-Amasty_ShopbyBrand-2.6.x-missing-option-error-fix.patch",
