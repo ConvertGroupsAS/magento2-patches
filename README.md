@@ -22,6 +22,12 @@ magento/magento2-base|Patch-Magento_Base-M2.3-remove-php-memory-limit.patch| |>=
 magento/magento2-base|Patch-Magento_Base-test-graphql-application.patch|Running GraphQl API functional tests|
 magento/magento2-base|Patch-Magento_Base-deploy-test-modules.patch|Deploy test modules - Convert|
 magento/magento2-base|Patch-Magento_Base_2.4.5_jquery_cookies_issue.patch|Fix magento theme jquery cookie issue|
+magento/magento2-base|VULN-39341-2-4-4-p18-magento-magento2-base.patch|VULN-39341 security fix|2.4.4-p18
+magento/magento2-base|VULN-39341-2-4-5-p17-magento-magento2-base.patch|VULN-39341 security fix|2.4.5-p17
+magento/magento2-base|VULN-39341-2-4-6-p15-magento-magento2-base.patch|VULN-39341 security fix|2.4.6-p15
+magento/magento2-base|VULN-39341-2-4-7-p10-magento-magento2-base.patch|VULN-39341 security fix|2.4.7-p10
+magento/magento2-base|VULN-39341-2-4-8-p5-magento-magento2-base.patch|VULN-39341 security fix|2.4.8-p5
+magento/magento2-base|VULN-39341-2-4-9-magento-magento2-base.patch|VULN-39341 security fix|2.4.9
 magento/framework|Patch-Magento_Framework-M2.4-indexers-performance-issue|Fix indexing performance issue | 2.4.5
 magento/framework|Patch-Magento_Framework-M2.4.7-indexers-performance-issue|Fix indexing performance issue | 2.4.7
 magento/framework|Patch-Magento_Framework-M2.4.x-upgrade-ICU-74.1-calendar-fix.patch|Fix since upgrade to ICU 74.1 https://github.com/magento/magento2/issues/38214 | >=2.4.7 < 2.4.8
@@ -43,6 +49,12 @@ magento/framework|Patch-Magento\_Patch-Magento_framework-M2.3.3-M2.4.3-security|
 magento/framework|Patch-Magento\_Patch-Magento_framework-M2.3.4-p1-M2.4.2-p1-security|(https://helpx.adobe.com/security/products/magento/apsb22-12.html)|>= 2.3.4-p1 <=2.4.2-p1
 magento/framework|Patch-Magento\_Patch-Magento_framework-M2.4.3-p1-security|(https://helpx.adobe.com/security/products/magento/apsb22-12.html)|>= 2.4.3-p1
 magento/framework|Magento_Framework-verbose-logs.patch|Remove verbose logs|
+magento/framework|VULN-39341-2-4-4-p18-magento-framework.patch|VULN-39341 security fix|2.4.4-p18
+magento/framework|VULN-39341-2-4-5-p17-magento-framework.patch|VULN-39341 security fix|2.4.5-p17
+magento/framework|VULN-39341-2-4-6-p15-magento-framework.patch|VULN-39341 security fix|2.4.6-p15
+magento/framework|VULN-39341-2-4-7-p10-magento-framework.patch|VULN-39341 security fix|2.4.7-p10
+magento/framework|VULN-39341-2-4-8-p5-magento-framework.patch|VULN-39341 security fix|2.4.8-p5
+magento/framework|VULN-39341-2-4-9-magento-framework.patch|VULN-39341 security fix|2.4.9
 magento/framework-message-queue|Patch-Message-Queue-Consumer-Transaction.patch| |EE Only < 2.2.0
 magento/module-cms-url-rewrite|Patch-M2.2-Magento\_CmsUrlRewrite-global-rewrite-delete.patch|[PR #14751](https://github.com/magento/magento2/pull/14751)|>= 2.2.0 < 2.2.5
 magento/module-cron|Patch-Magento\_Cron-M2.1.4-cron-generate-schedule.patch|[#4173](https://github.com/magento/magento2/issues/4173)|all as of 2.1.7 < 2.2.0
@@ -57,6 +69,12 @@ magento/module-email|Patch-Magento\_Patch-Magento_email-M2.3.3-M2.4.3-security| 
 magento/module-email|Patch-Magento\_Patch-Magento_email-M2.3.3-p1-M2.3.4-p1-security| (https://helpx.adobe.com/security/products/magento/apsb22-12.html) |>= 2.3.3-p1 <= 2.3.4-p1
 magento/module-email|Patch-Magento\_Patch-Magento_email-M2.3.4-p2-M2.4.2-p1-security| (https://helpx.adobe.com/security/products/magento/apsb22-12.html) |>= 2.3.4-p2 <= 2.4.2-p1
 magento/module-email|Patch-Magento\_Patch-Magento_email-M2.4.3-p1-M2.4.3-security| (https://helpx.adobe.com/security/products/magento/apsb22-12.html) |>= 2.4.3-p1
+magento/module-email|VULN-39341-2-4-4-p18-magento-module-email.patch|VULN-39341 security fix|2.4.4-p18
+magento/module-email|VULN-39341-2-4-5-p17-magento-module-email.patch|VULN-39341 security fix|2.4.5-p17
+magento/module-email|VULN-39341-2-4-6-p15-magento-module-email.patch|VULN-39341 security fix|2.4.6-p15
+magento/module-email|VULN-39341-2-4-7-p10-magento-module-email.patch|VULN-39341 security fix|2.4.7-p10
+magento/module-email|VULN-39341-2-4-8-p5-magento-module-email.patch|VULN-39341 security fix|2.4.8-p5
+magento/module-email|VULN-39341-2-4-9-magento-module-email.patch|VULN-39341 security fix|2.4.9
 magento/module-elasticsearch|Patch-Magento_Elasticsearch-M2.2-total-fields-limit-10000.patch|Increase default fields limit|>= 2.2.0
 magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.x-Send-Error-Message.patch| |>= 2.3.0
 magento/module-elasticsearch|Patch-Magento\_Elasticsearch-M2.3.0-M2.3.1-prices-pass-website-id.patch| |>= 2.3.0 <= 2.3.1
@@ -174,6 +192,18 @@ magento/module-sitemap|Patch-Magento_Sitemap-M2.2.x-fix-sitemap-links.patch|[#19
 magento/module-backend|Patch-Magento_Backend-M2.4.3-authentication|"Invalid security or form key. Please refresh the page." message|2.4.3
 magento/module-backend|Patch-Magento_Backend-M2.3-menu-log-level.patch|Menu Log Level - Debug|
 magento/module-backend|Magento_Backend-verbose-logs.patch|Menu Log Level - Debug|
+magento/module-backend|VULN-39341-2-4-4-p18-magento-module-backend.patch|VULN-39341 security fix|2.4.4-p18
+magento/module-backend|VULN-39341-2-4-5-p17-magento-module-backend.patch|VULN-39341 security fix|2.4.5-p17
+magento/module-backend|VULN-39341-2-4-6-p15-magento-module-backend.patch|VULN-39341 security fix|2.4.6-p15
+magento/module-backend|VULN-39341-2-4-7-p10-magento-module-backend.patch|VULN-39341 security fix|2.4.7-p10
+magento/module-backend|VULN-39341-2-4-8-p5-magento-module-backend.patch|VULN-39341 security fix|2.4.8-p5
+magento/module-backend|VULN-39341-2-4-9-magento-module-backend.patch|VULN-39341 security fix|2.4.9
+magento/module-newsletter|VULN-39341-2-4-4-p18-magento-module-newsletter.patch|VULN-39341 security fix|2.4.4-p18
+magento/module-newsletter|VULN-39341-2-4-5-p17-magento-module-newsletter.patch|VULN-39341 security fix|2.4.5-p17
+magento/module-newsletter|VULN-39341-2-4-6-p15-magento-module-newsletter.patch|VULN-39341 security fix|2.4.6-p15
+magento/module-newsletter|VULN-39341-2-4-7-p10-magento-module-newsletter.patch|VULN-39341 security fix|2.4.7-p10
+magento/module-newsletter|VULN-39341-2-4-8-p5-magento-module-newsletter.patch|VULN-39341 security fix|2.4.8-p5
+magento/module-newsletter|VULN-39341-2-4-9-magento-module-newsletter.patch|VULN-39341 security fix|2.4.9
 magento/module-related-product-graph-ql|Patch-Magento_RelatedProductGraphQl-M2.4.x-missed-sorting-by-position-fix.patch|[#33010](https://github.com/magento/magento2/issues/33010)|>2.4.0
 magento/module-price-permissions|Patch-Magento_Price_Permissions_2.4.5.patch|Fix Price Permissions module requires Tabs in adminhtml|
 magento/module-quote|Patch-Magento_Quote-M2.4.x-invalid-customer-address-id-fix.patch|[#1123](https://github.com/magento/magento2/issues/23618)|>2.4.0
@@ -336,7 +366,13 @@ Full composer.json example:
                 "Fix indexing performance m2.4.5": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4-indexers-performance-issue.patch",
                 "Fix indexing performance m2.4.7": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4.7-indexers-performance-issue.patch",
                 "Fix GIF images for product by Gd2 adapter (<= m2.4.6-p9) https://github.com/magento/magento2/pull/37319": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-Framework-Image_M2.4.6-gd2-gif-images-for-product.patch",
-                "Fix since upgrade to ICU 74.1 https://github.com/magento/magento2/issues/38214": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4.x-upgrade-ICU-74.1-calendar-fix.patch"
+                "Fix since upgrade to ICU 74.1 https://github.com/magento/magento2/issues/38214": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Framework-M2.4.x-upgrade-ICU-74.1-calendar-fix.patch",
+                "VULN-39341 security fix for Magento 2.4.4-p18": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-4-p18-magento-framework.patch",
+                "VULN-39341 security fix for Magento 2.4.5-p17": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-5-p17-magento-framework.patch",
+                "VULN-39341 security fix for Magento 2.4.6-p15": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-6-p15-magento-framework.patch",
+                "VULN-39341 security fix for Magento 2.4.7-p10": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-7-p10-magento-framework.patch",
+                "VULN-39341 security fix for Magento 2.4.8-p5": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-8-p5-magento-framework.patch",
+                "VULN-39341 security fix for Magento 2.4.9": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-9-magento-framework.patch"
             },
             "magento/magento2-base": {
                 "Fix MAGE_DIRS for CLI": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-cli.patch",
@@ -356,7 +392,13 @@ Full composer.json example:
                 "Running GraphQl API functional tests": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-test-graphql-application.patch",
                 "Deploy test modules - Convert": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base-deploy-test-modules.patch",
                 "Fix magento theme jquery cookie issue": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base_2.4.5_jquery_cookies_issue.patch",
-                "Fix https://github.com/magento/magento2/issues/37232 fotorama slider issue in magento 2.4.6": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base_2.4.6.fotorama.patch"
+                "Fix https://github.com/magento/magento2/issues/37232 fotorama slider issue in magento 2.4.6": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Base_2.4.6.fotorama.patch",
+                "VULN-39341 security fix for Magento 2.4.4-p18": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-4-p18-magento-magento2-base.patch",
+                "VULN-39341 security fix for Magento 2.4.5-p17": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-5-p17-magento-magento2-base.patch",
+                "VULN-39341 security fix for Magento 2.4.6-p15": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-6-p15-magento-magento2-base.patch",
+                "VULN-39341 security fix for Magento 2.4.7-p10": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-7-p10-magento-magento2-base.patch",
+                "VULN-39341 security fix for Magento 2.4.8-p5": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-8-p5-magento-magento2-base.patch",
+                "VULN-39341 security fix for Magento 2.4.9": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-9-magento-magento2-base.patch"
             },
             "magento/module-cache-invalidate": {
                 "Log Varnish purge errors": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_CacheInvalidate.patch"
@@ -470,7 +512,13 @@ Full composer.json example:
                 "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_email-M2.3.3-M2.4.3-security-notactual.patch",
                 "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Module-email-M2.3.3-p1-M2.3.4-p1_APSB22-12-security.patch",
                 "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Module-email-M2.3.4-p2-M2.4.2-p1_APSB22-12-security.patch",
-                "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Module-email-M2.4.3-p1_APSB22-12-security.patch"
+                "Security: APSB22-12": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Module-email-M2.4.3-p1_APSB22-12-security.patch",
+                "VULN-39341 security fix for Magento 2.4.4-p18": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-4-p18-magento-module-email.patch",
+                "VULN-39341 security fix for Magento 2.4.5-p17": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-5-p17-magento-module-email.patch",
+                "VULN-39341 security fix for Magento 2.4.6-p15": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-6-p15-magento-module-email.patch",
+                "VULN-39341 security fix for Magento 2.4.7-p10": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-7-p10-magento-module-email.patch",
+                "VULN-39341 security fix for Magento 2.4.8-p5": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-8-p5-magento-module-email.patch",
+                "VULN-39341 security fix for Magento 2.4.9": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-9-magento-module-email.patch"
             },
             "magento/module-elasticsearch": {
                 "Ignore Elastic Search Error": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Elasticsearch-M2.3.x-Send-Error-Message.patch",
@@ -593,7 +641,21 @@ Full composer.json example:
             "magento/module-backend": {
                 "Menu Log Level - Debug": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Backend-M2.3-menu-log-level.patch",
                 "Fix: https://github.com/magento/magento2/issues/33749#issuecomment-908145941": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento_Backend-M2.4.3-authentication.patch",
-                "Remove verbose logs": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Magento_Backend-verbose-logs.patch"
+                "Remove verbose logs": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Magento_Backend-verbose-logs.patch",
+                "VULN-39341 security fix for Magento 2.4.4-p18": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-4-p18-magento-module-backend.patch",
+                "VULN-39341 security fix for Magento 2.4.5-p17": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-5-p17-magento-module-backend.patch",
+                "VULN-39341 security fix for Magento 2.4.6-p15": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-6-p15-magento-module-backend.patch",
+                "VULN-39341 security fix for Magento 2.4.7-p10": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-7-p10-magento-module-backend.patch",
+                "VULN-39341 security fix for Magento 2.4.8-p5": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-8-p5-magento-module-backend.patch",
+                "VULN-39341 security fix for Magento 2.4.9": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-9-magento-module-backend.patch"
+            },
+            "magento/module-newsletter": {
+                "VULN-39341 security fix for Magento 2.4.4-p18": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-4-p18-magento-module-newsletter.patch",
+                "VULN-39341 security fix for Magento 2.4.5-p17": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-5-p17-magento-module-newsletter.patch",
+                "VULN-39341 security fix for Magento 2.4.6-p15": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-6-p15-magento-module-newsletter.patch",
+                "VULN-39341 security fix for Magento 2.4.7-p10": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-7-p10-magento-module-newsletter.patch",
+                "VULN-39341 security fix for Magento 2.4.8-p5": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-8-p5-magento-module-newsletter.patch",
+                "VULN-39341 security fix for Magento 2.4.9": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/VULN-39341-2-4-9-magento-module-newsletter.patch"
             },
             "magento/module-multiple-wishlist": {
                 "Fix Magento wishlist bug in Admin reports": "https://raw.githubusercontent.com/ConvertGroupsAS/magento2-patches/master/Patch-Magento-multiple-wishlist-Not-existing-products.patch"
