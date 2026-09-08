@@ -99,6 +99,30 @@
         "Fix since upgrade to ICU 74.1 https://github.com/magento/magento2/issues/38214": {
             "file": "Patch-Magento_Framework-M2.4.x-upgrade-ICU-74.1-calendar-fix.patch",
             "version": "*"
+        },
+        "VULN-39341 security fix for Magento 2.4.4-p18": {
+            "file": "VULN-39341-2-4-4-p18-magento-framework.patch",
+            "version": "2.4.4-p18"
+        },
+        "VULN-39341 security fix for Magento 2.4.5-p17": {
+            "file": "VULN-39341-2-4-5-p17-magento-framework.patch",
+            "version": "2.4.5-p17"
+        },
+        "VULN-39341 security fix for Magento 2.4.6-p15": {
+            "file": "VULN-39341-2-4-6-p15-magento-framework.patch",
+            "version": "2.4.6-p15"
+        },
+        "VULN-39341 security fix for Magento 2.4.7-p10": {
+            "file": "VULN-39341-2-4-7-p10-magento-framework.patch",
+            "version": "2.4.7-p10"
+        },
+        "VULN-39341 security fix for Magento 2.4.8-p5": {
+            "file": "VULN-39341-2-4-8-p5-magento-framework.patch",
+            "version": "2.4.8-p5"
+        },
+        "VULN-39341 security fix for Magento 2.4.9": {
+            "file": "VULN-39341-2-4-9-magento-framework.patch",
+            "version": "2.4.9"
         }
     },
     "magento/magento2-base": {
@@ -158,6 +182,30 @@
         "Add null to return value for session and cookies": {
             "file": "Patch-Magento_Base-M2.3.x-tests-cookie-and-session-add-to-return-null-value.patch",
             "version": "*"
+        },
+        "VULN-39341 security fix for Magento 2.4.4-p18": {
+            "file": "VULN-39341-2-4-4-p18-magento-magento2-base.patch",
+            "version": "2.4.4-p18"
+        },
+        "VULN-39341 security fix for Magento 2.4.5-p17": {
+            "file": "VULN-39341-2-4-5-p17-magento-magento2-base.patch",
+            "version": "2.4.5-p17"
+        },
+        "VULN-39341 security fix for Magento 2.4.6-p15": {
+            "file": "VULN-39341-2-4-6-p15-magento-magento2-base.patch",
+            "version": "2.4.6-p15"
+        },
+        "VULN-39341 security fix for Magento 2.4.7-p10": {
+            "file": "VULN-39341-2-4-7-p10-magento-magento2-base.patch",
+            "version": "2.4.7-p10"
+        },
+        "VULN-39341 security fix for Magento 2.4.8-p5": {
+            "file": "VULN-39341-2-4-8-p5-magento-magento2-base.patch",
+            "version": "2.4.8-p5"
+        },
+        "VULN-39341 security fix for Magento 2.4.9": {
+            "file": "VULN-39341-2-4-9-magento-magento2-base.patch",
+            "version": "2.4.9"
         }
     },
     "magento/module-developer": {
@@ -368,6 +416,30 @@
         "Disable adding ?SID in email message urls": {
             "file": "Patch-Magento_Email-M2.2.8-2.3.2-No-Sid-In-Messages.patch",
             "version": "*"
+        },
+        "VULN-39341 security fix for Magento 2.4.4-p18": {
+            "file": "VULN-39341-2-4-4-p18-magento-module-email.patch",
+            "version": "2.4.4-p18"
+        },
+        "VULN-39341 security fix for Magento 2.4.5-p17": {
+            "file": "VULN-39341-2-4-5-p17-magento-module-email.patch",
+            "version": "2.4.5-p17"
+        },
+        "VULN-39341 security fix for Magento 2.4.6-p15": {
+            "file": "VULN-39341-2-4-6-p15-magento-module-email.patch",
+            "version": "2.4.6-p15"
+        },
+        "VULN-39341 security fix for Magento 2.4.7-p10": {
+            "file": "VULN-39341-2-4-7-p10-magento-module-email.patch",
+            "version": "2.4.7-p10"
+        },
+        "VULN-39341 security fix for Magento 2.4.8-p5": {
+            "file": "VULN-39341-2-4-8-p5-magento-module-email.patch",
+            "version": "2.4.8-p5"
+        },
+        "VULN-39341 security fix for Magento 2.4.9": {
+            "file": "VULN-39341-2-4-9-magento-module-email.patch",
+            "version": "2.4.9"
         }
     },
     "magento/module-elasticsearch": {
@@ -746,6 +818,58 @@
         "Fix: https://github.com/magento/magento2/issues/19565": {
             "file": "Patch-Magento_Sitemap-M2.2.x-fix-sitemap-links.patch",
             "version": "*"
+        }
+    },
+    "magento/module-backend": {
+        "VULN-39341 security fix for Magento 2.4.4-p18": {
+            "file": "VULN-39341-2-4-4-p18-magento-module-backend.patch",
+            "version": "2.4.4-p18"
+        },
+        "VULN-39341 security fix for Magento 2.4.5-p17": {
+            "file": "VULN-39341-2-4-5-p17-magento-module-backend.patch",
+            "version": "2.4.5-p17"
+        },
+        "VULN-39341 security fix for Magento 2.4.6-p15": {
+            "file": "VULN-39341-2-4-6-p15-magento-module-backend.patch",
+            "version": "2.4.6-p15"
+        },
+        "VULN-39341 security fix for Magento 2.4.7-p10": {
+            "file": "VULN-39341-2-4-7-p10-magento-module-backend.patch",
+            "version": "2.4.7-p10"
+        },
+        "VULN-39341 security fix for Magento 2.4.8-p5": {
+            "file": "VULN-39341-2-4-8-p5-magento-module-backend.patch",
+            "version": "2.4.8-p5"
+        },
+        "VULN-39341 security fix for Magento 2.4.9": {
+            "file": "VULN-39341-2-4-9-magento-module-backend.patch",
+            "version": "2.4.9"
+        }
+    },
+    "magento/module-newsletter": {
+        "VULN-39341 security fix for Magento 2.4.4-p18": {
+            "file": "VULN-39341-2-4-4-p18-magento-module-newsletter.patch",
+            "version": "2.4.4-p18"
+        },
+        "VULN-39341 security fix for Magento 2.4.5-p17": {
+            "file": "VULN-39341-2-4-5-p17-magento-module-newsletter.patch",
+            "version": "2.4.5-p17"
+        },
+        "VULN-39341 security fix for Magento 2.4.6-p15": {
+            "file": "VULN-39341-2-4-6-p15-magento-module-newsletter.patch",
+            "version": "2.4.6-p15"
+        },
+        "VULN-39341 security fix for Magento 2.4.7-p10": {
+            "file": "VULN-39341-2-4-7-p10-magento-module-newsletter.patch",
+            "version": "2.4.7-p10"
+        },
+        "VULN-39341 security fix for Magento 2.4.8-p5": {
+            "file": "VULN-39341-2-4-8-p5-magento-module-newsletter.patch",
+            "version": "2.4.8-p5"
+        },
+        "VULN-39341 security fix for Magento 2.4.9": {
+            "file": "VULN-39341-2-4-9-magento-module-newsletter.patch",
+            "version": "2.4.9"
         }
     },
     "vconnect/module-allinone": {

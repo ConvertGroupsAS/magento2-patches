@@ -1,0 +1,43 @@
+diff --git a/Block/Adminhtml/Queue/Preview.php b/Block/Adminhtml/Queue/Preview.php
+index 0af88dbb3ab90..84894e7d4fec8 100644
+--- a/Block/Adminhtml/Queue/Preview.php
++++ b/Block/Adminhtml/Queue/Preview.php
+@@ -13,6 +13,11 @@
+  */
+ class Preview extends \Magento\Newsletter\Block\Adminhtml\Template\Preview
+ {
++    /**
++     * @var string
++     */
++    protected const ADMIN_RESOURCE = 'Magento_Newsletter::queue';
++
+     /**
+      * @var string
+      */
+diff --git a/Block/Adminhtml/Template/Preview.php b/Block/Adminhtml/Template/Preview.php
+index 7d6c3b8a8e499..3838e24c6f223 100644
+--- a/Block/Adminhtml/Template/Preview.php
++++ b/Block/Adminhtml/Template/Preview.php
+@@ -24,6 +24,11 @@
+  */
+ class Preview extends Widget
+ {
++    /**
++     * @var string
++     */
++    protected const ADMIN_RESOURCE = 'Magento_Newsletter::template';
++
+     /**
+      * Name for profiler
+      *
+@@ -74,6 +79,10 @@ public function __construct(
+      */
+     protected function _toHtml()
+     {
++        if (!$this->_authorization->isAllowed(static::ADMIN_RESOURCE)) {
++            return '';
++        }
++
+         /* @var $template \Magento\Newsletter\Model\Template */
+         $template = $this->_templateFactory->create();
+ 
