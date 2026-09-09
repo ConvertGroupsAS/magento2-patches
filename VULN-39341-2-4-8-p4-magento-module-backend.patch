@@ -1,0 +1,19 @@
+diff --git a/Model/Widget/Grid/Row/UrlGeneratorFactory.php b/Model/Widget/Grid/Row/UrlGeneratorFactory.php
+index 93ba6284c7ac8..d273d19a633a3 100644
+--- a/Model/Widget/Grid/Row/UrlGeneratorFactory.php
++++ b/Model/Widget/Grid/Row/UrlGeneratorFactory.php
+@@ -36,11 +36,11 @@ public function __construct(\Magento\Framework\ObjectManagerInterface $objectMan
+      */
+     public function createUrlGenerator($generatorClassName, array $arguments = [])
+     {
+-        $rowUrlGenerator = $this->_objectManager->create($generatorClassName, $arguments);
+-        if (false === $rowUrlGenerator instanceof \Magento\Backend\Model\Widget\Grid\Row\GeneratorInterface) {
++        // Validate the type BEFORE instantiation.
++        if (!is_a($generatorClassName, \Magento\Backend\Model\Widget\Grid\Row\GeneratorInterface::class, true)) {
+             throw new \InvalidArgumentException('Passed wrong parameters');
+         }
+ 
+-        return $rowUrlGenerator;
++        return $this->_objectManager->create($generatorClassName, $arguments);
+     }
+ }

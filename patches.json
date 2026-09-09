@@ -123,6 +123,26 @@
         "VULN-39341 security fix for Magento 2.4.9": {
             "file": "VULN-39341-2-4-9-magento-framework.patch",
             "version": "2.4.9"
+        },
+        "VULN-39341 security fix for Magento 2.4.4-p17": {
+            "file": "VULN-39341-2-4-4-p17-magento-framework.patch",
+            "version": "2.4.4-p17"
+        },
+        "VULN-39341 security fix for Magento 2.4.5-p16": {
+            "file": "VULN-39341-2-4-5-p16-magento-framework.patch",
+            "version": "2.4.5-p16"
+        },
+        "VULN-39341 security fix for Magento 2.4.6-p14": {
+            "file": "VULN-39341-2-4-6-p14-magento-framework.patch",
+            "version": "2.4.6-p14"
+        },
+        "VULN-39341 security fix for Magento 2.4.7-p9": {
+            "file": "VULN-39341-2-4-7-p9-magento-framework.patch",
+            "version": "2.4.7-p9"
+        },
+        "VULN-39341 security fix for Magento 2.4.8-p4": {
+            "file": "VULN-39341-2-4-8-p4-magento-framework.patch",
+            "version": "2.4.8-p4"
         }
     },
     "magento/magento2-base": {
@@ -206,6 +226,26 @@
         "VULN-39341 security fix for Magento 2.4.9": {
             "file": "VULN-39341-2-4-9-magento-magento2-base.patch",
             "version": "2.4.9"
+        },
+        "VULN-39341 security fix for Magento 2.4.4-p17": {
+            "file": "VULN-39341-2-4-4-p17-magento-magento2-base.patch",
+            "version": "2.4.4-p17"
+        },
+        "VULN-39341 security fix for Magento 2.4.5-p16": {
+            "file": "VULN-39341-2-4-5-p16-magento-magento2-base.patch",
+            "version": "2.4.5-p16"
+        },
+        "VULN-39341 security fix for Magento 2.4.6-p14": {
+            "file": "VULN-39341-2-4-6-p14-magento-magento2-base.patch",
+            "version": "2.4.6-p14"
+        },
+        "VULN-39341 security fix for Magento 2.4.7-p9": {
+            "file": "VULN-39341-2-4-7-p9-magento-magento2-base.patch",
+            "version": "2.4.7-p9"
+        },
+        "VULN-39341 security fix for Magento 2.4.8-p4": {
+            "file": "VULN-39341-2-4-8-p4-magento-magento2-base.patch",
+            "version": "2.4.8-p4"
         }
     },
     "magento/module-developer": {
@@ -440,6 +480,26 @@
         "VULN-39341 security fix for Magento 2.4.9": {
             "file": "VULN-39341-2-4-9-magento-module-email.patch",
             "version": "2.4.9"
+        },
+        "VULN-39341 security fix for Magento 2.4.4-p17": {
+            "file": "VULN-39341-2-4-4-p17-magento-module-email.patch",
+            "version": "2.4.4-p17"
+        },
+        "VULN-39341 security fix for Magento 2.4.5-p16": {
+            "file": "VULN-39341-2-4-5-p16-magento-module-email.patch",
+            "version": "2.4.5-p16"
+        },
+        "VULN-39341 security fix for Magento 2.4.6-p14": {
+            "file": "VULN-39341-2-4-6-p14-magento-module-email.patch",
+            "version": "2.4.6-p14"
+        },
+        "VULN-39341 security fix for Magento 2.4.7-p9": {
+            "file": "VULN-39341-2-4-7-p9-magento-module-email.patch",
+            "version": "2.4.7-p9"
+        },
+        "VULN-39341 security fix for Magento 2.4.8-p4": {
+            "file": "VULN-39341-2-4-8-p4-magento-module-email.patch",
+            "version": "2.4.8-p4"
         }
     },
     "magento/module-elasticsearch": {
@@ -844,6 +904,26 @@
         "VULN-39341 security fix for Magento 2.4.9": {
             "file": "VULN-39341-2-4-9-magento-module-backend.patch",
             "version": "2.4.9"
+        },
+        "VULN-39341 security fix for Magento 2.4.4-p17": {
+            "file": "VULN-39341-2-4-4-p17-magento-module-backend.patch",
+            "version": "2.4.4-p17"
+        },
+        "VULN-39341 security fix for Magento 2.4.5-p16": {
+            "file": "VULN-39341-2-4-5-p16-magento-module-backend.patch",
+            "version": "2.4.5-p16"
+        },
+        "VULN-39341 security fix for Magento 2.4.6-p14": {
+            "file": "VULN-39341-2-4-6-p14-magento-module-backend.patch",
+            "version": "2.4.6-p14"
+        },
+        "VULN-39341 security fix for Magento 2.4.7-p9": {
+            "file": "VULN-39341-2-4-7-p9-magento-module-backend.patch",
+            "version": "2.4.7-p9"
+        },
+        "VULN-39341 security fix for Magento 2.4.8-p4": {
+            "file": "VULN-39341-2-4-8-p4-magento-module-backend.patch",
+            "version": "2.4.8-p4"
         }
     },
     "magento/module-newsletter": {
@@ -870,6 +950,26 @@
         "VULN-39341 security fix for Magento 2.4.9": {
             "file": "VULN-39341-2-4-9-magento-module-newsletter.patch",
             "version": "2.4.9"
+        },
+        "VULN-39341 security fix for Magento 2.4.4-p17": {
+            "file": "VULN-39341-2-4-4-p17-magento-module-newsletter.patch",
+            "version": "2.4.4-p17"
+        },
+        "VULN-39341 security fix for Magento 2.4.5-p16": {
+            "file": "VULN-39341-2-4-5-p16-magento-module-newsletter.patch",
+            "version": "2.4.5-p16"
+        },
+        "VULN-39341 security fix for Magento 2.4.6-p14": {
+            "file": "VULN-39341-2-4-6-p14-magento-module-newsletter.patch",
+            "version": "2.4.6-p14"
+        },
+        "VULN-39341 security fix for Magento 2.4.7-p9": {
+            "file": "VULN-39341-2-4-7-p9-magento-module-newsletter.patch",
+            "version": "2.4.7-p9"
+        },
+        "VULN-39341 security fix for Magento 2.4.8-p4": {
+            "file": "VULN-39341-2-4-8-p4-magento-module-newsletter.patch",
+            "version": "2.4.8-p4"
         }
     },
     "vconnect/module-allinone": {
